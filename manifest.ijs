@@ -24,7 +24,3 @@ finexec_addon.html
 finexec_category.html                               
 introduction_tut.ijs                                
 )
-
-
-
-
