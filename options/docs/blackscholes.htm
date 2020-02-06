@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>blackscholes.ijs</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="joxygen.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">blackscholes.ijs</h1>
+</div>
+<p>Script: ~addons/finexec/finexec/options/blackscholes.ijs<br />
+Contributor: William Szuch<br />
+Updated: 30/1/2020<br />
+Depend: ~addon/stats/distribs/distribs.ijs<br />
+Definitions: loaded to locale: base</p>
+<hr>
+<p><a class="HREF" href="index.htm" target="_blank">Category: Options</a><br />
+<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a></p>
+<hr>
+<p>Black-Scholes option pricing models.<br />
+Equations to be added.<br />
+<a href="../eqs/blackscholes_ijs_eqs.html" target="_blank">Script equations: blackscholes.ijs To Do</a><br />
+<a href="../blackscholes.ijs" target="_blank">Script source: blacksholes.ijs</a></p>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+B
+</td>
+<td>
+<a href="#bsGKCurrencyOption">bsGKCurrencyOption</a>, <a href="#bsNonDividend">bsNonDividend</a>
+</td>
+</tr>
+</table>
+<h2 id="bsGKCurrencyOption" class="hdef">bsGKCurrencyOption (monad)</h2>
+<p>Black-Scholes/Garman-Kohlhagen currency option pricing model.<br />
+Result is the Call and Put premiums.<br />
+<a href="../equations/bsGKCurrencyOption_eq.html" target="_blank">Equation: bsGKCurrencyOption(Sp;Sr;Fp;T;V;F) Yo Do</a></p>
+<h3>Syntax</h3>
+<pre><code>bsGKCurrencyOption(Sp;Sr;Fp;T;V;F)
+St = strike price (ie: exercise price)
+Sp = spot rate
+Fp = forward outright price
+T  = time to expiry of the option as a proportion of a year(365 days)
+V  = annualised volatility
+F  = yearly force of interest rate (ie: continously compounding)</code></pre>
+<h3>Example</h3>
+<pre><code>   bsGKCurrencyOption(1.19;1.20;1.21;(91%365);0.09;0.0654)
+   0.0324408 0.0127642</code></pre>
+<h2 id="bsNonDividend" class="hdef">bsNonDividend (monad)</h2>
+<p>Black-Scholes option pricing model for a non-dividend paying asset.<br />
+European option<br />
+Result is the Call and Put premiums.<br />
+<a href="../eqs/bsNonDividend_eq.html" target="_blank">Equation: bsNonDividendr(St;Sp;T;V:F) To Do</a></p>
+<h3>Syntax</h3>
+<pre><code>bsNonDividend(St;Sp;T;V:F)
+St = strike price (ie: exercise price)
+Sp = spot price
+T  = time to expiry of the option as a proportion of a year(365 days)
+V  = annualised volatility
+F  = yearly force of interest rate (ie: continously compounding)</code></pre>
+<h3>Example</h3>
+<pre><code>   bsNonDividend(1.004;1.0;0.25;0.0298;0.0598505)
+0.0129008 0.00199015</code></pre>
+<pre><code>   bsNonDividend(40;42;0.5;0.2;0.10)
+4.75942 0.808599</code></pre>
+</body>
+</html>

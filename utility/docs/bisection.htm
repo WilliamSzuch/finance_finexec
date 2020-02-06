@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>bisection.ijs</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="joxygen.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">bisection.ijs</h1>
+</div>
+<p>Script: ~addons/finance/finexec/utility/bisection.ijs<br />
+Contributor: William Szuch<br />
+Updated: 4/2/2020<br />
+Depend: nil<br />
+Definitions: loaded to locale base</p>
+<hr>
+<p><a class="HREF" href="index.htm" target="_blank">Category: Utility</a><br />
+<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a></p>
+<hr>
+<p>Bisection method of solving: f(x) = 0.<br />
+Useful for calculating the money weighted rate of return (mwrr).<br />
+<a href="../bisection.ijs" target="_blank">Script source: bisection.ijs</a></p>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+B
+</td>
+<td>
+<a href="#bisection">bisection</a>
+</td>
+</tr>
+</table>
+<h2 id="bisection" class="hdef">bisection (adverb)</h2>
+<p><b>Form:</b> explicit<br />
+Calculate the solution to the function f(x) = 0 if it<br />
+exists is in the range A to B with tolerence TOL<br />
+using the Bisection method.<br />
+The result is two numbers:<br />
+  first number is the approximation for x to the solution f(x) = 0<br />
+  second number of the value of f(x) using the approximation ie: error<br />
+Some useful steps:<br />
+(1) select a suitable tolerence for the function or except default<br />
+(2) check if there is a solution - for example using signchange or<br />
+    plot<br />
+(3) check if there multiple solutions in the range</p>
+<h3>Syntax</h3>
+<pre><code>(f)bisection(A;B;[TOL])
+f = function to be solved
+A,B = lower and upper values of initial range
+[TOL] = default tolerence for solution 0.01</code></pre>
+<h3>Example</h3>
+<pre><code> The examples requires:
+ load &#39;plot&#39;
+ signchange =: [: - ([: */ ([: * &gt;))       NB. signchange(A,B)
+ steps=: {. + (1&amp;{ - {.) * (i.@&gt;: % ])@{:  NB. steps(A,B,N)
+
+   f1 =: _3.12 + [  NB. Simple linear function
+   f1 i. 10         NB. shows there is a solution in range 0 to 9
+_3.12 _2.12 _1.12 _0.12 0.88 1.88 2.88 3.88 4.88 5.88
+   signchange f1(3,5)
+1  NB. Sign change in the interval (3,5)
+
+   plot ([;f1) steps(0,10,100)
+
+   (f1)bisection(0;9;0.001)
+3.12012 0.000117187</code></pre>
+<pre><code>   (f1)bisection(0;9)
+3.12891 0.00890625</code></pre>
+<pre><code>   (f1)bisection(4;9)
+┌──────────────────────────────────┬─┬─┐
+│*** No sign change in the range : │4│9│
+└──────────────────────────────────┴─┴─┘</code></pre>
+<pre><code> Further examples:
+ f2 =: 3 : &#39;_100 + 10 * *: y&#39;
+ f3 =: 3 : &#39;100 + _10 * *: y&#39;
+ f4 =: 3 : &#39;120 + _10 * *: y&#39;
+ plot ([;f2) steps(1,5,10)
+ plot ([;f3) steps(1,5,10)
+ plot ([;f4) steps(1, 5,10
+ (f2)bisection(1;5;0.001)
+ (f3)bisection(1;5)
+ (f4)bisection(1;5)</code></pre>
+</body>
+</html>

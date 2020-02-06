@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>boxed_table.ijs</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="joxygen.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">boxed_table.ijs</h1>
+</div>
+<p>Script: ~addons/finance/finexec/utility/boxed_table.ijs<br />
+Contributor: William Szuch<br />
+Updated: 6/2/2020<br />
+Depend: nil<br />
+Definitions: loaded to locale base</p>
+<hr>
+<p><a class="HREF" href="index.htm" target="_blank">Category: Utility</a><br />
+<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a></p>
+<hr>
+<p>Build a boxed table of data of numbers or characters that can be<br />
+used as input to a definition.<br />
+<a href="../boxed_table.ijs" target="_blank">Script source: boxed_table.ijs</a></p>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+B
+</td>
+<td>
+<a href="#boxedtable">boxedtable</a>
+</td>
+</tr>
+</table>
+<h2 id="boxedtable" class="hdef">boxedtable (monad)</h2>
+<p><b>Form:</b> tacit<br />
+Build a boxed table from lists of pairs of numbers or chatacters.</p>
+<h3>Syntax</h3>
+<pre><code>boxedtable(L1;L2)
+L1 = list of numbers or characters
+L2 = list of numbers or characters
+L1 and L2 to be of the same different type: numbers and or characters</code></pre>
+<h3>Example</h3>
+<pre><code>   boxedtable(1 2;3 4 5)
+┌─────┬─────┬─────┐
+│┌─┬─┐│┌─┬─┐│┌─┬─┐│
+││1│3│││1│4│││1│5││
+│└─┴─┘│└─┴─┘│└─┴─┘│
+├─────┼─────┼─────┤
+│┌─┬─┐│┌─┬─┐│┌─┬─┐│
+││2│3│││2│4│││2│5││
+│└─┴─┘│└─┴─┘│└─┴─┘│
+└─────┴─────┴─────┘</code></pre>
+<pre><code>   boxedtable(&#39;ab&#39;;&#39;cde&#39;)
+┌─────┬─────┬─────┐
+│┌─┬─┐│┌─┬─┐│┌─┬─┐│
+││a│c│││a│d│││a│e││
+│└─┴─┘│└─┴─┘│└─┴─┘│
+├─────┼─────┼─────┤
+│┌─┬─┐│┌─┬─┐│┌─┬─┐│
+││b│c│││b│d│││b│e││
+│└─┴─┘│└─┴─┘│└─┴─┘│
+└─────┴─────┴─────┘</code></pre>
+<pre><code>   boxedtable( &#39;ab&#39;;4 5 6)
+┌─────┬─────┬─────┐
+│┌─┬─┐│┌─┬─┐│┌─┬─┐│
+││a│4│││a│5│││a│6││
+│└─┴─┘│└─┴─┘│└─┴─┘│
+├─────┼─────┼─────┤
+│┌─┬─┐│┌─┬─┐│┌─┬─┐│
+││b│4│││b│5│││b│6││
+│└─┴─┘│└─┴─┘│└─┴─┘│
+└─────┴─────┴─────┘</code></pre>
+</body>
+</html>

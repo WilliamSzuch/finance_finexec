@@ -1,0 +1,354 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>lifetable.ijs</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="joxygen.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">lifetable.ijs</h1>
+</div>
+<p>Script: ~addons/finance/finexec/lifecontingencies/lifetable.ijs<br />
+Contributor: William Szuch<br />
+Updated: 3/2/2020<br />
+Depend: ~addons/finance/finexec/qxtables/qxtools.ijs'<br />
+Definitions: loaded to locale base</p>
+<hr>
+<p><a class="HREF" href="index.htm" target="_blank">Category: Life Contingencies</a><br />
+<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a></p>
+<hr>
+<p>Definitions to calculate life table functions and survival factors.<br />
+Qx tables loaded to the locale base.<br />
+See: Qx_ALL for a list of names.<br />
+See: Qx_ALT for a list of Australian Life Tables.<br />
+All mortality tables start at age = 0.<br />
+<a href="../eqs/lifetable_ijs_eqs.html" target="_blank">Script equations: lifetable.ijs</a><br />
+<a href="../lifetable.ijs" target="_blank">Script source: lifetable.ijs</a></p>
+<hr>
+<p>Note:<br />
+(1) Dealing with Ages outside the range of the mortality table.<br />
+(2) Dealing with qx&gt;1 if Qx table is scaled up.<br />
+use of ext5<br />
+Tables - try to make tacit<br />
+pxn,qxn - try to make into tacit<br />
+Plots</p>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+D
+</td>
+<td>
+<a href="#distDeathsYr">distDeathsYr</a>, <a href="#distDurLife">distDurLife</a>, <a href="#dx">dx</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+E
+</td>
+<td>
+<a href="#ex">ex</a>, <a href="#exz">exz</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+L
+</td>
+<td>
+<a href="#lx">lx</a>, <a href="#lxn">lxn</a>, <a href="#lxn1">lxn1</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+P
+</td>
+<td>
+<a href="#plotdistDeathsYr">plotdistDeathsYr</a>, <a href="#plotdistDurLife">plotdistDurLife</a>, <a href="#px">px</a>, <a href="#pxn">pxn</a>, <a href="#pxn1">pxn1</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+Q
+</td>
+<td>
+<a href="#qx">qx</a>, <a href="#qxn">qxn</a>, <a href="#qxn1">qxn1</a>
+</td>
+</tr>
+</table>
+<h2 id="distDeathsYr" class="hdef">distDeathsYr (dyad)</h2>
+<p><b>Form:</b> explicit<br />
+Distribution of the number of deaths in a year for a selected Qx table<br />
+and Age for 100,000 lives at Age.<br />
+1000 simulations</p>
+<h3>Example</h3>
+<pre><code>   (ALT_2013_15_M)distDeathsYr(54)
+   (ALT_2013_15_M)distDeathsYr(0)</code></pre>
+<pre><code>   (ALT_2013_15_M)plotdistDeathsYr(54)
+   (ALT_2013_15_M)plotdistDeathsYr(0)</code></pre>
+<h2 id="distDurLife" class="hdef">distDurLife (dyad)</h2>
+<p><b>Form:</b> explicit<br />
+Distribution of the duration of life for a selected Qx table and Age.<br />
+Number of simulations = 100,000 for distribution.</p>
+<h3>Note</h3>
+<p>Mortality table extended by 5 years.</p>
+<h3>Syntax</h3>
+<pre><code>(Qx)distDurLife(Age)
+Qx = name of qx table starting at age = 0
+Age = integer age</code></pre>
+<h3>Example</h3>
+<pre><code>   (ALT_2013_15_M)distDurLife(54)
+   (ALT_2013_15_M)distDurLife(0)</code></pre>
+<pre><code>   (ALT_2013_15_M)plotdistDurLife(54)
+   (ALT_2013_15_M)plotdistDurLife(0)
+   (ALT_2013_15_M)plotdistDurLife(10;1)</code></pre>
+<h2 id="dx" class="hdef">dx (dyad)</h2>
+<p><b>Form:</b> tacit<br />
+Number of deaths from Age to Age + 1<br />
+from lx(Age) lives at Age.</p>
+<h3>Note</h3>
+<p>lx(Age) is the number of lives surviving to Age from 100000 biths.<br />
+<a href="../eqs/dx_eq.html" target="_blank">Equation: (Qx)dx(Age)</a></p>
+<h3>Syntax</h3>
+<pre><code>(Qx)dx(Age)
+Qx = name of qx table starting at age = 0
+Age = integer ages</code></pre>
+<h3>Example</h3>
+<pre><code>   (ALT_2005_07_M)dx(0)
+523</code></pre>
+<pre><code>   (ALT_2005_07_M)dx(0 10 20 50)
+523 9.93219 73.2663 288.278</code></pre>
+<h2 id="ex" class="hdef">ex (dyad)</h2>
+<p><b>Form:</b> tacit<br />
+Calculate the complete expectation of life with extended Qx table.</p>
+<h3>Note</h3>
+<p>The complete expectation of life is the average number of<br />
+years lived by person aged x from age x.<br><br />
+The final value in the Qx table is extended by 5 years.<br />
+<a href="../eqs/ex_eq.html" target="_blank">Equation: (Qx)ex(Age)</a></p>
+<h3>Syntax</h3>
+<pre><code>(Qx)ex(Age)
+Qx = name of Qx table starting at age = 0
+Age= integer ages</code></pre>
+<h3>Example</h3>
+<pre><code>   (ALT_1960_62_M)ex(30 40 50 60 70)
+ 41.119 31.8354 23.1279 15.6059 9.77224</code></pre>
+<pre><code>   (ALT_2009_11_F)ex(0 20 40 60)
+ 84.2052 64.6905 45.1089 26.414</code></pre>
+<h2 id="exz" class="hdef">exz (dyad)</h2>
+<p><b>Form:</b> tacit<br />
+Calculate the complete expectation of life without extended Qx table.</p>
+<h3>Note</h3>
+<p>The complete expectation of life is the average number of<br />
+years lived by person aged x from age x.<br><br />
+The final value in the qx table has not been extended.<br />
+Same equation as for ex.<br />
+<a href="../eqs/ex_eq.html" target="_blank">Equation: (Qx)ex(Age)</a></p>
+<h3>Syntax</h3>
+<pre><code>(Qx)exz(Age)
+Qx = name of Qx table starting at age = 0
+Age  = integer ages</code></pre>
+<h3>Example</h3>
+<pre><code>   (ALT_1960_62_M)exz(30 40 50 60 70)
+41.119 31.8354 23.1279 15.6059 9.77224</code></pre>
+<pre><code>   (ALT_2009_11_F)exz(0 20 40 60)
+84.1505 64.6354 45.0534 26.3563</code></pre>
+<h2 id="lx" class="hdef">lx (dyad)</h2>
+<p>Calculate the number of lives surviving to Age from 100,000 births for the<br />
+Qx selected table.<br />
+Qx tables start from Age = 0.<br />
+<a href="../eqs/lx_eq.html" target="_blank">Equation: (Qx)lx(Age)</a></p>
+<h3>Syntax</h3>
+<pre><code>(Qx)lx(Age)
+Qx = name of Qx table starting at age = 0
+Age = integer ages</code></pre>
+<h3>Example</h3>
+<pre><code>   (ALT_2009_11_F)lx(10)
+99538.4</code></pre>
+<pre><code>   (ALT_2009_11_F)lx(0 10 20 30 40)
+100000 99538.4 99391.2 99111.3 98608.9</code></pre>
+<h2 id="lxn" class="hdef">lxn (dyad)</h2>
+<p><b>Form:</b> tacit<br />
+Extension of lxn1.<br />
+Multiple ages surviving for multiple periods in years<br />
+Calculate for multiple ages and periods surviving from 100,000<br />
+lives at each age for the selected (Qx) mortality table.<br />
+Qx tables start from age = 0.<br />
+<a href="../eqs/lxn_eq.html" target="_blank">Equation: (Qx)lxn(Age;N)</a></p>
+<h3>Syntax</h3>
+<pre><code>(Qx)lxn(Age;N)
+Qx = name of Qx table starting at age = 0
+Age = integer ages
+N = integer periods</code></pre>
+<h3>Example</h3>
+<pre><code>   (ALT_2009_11_F)lxn(10;10)
+99852.1</code></pre>
+<pre><code>   (ALT_2009_11_F)lxn(40;10 20 30)
+98789.6 96154.3 90253.2</code></pre>
+<pre><code>   (ALT_2009_11_F)lxn(20 30 40;10)
+99718.4 99493.2 98789.6</code></pre>
+<pre><code>   (ALT_2009_11_F)lxn(20 40;0 10 20 30)
+100000 99718.4 99212.9 98012.1
+100000 98789.6 96154.3 90253.2</code></pre>
+<h2 id="lxn1" class="hdef">lxn1 (dyad)</h2>
+<p><b>Form:</b> tacit<br />
+Calculate the number lives surviving to Age + N from 100,000 lives<br />
+at Age for the selected Qx table.<br />
+Qx tables start from age = 0.<br />
+(for one life) - same equation as lxn<br />
+<a href="../eqs/lxn_eq.html" target="_blank">Equation: (Qx)lxn(Age;N)</a></p>
+<h3>Syntax</h3>
+<pre><code>(Qx)lxn1(Age;N)
+Qx = name of Qx table starting at age = 0
+Age = integer age
+N = interger duration in years</code></pre>
+<h3>Example</h3>
+<pre><code>  (ALT_2009_11_F)lxn1(10;10)
+99852.1</code></pre>
+<pre><code>   (ALT_2009_11_F)lxn1(0;10)
+99538.4</code></pre>
+<h2 id="plotdistDeathsYr" class="hdef">plotdistDeathsYr (dyad)</h2>
+<p><b>Form:</b> explicit<br />
+<b>Depend:</b> distDyingYr<br />
+Plot the pdf and cdf from distDeathsYr.</p>
+<h3>Syntax</h3>
+<pre><code>(Qx)distDeathsYr(Age;[Y])
+Qx = name of qx table starting at age = 0
+Age = integer age</code></pre>
+<p>[Y] = 0 optinal = default - probability density functions (pdf)<br />
+    = 1 cumulative density function (cdf)</p>
+<h3>Example</h3>
+<pre><code>   (ALT_2013_15_M)plotdistDeathsYr(54)
+   (ALT_2013_15_M)plotdistDeathsYr(54;1)
+   (ALT_2013_15_M)plotdistDeathsYr(0)
+   (ALT_2013_15_M)plotdistDeathsYr(0;1)</code></pre>
+<h2 id="plotdistDurLife" class="hdef">plotdistDurLife (dyad)</h2>
+<p><b>Form:</b> explicit<br />
+<b>Depend:</b> distDurLife<br />
+Plot the pdf and cdf from distDurLife.</p>
+<h3>Syntax</h3>
+<pre><code>(Qx)distDurLife(Age;[Y])
+Qx = name of qx table starting at age = 0
+Age = integer age</code></pre>
+<p>[Y] = 0 optinal = default - probability density functions (pdf)<br />
+    = 1 cumulative density function (cdf)</p>
+<h3>Example</h3>
+<pre><code>   (ALT_2013_15_M)plotdistDurLife(54)
+   (ALT_2013_15_M)plotdistDurLife(54;1)
+   (ALT_2013_15_M)plotdistDurLife(0)
+   (ALT_2013_15_M)plotdistDurLife(0;1)</code></pre>
+<h2 id="px" class="hdef">px (dyad)</h2>
+<p><b>Form:</b> tacit<br />
+The probability of surviving a year for the selected Qx mortality table.<br><br />
+Qx tables start from age = 0.<br />
+<a href="../eqs/px_eq.html" target="_blank">Equation: (Qx)px(Age)</a></p>
+<h3>Syntax</h3>
+<pre><code>(Qx)px(Age)
+Qx = name of Qx table starting at age = 0
+Age = integer ages</code></pre>
+<h3>Example</h3>
+<pre><code>   (ALT_2009_11_F)px(10)
+0.99993</code></pre>
+<pre><code>   (ALT_2010_12_F)px(0 10 20 60)
+0.99658 0.99993 0.99973 0.99593</code></pre>
+<h2 id="pxn" class="hdef">pxn (dyad)</h2>
+<p><b>Form:</b> explicit<br />
+<b>Depend:</b> boxtable<br />
+Extension of pxn1<br />
+The probability of a life surviving N years for the selected Qx table.<br />
+Qx tables start from age = 0.<br />
+<a href="../eqs/pxn_eq.html" target="_blank">Equation: (Qx)pxn(Age;N)</a></p>
+<h3>Syntax</h3>
+<pre><code>(Qx)pxn(Age;N)
+Qx = name of Qx table starting at age = 0
+Age = integer ages
+N = integer period</code></pre>
+<h3>Example</h3>
+<pre><code>   (ALT_2009_11_F)pxn(40;10)
+0.987896</code></pre>
+<pre><code>   (ALT_2009_11_F)pxn(0 10 20;40)</code></pre>
+<h2 id="pxn1" class="hdef">pxn1 (dyad)</h2>
+<p><b>Form:</b> tacit<br />
+The probability of a life surviving N years for the selected Qx table.<br />
+Qx tables start from age = 0.<br />
+(for one life) - same equation as pxn<br />
+<a href="../eqs/pxn_eq.html" target="_blank">Equation: (Qx)pxn(Age;N)</a></p>
+<h3>Syntax</h3>
+<pre><code>(Qx)pxn1(Age;N)
+Qx = name of Qx table starting at age = 0
+Age = integer age
+N = integer period</code></pre>
+<h3>Example</h3>
+<pre><code>   (ALT_2009_11_F)pxn1(40;10)
+0.987896</code></pre>
+<pre><code>   (ALT_2009_11_F)pxn1(0;40)
+0.986089</code></pre>
+<pre><code>   (ALT_2009_11_F)pxn1(40;0)
+1</code></pre>
+<pre><code>   (ALT_2010_12_F)pxn1(65;10)
+0.899431</code></pre>
+<h2 id="qx" class="hdef">qx (dyad)</h2>
+<p><b>Form:</b> tacit<br />
+The probability of dying within a year for the selected Qx table.<br />
+Qx tables start from age = 0.<br />
+<a href="../eqs/qx_eq.html" target="_blank">Equation: (Qx)qx(Age)</a></p>
+<h3>Syntax</h3>
+<pre><code>(Qx)qx(Age)
+Qx = name of Qx table starting at age = 0
+Age = integer ages</code></pre>
+<h3>Example</h3>
+<pre><code>   (ALT_2009_11_F)qx(20)
+0.00025</code></pre>
+<pre><code>   (ALT_2010_12_F)qx(0 10 20 60)
+0.00342 7e_5 0.00027 0.00407</code></pre>
+<h2 id="qxn" class="hdef">qxn (dyad)</h2>
+<p><b>Form:</b> tacit<br />
+<b>Depend:</b> boxtable<br />
+Extension of qxn1.<br />
+The probability for multiple ages dying with multiple periods<br />
+for the selected Qx table.</p>
+<p>Qx tables start from age = 0.</p>
+<p><a href="../eqs/qxn_eq.html" target="_blank">Equation: (Qx)qxn(Age;N)</a></p>
+<h3>Syntax</h3>
+<pre><code>(Qx)qxn(Age;N)
+Qx = name of Qx table starting at age = 0
+Age = integer ages
+N = integer periods in years</code></pre>
+<h3>Example</h3>
+<pre><code>  (ALT_2009_11_F)qxn(40;10)
+0.012104</code></pre>
+<pre><code>  (ALT_2009_11_F)qxne(40 50 60;10)
+0.012104 0.0266759 0.0613706</code></pre>
+<pre><code>  (ALT_2009_11_F)qxn(40;10 20 30)
+0.012104 0.0384571 0.0974675</code></pre>
+<pre><code>  (ALT_2009_11_F)qxn(20 30 40 50;10 20 30)
+0.00281643 0.00787062 0.0198794
+0.00506847  0.0171111 0.0433306
+  0.012104  0.0384571 0.0974675
+ 0.0266759  0.0864094  0.241221</code></pre>
+<h2 id="qxn1" class="hdef">qxn1 (dyad)</h2>
+<p><b>Form:</b> tacit<br />
+The probability of a life dying within N years for the selected Qx table.<br />
+Mortality tables start from age = 0.<br />
+(for one life) - same equation as qxn<br />
+<a href="../eqs/qxn_eq.html" target="_blank">Equation: (Qx)qxn(Age;N)</a></p>
+<h3>Syntax</h3>
+<pre><code>(Qx)qxn1(Age;N)
+Qx = name of Qx table starting at age = 0
+Age = integer age
+N = integer period</code></pre>
+<h3>Example</h3>
+<pre><code>   (ALT_2009_11_F)qxn1(40;10)
+0.012104</code></pre>
+<pre><code>   (ALT_2009_11_F)qxn1(0;40)
+0.0139106</code></pre>
+<pre><code>   (ALT_2009_11_F)qxn1(40;0)
+0</code></pre>
+<pre><code>   (ALT_2010_12_F)qxn1(65;10)
+0.100569</code></pre>
+</body>
+</html>
