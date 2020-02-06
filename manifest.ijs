@@ -192,7 +192,3 @@ utility/docs/save_reteive_data.htm
 utility/docs/select.htm                             
 utility/docs/text_to_numeric.htm                    
 )
-
-
-
-
