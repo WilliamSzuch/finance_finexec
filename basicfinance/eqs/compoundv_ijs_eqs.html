@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>compoundz.ijs</title>
+<!-- MathML created with MathCast Equation Editor version 0.92 -->
+</head>
+<body>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>Ev = List of variable effective interest rates for time units</mtext>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>Ev(k)</mtext>
+    <mo>=</mo>
+    <msup>
+      <mtext>k</mtext>
+      <mtext>th</mtext>
+    </msup>
+    <mtext>item in the list Ev</mtext>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>N</mtext>
+    <mo>=</mo>
+    <mtext>Integer number of time units in a period</mtext>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>T = Number of time units in a period</mtext>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>T(i)</mtext>
+    <mo>=</mo>
+    <mtext>Number of time units in the i</mtext>
+    <msup>
+      <mi/>
+      <mrow>
+        <mtext>th</mtext>
+      </mrow>
+    </msup>
+    <mtext>&#xa0;period</mtext>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>F</mtext>
+    <mo>=</mo>
+    <mtext>Frequency of payment within a time unit</mtext>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>C</mtext>
+    <mo>=</mo>
+    <mtext>Cash flow or list of cash flow amounts</mtext>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>C(i)</mtext>
+    <mo>=</mo>
+    <mtext>Cash flow in the i</mtext>
+    <msup>
+      <mi/>
+      <mrow>
+        <mtext>th</mtext>
+      </mrow>
+    </msup>
+    <mtext>&#xa0;period</mtext>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>(Ev(i)vvt(T)</mtext>
+    <mo>=</mo>
+    <mfrac>
+      <mn>1</mn>
+      <msup>
+        <mfenced>
+          <mrow>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mtext>Ev(i)</mtext>
+          </mrow>
+        </mfenced>
+        <mrow>
+          <mtext>T</mtext>
+        </mrow>
+      </msup>
+    </mfrac>
+    <mspace width="1.0em"/>
+    <mtext>for 0&#x2264;T&#x2264;1</mtext>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>(Ev)vvt(T)</mtext>
+    <mo>=</mo>
+    <mn>1</mn>
+    <mo>&#x2215;</mo>
+    <mfenced>
+      <mrow>
+        <munder>
+          <mo>&#x220f;</mo>
+          <mrow>
+            <mtext>k</mtext>
+          </mrow>
+        </munder>
+        <mfenced>
+          <mrow>
+            <mn>1</mn>
+            <mo>+</mo>
+            <mtext>Ev(k)</mtext>
+          </mrow>
+        </mfenced>
+      </mrow>
+    </mfenced>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>(Ev)pvcfv(C;T)</mtext>
+    <mo>=</mo>
+    <munder>
+      <mo>&#x2211;</mo>
+      <mrow>
+        <mtext>i</mtext>
+      </mrow>
+    </munder>
+    <mtext>C(i)</mtext>
+    <mo>&#x2217;</mo>
+    <mtext>(Ev)vvt(T(i))</mtext>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>(Ev)wvt(T)</mtext>
+    <mo>=</mo>
+    <munder>
+      <mo>&#x220f;</mo>
+      <mrow>
+        <mtext>k</mtext>
+      </mrow>
+    </munder>
+    <mfenced>
+      <mrow>
+        <mn>1</mn>
+        <mo>+</mo>
+        <mtext>Ev(k)</mtext>
+      </mrow>
+    </mfenced>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>(Ev)fvcfv(C;T)</mtext>
+    <mo>=</mo>
+    <munder>
+      <mo>&#x2211;</mo>
+      <mrow>
+        <mtext>i</mtext>
+      </mrow>
+    </munder>
+    <mtext>C(i)</mtext>
+    <mo>&#x2217;</mo>
+    <mtext>(Ev)wvt(T(i))</mtext>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>([0])anvF(Ev;N;[F])</mtext>
+    <mo>=</mo>
+    <mfenced>
+      <mrow>
+        <munderover>
+          <mo>&#x2211;</mo>
+          <mrow>
+            <mtext>k=0</mtext>
+          </mrow>
+          <mrow>
+            <mtext>k=N&#x2212;1</mtext>
+          </mrow>
+        </munderover>
+        <mfenced>
+          <mrow>
+            <mtext>(Ev)vvt(k)</mtext>
+          </mrow>
+        </mfenced>
+        <mo>&#x2217;</mo>
+        <mfenced>
+          <mrow>
+            <mtext>(Ev(k))vf0(F)</mtext>
+          </mrow>
+        </mfenced>
+      </mrow>
+    </mfenced>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>([1])anvF(Ev;N;[F])</mtext>
+    <mo>=</mo>
+    <mfenced>
+      <mrow>
+        <munderover>
+          <mo>&#x2211;</mo>
+          <mrow>
+            <mtext>k=0</mtext>
+          </mrow>
+          <mrow>
+            <mtext>k=N&#x2212;1</mtext>
+          </mrow>
+        </munderover>
+        <mfenced>
+          <mrow>
+            <mtext>(Ev)vvt(k)</mtext>
+          </mrow>
+        </mfenced>
+        <mo>&#x2217;</mo>
+        <mfenced>
+          <mrow>
+            <mtext>(Ev(k))vf1(F)</mtext>
+          </mrow>
+        </mfenced>
+      </mrow>
+    </mfenced>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>X</mtext>
+    <mo>=</mo>
+    <mtext>optional: default = 0 payment in advance</mtext>
+    <mspace width="1.0em"/>
+    <mtext>X = 1 payments in arrears</mtext>
+  </mrow>
+</math><math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow>
+    <mtext>F = optional: default = 1</mtext>
+    <mspace width="1.0em"/>
+    <mtext>frequency of payment within a time unit eg: 1 2 3 4 6 12 .. and _ continous</mtext>
+  </mrow>
+</math></body>
+</html>
