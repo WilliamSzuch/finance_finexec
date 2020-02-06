@@ -11,7 +11,7 @@ Financial and Actuarial computing with J.
 
 VERSION=: '1.0.0'
 
-RELEASE=: 'j901'
+RELEASE=: 'j807'
 
 PLATFORMS=: ''
 
