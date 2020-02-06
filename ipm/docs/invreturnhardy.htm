@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>invreturnhardy.ijs</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="joxygen.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">invreturnhardy.ijs</h1>
+</div>
+<p>Script: ~addons/finance/finexec/ipm/inreturnhardy.ijs<br />
+Contributor: William Szuch<br />
+Updated: 1/2/2020<br />
+Depend:nil<br />
+Definitions: loaded to locale base</p>
+<hr>
+<p><a class="HREF" href="index.htm" target="_blank">Category: Basic Finance</a><br />
+<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a></p>
+<hr>
+<p>Definition to Calculate the investment return for a time unit using Hardy's<br />
+method<br />
+<a href="../eqs/invreturnhardy_ijs_eqs.html" target="_blank">Script equations: invreturnhardy.ijs</a><br />
+<a href="../invreturnhardy.ijs" target="_blank">Script source: invreturnhardy.ijs</a></p>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+I
+</td>
+<td>
+<a href="#invReturnHardy">invReturnHardy</a>, <a href="#invReturnHardy_T">invReturnHardy_T</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="invReturnHardy_T" class="rid">
+invReturnHardy_T
+</td>
+<td class="rtype">
+m
+</td>
+<td class="rdef">
+Tacit form of invReturnHardy
+</td>
+</tr>
+</table>
+<h2 id="invReturnHardy" class="hdef">invReturnHardy (monad)</h2>
+<p><b>Form:</b> explicit<br />
+Calculate the rate of investmnet return using Hardy's<br />
+approximation formula over one time unit.<br />
+<a href="../eqs/invreturnhardy_eq.html" target="_blank">Equation: invReturnHardy(Vb;Ve;I)</a></p>
+<h3>Syntax</h3>
+<pre><code>  invReturnHardy(Vb;Ve;I)
+Vb = value of assets at beginning of time unit including accruals
+Ve = value of assets at end of time unit including accurals
+I  = investment income over the time unit including</code></pre>
+</body>
+</html>

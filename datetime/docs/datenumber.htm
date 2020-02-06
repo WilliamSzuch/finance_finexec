@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>datenumber.ijs</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="joxygen.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">datenumber.ijs</h1>
+</div>
+<p>Script: ~addons/finance/finexec/datetime/datenumber.ijs<br />
+Contributor: William Szuch<br />
+Updated: 6/2/2020<br />
+Depend: nil<br />
+Definitions loaded to locale base</p>
+<hr>
+<p><a class="HREF" href="index.htm" target="_blank">Category: Date Time</a><br />
+<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a></p>
+<hr>
+<p><a href="../datenumber.ijs" target="_blank">Script source: datenember.ijs</a><br />
+This is an exercise in building long tacits for todayno and todate.<br />
+Taken from the explicit definition in dates.ijs<br />
+in the Standard Libraray - stdlib.ijs.<br />
+This script defines definitions that convert a date to a number<br />
+and a number to a date.<br />
+The J calendar starts from 1800 1 1 (Wed): day number = 0 eg: todate 0 gives 1800 1 1<br />
+also, 1 todate 0 gives 18000101<br />
+Use is made of the J utility: dates.ijs that is loaded to the z locale as<br />
+part of the stdlib.ijs.</p>
+<p>Monday is the first day of the week as per: ISO 8601.<br />
+Index: Monday = 0, Sunday = 6 (Days = 0 1 2 3 4 5 6)<br />
+calendar 2009<br />
+1 calendar 2009 &lt; ISO 8601 &gt;</p>
+<p>In the ISO 8601 calendar is a week that starts on Monday.<br />
+1 YEAR = 365.2425 DAYS</p>
+<p>Date format as a number: <yyyy mm dd> or <yyyymmdd></p>
+<p>The preferred date formats:<br />
+yyyymmdd eg: 19970630<br />
+yyyy mm dd eg: 1997 6 30</p>
+<p>Use 'getdate' for conversion of character dates to format: yyyy mm dd.</p>
+<p>An Excel date is a number displayed with a date format.<br />
+It starts from 1900 1 1 with a well known leap year bug.</p>
+| To convert from J day numbers (result of verb 'todayno' in dates.ijs),to | Excel day number subtract 36522 from the J day number. |
+<hr>
+<p>Definitions to be completed.<br />
+numbertodate/numbertodatex<br />
+Review definition.</p>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+D
+</td>
+<td>
+<a href="#datenumbertable">datenumbertable</a>, <a href="#datetonumber">datetonumber</a>, <a href="#datetonumberx">datetonumberx</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+N
+</td>
+<td>
+<a href="#numbertodate">numbertodate</a>, <a href="#numbertodatex">numbertodatex</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+T
+</td>
+<td>
+<a href="#todate">todate</a>, <a href="#todayno">todayno</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="datenumbertable" class="rid">
+datenumbertable
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+-
+</td>
+</tr>
+<tr>
+<td id="datetonumber" class="rid">
+datetonumber
+</td>
+<td class="rtype">
+m
+</td>
+<td class="rdef">
+-
+</td>
+</tr>
+<tr>
+<td id="datetonumberx" class="rid">
+datetonumberx
+</td>
+<td class="rtype">
+m
+</td>
+<td class="rdef">
+-
+</td>
+</tr>
+<tr>
+<td id="todate" class="rid">
+todate
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+<p><b>Form:</b> explicit</p>
+| Converts day numbers to a date | Already loaded as part of stdlib to the z locale from dates.ijs. | This is coverted to a tacit - for the exercise to build a large tacit. | see: numbertodate
+</td>
+</tr>
+</table>
+<h2 id="numbertodate" class="hdef">numbertodate (monad)</h2>
+<p>Convert a date to a number.</p>
+<p>syntax numbertodate Y Y = day number</p>
+<h2 id="numbertodatex" class="hdef">numbertodatex (monad)</h2>
+<p>syntax numbertodatex Y Y = day number</p>
+<h2 id="todayno" class="hdef">todayno (verb)</h2>
+<p><b>Form:</b> explicit</p>
+<p>Converts dates to a day number.<br />
+Converse - todate<br />
+Already loaded as part of stdlib to the z locale from dates.ijs.<br />
+This is coverted to a tacit - for the exercise to build a large tacit.<br />
+see: datetonumber</p>
+<p>syntax <sub><sub><sub> ([X])todayno(D) </sub></sub></sub></p>
+<p>[X] = optional:<br />
+      0 - dates in form YYYY MM DD (default)<br />
+      1 - dates in form YYYYMMDD<br />
+      2 - dates in form YYYY MM DD HH MM SS</p>
+<h3>Example</h3>
+<pre><code>   todayno 1998 5 23
+72460</code></pre>
+<pre><code>  1 todayno 19980523
+72460</code></pre>
+<pre><code>  2 todayno 1998 5 23 12 30 30
+72460.5</code></pre>
+</body>
+</html>
