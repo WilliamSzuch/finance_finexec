@@ -1,4 +1,3 @@
-NB. =========================================================
 NB. ~addons/finance/finexec/manifest.ijs
 
 CAPTION=: 'Finexec: Project for Financial and Actuarial computing with J'
