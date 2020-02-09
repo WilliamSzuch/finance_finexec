@@ -17,15 +17,15 @@ PLATFORMS=: ''
 FOLDER=: 'finance/finexec'
 
 FILES=: 0 : 0
-finexec.css                                         
-finexec.ijs                                         
-finexec_addon.html                                  
-finexec_category.html                               
-introduction_tut.ijs                                
-manifest.ijs                                        
-zippy.bmp                                           
-basicfinance/basicfinance_docs.ijs                  
-basicfinance/basicfinance_terminology.html          
+finexec.css
+finexec.ijs
+finexec_addon.html
+finexec_category.html
+introduction_tut.ijs
+manifest.ijs
+zippy.bmp
+basicfinance/basicfinance_docs.ijs
+basicfinance/basicfinance_terminology.html
 basicfinance/compound.ijs                           
 basicfinance/compoundv.ijs                          
 basicfinance/force.ijs                              
