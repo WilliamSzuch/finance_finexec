@@ -1,22 +1,25 @@
 NB. =========================================================
 NB.%mwrr.ijs - Money weighted rate of rerurn (internal rate of return)
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Investment Performamce Measurement</a>
+NB.-<hr>
 NB.- Script: ~addons/finance/finexec/ipm/mwrr.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 3/2/2020
+NB.- Updated: 31/7/2020
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.-<hr>
-NB.- <a class="HREF" href="index.htm" target="_blank">Category: Basic Finance</a>
-NB.- <a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
+NB.- Status: done:
+NB.- <a href="../mwrr.ijs" target="_blank">Script source: mwrr.ijs</a>
 NB.-<hr>
 NB.- Definitions to calculate the money weighted rate of return for a time unit.  
 NB.- Also referred to as the internal rate of return.
 NB.- External cash flow:
 NB.-   cash inflow positive (eg: 100 10)
 NB.-   cash outflow negative (eg: _10 _12)
-NB.- If a solution exits it is in the range [_1,_] where _ is infinity.
-NB.- <a href="../eqs/mwrr_ijs_eqs.html" target="_blank">Script equations: mwrr.ijs</a>
-NB.- <a href="../mwrr.ijs" target="_blank">Script source: mwrr.ijs</a>
+NB.- If a solution exits it is in the range as [ _ 1,_ ]  where _ is infinity.
+NB.- <img alt="NF" src="../eqs/mwrr_ijs_eqs.gif">
 NB.-<hr>
 
 
@@ -34,7 +37,6 @@ NB.- (2) money weighted rate of return calculated by Newton-Raphson method.
 NB.- (3) tolerance 1e_6
 NB.- (4) non periodic cash flow
 NB.- (5) Maximum iterations 15
-NB.- <a href="../eqs/mwr_eq.html" target="_blank">Equation: ([I])mwr(C;T)</a>
 NB.-syntax:
 NB.+([I])mwr(C;T)
 NB.+[I] = optional initial trial value (decimal interest rate) 
@@ -96,7 +98,6 @@ NB.- (2) money weighted rate of return calculated by Newton-Raphson method.
 NB.- (3) tolerance 1e_6
 NB.- (4) periodical cash flow
 NB.- (5) Maximum iterations 15
-NB.- <a href="../eqs/mwrPeriodic_eq.html" target="_blank">Equation: ([I])mwrPeriodic(C)</a>
 NB.-syntax:
 NB.+([I])mwrPeriodic(C)
 NB.+[I] = optional initial trial value (decimal rate)
@@ -161,7 +162,6 @@ NB.- (2) money weighted rate of return calculated by Newton-Raphson method.
 NB.- (3) tolerance 1e_6
 NB.- (4) non periodic cash flow
 NB.- (5) Maximum iterations 15
-NB.- <a href="../eqs/mwrDates_eq.html" target="_blank">Equation: [I]mwrDates(C;D))</a>
 NB.-syntax:
 NB.+[I]mwrDates(C;D)
 NB.+[I] = optional initial trial value (decimal interest rate)

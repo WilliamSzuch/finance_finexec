@@ -12,14 +12,16 @@
 <div id="header">
 <h1 class="title">twrr.ijs</h1>
 </div>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a> <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a> <a class="HREF" href="index.htm" target="_blank">Investment Performamce Measurement</a>
+<hr>
 <p>Script: ~addons/finance/finexec/ipm/twrr.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2/2/2020<br />
+Updated: 31/7/2020<br />
 Depend: nil<br />
-Definitions: loaded to locale base</p>
-<hr>
-<p><a class="HREF" href="index.htm" target="_blank">Category: Investment Performance Measurement</a><br />
-<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a></p>
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../twrr.ijs" target="_blank">Script source: twrr.ijs</a></p>
 <hr>
 <p>Definitions to calculate the time weighted rate<br />
 of return over for a time unit using several methods.<br />
@@ -28,8 +30,7 @@ External cash flow:<br />
   cash outflow negative (eg: _10 _12)<br />
 Date format: yyyymmdd (eg: 20161231;20160101)<br />
 Date is entered as an 8 digit number.<br />
-<a href="../eqs/twrr_ijs_eqs.html" target="_blank">Script equations: twrr.ijs</a><br />
-<a href="../twrr.ijs" target="_blank">Script source: twrrt.ijs</a></p>
+<img alt="NF" src="../eqs/twrr_ijs_eqs.gif"></p>
 <hr>
 <h2>Definitions</h2>
 <table class="map">
@@ -45,11 +46,11 @@ T
 <h2 id="twr" class="hdef">twr (dyad)</h2>
 <p><b>Form:</b> tacit<br />
 Time weighted rate of return with<br />
-no external cash flow over a time unit.<br />
-<a href="../eqs/twr_eq.html" target="_blank">Equation: (Vb)twr(Ve)</a></p>
+no external cash flow over a time unit.</p>
 <h3>Syntax</h3>
-<pre><code>(Vb)twr(Ve)</code></pre>
-<p>Vb = portfolio value at the start of the time unit including accrued income Ve = portfoliio value at the end of the time unit including accrued income</p>
+<pre><code>(Vb)twr(Ve)
+Vb = portfolio value at the start of the time unit including accrued income
+Ve = portfoliio value at the end of the time unit including accrued income</code></pre>
 <h3>Example</h3>
 <pre><code>   (100)twr(105)
 0.05</code></pre>
@@ -103,10 +104,12 @@ Monadic form of twrDietz.<br />
 Time weighted rate of return for a time unit with<br />
 external cash flow using the Dietz methodology.<br />
 This method assumes that the external cash flow is in the<br />
-middle of the time unit.<br />
-<a href="../eqs/twrDietz_M_eq.html" target="_blank">Equation: twrDietz_M(Vb;Ve;Ec)</a></p>
+middle of the time unit.</p>
 <h3>Syntax</h3>
-<p>twrDietz_M(Vb;Ve;Ec) <sub>~</sub> Vb = portfolio value at the start of the time unit unit including accrued income Ve = portfolio value at the end of the time unit including accrued income Ec = external cash flow over the time unit <sub>~</sub></p>
+<pre><code>twrDietz_M(Vb;Ve;Ec)
+Vb = portfolio value at the start of the time unit unit including accrued income
+Ve = portfolio value at the end of the time unit including accrued income
+Ec = external cash flow over the time unit</code></pre>
 <h3>Example</h3>
 <pre><code>   twrDietz_M(100;105;1)
 0.039801</code></pre>
@@ -119,8 +122,7 @@ external cash flow using the Dietz modified methodology with dates.<br />
 External cash flow:<br />
    cash inflow positive (eg: 100);<br />
    cash outflow negative (eg: _10).<br />
-Dates are in format: yyyymmdd eg: 20160101<br />
-<a href="../eqs/twrDietzDates_eq.html" target="_blank">Equation: (Vb;VbD;Ve;VeD)twrDietzDates_de(Ec;D)</a></p>
+Dates are in format: yyyymmdd eg: 20160101</p>
 <h3>Syntax</h3>
 <pre><code>(Vb;VbD;Ve;VeD)twrDietzDates_de(Ec;D)
 Vb = portfolio value at the start of the time unit including accrued income
@@ -138,8 +140,7 @@ Monadic form of twrDietzDates<br />
 Time weighted rate of return for a period with<br />
 external cash flow using the Dietz modified methodology with dates.<br><br />
 External cash flow:cash inflow positive (eg: 100);cash outflow negative (eg: _10).<br />
-Dates are in format: yyyymmdd eg: 20160101;20160630;20160215<br />
-<a href="../equations/twrDietzDates_M_eq.html" target="_blank">Equation: twrDietzDates(Vb;VbD;Ve;VeD;Ec;D)</a></p>
+Dates are in format: yyyymmdd eg: 20160101;20160630;20160215</p>
 <h3>Syntax</h3>
 <pre><code>twrDietzDates(Vb;VbD;Ve;VeD;Ec;D)
 Vb = portfolio value at the start f the time unit including accrued income
@@ -159,8 +160,7 @@ The modified methodology weights the external cash flow by the proportion<br />
 it is in the time unit.<br />
 External cash flow:<br />
    cash inflow positive (eg: 100)<br />
-   cash outflow negative (eg: _10)<br />
-<a href="../eqs/twrDietzProp_eq.html" target="_blank">Equation: (Vb;Ve)twrDietzProp(Ec;P)</a></p>
+   cash outflow negative (eg: _10)</p>
 <h3>Syntax</h3>
 <pre><code>(Vb;Ve)twrDietzProp(Ec;P)
 Vb = portfolio value at the start of the time unit including accrued income
@@ -182,8 +182,7 @@ The modified methodology weights the external cash flow by the proportion<br />
 it is in the time unit.<br />
 External cash flow:<br />
    cash inflow positive (eg: 100)<br />
-   cash outflow negative (eg: _10)<br />
-<a href="../eqs/twrDietzProp_eq.html" target="_blank">Equation: twrDietzProp_M((Vb;Ve;Ec;P)</a></p>
+   cash outflow negative (eg: _10)</p>
 <h3>Syntax</h3>
 <pre><code>twrDietzProp((Vb;Ve;Ec;P)
 Vb = portfolio value at the start of the time unit including accrued income

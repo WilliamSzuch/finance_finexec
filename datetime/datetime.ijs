@@ -1,14 +1,17 @@
 NB. =========================================================
 NB.%datetime.ijs - Date time utilities
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Date Time</a>
+NB.-<hr>
 NB.- Script: ~addons/finance/finexec/datetime/datetime.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 6/2/2020
+NB.- Updated: 31/7/2020
 NB.- Definitions loaded to locale base 
-NB.-<hr>
-NB.- <a class="HREF" href="index.htm" target="_blank">Category: Date Time</a>
-NB.- <a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
-NB.-<hr>
+NB.- Status: done:
 NB.- <a href="../datetime.ijs" target="_blank">Script source: datetime.ijs</a>
+NB.-<hr>
 NB.- This script is a copy of ~addons/types/datetime/datetime.ijs by:
 NB.- Ric Sherlock : 2009 09 09
 NB.- Modified for the Finexec addon
@@ -33,6 +36,7 @@ NB.-note:
 NB.- For astronomical use, the start of a [Julian day](http://en.wikipedia.org/wiki/Julian_day)
 NB.- is noon. So for an accurate representation of a Julian day/time
 NB.- combination 2378496.5 should be added instead.
+NB. ---------------------------------------------------------
 J0Date=: 2378497
 
 
@@ -44,12 +48,14 @@ NB.- The first date supported by Microsoft Excel is 1900 1 1
 NB.- but dates between 1900 1 1 and 1900 1 28 will not convert properly
 NB.- because Excel incorrectly denotes 1900 as a leap year, 
 NB.- <http://support.microsoft.com/kb/214326>
+NB. ---------------------------------------------------------
 MS0Date=: 36522
 
 
 NB. =========================================================
 NB.*Linux0DateTime n - 
 NB.- Add to Linux-style date to get a J day number
+NB. ---------------------------------------------------------
 Linux0DateTime=: 62091
 
 
@@ -67,7 +73,7 @@ NB. =========================================================
 
 
 NB. =========================================================
-NB. escaped v process an escaped string
+NB.*escaped v process an escaped string
 NB. eg: '\' escaped '\Date is: D\\MM\\YYYY'
 NB. result: 2-item list of boxed mask & string:
 NB.          0{:: boolean mask of non-escaped characters
@@ -87,6 +93,8 @@ escaped=: 3 : 0
 
 
 NB. =========================================================
+NB.*fmt v format forengin
+NB. ---------------------------------------------------------
 fmt=: 8!:0
 
 
@@ -225,7 +233,9 @@ NB. =========================================================
 
 
 NB. =========================================================
-adjustYrMth=. 2&}. ,~ [: ]&.:(0 12&#.) 2&{.
+NB.*adjustYrMth m adjust year and month
+NB. ---------------------------------------------------------
+adjustYrMth=: 2&}. ,~ [: ]&.:(0 12&#.) 2&{.
 
 
 NB. =========================================================
@@ -237,6 +247,7 @@ NB.-y: Array of numeric time(s) to add to *x*.
 NB.-   Format: `[[[[[Y] M] D] h] m] s`
 NB.-x: Array of numeric timestamps to add *y* to.  
 NB.-   Format: `Y [M [D [h [m [s]]]]]`
+NB. ---------------------------------------------------------
 tsPlus=:     [: toDateTime@toDayNo adjustYrMth@(6&{.@[ + _6&{.@])"1 f.
 NB. tsPlus=: [: toDateTime@toDayNo (6&{.@[ + _6&{.@])"1
 
@@ -249,6 +260,7 @@ NB.-y: Array of numeric time(s) to subtract from *x*.
 NB.-   Format: `[[[[[Y] M] D] h] m] s`
 NB.-x: Array of numeric timestamps to subtract *y* from.  
 NB.-   Format: `Y [M [D [h [m [s]]]]]`
+NB. ---------------------------------------------------------
 tsMinus=: tsPlus -
 
 
@@ -258,6 +270,7 @@ NB.-usage: endtimestamp daysDiff starttimestamp
 NB.-result: Numeric array of time difference for *x*-*y* in `days.fraction-of-days` format.
 NB.-y: Numeric start date,time in `Y M D h m s` format.
 NB.-x: Numeric end date,time in `Y M D h m s` format.
+NB. ---------------------------------------------------------
 daysDiff=: -&toDayNo
 
 
@@ -406,6 +419,7 @@ NB.    * decimal: YYY, MMM, DDD, hhh, mmm, sss
 NB.    * round (to nearest unit): YY, MM, DD, hh, mm, ss
 NB.    * truncate (only complete units): Y, M, D, h, m, s
 NB.!! TO DO
+NB. ---------------------------------------------------------
 fmtTimeDiff =: 'To Do' 
 
 
@@ -445,16 +459,3 @@ getTimeZoneInfo=: 3 : 0
 )
 
 
-NB. =========================================================
-NB. Export to base locale
-fmtTime_base_     =: fmtTime_datetime_
-fmtDate_base_     =: fmtDate_datetime_
-fmtDateTime_base_ =: fmtDateTime_datetime_
-toDayNo_base_     =: toDayNo_datetime_
-toDateTime_base_  =: toDateTime_datetime_
-toJulian_base_    =: toJulian_datetime_
-fromJulian_base_  =: fromJulian_datetime_
-tsPlus_base_      =: tsPlus_datetime_
-tsMinus_base_     =: tsMinus_datetime_
-daysDiff_base_    =: daysDiff_datetime_
-tsDiff_base_      =: tsDiff_datetime_

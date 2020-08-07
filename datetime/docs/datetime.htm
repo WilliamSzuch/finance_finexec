@@ -12,16 +12,17 @@
 <div id="header">
 <h1 class="title">datetime.ijs</h1>
 </div>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a> <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a> <a class="HREF" href="index.htm" target="_blank">Date Time</a>
+<hr>
 <p>Script: ~addons/finance/finexec/datetime/datetime.ijs<br />
 Contributor: William Szuch<br />
-Updated: 6/2/2020<br />
-Definitions loaded to locale base</p>
+Updated: 31/7/2020<br />
+Definitions loaded to locale base<br />
+Status: done:<br />
+<a href="../datetime.ijs" target="_blank">Script source: datetime.ijs</a></p>
 <hr>
-<p><a class="HREF" href="index.htm" target="_blank">Category: Date Time</a><br />
-<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a></p>
-<hr>
-<p><a href="../datetime.ijs" target="_blank">Script source: datetime.ijs</a><br />
-This script is a copy of ~addons/types/datetime/datetime.ijs by:<br />
+<p>This script is a copy of ~addons/types/datetime/datetime.ijs by:<br />
 Ric Sherlock : 2009 09 09<br />
 Modified for the Finexec addon<br />
 Some of the verbs in this script were derived from<br />
@@ -35,6 +36,14 @@ Extends the dates.ijs system script in the Standard Library.</p>
 <table class="map">
 <tr>
 <td class="key">
+A
+</td>
+<td>
+<a href="#adjustYrMth">adjustYrMth</a>
+</td>
+</tr>
+<tr>
+<td class="key">
 D
 </td>
 <td>
@@ -43,10 +52,18 @@ D
 </tr>
 <tr>
 <td class="key">
+E
+</td>
+<td>
+<a href="#escaped">escaped</a>
+</td>
+</tr>
+<tr>
+<td class="key">
 F
 </td>
 <td>
-<a href="#fmtDate">fmtDate</a>, <a href="#fmtDateTime">fmtDateTime</a>, <a href="#fmtTime">fmtTime</a>, <a href="#fmtTimeDiff">fmtTimeDiff</a>, <a href="#fromJulian">fromJulian</a>
+<a href="#fmt">fmt</a>, <a href="#fmtDate">fmtDate</a>, <a href="#fmtDateTime">fmtDateTime</a>, <a href="#fmtTime">fmtTime</a>, <a href="#fmtTimeDiff">fmtTimeDiff</a>, <a href="#fromJulian">fromJulian</a>
 </td>
 </tr>
 <tr>
@@ -92,6 +109,39 @@ T
 </table>
 <hr>
 <table class="rdef">
+<tr>
+<td id="adjustYrMth" class="rid">
+adjustYrMth
+</td>
+<td class="rtype">
+m
+</td>
+<td class="rdef">
+adjust year and month
+</td>
+</tr>
+<tr>
+<td id="escaped" class="rid">
+escaped
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+process an escaped string
+</td>
+</tr>
+<tr>
+<td id="fmt" class="rid">
+fmt
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+format forengin
+</td>
+</tr>
 <tr>
 <td id="fmtDateTime" class="rid">
 fmtDateTime

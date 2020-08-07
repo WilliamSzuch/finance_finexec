@@ -1,16 +1,14 @@
 NB. =========================================================
 NB. header for main page index.htm
 IndexHdr=: 0 : 0
-<h1>Finexec: Category: Investment Performamce Measurement</h1>
+<h1>finexec: Category: Derivatives</h1>
 <hr>
 <a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
 <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
-<a class="HREF" href="../ipm_terminology.html" target="_blank">Investment Performamce Terminology</a><br>
 <hr>
-Script: ~addons/finance/finexec/ipm/ipm_docs.ijs<br>
-Updated: 28/7/2020<br>
-Definitions for calculating investment performance measurement.<br>
-
+Script: ~addons/finance/finexec/derivatives/derivatives_docs.ijs<br>
+Updated: 26/7/2020<br>
+Definitions for the calculation of derivatives eg:  options, forward contracts etc.<br>
 <hr>
 )
 
@@ -21,7 +19,7 @@ require 'docs/joxygen'
 
 NB. =========================================================
 NB. Build the docs. 
-smoutput <'*** Start: ipm_docs ***'
+smoutput <'*** Start: derivatives_docs ***'
 
 
 NB. =========================================================
@@ -30,11 +28,11 @@ NB. This builds the html files in the Target directory.
 
 NB. source directory (used to find source files,
 NB. but not used in the html docs)
-Source=: jpath '~addons/finance/finexec/ipm'
+Source=: jpath '~addons/finance/finexec/derivatives'
 
 
 NB. target directory
-Target=: jpath '~addons/finance/finexec/ipm/docs'
+Target=: jpath '~addons/finance/finexec/derivatives/docs'
 
 
 NB. =========================================================
@@ -46,9 +44,7 @@ NB. source files under the source directory
 NB. (may be more than one level down)
 NB. =========================================================
 Files =: cutopen 0 : 0
-invreturnhardy.ijs
-mwrr.ijs
-twrr.ijs
+blackscholes.ijs
 )
 
 
@@ -61,4 +57,4 @@ NB. copy the css file to the Target directory
 NB. make the docs
 makedocs''
 
-smoutput <'*** End: ipm_docs ***'
+smoutput <'*** End: derivatives_docs ***'

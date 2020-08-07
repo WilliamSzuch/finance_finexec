@@ -1,0 +1,314 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>dateperiod.ijs</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="joxygen.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">dateperiod.ijs</h1>
+</div>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a> <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a> <a class="HREF" href="index.htm" target="_blank">Date Time</a>
+<hr>
+<p>Script: ~addons/finexec/datetime/dateperiod.ijs<br />
+Contributor: William Szuch<br />
+Updated: 31/7/2020<br />
+Depend: nil<br />
+Definitions loaded to locale: base<br />
+Status: done:<br />
+<a href="../dateperiod.ijs" target="_blank">Script source: dateperiod.ijs</a></p>
+<hr>
+<p>Definition for grouping dates into periods<br />
+The definitions in the Standard Library script dates.ijs are available.<br />
+The J Calendar starts from 1800 1 1 (Wed): with day number = 0</p>
+<pre><code>    todate 0
+1800 1 1
+
+   1 todate 0
+18000101</code></pre>
+<p>Monday is the first day of the week as per: ISO 8601.<br />
+Index: Monday = 0, Sunday = 6 (Days = 0 1 2 3 4 5 6)</p>
+<pre><code>   calendar 2020 1</code></pre>
+<p>The ISO 8601 calendar - a week starts on monday.<br />
+1 year = 365.2425 days</p>
+<pre><code>┌─────────────────────┐
+│         Jan         │
+│ Su Mo Tu We Th Fr Sa│
+│     1  2  3  4  5  6│
+│  7  8  9 10 11 12 13│
+│ 14 15 16 17 18 19 20│
+│ 21 22 23 24 25 26 27│
+│ 28 29 30 31         │
+│                     │
+└─────────────────────┘</code></pre>
+<pre><code>   1 calendar 2018 1
+┌─────────────────────┐
+│         Jan         │
+│ Mo Tu We Th Fr Sa Su│
+│  1  2  3  4  5  6  7│
+│  8  9 10 11 12 13 14│
+│ 15 16 17 18 19 20 21│
+│ 22 23 24 25 26 27 28│
+│ 29 30 31            │
+│                     │
+└─────────────────────┘</code></pre>
+<p>Date formats as a number: yyyy mm dd or yyyymmdd</p>
+<pre><code>    todayno  2017 1 1
+79258
+   1 todayno  20170101
+79258</code></pre>
+<p>Use of definition 'calendar' is slow - could consider doing something faster.</p>
+<p>The preferred formats for a date are:<br />
+yyyy mm dd eg. 1997 6 30 etc.<br />
+yyyymmdd eg 19970630 has advantages.</p>
+<p>Use the definition 'getdate' for conversion of character dates to format: yyyy mm dd.</p>
+<pre><code>   getdate(&#39;2017/1/1&#39;)
+2017 1 1
+   getdate(&#39;1/1/2017&#39;)
+2017 1 1</code></pre>
+<p>An Excel date is a number displayed with a date format.<br />
+It starts from 1900 1 1 with a well known leap year bug.<br />
+??? Check if this applied to Excel 2016</p>
+<p>To convert from J day numbers (result of verb 'todayno' in dates.ijs),to<br />
+Excel day number subtract 36522 from the J day number.</p>
+<p>Some useful date conversion verbs are also contained in the script.</p>
+<p>Formated date: yyyymmdd:<br />
+(1) Dates in yyyymmdd format can be held as a vector and not a matrix.<br />
+    This can have some advantages.<br />
+    Can also help with dates in Excel</p>
+<p>Define: 1 &amp; todate<br />
+         1 &amp; todayno<br />
+to work with date format yyyymmdd</p>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+I
+</td>
+<td>
+<a href="#index_period">index_period</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+M
+</td>
+<td>
+<a href="#month_days">month_days</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+P
+</td>
+<td>
+<a href="#periods_end_monthly">periods_end_monthly</a>, <a href="#periods_hy">periods_hy</a>, <a href="#periods_monthly">periods_monthly</a>, <a href="#periods_qrt">periods_qrt</a>, <a href="#periods_yr">periods_yr</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+T
+</td>
+<td>
+<a href="#todate1">todate1</a>, <a href="#todayno1">todayno1</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+V
+</td>
+<td>
+<a href="#valdate_yyyymmdd">valdate_yyyymmdd</a>
+</td>
+</tr>
+</table>
+<h2 id="index_period" class="hdef">index_period (dyad)</h2>
+<p><b>Form</b> tacit<br />
+<b>Depend:</b> nil<br />
+Calculate the index of the period of the occurence of a date<br />
+in a sequence of dates defining the periods.<br />
+The period is closed on the right side (a &lt; z &lt;= b).<br />
+Dates to be converted to format: yyyymmdd</p>
+<h3>Syntax</h3>
+<pre><code>(P)index_period(D)
+P = dates setting out the periods
+    dates must be in ascending order
+    date format: yyyymmdd
+D = dates to be grouped into periods
+    date format: yyyymmdd</code></pre>
+<h3>Example</h3>
+<pre><code>   (20190630 20200630)index_period(20190531 20190630 20190701)
+0 0 1</code></pre>
+<pre><code>   (20190630 20200630)index_period(20200531 20200630 20200701)
+1 1 2</code></pre>
+<pre><code>   (20150630 20160630 20170630)index_period(20170101)
+2</code></pre>
+<pre><code>   (20150630 20160630 20170630)index_period(20150531 20150630 20170101 20170630 20170701)
+ 0 0 2 2 3</code></pre>
+<pre><code>   (20150630 20160630 20170630)index_period(20150630 20150701)
+0 1</code></pre>
+<h2 id="month_days" class="hdef">month_days (monad)</h2>
+<p><b>Form</b> explicit<br />
+<b>Depend:</b> todate,todayno from dates.ijs (stdlib)<br />
+     valdate_yyyymmdd from daterperiod.ijs<br />
+Vector of dates in a month as YYYYMMDD</p>
+<h3>Syntax</h3>
+<pre><code> month_days(Y,M)
+Y,M = Year,Month eg: 2009 12</code></pre>
+<h3>Example</h3>
+<pre><code>   ,.month_days 2020 2
+20200201 20200202 20200203  ... 20200227 20200228 20200229</code></pre>
+<h2 id="periods_end_monthly" class="hdef">periods_end_monthly (dyad)</h2>
+<p><b>Form</b> explicit<br />
+<b>Depend:</b> nil<br />
+Set end of monthly periods.</p>
+<h3>Syntax</h3>
+<pre><code>(Y,M)periods_end_monthly(N)
+Y,M = year and month to start ie: YYYY,MM
+N = Number of monthly periods</code></pre>
+<h3>Example</h3>
+<pre><code>  (2019 12)periods_end_monthly(0)
+20191231</code></pre>
+<pre><code>  (2019 12)periods_end_monthly(4)
+20191231 20200131 20200229 20200331 20200430</code></pre>
+<pre><code>  (2018 12)periods_end_monthly(4)
+20181231 20190131 20190228 20190331 20190430</code></pre>
+<h2 id="periods_hy" class="hdef">periods_hy (dyad)</h2>
+<p><b>Form</b> explicit<br />
+<b>Depend:</b> nil<br />
+Half yearly periods.<br />
+<b>Note:</b><br />
+Leap year date 29/2 not valid as invalid dates result.</p>
+<h3>Syntax</h3>
+<pre><code>(D,D1)periods_yr(N)
+D = start date for first half year format YYYMMDD
+D1 = end date for firt half year format YYYYMMDD
+N = Number of half yearly periods</code></pre>
+<h3>Example</h3>
+<pre><code>  19800630 19801231 periods_hy 0
+19800630</code></pre>
+<pre><code>  19800630 19801231 periods_hy 1
+19800630 19801231</code></pre>
+<pre><code>   19801231 19800630 periods_hy 5
+19800630 19801231 19810630 19811231 19820630 19821231</code></pre>
+<pre><code>  valdate_yyyymmdd 20200229 20200731 periods_hy 10
+1 1 0 1 0 1 0 1 1 1 0</code></pre>
+<pre><code>   valdate_yyyymmdd 20200228 20200731 periods_hy 10
+1 1 1 1 1 1 1 1 1 1 1</code></pre>
+<h2 id="periods_monthly" class="hdef">periods_monthly (dyad)</h2>
+<p><b>Form</b> explicit<br />
+<b>Depend:</b> todate,todayno from dates.ijs (stdlib)<br />
+    valdate_yyyymmdd from daterperiod.ijs<br />
+Set monthly dates for a specific day of the month.<br />
+Treatment of 29, 30 and 31:<br />
+Treated as End of MONTH if date exceeds End of Month.</p>
+<h3>Syntax</h3>
+<pre><code> (D)periods_monthly(N)
+D = start date - format yyymmdd
+N = number of monthly periods</code></pre>
+<h3>Example</h3>
+<pre><code>  (20090132)periods_monthly(4)
+*** Invalid Start Date ***</code></pre>
+<pre><code>  (20200131)periods_monthly(0)
+20200131</code></pre>
+<pre><code>  ,.(20200131)periods_monthly(13)
+20200131
+20200229
+20200331
+20200430
+20200531
+20200630
+20200731
+20200831
+20200930
+20201031
+20201130
+20201231
+20210131
+20210228</code></pre>
+<h2 id="periods_qrt" class="hdef">periods_qrt (dyad)</h2>
+<p><b>Form</b> explicit<br />
+<b>Depend:</b> nil<br />
+Quarterly period dates.<br />
+<b>Note:</b><br />
+Leap year date 29/2 not valid as invalid dates result.</p>
+<h3>Syntax</h3>
+<pre><code>(D,D1,D2,D3)periods_qrt(N)
+D,D1,D2,D3 = first four quarterly dates format YYYYMMDD
+N = number of quarterly periods</code></pre>
+<h3>Example</h3>
+<pre><code>  (19800331 19800630 19800930 19801231)periods_qrt(0)
+19800630</code></pre>
+<pre><code> (19800331 19800630 19800930 19801231)periods_qrt(2)
+19800630 19800930 19801231</code></pre>
+<pre><code>  ,.(19800331 19800630 19800930 19801231)periods_qrt 8
+19800630
+19800930
+19801231
+19810630
+19810930
+19811231
+19820630
+19820930
+19821231</code></pre>
+<h2 id="periods_yr" class="hdef">periods_yr (dyad)</h2>
+<p><b>Form</b> tacit<br />
+<b>Depend:</b> nil<br />
+Yearly period dates<br />
+<b>Note:</b><br />
+Leap year start date 29/2 not valid as invalid dates result.</p>
+<h3>Syntax</h3>
+<pre><code>(D)periods_yr(N)
+D = start date format YYYMMDD
+N = Number of yearly periods</code></pre>
+<h3>Example</h3>
+<pre><code>   19801231 periods_yr 0
+19801231</code></pre>
+<pre><code>   19801231 periods_yr 1
+19801231 19811231</code></pre>
+<pre><code>  20200630 periods_yr 4
+20200630 20210630 20220630 20230630 20240630</code></pre>
+<pre><code>  valdate_yyyymmdd 20200229 periods_yr 6
+1 0 0 0 1 0 0</code></pre>
+<h2 id="todate1" class="hdef">todate1 (monad)</h2>
+<p><b>Form:</b> explicit-<br />
+<b>Depend:</b> todate from dates.ijs (stdlib)<br />
+Convert a day number to a date with format: yyyymmdd.<br />
+Similiar to todate.</p>
+<h3>Syntax</h3>
+<pre><code>todate1(N)
+N = day number</code></pre>
+<h3>Example</h3>
+<pre><code>   todate1 79000
+20160418</code></pre>
+<pre><code>   todate 79000
+2016 4 18</code></pre>
+<pre><code>   todate1 0
+18000101</code></pre>
+<h2 id="todayno1" class="hdef">todayno1 (monad)</h2>
+<p><b>Form</b> explicit<br />
+<b>Depend:</b> todayno from dates.ijs (stdlib)<br />
+Convert date to a day number.<br />
+Similiar to todayno.</p>
+<h2 id="valdate_yyyymmdd" class="hdef">valdate_yyyymmdd (verb)</h2>
+<p><b>Form</b> explicit<br />
+<b>Depend:</b> valdate from dates.ijs (stdlib)<br />
+Validate that a date is in YYYYMMDD format<br />
+Returns 1 if date valid.<br />
+Based on valdate in dates.ijs (stdlib)</p>
+<h3>Syntax</h3>
+<pre><code>valdate_yyyymmdd(D)
+D = dates in YYYYMMDD format</code></pre>
+<h3>Example</h3>
+<pre><code>  valdate_yyyymmdd 20200131 20200132
+1 0</code></pre>
+<pre><code>  valdate_yyyymmdd 20190228 20190229 20200229
+1 0 1</code></pre>
+</body>
+</html>

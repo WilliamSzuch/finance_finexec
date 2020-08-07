@@ -2,9 +2,13 @@ NB. =========================================================
 NB. header for main page index.htm
 IndexHdr=: 0 : 0
 <h1>Finexec: Category: Date Time</h1>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+<hr>
 Script: ~addons/finance/finexec/datetime/datetime_docs.ijs<br>
+Updated: 28/7/2020<br>
 Definitions for date and time calculations<br>
-<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
 <hr>
 )
 
@@ -40,7 +44,9 @@ NB. source files under the source directory
 NB. (may be more than one level down)
 NB. =========================================================
 Files =: cutopen 0 : 0
+calendaryr.ijs
 datenumber.ijs
+dateperiod.ijs
 datetime.ijs
 )
 

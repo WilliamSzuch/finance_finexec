@@ -12,23 +12,24 @@
 <div id="header">
 <h1 class="title">mwrr.ijs</h1>
 </div>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a> <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a> <a class="HREF" href="index.htm" target="_blank">Investment Performamce Measurement</a>
+<hr>
 <p>Script: ~addons/finance/finexec/ipm/mwrr.ijs<br />
 Contributor: William Szuch<br />
-Updated: 3/2/2020<br />
+Updated: 31/7/2020<br />
 Depend: nil<br />
-Definitions: loaded to locale base</p>
-<hr>
-<p><a class="HREF" href="index.htm" target="_blank">Category: Basic Finance</a><br />
-<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a></p>
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../mwrr.ijs" target="_blank">Script source: mwrr.ijs</a></p>
 <hr>
 <p>Definitions to calculate the money weighted rate of return for a time unit.<br />
 Also referred to as the internal rate of return.<br />
 External cash flow:<br />
   cash inflow positive (eg: 100 10)<br />
   cash outflow negative (eg: _10 _12)<br />
-If a solution exits it is in the range [<em>1,</em>] where _ is infinity.<br />
-<a href="../eqs/mwrr_ijs_eqs.html" target="_blank">Script equations: mwrr.ijs</a><br />
-<a href="../mwrr.ijs" target="_blank">Script source: mwrr.ijs</a></p>
+If a solution exits it is in the range as [ _ 1,_ ] where _ is infinity.<br />
+<img alt="NF" src="../eqs/mwrr_ijs_eqs.gif"></p>
 <hr>
 <h2>Definitions</h2>
 <table class="map">
@@ -53,8 +54,7 @@ the equation that the present value of the cach flow is zero.<br />
 (2) money weighted rate of return calculated by Newton-Raphson method.<br />
 (3) tolerance 1e_6<br />
 (4) non periodic cash flow<br />
-(5) Maximum iterations 15<br />
-<a href="../eqs/mwr_eq.html" target="_blank">Equation: ([I])mwr(C;T)</a></p>
+(5) Maximum iterations 15</p>
 <h3>Syntax</h3>
 <pre><code>([I])mwr(C;T)
 [I] = optional initial trial value (decimal interest rate)
@@ -88,8 +88,7 @@ the equation that the present value of the cach flow is zero.<br />
 (2) money weighted rate of return calculated by Newton-Raphson method.<br />
 (3) tolerance 1e_6<br />
 (4) non periodic cash flow<br />
-(5) Maximum iterations 15<br />
-<a href="../eqs/mwrDates_eq.html" target="_blank">Equation: [I]mwrDates(C;D))</a></p>
+(5) Maximum iterations 15</p>
 <h3>Syntax</h3>
 <pre><code>[I]mwrDates(C;D)
 [I] = optional initial trial value (decimal interest rate)
@@ -111,8 +110,7 @@ the equation that the present value of the cach flow is zero.<br />
 (2) money weighted rate of return calculated by Newton-Raphson method.<br />
 (3) tolerance 1e_6<br />
 (4) periodical cash flow<br />
-(5) Maximum iterations 15<br />
-<a href="../eqs/mwrPeriodic_eq.html" target="_blank">Equation: ([I])mwrPeriodic(C)</a></p>
+(5) Maximum iterations 15</p>
 <h3>Syntax</h3>
 <pre><code>([I])mwrPeriodic(C)
 [I] = optional initial trial value (decimal rate)
