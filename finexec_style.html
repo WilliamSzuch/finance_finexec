@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Finexec: Style</title>
+<link rel="stylesheet" href="finexec.css" type="text/css">
+</head>
+<body>
+<div class="HDR1">
+<h1><a href="http://www.finexec.com.au" target="_blank"><img alt="NF" src="finexec.jpg" width="45px" height="35px"></a>Finexec: Style</h1>
+<a class="HREF" href="http://www.finexec.com.au" target="_blank">Finexec</a>
+<a class="HREF" href="finexec_addon.html" target="_blank">Addon</a>
+<a class="HREF" href="finexec_category.html" target="_blank">Category</a>
+<a class="HREF" href="finexec_usage.html" target="_blank">Usage</a>
+</div>
+<p>
+The styles and conventions used to document the Finexec addon scripts and definitions are 
+set out below.
+</p>
+<pre>
+Example: script source documentation style: <a class="HREF" href="basicfinance/simple.ijs" target="_blank">finexec/basicfinance/simple.ijs</a>
+Resulting documentation: <a class="HREF" href="basicfinance/docs/simple.htm" target="_blank">finexec/basicfinance/docs/simple.htm</a>
+</pre>
+<h3 class="Hw">Scripts</h3>
+<pre>
+As a general style the Finexec addon scripts are stand-a-lone (ie. no dependencies)
+Any dependencies to other scripts are listed at the start of the script.
+Use the <b>require</b> definition to load any dependant scripts to aviod having to 
+reload the script. 
+The definitions from a script are loaded into the locale base unless otherwise indicated in the script.
+The documentation for the definitions in a script can be viewed by linking to a script.
+The scripts can be used for projects and jobs.
+The scripts can copied, modified and loaded into another locale for a project or job to aviod
+potential naming conflicts.
+
+<b>View Source Scripts</b>
+The source script can be viewed in Qt and JHS IDE front ends.
+eg: Qt IDE: open '~addoms/finance/finexec/basicfinance/simple.ijs'
+eg: JHS IDE: edit '~addons/finance/finexec/basicfinance/simple.ijs'
+<b>Source Script Names</b> 
+Script names as general rule use lowercase. For example: ~addons/finexec/basicfinance/simple.ijs
+
+<b>Source Script Documentation</b>
+The scripts are documented using the '~addons/docs/joxygen/joxygen.ijs' package
+which creates htm files from the script.
+For details see: <a class="HREF" href="http://code.jsoftware.com/wiki/Addons/docs/joxygen">Joxygen</a>
+</pre>
+
+<h3 class="Hw">Definitions</h3>
+<pre>
+<b>Names</b> 
+The naming style for verbs, adverbs and conjuctions is to commence with a lower case letter 
+and can be all lower case or camel case.
+The naming style for nouns is to commence with an upper case letter and can be all upper case or camel case.
+
+<b>Documentation</b>
+Definitions start with NB.* and can have some or all of the following documentation details:
+(Even for the most trivial or simple definitions.)
+
+<b>Name(type):</b> type: (acvmdn) for/or adverb, conjunction, verb, monad, dyad, noun
+<b>Form:</b> tacit or explicit 
+<b>Depend:</b> If required list any dependent definitions even if from the stdlib and script. eg:  def/script
+<b>Description:</b> What the definition is used for and if applicable an equation.
+<b>Note:</b> Any special details.
+<b>Syntax:</b> Details of how the definition is used and specification of the data inputs to the definition.
+Left(L) and Right(R) arguments in the syntax to a definition have been enclosed in brackets eg:
+     definition(R)
+  (L)definition(R)
+The brackets are generally redundant and are used for clarity. 
+<b>Example:</b> The examples can be tested to review the performance of the definition.
+</pre>
+
+<h3 class="Hw">Form of Definition : Tacit or Explict</h3>
+<pre>
+Definitions have two forms, tacit or explicit. 
+<b>Tacit definitions</b> have no dependencies and are self contained only using J primitives.
+The adverb fix f. can be is used to create a fixed tacit.
+A tacit definition can be defined and used in an explicit definition.
+<b>Explicit definitions</b> are created with the verbs:
+   3 : 0 or 4 : 0
+The <b>Form</b> of a definition (tacit or explicit) can be useful in deciding how to to use it 
+or modify it for a project or job.
+The explicit form is generally easier to produce, read, debug and often useful for developing the tacit.  
+The tacit form is produced as first choice if possible otherwise the explicit form is used.
+Explicit definitions are generally stand-a-lone but may include dependencies.
+Always check the documentation of the definition and source script.
+A tacit definition may also have an explicit form: zzz and zzz_E.
+</pre>
+
+<h3 class="Hw">Equations</h3>
+<pre>
+Where possible equations are provided for definitions in a script.
+Equations are in html files using the &#60;math&#62 HTML markup element.
+The equations are created using the MathType application.
+Some browsers may not support the &#60;math&#62 element and therefore equations will 
+not be displayed correctly.
+</pre>
+<hr>
+Updated: 26/7/2020
+</body>
+</html>
