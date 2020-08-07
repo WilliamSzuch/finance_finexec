@@ -12,19 +12,20 @@
 <div id="header">
 <h1 class="title">simple.ijs</h1>
 </div>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a> <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a> <a class="HREF" href="index.htm" target="_blank">Basic Finance</a>
+<hr>
 <p>Script: ~addons/finance/finexec/basicfinance/simple.ijs<br />
 Contributor: William Szuch<br />
-Updated: 30/1/2020<br />
+Updated: 31/7/2020<br />
 Depend: nil<br />
-Definitions: loaded to locale base</p>
-<hr>
-<p><a class="HREF" href="index.htm" target="_blank">Category: Basic Finance</a><br />
-<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a></p>
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../simple.ijs" target="_blank">Script source: simple.ijs</a></p>
 <hr>
 <p>Definitions for solving simple interest rate problems for<br />
 a constant simple interest rate over a period.<br />
-<a href="../eqs/simple_ijs_eqs.html" target="_blank">Script equations: simple.ijs</a><br />
-<a href="../simple.ijs" target="_blank">Script source: simple.ijs</a></p>
+<img alt="NF" src="../eqs/simple_ijs_eqs.gif"></p>
 <hr>
 <h2>Definitions</h2>
 <table class="map">
@@ -33,7 +34,7 @@ a constant simple interest rate over a period.<br />
 E
 </td>
 <td>
-<a href="#effective_simple">effective_simple</a>, <a href="#effective_simple_T">effective_simple_T</a>
+<a href="#effectiveFromSimple">effectiveFromSimple</a>, <a href="#effectiveFromSimple_T">effectiveFromSimple_T</a>
 </td>
 </tr>
 <tr>
@@ -49,32 +50,32 @@ R
 S
 </td>
 <td>
-<a href="#s">s</a>, <a href="#simple_effective">simple_effective</a>, <a href="#simple_effective_T">simple_effective_T</a>, <a href="#sirate">sirate</a>, <a href="#sirate_E">sirate_E</a>, <a href="#st">st</a>
+<a href="#s">s</a>, <a href="#simpleFromEffective">simpleFromEffective</a>, <a href="#simpleFromEffective_T">simpleFromEffective_T</a>, <a href="#sirate">sirate</a>, <a href="#sirate_E">sirate_E</a>, <a href="#st">st</a>
 </td>
 </tr>
 </table>
 <hr>
 <table class="rdef">
 <tr>
-<td id="effective_simple_T" class="rid">
-effective_simple_T
+<td id="effectiveFromSimple_T" class="rid">
+effectiveFromSimple_T
 </td>
 <td class="rtype">
 d
 </td>
 <td class="rdef">
-Tacit form of effective_simple
+Tacit form of effectiveFromSimple
 </td>
 </tr>
 <tr>
-<td id="simple_effective_T" class="rid">
-simple_effective_T
+<td id="simpleFromEffective_T" class="rid">
+simpleFromEffective_T
 </td>
 <td class="rtype">
 d
 </td>
 <td class="rdef">
-Tacit form of simple_effective
+Tacit form of simpleFromEffective
 </td>
 </tr>
 <tr>
@@ -89,27 +90,25 @@ Explicit form of sirate
 </td>
 </tr>
 </table>
-<h2 id="effective_simple" class="hdef">effective_simple (dyad)</h2>
+<h2 id="effectiveFromSimple" class="hdef">effectiveFromSimple (dyad)</h2>
 <p><b>Form:</b> explicit<br />
 Calculate the effective interest rate for a time from the<br />
-simple interest rate for a time unit over a period.<br />
-<a href="../eqs/effective_simple_eq.html" target="_blank">Equation: (S)effective_simple(T)</a></p>
+simple interest rate for a time unit over a period.</p>
 <h3>Syntax</h3>
-<pre><code>(S)effective_simple(T)
+<pre><code>(S)effectiveFromSimple(T)
 S = constant simple interest rate for one time unit over the period
 T = number of time units in the period</code></pre>
 <h3>Example</h3>
-<pre><code>   (0.05)effective_simple(1)
+<pre><code>   (0.05)effectiveFromSimple(1)
 0.05</code></pre>
-<pre><code>   (0.05)effective_simple(3)
+<pre><code>   (0.05)effectiveFromSimple(3)
 0.0476896</code></pre>
-<pre><code>   (0.05)effective_simple(i. 10)
+<pre><code>   (0.05)effectiveFromSimple(i. 10)
 0 0.05 0.0488088 0.0476896 0.0466351 0.0456396 0.0446975 0.0438044 0.042956 0.0421489</code></pre>
 <h2 id="r" class="hdef">r (monad)</h2>
 <p><b>Form:</b> tacit<br />
 Present value of 1 payable in 1 time unit<br />
-for a simple interest rate S.<br />
-<a href="../eqs/r_eq.html" target="_blank">Equation: r(S)</a></p>
+for a simple interest rate S.</p>
 <h3>Syntax</h3>
 <pre><code>r(S)
 S = simple interest rate for one time unit</code></pre>
@@ -121,8 +120,7 @@ S = simple interest rate for one time unit</code></pre>
 <h2 id="rt" class="hdef">rt (dyad)</h2>
 <p><b>Form:</b> tacit<br />
 Present value of 1 payable in a period of T time units<br />
-for a constant simple interest rate S over the period.<br />
-<a href="../eqs/rt_eq.html" target="_blank">Equation: (S)rt(T)</a></p>
+for a constant simple interest rate S over the period.</p>
 <h3>Syntax</h3>
 <pre><code>(S)rt(T)
 S = constant simple interest rate for one time unit over the period
@@ -144,7 +142,6 @@ T = number of time units in the period</code></pre>
 <p><b>Form:</b> tacit<br />
 Future value of 1 in 1 time unit<br />
 for a simple interest rate S.<br />
-<a href="../eqs/s_eq.html" target="_blank">Equation: s(S)</a><br />
 syntax:</p>
 <pre><code>   s(S)
 S = simple interest rate for one time unit</code></pre>
@@ -153,27 +150,25 @@ S = simple interest rate for one time unit</code></pre>
 1.05</code></pre>
 <pre><code>   s(0 0.05 0.1 0.15)
 1 1.05 1.1 1.15</code></pre>
-<h2 id="simple_effective" class="hdef">simple_effective (dyad)</h2>
+<h2 id="simpleFromEffective" class="hdef">simpleFromEffective (dyad)</h2>
 <p><b>Form:</b> explicit<br />
 Calculate the simple interest rate for a time from the<br />
-effective interest rate for a time unit over a period.<br />
-<a href="../eqs/simple_effective_eq.html" target="_blank">Equation: (S)simple_effective(T)</a></p>
+effective interest rate for a time unit over a period.</p>
 <h3>Syntax</h3>
-<pre><code>(E)simple_effective(T)
+<pre><code>(E)simpleFromEffective(T)
 E = constant effective interest rate for one time unit over the period
 T = number of time units in the period</code></pre>
 <h3>Example</h3>
-<pre><code>   (0.05)simple_effective(1)
+<pre><code>   (0.05)simpleFromEffective(1)
 0.05</code></pre>
-<pre><code>   (0.05)simple_effective(3)
+<pre><code>   (0.05)simpleFromEffective(3)
 0.0525417</code></pre>
-<pre><code>   (0.05)simple_effective(i. 10)
+<pre><code>   (0.05)simpleFromEffective(i. 10)
 0 0.05 0.05125 0.0525417 0.0538766 0.0552563 0.0566826 0.0581572 0.0596819 0.0612587</code></pre>
 <h2 id="sirate" class="hdef">sirate (monad)</h2>
 <p><b>Form:</b> tacit<br />
 Calculate the simple interest rate for a<br />
-time unit from the amount at the start and end of a period.<br />
-<a href="../eqs/sirate_eq.html" target="_blank">Equation: sirate(A0;A1;T)</a></p>
+time unit from the amount at the start and end of a period.</p>
 <h3>Syntax</h3>
 <pre><code> sirate(A0;A1;T)
 A0 = amount at start of a period
@@ -191,8 +186,7 @@ T =  period in time units</code></pre>
 <h2 id="st" class="hdef">st (dyad)</h2>
 <p><b>Form:</b> tacit<br />
 Future value of 1 in T time units<br />
-for a simple interest rate S.<br />
-<a href="../eqs/st_eq.html" target="_blank">Equation: (S)st(T)</a></p>
+for a simple interest rate S.</p>
 <h3>Syntax</h3>
 <pre><code>(S)st(T)
 S = constant simple interest rate for one time unit over the period

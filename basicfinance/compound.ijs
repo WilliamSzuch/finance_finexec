@@ -1,24 +1,24 @@
 NB. =========================================================
 NB.%compound.ijs - Compound interest definitions for constant effective interest rates
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Basic Finance</a>
+NB.-<hr>
 NB.- Script: ~addons/finance/finexec/basicfinance/compound.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 30/1/2020
+NB.- Updated: 6/8/2020
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.-<hr>
-NB.- <a class="HREF" href="index.htm" target="_blank">Category: Basic Finance</a>
-NB.- <a class="HREF" href="../../fpcategory.html" target="_blank">Finexec: Category</a>
+NB.- Status: done:
+NB.- <a href="../compound.ijs" target="_blank">Script source: compound.ijs</a>
 NB.-<hr>
 NB.- Definitions for solving compound interest rate problems for
 NB.- a constant effective interest rate over a period.
 NB.-   present value
 NB.-   future value
 NB.-   effective and nominal interest rate conversions between time units
-NB.- <a href="../eqs/compound_ijs_eqs.html" target="_blank">Script equations: compound.ijs</a>
-NB.- <a href="../compound.ijs" target="_blank">Script source: compound.ijs</a>
-NB.-<hr>
-NB.- <b>To Do</b>
-NB.- Tacit forms for vf0 and vf1
+NB.- <img alt="NF" src="../eqs/compound_ijs_eqs.gif">
 NB.-<hr>
 
 
@@ -27,7 +27,6 @@ NB.*d m -
 NB.- <b>Form:</b> tacit 
 NB.- Effective rate of discount for one time unit for  
 NB.- an effective interest rate E. 
-NB.- <a href="../eqs/d_eq.html" target="_blank">Equation: d(E)</a>
 NB.-syntax:
 NB.+d(E)
 NB.+E = effective interest rate for one time unit
@@ -56,7 +55,6 @@ NB.*v m -
 NB.- <b>Form:</b> tacit 
 NB.- Present value of 1 payable in 1 time unit for a 
 NB.- effective interest rate E.
-NB.- <a href="../eqs/v_eq.html" target="_blank">Equation: v(E)</a>
 NB.-syntax:
 NB.+v(E)
 NB.+E = effective interest rate for one time unit
@@ -75,7 +73,6 @@ NB.*vt d -
 NB.- <b>Form:</b> tacit 
 NB.- Present value of 1 payable in a period of T time units
 NB.- for a constant effective interest rate E over the period.
-NB.- <a href="../eqs/vt_eq.html" target="_blank">Equation: (E)vt(T)</a>
 NB.-syntax:
 NB.+(E)vt(T)
 NB.+E = constant effective interest rate per time unit over a period
@@ -113,7 +110,6 @@ NB.- <b>Form:</b> tacit
 NB.- Present value of N payments of 1 paid at the beginning of each time unit
 NB.- for a constant effective interest rate E over the period.
 NB.- Payments in advance
-NB.- <a href="../eqs/an0_eq.html" target="_blank">Equation: (E)an0(N)</a>
 NB.-syntax:
 NB.+(E)an0(N)
 NB.+E = constant effective interest rate per time unit over the period.
@@ -151,7 +147,6 @@ NB.*an d -
 NB.- <b>Form:</b> tacit 
 NB.- Same as an0 but payments deferred for 1 time unit
 NB.- Payments in arrears
-NB.- <a href="../eqs/an_eq.html" target="_blank">Equation: (E)an(N)</a>
 NB.-syntax:
 NB.+(E)an(N)
 NB.+E = constant effective interest rate per time unit over the period.
@@ -181,7 +176,6 @@ NB.- <b>Form:</b> tacit
 NB.- Present value of N payments of 1 payable at the beginning of each time unit 
 NB.- with the first payment deferred for D time units
 NB.- for a constant effective interest rate E over the period.
-NB.- <a href="../eqs/anD_eq.html" target="_blank">Equation: (E)anD(D;N)</a>
 NB.-syntax:
 NB.+(E)anD(D;N)
 NB.+E = constant effective interest rate per time unit over the period.
@@ -223,7 +217,6 @@ NB.- Present value of multiple payments of 1/F paid at intervals of 1/F of a tim
 NB.- at start of the first payment 
 NB.- for a constant effective interest rate E over the period.
 NB.- Payments in advance
-NB.- <a href="../eqs/anF_eq.html" target="_blank">Equation: (E)anF(F;N)</a>
 NB.-syntax:
 NB.+(E)anF(F;N)
 NB.+E = constant effective interest rate per time unit over the period.
@@ -264,7 +257,6 @@ NB.- <b>Form:</b> tacit
 NB.- Present value of a cash flow C payable at the periods 
 NB.- of T time units
 NB.- for a constant effective interest rate E over the period.
-NB.- <a href="../eqs/pvcf_eq.html" target="_blank">Equation: (E)pvcf(C;T)</a> 
 NB.-syntax:
 NB.+(E)pvcf(C;T)
 NB.+E = constant effective interest rate per time unit over the period.
@@ -303,7 +295,6 @@ NB.*w m -
 NB.- <b>Form:</b> tacit 
 NB.- Future value of 1 payable in 1 time unit for a 
 NB.- effective interest rate E.
-NB.- <a href="../eqs/w_eq.html" target="_blank">Equation: w(E)</a>
 NB.-syntax:
 NB.+w(E)
 NB.+E = effective interest rate for one time unit
@@ -322,7 +313,6 @@ NB.*wt d -
 NB.- <b>Form:</b> tacit 
 NB.- Future value of 1 payable in a period of T time units
 NB.- for a constant effective interest E over the period.
-NB.- <a href="../eqs/wt_eq.html" target="_blank">Equation: (E)wt(T)</a>
 NB.-syntax:
 NB.+(E)wt(T)
 NB.+E = constant effective interest rate per time unit over a period
@@ -361,7 +351,6 @@ NB.- Future value of N payments of 1 payable at intervals for a time unit.
 NB.- for a constant effective rate of interest E.
 NB.- accumulated to the time of the last payment.
 NB.- Payments in arrears
-NB.- <a href="../eqs/sn_eq.html" target="_blank">Equation: (E)sn(N)</a>
 NB.-syntax:
 NB.+(E)sn(N)
 NB.+E = constant effective interest rate per time unit over the period.
@@ -400,7 +389,6 @@ NB.- <b>Form:</b> tacit
 NB.- Same as sn but payments accumulated for
 NB.- an additional time unit. 
 NB.- Payments in advance
-NB.- <a href="../eqs/sn1_eq.html" target="_blank">Equation: (E)sn1(N)</a>
 NB.-syntax:
 NB.+(E)sn1(N)
 NB.+E = constant effective interest rate per time unit over the period.
@@ -426,7 +414,6 @@ NB.*snD d -
 NB.- <b>Form:</b> tacit 
 NB.- Futuret value of N payments of 1 payable interval of a time unit 
 NB.- accumulated for a further D time units from the last payment.
-NB.- <a href="../eqs/snD_eq.html" target="_blank">Equation: (E)snD(D;N)</a>
 NB.-syntax:
 NB.+(E)snD(D;N)
 NB.+E = constant effective interest rate per time unit over the period.
@@ -467,7 +454,6 @@ NB.- <b>Form:</b> tacit
 NB.- Future value of multiple payments of 1/F paid at intervals 1/F of a time unit
 NB.- accumuleted to the last payment.
 NB.- Payments in arrears
-NB.- <a href="../eqs/snF_eq.html" target="_blank">Equation: (E)snF(F;N)</a>
 NB.-syntax:
 NB.+(E)snF(F;N)
 NB.+E = constant effective interest rate per time unit over the period.
@@ -507,7 +493,6 @@ NB.*fvcf d -
 NB.- <b>Form:</b> tacit 
 NB.- future value of a cash flow C accumulated for periods 
 NB.- of T time units.
-NB.- <a href="../eqs/fvcf_eq.html" target="_blank">Equation: (E)fvcf(C;T)</a> 
 NB.-syntax:
 NB.+(E)fvcf(C;T)
 NB.+E = constant effective interest rate per time unit over the period.
@@ -547,7 +532,6 @@ NB.- <b>Form:</b> tacit
 NB.- Convert an effective interest rate E for an initial time unit to
 NB.- an equivalent effective interest rate for a new time unit of 
 NB.- 1/F of the initial time unit.
-NB.- <a href="../eqs/econvf_eq.html" target="_blank">Equation: (E)econvf(F)</a>
 NB.-syntax:
 NB.+(E)econvf(F)
 NB.+E = effective interest rate for the initial time unit
@@ -576,7 +560,6 @@ NB.- <b>Form:</b> tacit
 NB.- Convert an effective interest rate E for an initial time unit to
 NB.- an equivalent effective interest rate for a new time unit of 
 NB.- G times the inital time unit.
-NB.- <a href="../eqs/econvg_eq.html" target="_blank">Equation: (E)econvg(G)</a>
 NB.-syntax:
 NB.+(E)econvg(G)
 NB.+E = effective interest rate for old time unit
@@ -604,7 +587,6 @@ NB.*enominal d -
 NB.- <b>Form:</b> tacit 
 NB.- Convert a nominal interest rate for a period to an effective
 NB.- interest rate for a time unit.
-NB.- <a href="../eqs/enominal_eq.html" target="_blank">Equation: (E)enominal(F)</a>
 NB.-syntax:
 NB.+(R)enominal(F)
 NB.+R = nominal interest rate for a period
@@ -634,7 +616,6 @@ NB.*rconvf d -
 NB.- <b>Form:</b> tacit 
 NB.- Convert a nominal interest rate for a period to an effective
 NB.- interest rate for time unit for the same period.
-NB.- <a href="../eqs/rconvf_eq.html" target="_blank">Equation: (R)rconvf(F)</a>
 NB.-syntax:
 NB.+(R)rconvf(F)
 NB.+R = nominal interest rate for a period
@@ -674,7 +655,6 @@ NB.- Present value of 1 paid over a single time unit.
 NB.- Payments commencing at the start of the first frequency 
 NB.- interval in the time unit.
 NB.- Paymenmt in advance.
-NB.- <a href="../eqs/vf0_eq.html" target="_blank">Equation: (E)vf0(F)</a>
 NB.-syntax:
 NB.+ (E)vf0(F)
 NB.+E = effective interest rate for the time unit
@@ -731,7 +711,6 @@ NB.- Present value of 1 paid over a single time unit.
 NB.- Payments commencing at the end of the first frequency 
 NB.- interval in the time unit.
 NB.- Payment in arrears.
-NB.- <a href="../eqs/vf1_eq.html" target="_blank">Equation: (E)vf1(F)</a>
 NB.-syntax:
 NB.+ (E)vf1(F)
 NB.+E = effective interest rate for the time unit.

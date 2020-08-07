@@ -2,10 +2,15 @@ NB. =========================================================
 NB. header for main page index.htm
 IndexHdr=: 0 : 0
 <h1>Finexec Category: Basic Finance</h1>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+<a class="HREF" href="../basicfinance_terminology.html" target="_blank">Basic Finance Terminology</a>
+<hr>
 Script: ~addons/finance/finexec/basicfinance/basicfinance_docs.ijs<br>
-Definitions for simple and compound interest rate problems.<br>
-<a class="HREF" href="../basicfinance_terminology.html" target="_blank">Basic Finance Terminology</a><br>
-<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
+Updated: 26/7/2020<br>
+Definitions for simple and compound interest rate problems with 
+a constant interest rate over a period.
 <hr>
 )
 

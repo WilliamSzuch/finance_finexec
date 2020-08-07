@@ -1,15 +1,21 @@
 NB. =========================================================
 NB.%timeline.ijs - Time line plot of a cash flow
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Basic Finance</a>
+NB.-<hr>
 NB.- Script: ~addons/finance/finrxec/basicfinance/timeline.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 30/1/2020
+NB.- Updated: 28/7/2020
 NB.- Depend: ~addons/graphics/plot/plot.ijs
 NB.- Definitions: loaded to locale base
-NB.- <a class="HREF" href="../all_docs/index.htm" target="_blank">All Documentation</a>
+NB.- Status: done:
 NB.-<hr>
 NB.- Show the cash flow as a time line plot at the periods when the cash 
 NB.- flow occurred from a reference point of period equal to 0. 
-NB.- As a convention a the cash inflow to a portfolio is positive 
+NB.- As a convention the cash inflow to a portfolio is positive 
+NB.- <a href="../timeline.ijs" target="_blank">Script source: timeline.ijs</a>
 NB.-<hr>
 
 

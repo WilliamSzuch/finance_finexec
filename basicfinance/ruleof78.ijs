@@ -1,19 +1,20 @@
 NB. =========================================================
 NB.%ruleof78.ijs - Rule of 78 
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Basic Finance</a>
+NB.-<hr>
 NB.- Script: ~addons/finance/finexec/basicfinance/ruleof78.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 4/2/2020
+NB.- Updated: 6/8/2020
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.-<hr>
-NB.- <a class="HREF" href="index.htm" target="_blank">Category: Basic Finance</a>
-NB.- <a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
+NB.- Status: todo: equations
+NB.- <a href="../ruleof78.ijs" target="_blank">Script source: rule0f78.ijs</a>
 NB.-<hr>
 NB.- Rule of 78 outstanding monthly balance calculations.
-NB.- Equations to be added.
-NB.- <a href="../eqs/ruleof78_ijs_eqs.html" target="_blank">Script equations: ruleof78.ijs To Do</a>
-NB.- <a href="../ruleof78.ijs" target="_blank">Script source: rule0f78.ijs</a>
-
+NB.- <img alt="NF" src="../eqs/rba_ijs_eqs.gif">
 NB.-<hr>
 
 
@@ -28,7 +29,6 @@ NB.- If the loan repayments are less than amount of loan
 NB.- the result is message and no calculation is made.
 NB.- (1) loan repayments are at the end of the month
 NB.- (2) loan balances are rounded to the nearer cent
-NB.- <a href="../eqs/ruleof78_eq.html" target="_blank">Equation: ([Opt])ruleof78(A;M;X) To Do</a>
 NB.-syntax:
 NB.+([Opt])ruleof78(A;M;X)
 NB.+[Opt] = disply option 

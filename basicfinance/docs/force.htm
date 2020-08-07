@@ -12,21 +12,19 @@
 <div id="header">
 <h1 class="title">force.ijs</h1>
 </div>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a> <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a> <a class="HREF" href="index.htm" target="_blank">Basic Finance</a>
+<hr>
 <p>Script: ~addons/finexec/finexec/basicfinance/force.ijs<br />
 Contributor: William Szuch<br />
-Updated: 31/1/2020<br />
+Updated: 6/8/2020<br />
 Depend: nil<br />
-Definitions: loaded to locale base</p>
-<hr>
-<p><a class="HREF" href="index.htm" target="_blank">Category: Basic Finance</a><br />
-<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a></p>
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../force.ijs" target="_blank">Script equations: force.ijs</a></p>
 <hr>
 <p>Definitions for solving force of interest (continous compounding) problems.<br />
-<a href="../eqs/force_ijs_eqs.html" target="_blank">Script equations: force.ijs</a><br />
-<a href="../force.ijs" target="_blank">Script source: force.ijs</a></p>
-<hr>
-<p><b>To Do</b><br />
-Equations to be completed</p>
+<img alt="NF" src="../eqs/force_ijs_eqs.gif"></p>
 <hr>
 <h2>Definitions</h2>
 <table class="map">
@@ -113,8 +111,7 @@ Explicit form of gct
 <h2 id="ez" class="hdef">ez (monad)</h2>
 <p><b>Form:</b> tacit<br />
 Equivalent effective interest rate for a constant force<br />
-of interest rate for one time unit.<br />
-<a class="HREF" href="../eqs/ez_eq.html" target="_blank">Equation: ez(Z)</a></p>
+of interest rate for one time unit.</p>
 <h3>Syntax</h3>
 <pre><code>ez(Z)
 Z = constant force of interest rate for one time unit.</code></pre>
@@ -126,8 +123,7 @@ _0.0487706 0 0 0.0512711 0.105171</code></pre>
 <h2 id="f" class="hdef">f (monad)</h2>
 <p><b>Form:</b> tacit<br />
 Present value of an amount of 1 payable in one time unit<br />
-for a force of interest rate Z.<br />
-<a class="HREF" href="../eqs/f_eq.html" target="_blank">Equation: f(Z)</a></p>
+for a force of interest rate Z.</p>
 <h3>Syntax</h3>
 <pre><code>f(Z)
 Z = constant force of interest rate for one time unit.</code></pre>
@@ -139,8 +135,7 @@ Z = constant force of interest rate for one time unit.</code></pre>
 <h2 id="fc" class="hdef">fc (monad)</h2>
 <p><b>Form:</b> tacit<br />
 Present value of an amount of 1 paid continuosly over one time unit<br />
-for a force of interest rates Z.<br />
-<a class="HREF" href="../eqs/fc_eq.html" target="_blank">Equation: fc(Z)</a></p>
+for a force of interest rates Z.</p>
 <h3>Syntax</h3>
 <pre><code>fc(Z)
 Z = constant force of interest rate for one time unit.</code></pre>
@@ -155,8 +150,7 @@ Z = constant force of interest rate for one time unit.</code></pre>
 <p><b>Form:</b> tacit<br />
 Present value of continous payments over the period of<br />
 of T time units where the rate of payment per time unit<br />
-is one for a constant force of interest Z.<br />
-<a class="HREF" href="../eqs/fct_eq.html" target="_blank">Equation: (Z)fct(T)</a></p>
+is one for a constant force of interest Z.</p>
 <h3>Syntax</h3>
 <pre><code>(Z)fct(T)
 Z = constant force of interest rate per time unit over the period.
@@ -197,8 +191,7 @@ T = period in time units of continous payments</code></pre>
 <p><b>Form:</b> tacit<br />
 Present value of N payments of 1 paid at the beginning of each time unit<br />
 for a constant force of interest rate Z over the period.<br />
-ie. Payments in advance<br />
-<a class="HREF" href="../eqs/fn_eq.html" target="_blank">Equation: fn(Z)</a></p>
+ie. Payments in advance</p>
 <h3>Syntax</h3>
 <pre><code>(Z)fn(N)
 Z = constant force of interest rate per time unit over the period.
@@ -219,8 +212,7 @@ N = integer number of payments over the period</code></pre>
 <h2 id="ft" class="hdef">ft (dyad)</h2>
 <p><b>Form:</b> tacit<br />
 Present value of an amount of 1 payable in T time units<br />
-for a constant force of interest Z over the period.<br />
-<a class="HREF" href="../eqs/ft_eq.html" target="_blank">Equation: ft(Z)</a></p>
+for a constant force of interest Z over the period.</p>
 <h3>Syntax</h3>
 <pre><code>(Z)ft(T)
 Z = constant force of interest rate per time unit over a period
@@ -240,8 +232,7 @@ T = number of time units in the period</code></pre>
 <h2 id="g" class="hdef">g (monad)</h2>
 <p><b>Form:</b> tacit<br />
 Future value of an amount of 1 in one time unit<br />
-for a force of interest rates Z.<br />
-<a class="HREF" href="../eqs/g_eq.html" target="_blank">Equation: g(Z)</a></p>
+for a force of interest rates Z.</p>
 <h3>Syntax</h3>
 <pre><code>g(Z)
 Z = constant force of interest rate for one time unit.</code></pre>
@@ -253,8 +244,7 @@ Z = constant force of interest rate for one time unit.</code></pre>
 <h2 id="gc" class="hdef">gc (monad)</h2>
 <p><b>Form:</b> tacit<br />
 Future value of an amount of 1 paid continuosly over one time unit<br />
-for a force of interest rates Z.<br />
-<a class="HREF" href="../eqs/gc_eq.html" target="_blank">Equation: gc(Z)</a></p>
+for a force of interest rates Z.</p>
 <h3>Syntax</h3>
 <pre><code>gc(Z)
 Z = constant force of interest rate for one time unit.</code></pre>
@@ -269,8 +259,7 @@ Z = constant force of interest rate for one time unit.</code></pre>
 <p><b>Form:</b> tacit<br />
 Present value of continous payments over the period of<br />
 of T time units where the rate of payment per time unit<br />
-is one for a constant force of interest Z.<br />
-<a class="HREF" href="../equations/gct_eq.html" target="_blank">Equation: (Z)gct(N)</a></p>
+is one for a constant force of interest Z.</p>
 <h3>Syntax</h3>
 <pre><code>(Z)gct(T)
 Z = constant force of interest rate per time unit over the period.
@@ -293,8 +282,7 @@ T = period in time units of continous payments</code></pre>
 Restricted form of fct: only single values for Z and T.<br />
 Present value of continous payments over the period of<br />
 of T time units where the rate of payment per time unit<br />
-is one for a constant force of interest Z.<br />
-<a class="HREF" href="../eqs/gct_eq.html" target="_blank">Equation: (Z)gct1(N)</a></p>
+is one for a constant force of interest Z.</p>
 <h3>Syntax</h3>
 <pre><code>(Z)gct(T)
 Z = constant force of interest rate per time unit over the period.
@@ -313,8 +301,7 @@ T = period in time units of continous payments</code></pre>
 Future value of N payments of 1 payable at intervals for a time unit.<br />
 for a constant force of interest Z.<br />
 accumulated to the time of the last payment.<br />
-(ie: payments in arrears)<br />
-<a class="HREF" href="../eqs/gn_eq.html" target="_blank">Equation: (Z)gn(N)</a></p>
+(ie: payments in arrears)</p>
 <h3>Syntax</h3>
 <pre><code>(Z)gn(N)
 Z = constant force of interest rate per time unit over the period.
@@ -335,8 +322,7 @@ N = number of payments over the period</code></pre>
 <h2 id="gt" class="hdef">gt (dyad)</h2>
 <p><b>Form:</b> tacit<br />
 Future value of an amount of 1 payable in T time units<br />
-for a constant force of interest Z over the period.<br />
-<a class="HREF" href="../eqs/gt_eq.html" target="_blank">Equation: (Z)gt(T)</a></p>
+for a constant force of interest Z over the period.</p>
 <h3>Syntax</h3>
 <pre><code>(Z)gt(T)
 Z = constant force of interest rate per time unit over a period
@@ -355,8 +341,7 @@ T = number of time units in the period</code></pre>
 <h2 id="ze" class="hdef">ze (monad)</h2>
 <p><b>Form:</b> tacit<br />
 Equivalent constant force of interest rate for a<br />
-constant effective interest rate for one time unit.<br />
-<a class="HREF" href="../eqs/ze_eq.html" target="_blank">Equation: ze(E)</a></p>
+constant effective interest rate for one time unit.</p>
 <h3>Syntax</h3>
 <pre><code>ez(Z)
 E = constant effective interest rate for one time unit.</code></pre>

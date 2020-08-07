@@ -1,18 +1,21 @@
 NB. =========================================================
 NB.%compoundv.ijs - Compound interest definitions for variable effective interest rates
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Basic Finance</a>
+NB.-<hr>
 NB.- Script: ~addons/finance/fp/basicfinance/compoundv.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 4/2/2020
+NB.- Updated: 6/8/2020
 NB.- Depend: ~addons/finance/finexec/basicfinance/compound.ijs
 NB.- Definitions: loaded to locale base
-NB.-<hr>
-NB.- <a class="HREF" href="index.htm" target="_blank">Category: Basic Finance</a>
-NB.- <a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
+NB.- Status: done:
+NB.- <a href="../compoundv.ijs" target="_blank">Script source: compoundv.ijs</a>
 NB.-<hr>
 NB.- Definitions for solving compound interest rate problems with
 NB.- variable effective interest rates for the time units over a period.
-NB.- <a href="../eqs/compoundv_ijs_eqs.html" target="_blank">Script equations: compoundv.ijs</a>
-NB.- <a href="../compound.ijs" target="_blank">Script source: compound.ijs</a>
+NB.- <img alt="NF" src="../eqs/compoundv_ijs_eqs.gif">
 NB.-<hr>
 
 

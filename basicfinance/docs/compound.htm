@@ -12,25 +12,23 @@
 <div id="header">
 <h1 class="title">compound.ijs</h1>
 </div>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a> <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a> <a class="HREF" href="index.htm" target="_blank">Basic Finance</a>
+<hr>
 <p>Script: ~addons/finance/finexec/basicfinance/compound.ijs<br />
 Contributor: William Szuch<br />
-Updated: 30/1/2020<br />
+Updated: 6/8/2020<br />
 Depend: nil<br />
-Definitions: loaded to locale base</p>
-<hr>
-<p><a class="HREF" href="index.htm" target="_blank">Category: Basic Finance</a><br />
-<a class="HREF" href="../../fpcategory.html" target="_blank">Finexec: Category</a></p>
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../compound.ijs" target="_blank">Script source: compound.ijs</a></p>
 <hr>
 <p>Definitions for solving compound interest rate problems for<br />
 a constant effective interest rate over a period.<br />
   present value<br />
   future value<br />
   effective and nominal interest rate conversions between time units<br />
-<a href="../eqs/compound_ijs_eqs.html" target="_blank">Script equations: compound.ijs</a><br />
-<a href="../compound.ijs" target="_blank">Script source: compound.ijs</a></p>
-<hr>
-<p><b>To Do</b><br />
-Tacit forms for vf0 and vf1</p>
+<img alt="NF" src="../eqs/compound_ijs_eqs.gif"></p>
 <hr>
 <h2>Definitions</h2>
 <table class="map">
@@ -110,8 +108,7 @@ W
 <h2 id="an" class="hdef">an (dyad)</h2>
 <p><b>Form:</b> tacit<br />
 Same as an0 but payments deferred for 1 time unit<br />
-Payments in arrears<br />
-<a href="../eqs/an_eq.html" target="_blank">Equation: (E)an(N)</a></p>
+Payments in arrears</p>
 <h3>Syntax</h3>
 <pre><code>(E)an(N)
 E = constant effective interest rate per time unit over the period.
@@ -127,8 +124,7 @@ N = integer number of payments over the period</code></pre>
 <p><b>Form:</b> tacit<br />
 Present value of N payments of 1 paid at the beginning of each time unit<br />
 for a constant effective interest rate E over the period.<br />
-Payments in advance<br />
-<a href="../eqs/an0_eq.html" target="_blank">Equation: (E)an0(N)</a></p>
+Payments in advance</p>
 <h3>Syntax</h3>
 <pre><code>(E)an0(N)
 E = constant effective interest rate per time unit over the period.
@@ -150,8 +146,7 @@ N = integer number of payments over the period</code></pre>
 <p><b>Form:</b> tacit<br />
 Present value of N payments of 1 payable at the beginning of each time unit<br />
 with the first payment deferred for D time units<br />
-for a constant effective interest rate E over the period.<br />
-<a href="../eqs/anD_eq.html" target="_blank">Equation: (E)anD(D;N)</a></p>
+for a constant effective interest rate E over the period.</p>
 <h3>Syntax</h3>
 <pre><code>(E)anD(D;N)
 E = constant effective interest rate per time unit over the period.
@@ -175,8 +170,7 @@ N = number of payments in the period</code></pre>
 Present value of multiple payments of 1/F paid at intervals of 1/F of a time unit<br />
 at start of the first payment<br />
 for a constant effective interest rate E over the period.<br />
-Payments in advance<br />
-<a href="../eqs/anF_eq.html" target="_blank">Equation: (E)anF(F;N)</a></p>
+Payments in advance</p>
 <h3>Syntax</h3>
 <pre><code>(E)anF(F;N)
 E = constant effective interest rate per time unit over the period.
@@ -197,8 +191,7 @@ N = integer number of time units over the period</code></pre>
 <h2 id="d" class="hdef">d (monad)</h2>
 <p><b>Form:</b> tacit<br />
 Effective rate of discount for one time unit for<br />
-an effective interest rate E.<br />
-<a href="../eqs/d_eq.html" target="_blank">Equation: d(E)</a></p>
+an effective interest rate E.</p>
 <h3>Syntax</h3>
 <pre><code>d(E)
 E = effective interest rate for one time unit</code></pre>
@@ -211,8 +204,7 @@ E = effective interest rate for one time unit</code></pre>
 <p><b>Form:</b> tacit<br />
 Convert an effective interest rate E for an initial time unit to<br />
 an equivalent effective interest rate for a new time unit of<br />
-1/F of the initial time unit.<br />
-<a href="../eqs/econvf_eq.html" target="_blank">Equation: (E)econvf(F)</a></p>
+1/F of the initial time unit.</p>
 <h3>Syntax</h3>
 <pre><code>(E)econvf(F)
 E = effective interest rate for the initial time unit
@@ -228,8 +220,7 @@ F = period of new time unit of 1/F times the initial time unit</code></pre>
 <p><b>Form:</b> tacit<br />
 Convert an effective interest rate E for an initial time unit to<br />
 an equivalent effective interest rate for a new time unit of<br />
-G times the inital time unit.<br />
-<a href="../eqs/econvg_eq.html" target="_blank">Equation: (E)econvg(G)</a></p>
+G times the inital time unit.</p>
 <h3>Syntax</h3>
 <pre><code>(E)econvg(G)
 E = effective interest rate for old time unit
@@ -244,8 +235,7 @@ G = period of new time unit, G times the initial time unit</code></pre>
 <h2 id="enominal" class="hdef">enominal (dyad)</h2>
 <p><b>Form:</b> tacit<br />
 Convert a nominal interest rate for a period to an effective<br />
-interest rate for a time unit.<br />
-<a href="../eqs/enominal_eq.html" target="_blank">Equation: (E)enominal(F)</a></p>
+interest rate for a time unit.</p>
 <h3>Syntax</h3>
 <pre><code>(R)enominal(F)
 R = nominal interest rate for a period
@@ -262,8 +252,7 @@ F = the number of times interest is payable and accumulated in the period</code>
 <h2 id="fvcf" class="hdef">fvcf (dyad)</h2>
 <p><b>Form:</b> tacit<br />
 future value of a cash flow C accumulated for periods<br />
-of T time units.<br />
-<a href="../eqs/fvcf_eq.html" target="_blank">Equation: (E)fvcf(C;T)</a></p>
+of T time units.</p>
 <h3>Syntax</h3>
 <pre><code>(E)fvcf(C;T)
 E = constant effective interest rate per time unit over the period.
@@ -282,8 +271,7 @@ T = accumulation periods in time units of cash flow</code></pre>
 <p><b>Form:</b> tacit<br />
 Present value of a cash flow C payable at the periods<br />
 of T time units<br />
-for a constant effective interest rate E over the period.<br />
-<a href="../eqs/pvcf_eq.html" target="_blank">Equation: (E)pvcf(C;T)</a></p>
+for a constant effective interest rate E over the period.</p>
 <h3>Syntax</h3>
 <pre><code>(E)pvcf(C;T)
 E = constant effective interest rate per time unit over the period.
@@ -301,8 +289,7 @@ T = periods in time units of cash flow</code></pre>
 <h2 id="rconvf" class="hdef">rconvf (dyad)</h2>
 <p><b>Form:</b> tacit<br />
 Convert a nominal interest rate for a period to an effective<br />
-interest rate for time unit for the same period.<br />
-<a href="../eqs/rconvf_eq.html" target="_blank">Equation: (R)rconvf(F)</a></p>
+interest rate for time unit for the same period.</p>
 <h3>Syntax</h3>
 <pre><code>(R)rconvf(F)
 R = nominal interest rate for a period
@@ -323,8 +310,7 @@ F = the number of times interest is payable and accumulated in the period</code>
 Future value of N payments of 1 payable at intervals for a time unit.<br />
 for a constant effective rate of interest E.<br />
 accumulated to the time of the last payment.<br />
-Payments in arrears<br />
-<a href="../eqs/sn_eq.html" target="_blank">Equation: (E)sn(N)</a></p>
+Payments in arrears</p>
 <h3>Syntax</h3>
 <pre><code>(E)sn(N)
 E = constant effective interest rate per time unit over the period.
@@ -346,8 +332,7 @@ N = number of payments over the period</code></pre>
 <p><b>Form:</b> tacit<br />
 Same as sn but payments accumulated for<br />
 an additional time unit.<br />
-Payments in advance<br />
-<a href="../eqs/sn1_eq.html" target="_blank">Equation: (E)sn1(N)</a></p>
+Payments in advance</p>
 <h3>Syntax</h3>
 <pre><code>(E)sn1(N)
 E = constant effective interest rate per time unit over the period.
@@ -360,8 +345,7 @@ N = number of payments over the period</code></pre>
 <h2 id="snD" class="hdef">snD (dyad)</h2>
 <p><b>Form:</b> tacit<br />
 Futuret value of N payments of 1 payable interval of a time unit<br />
-accumulated for a further D time units from the last payment.<br />
-<a href="../eqs/snD_eq.html" target="_blank">Equation: (E)snD(D;N)</a></p>
+accumulated for a further D time units from the last payment.</p>
 <h3>Syntax</h3>
 <pre><code>(E)snD(D;N)
 E = constant effective interest rate per time unit over the period.
@@ -384,8 +368,7 @@ N = number of payments in the period</code></pre>
 <p><b>Form:</b> tacit<br />
 Future value of multiple payments of 1/F paid at intervals 1/F of a time unit<br />
 accumuleted to the last payment.<br />
-Payments in arrears<br />
-<a href="../eqs/snF_eq.html" target="_blank">Equation: (E)snF(F;N)</a></p>
+Payments in arrears</p>
 <h3>Syntax</h3>
 <pre><code>(E)snF(F;N)
 E = constant effective interest rate per time unit over the period.
@@ -406,8 +389,7 @@ N = intenger number of time units over the period</code></pre>
 <h2 id="v" class="hdef">v (monad)</h2>
 <p><b>Form:</b> tacit<br />
 Present value of 1 payable in 1 time unit for a<br />
-effective interest rate E.<br />
-<a href="../eqs/v_eq.html" target="_blank">Equation: v(E)</a></p>
+effective interest rate E.</p>
 <h3>Syntax</h3>
 <pre><code>v(E)
 E = effective interest rate for one time unit</code></pre>
@@ -421,8 +403,7 @@ E = effective interest rate for one time unit</code></pre>
 Present value of 1 paid over a single time unit.<br />
 Payments commencing at the start of the first frequency<br />
 interval in the time unit.<br />
-Paymenmt in advance.<br />
-<a href="../eqs/vf0_eq.html" target="_blank">Equation: (E)vf0(F)</a></p>
+Paymenmt in advance.</p>
 <h3>Syntax</h3>
 <pre><code> (E)vf0(F)
 E = effective interest rate for the time unit
@@ -446,8 +427,7 @@ F = integer frequency of payments in time unit: 1/2/3/etc
 Present value of 1 paid over a single time unit.<br />
 Payments commencing at the end of the first frequency<br />
 interval in the time unit.<br />
-Payment in arrears.<br />
-<a href="../eqs/vf1_eq.html" target="_blank">Equation: (E)vf1(F)</a></p>
+Payment in arrears.</p>
 <h3>Syntax</h3>
 <pre><code> (E)vf1(F)
 E = effective interest rate for the time unit.
@@ -463,8 +443,7 @@ F = integer frequency of payments in the time unit: 1/2/3/etc
 <h2 id="vt" class="hdef">vt (dyad)</h2>
 <p><b>Form:</b> tacit<br />
 Present value of 1 payable in a period of T time units<br />
-for a constant effective interest rate E over the period.<br />
-<a href="../eqs/vt_eq.html" target="_blank">Equation: (E)vt(T)</a></p>
+for a constant effective interest rate E over the period.</p>
 <h3>Syntax</h3>
 <pre><code>(E)vt(T)
 E = constant effective interest rate per time unit over a period
@@ -485,8 +464,7 @@ T = number of time units in the period</code></pre>
 <h2 id="w" class="hdef">w (monad)</h2>
 <p><b>Form:</b> tacit<br />
 Future value of 1 payable in 1 time unit for a<br />
-effective interest rate E.<br />
-<a href="../eqs/w_eq.html" target="_blank">Equation: w(E)</a></p>
+effective interest rate E.</p>
 <h3>Syntax</h3>
 <pre><code>w(E)
 E = effective interest rate for one time unit</code></pre>
@@ -498,8 +476,7 @@ E = effective interest rate for one time unit</code></pre>
 <h2 id="wt" class="hdef">wt (dyad)</h2>
 <p><b>Form:</b> tacit<br />
 Future value of 1 payable in a period of T time units<br />
-for a constant effective interest E over the period.<br />
-<a href="../eqs/wt_eq.html" target="_blank">Equation: (E)wt(T)</a></p>
+for a constant effective interest E over the period.</p>
 <h3>Syntax</h3>
 <pre><code>(E)wt(T)
 E = constant effective interest rate per time unit over a period

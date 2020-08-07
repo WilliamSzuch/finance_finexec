@@ -1,20 +1,20 @@
 NB. =========================================================
 NB.%force.ijs - Force of interest definitions (Continous compounding)
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Basic Finance</a>
+NB.-<hr>
 NB.- Script: ~addons/finexec/finexec/basicfinance/force.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 31/1/2020
+NB.- Updated: 6/8/2020
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.-<hr>
-NB.- <a class="HREF" href="index.htm" target="_blank">Category: Basic Finance</a>
-NB.- <a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
+NB.- Status: done:
+NB.- <a href="../force.ijs" target="_blank">Script equations: force.ijs</a>
 NB.-<hr>
 NB.- Definitions for solving force of interest (continous compounding) problems. 
-NB.- <a href="../eqs/force_ijs_eqs.html" target="_blank">Script equations: force.ijs</a>
-NB.- <a href="../force.ijs" target="_blank">Script source: force.ijs</a>
-NB.-<hr>
-NB.- <b>To Do</b>
-NB.- Equations to be completed
+NB.- <img alt="NF" src="../eqs/force_ijs_eqs.gif">
 NB.-<hr>
 
 
@@ -23,7 +23,6 @@ NB.*ez m -
 NB.- <b>Form:</b> tacit
 NB.- Equivalent effective interest rate for a constant force
 NB.- of interest rate for one time unit.
-NB.- <a class="HREF" href="../eqs/ez_eq.html" target="_blank">Equation: ez(Z)</a>
 NB.-syntax:
 NB.+ez(Z) 
 NB.+Z = constant force of interest rate for one time unit.
@@ -42,7 +41,6 @@ NB.*ze m -
 NB.- <b>Form:</b> tacit
 NB.- Equivalent constant force of interest rate for a 
 NB.- constant effective interest rate for one time unit.
-NB.- <a class="HREF" href="../eqs/ze_eq.html" target="_blank">Equation: ze(E)</a>
 NB.-syntax:
 NB.+ez(Z) 
 NB.+E = constant effective interest rate for one time unit.
@@ -69,7 +67,6 @@ NB.*f m -
 NB.- <b>Form:</b> tacit
 NB.- Present value of an amount of 1 payable in one time unit 
 NB.- for a force of interest rate Z.
-NB.- <a class="HREF" href="../eqs/f_eq.html" target="_blank">Equation: f(Z)</a>
 NB.-syntax:
 NB.+f(Z)
 NB.+Z = constant force of interest rate for one time unit.
@@ -88,7 +85,6 @@ NB.*fc m -
 NB.- <b>Form:</b> tacit
 NB.- Present value of an amount of 1 paid continuosly over one time unit 
 NB.- for a force of interest rates Z.
-NB.- <a class="HREF" href="../eqs/fc_eq.html" target="_blank">Equation: fc(Z)</a>
 NB.-syntax:
 NB.+fc(Z)
 NB.+Z = constant force of interest rate for one time unit.
@@ -116,7 +112,6 @@ NB.*ft d -
 NB.- <b>Form:</b> tacit
 NB.- Present value of an amount of 1 payable in T time units
 NB.- for a constant force of interest Z over the period.
-NB.- <a class="HREF" href="../eqs/ft_eq.html" target="_blank">Equation: ft(Z)</a>
 NB.-syntax:
 NB.+(Z)ft(T)
 NB.+Z = constant force of interest rate per time unit over a period
@@ -194,7 +189,6 @@ NB.- <b>Form:</b> tacit
 NB.- Present value of continous payments over the period of
 NB.- of T time units where the rate of payment per time unit
 NB.- is one for a constant force of interest Z.
-NB.- <a class="HREF" href="../eqs/fct_eq.html" target="_blank">Equation: (Z)fct(T)</a>
 NB.-syntax:
 NB.+(Z)fct(T)
 NB.+Z = constant force of interest rate per time unit over the period.
@@ -245,7 +239,6 @@ NB.- <b>Form:</b> tacit
 NB.- Present value of N payments of 1 paid at the beginning of each time unit
 NB.- for a constant force of interest rate Z over the period.
 NB.- ie. Payments in advance
-NB.- <a class="HREF" href="../eqs/fn_eq.html" target="_blank">Equation: fn(Z)</a>
 NB.-syntax:
 NB.+(Z)fn(N)
 NB.+Z = constant force of interest rate per time unit over the period.
@@ -288,7 +281,6 @@ NB.*g m -
 NB.- <b>Form:</b> tacit
 NB.- Future value of an amount of 1 in one time unit 
 NB.- for a force of interest rates Z.
-NB.- <a class="HREF" href="../eqs/g_eq.html" target="_blank">Equation: g(Z)</a>
 NB.-syntax:
 NB.+g(Z)
 NB.+Z = constant force of interest rate for one time unit.
@@ -307,7 +299,6 @@ NB.*gc m -
 NB.- <b>Form:</b> tacit
 NB.- Future value of an amount of 1 paid continuosly over one time unit 
 NB.- for a force of interest rates Z.
-NB.- <a class="HREF" href="../eqs/gc_eq.html" target="_blank">Equation: gc(Z)</a>
 NB.-syntax:
 NB.+gc(Z)
 NB.+Z = constant force of interest rate for one time unit.
@@ -335,7 +326,6 @@ NB.*gt d -
 NB.- <b>Form:</b> tacit
 NB.- Future value of an amount of 1 payable in T time units
 NB.- for a constant force of interest Z over the period.
-NB.- <a class="HREF" href="../eqs/gt_eq.html" target="_blank">Equation: (Z)gt(T)</a>
 NB.-syntax:
 NB.+(Z)gt(T)
 NB.+Z = constant force of interest rate per time unit over a period
@@ -370,7 +360,6 @@ NB.- Future value of N payments of 1 payable at intervals for a  time unit.
 NB.- for a constant force of interest Z.
 NB.- accumulated to the time of the last payment.
 NB.- (ie: payments in arrears)
-NB.- <a class="HREF" href="../eqs/gn_eq.html" target="_blank">Equation: (Z)gn(N)</a>
 NB.-syntax:
 NB.+(Z)gn(N)
 NB.+Z = constant force of interest rate per time unit over the period.
@@ -410,7 +399,6 @@ NB.- Restricted form of fct: only single values for Z and T.
 NB.- Present value of continous payments over the period of
 NB.- of T time units where the rate of payment per time unit
 NB.- is one for a constant force of interest Z.
-NB.- <a class="HREF" href="../eqs/gct_eq.html" target="_blank">Equation: (Z)gct1(N)</a>
 NB.-syntax:
 NB.+(Z)gct(T)
 NB.+Z = constant force of interest rate per time unit over the period.
@@ -453,7 +441,6 @@ NB.- <b>Form:</b> tacit
 NB.- Present value of continous payments over the period of
 NB.- of T time units where the rate of payment per time unit
 NB.- is one for a constant force of interest Z.
-NB.- <a class="HREF" href="../equations/gct_eq.html" target="_blank">Equation: (Z)gct(N)</a>
 NB.-syntax:
 NB.+(Z)gct(T)
 NB.+Z = constant force of interest rate per time unit over the period.

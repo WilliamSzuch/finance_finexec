@@ -1,21 +1,25 @@
 NB. =========================================================
 NB.%rba.ijs - Reserve Bank of Australia formula for calculating value of securities
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Basic Finance</a>
+NB.-<hr>
 NB.- Script: ~addons/finance/finexec/basicfinance/rba.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 30/1/2020
+NB.- Updated: 6/8/2020
 NB.- Depend: ~addons/finance/finexec/basicfinance/compound.ijs
-NB.-         ~addons/finance/finexec/utility/bisection.ijs
+NB.-         ~addons/finance/finexec/toolbox/bisection.ijs
 NB.- Definitions: loaded to locale base
-NB.-<hr>
-NB.- <a class="HREF" href="index.htm" target="_blank">Category: Basic Finance</a>
-NB.- <a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
+NB.- Status: todo: equations
+NB.- <a href="../rba.ijs" target="_blank">Script source: rba.ijs</a>
 NB.-<hr>
 NB.- RBA - Treasury Bond calculations.
 NB.- Financial calculations based on the Reserve Bank formula.
+NB.- <img alt="NF" src="../eqs/rba_ijs_eqs.gif">
 NB.- Methodology set out in the Reserve Bank of Australia 
 NB.- note dated: 27/10/1992 No. 92-24
 NB.- <a class="HREF" href="https://aofm.gov.au/ags/" target="_blank">RBA Notes and Equations</a> 
-NB.- <a href="../rba.ijs" target="_blank">Script source: rba.ijs</a>
 NB.-<hr>
 NB.- <b>Treasury Bond Yield Calculation</b>
 NB.- Using bisection method with (E)pvcf(C;T)
@@ -42,7 +46,7 @@ NB.+_0.000908185
 
 
 require '~addons/finance/finexec/basicfinance/compound.ijs'
-require '~addons/finance/finexec/utility/bisection.ijs'
+require '~addons/finance/finexec/toolbox/bisection.ijs'
 
 
 NB. =========================================================
