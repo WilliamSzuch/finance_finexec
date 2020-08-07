@@ -1,18 +1,14 @@
 NB. =========================================================
 NB. header for main page index.htm
 IndexHdr=: 0 : 0
-<h1>finexec: Catgory: Life Contingencies</h1>
+<h1>finexec: Category: Toolbox</h1>
 <hr>
 <a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
 <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
-<a class="HREF" href="../lifecontingencies_terminology.html" target="_blank">Life Contingencies Finance Terminology</a>
 <hr>
-Script: ~addons/finance/finexec/lifecontingencies/lifecontingencies_docs.ijs<br>
-Updated: 28/7/2020<br>
-Definitions for life contingencies calculations.<br>
-* life table<br>
-* life annuities<br>
-* life issurance<br> 
+Script: ~addons/finance/finexec/toolbox/toolbox_docs.ijs<br>
+Updated: 5/8/2020<br>
+Toolbox of definitions for developing new projects and definitions.<br>
 <hr>
 )
 
@@ -23,20 +19,20 @@ require 'docs/joxygen'
 
 NB. =========================================================
 NB. Build the docs. 
-smoutput <'Start: Life Contingencies'
+smoutput <'*** Start: toolbox_docs ***'
 
 
 NB. =========================================================
-NB. This builds html docs in the Target directory.
+NB. This builds the html files in the Target directory.
 
 
 NB. source directory (used to find source files,
 NB. but not used in the html docs)
-Source=: jpath '~addons/finance/finexec/lifecontingencies'
+Source=: jpath '~addons/finance/finexec/toolbox'
 
 
 NB. target directory
-Target=: jpath '~addons/finance/finexec/lifecontingencies/docs'
+Target=: jpath '~addons/finance/finexec/toolbox/docs'
 
 
 NB. =========================================================
@@ -46,10 +42,17 @@ ferase each  1 dir Target
 
 NB. source files under the source directory
 NB. (may be more than one level down)
-Files=: cutopen 0 : 0
-lifetable.ijs
-lifeannuities.ijs
-lifeinsurance.ijs
+NB. =========================================================
+Files =: cutopen 0 : 0
+bisection.ijs
+boxed_table.ijs
+color.ijs
+lists.ijs
+numeric.ijs
+plots.ijs
+save_retrieve_data.ijs
+select.ijs
+text_to_numeric.ijs
 )
 
 
@@ -62,4 +65,4 @@ NB. copy the css file to the Target directory
 NB. make the docs
 makedocs''
 
-smoutput <'End: Life Contingencies'
+smoutput <'*** End: toolbox_docs ***'

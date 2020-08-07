@@ -12,14 +12,16 @@
 <div id="header">
 <h1 class="title">lifeinsurance.ijs</h1>
 </div>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a> <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a> <a class="HREF" href="index.htm" target="_blank">Life Contingencies</a>
+<hr>
 <p>Script: ~addons/finance/finexec/lifecontingencies/lifeinsurance.ijs<br />
 Contributor: William Szuch<br />
-Updated: 3/2/2020<br />
+Updated: 31/7/2020<br />
 Depend: ~addons/finance/fp/qxtables/qxtables/qxtools.ijs'<br />
-Definitions: loaded to locale base</p>
-<hr>
-<p><a class="HREF" href="index.htm" target="_blank">Category: Life Contingencies</a><br />
-<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a></p>
+Definitions: loaded to locale base<br />
+Status: todo: equations<br />
+<a href="../lifeinsurance.ijs" target="_blank">Script scource: lifeinsurance.ijs</a></p>
 <hr>
 <p>Definitions to calculate life issurance factors for<br />
 single and multiple lives.<br />
@@ -27,8 +29,7 @@ Qx tables loaded to the locale base<br />
 See: Qx_ALL for a list of names.<br />
 See: Qx_ALT for a list of Australian Life Tables.<br />
 All mortality tables start at age = 0.<br />
-<a href="../eqs/lifeinsurance_ijs_eqs.html" target="_blank">Script equations: lifeinsurance.ijs</a><br />
-<a href="../lifeinsurance.ijs" target="_blank">Script source: lifeinsurance.ijs</a></p>
+<img alt="NF" src="../eqs/lifeinsurance_ijs_eqs.gif"></p>
 <hr>
 <p>(1) Extending Qx tables by 5 years.<br />
 (2) Multiple lives<br />
@@ -49,7 +50,6 @@ A
 <p><b>Form:</b> tacit<br />
 Calculate the value of a whole of life issurance for<br />
 a sum insured of one payable at the end of the year death.<br />
-<a href="../eqs/asx_eq.html" target="_blank">Equation: (Qx;E)asx(Age)</a><br />
 syntax:</p>
 <pre><code>(Qx;E)asx(Age)
 Qx = name of Qx table starting at age = 0
@@ -64,8 +64,7 @@ Age = integer ages</code></pre>
 <p><b>Form:</b> tacit<br />
 Monadic form of asx.<br />
 Calculate the value of a whole of life issurance for<br />
-a sum insured of one payable at the end of the year death.<br />
-<a href="../eqs/asx_eq.html" target="_blank">Equation: (Qx;E)asx_M(Qx;Age;E)</a></p>
+a sum insured of one payable at the end of the year death.</p>
 <h3>Syntax</h3>
 <pre><code>asx_M(Qx;Age;E)
 Qx = name of Qx table starting at age = 0
@@ -81,7 +80,6 @@ E = yearly effective interest rate</code></pre>
 Same as asxn1 but allow multiple lives and terms.<br />
 Calculate the value of a term life issurance for<br />
 a sum insured of one payable at the end of the year death.<br />
-<a href="../eqs/asxn_eq.html" target="_blank">Equation: (Qx;E)asxn(Age;N)</a><br />
 syntax:</p>
 <pre><code>(Qx;E)asxn(Age;N)
 Qx = name of Qx table starting at age = 0
@@ -103,7 +101,6 @@ N = term of insurance - integer years</code></pre>
 Calculate the value of a term life issurance for<br />
 a sum insured of one payable at the end of the year death.<br />
 (one life)<br />
-<a href="../eqs/asxn_eq.html" target="_blank">Equation: (Qx;E)asxn1(Age;N)</a><br />
 syntax:</p>
 <pre><code>(Qx;E)asx(Age;N)
 Qx = name of Qx table starting at age = 0

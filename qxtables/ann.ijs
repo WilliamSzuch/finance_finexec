@@ -1,18 +1,21 @@
 NB. =========================================================
 NB.%ann.ijs - Annuity Life Tables (ANN) 
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Qx Tables</a>
+NB.-<hr>
 NB.- Script: ~addons/finance/finexec/qxtables/ann.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 31/1/2020
+NB.- Updated: 31/7/2020
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.-<hr>
-NB.- <a class="HREF" href="index.htm" target="_blank">Category: Qx Tables</a>
-NB.- <a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
+NB.- Status: done:
+NB.- <a href="../ann.ijs" target="_blank">Script source: ann.ijs</a>
 NB.-<hr>
 NB.- Annuity Life Tables
 NB.- Names commence with ANN_.
 NB.- All mortality tables start at age = 0.
-NB.- <a href="../ann.ijs" target="_blank">Script source: ann.ijs</a>
 NB.-<hr>
 
 

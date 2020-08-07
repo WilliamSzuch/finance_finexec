@@ -1,13 +1,17 @@
 NB. =========================================================
 NB.%lifeinsurance.ijs - Life issurance definitions
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Life Contingencies</a>
+NB.-<hr>
 NB.- Script: ~addons/finance/finexec/lifecontingencies/lifeinsurance.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 3/2/2020
+NB.- Updated: 31/7/2020
 NB.- Depend: ~addons/finance/fp/qxtables/qxtables/qxtools.ijs'
 NB.- Definitions: loaded to locale base
-NB.-<hr>
-NB.- <a class="HREF" href="index.htm" target="_blank">Category: Life Contingencies</a>
-NB.- <a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
+NB.- Status: todo: equations
+NB.- <a href="../lifeinsurance.ijs" target="_blank">Script scource: lifeinsurance.ijs</a>
 NB.-<hr>
 NB.- Definitions to calculate life issurance factors for
 NB.- single and multiple lives.
@@ -15,8 +19,7 @@ NB.- Qx tables loaded to the locale base
 NB.- See: Qx_ALL for a list of names.
 NB.- See: Qx_ALT for a list of Australian Life Tables.
 NB.- All mortality tables start at age = 0.
-NB.- <a href="../eqs/lifeinsurance_ijs_eqs.html" target="_blank">Script equations: lifeinsurance.ijs</a>
-NB.- <a href="../lifeinsurance.ijs" target="_blank">Script source: lifeinsurance.ijs</a>
+NB.- <img alt="NF" src="../eqs/lifeinsurance_ijs_eqs.gif">
 NB.-<hr>
 NB.- (1) Extending Qx tables by 5 years. 
 NB.- (2) Multiple lives
@@ -43,7 +46,6 @@ NB.*asx d -
 NB.- <b>Form:</b> tacit
 NB.- Calculate the value of a whole of life issurance for
 NB.- a sum insured of one payable at the end of the  year death.
-NB.- <a href="../eqs/asx_eq.html" target="_blank">Equation: (Qx;E)asx(Age)</a>
 NB.- syntax:
 NB.+(Qx;E)asx(Age)
 NB.+Qx = name of Qx table starting at age = 0
@@ -75,7 +77,6 @@ NB.- <b>Form:</b> tacit
 NB.- Monadic form of asx.
 NB.- Calculate the value of a whole of life issurance for
 NB.- a sum insured of one payable at the end of the  year death.
-NB.- <a href="../eqs/asx_eq.html" target="_blank">Equation: (Qx;E)asx_M(Qx;Age;E)</a>
 NB.-syntax:
 NB.+asx_M(Qx;Age;E) 
 NB.+Qx = name of Qx table starting at age = 0
@@ -105,7 +106,6 @@ NB.- <b>Form:</b> tacit
 NB.- Calculate the value of a term life issurance for
 NB.- a sum insured of one payable at the end of the  year death.
 NB.- (one life)
-NB.- <a href="../eqs/asxn_eq.html" target="_blank">Equation: (Qx;E)asxn1(Age;N)</a>
 NB.- syntax:
 NB.+(Qx;E)asx(Age;N)
 NB.+Qx = name of Qx table starting at age = 0
@@ -141,7 +141,6 @@ NB.- <b>Form:</b> explicit
 NB.- Same as asxn1 but allow multiple lives and terms. 
 NB.- Calculate the value of a term life issurance for
 NB.- a sum insured of one payable at the end of the  year death.
-NB.- <a href="../eqs/asxn_eq.html" target="_blank">Equation: (Qx;E)asxn(Age;N)</a>
 NB.- syntax:
 NB.+(Qx;E)asxn(Age;N)
 NB.+Qx = name of Qx table starting at age = 0

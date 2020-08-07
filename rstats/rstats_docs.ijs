@@ -1,10 +1,13 @@
 NB. =========================================================
 NB. header for main page index.htm
 IndexHdr=: 0 : 0
-<h1>finexec: Category: R Stats</h1>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+<hr>
 Script: ~addons/finance/finexec/rstats/rstats_docs.ijs<br>
+Updated: 28/7/2020<br>
 Defintions to be used to interface J with the R Statsical Package.<br>
-<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
 <hr>
 J provides an interfaces to the R statistical package.<br>
 R is the most widely used program in the statistical research community 
@@ -15,6 +18,9 @@ For more information, see wiki page:
 <hr>
 )
 
+
+
+NB. edit_cat_doc 'toolbox/toolbox_docs.ijs'
 
 NB. =========================================================
 require 'docs/joxygen'

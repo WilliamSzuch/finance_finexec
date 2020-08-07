@@ -1,21 +1,24 @@
 NB. =========================================================
 NB.%qxtools.ijs - Definitions for modifying Qx tables and loading all the Qx tables
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Qx Tables</a>
+NB.-<hr>
 NB.- Script: ~addons/finance/finexec/qxtables/qxtools.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 31/1/2020
+NB.- Updated: 5/8/2020
 NB.- Depend: ~addons/finance/finexec/qxtables/al.ijs
 NB.-         ~addons/finance/finexec/qxtables/alt.ijs
 NB.-         ~addons/finance/finexec/qxtables/ann.ijs
 NB.-         ~addons/finance/finexec/qxtables/elt.ijs
 NB.- Definitions: loaded to locale base
-NB.-<hr>
-NB.- <a class="HREF" href="index.htm" target="_blank">Category: Qx Tables</a>
-NB.- <a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
+NB.- Status: update:
+NB.- <a href="../qxtools.ijs" target="_blank">Script source: qxtools.ijs</a>
 NB.-<hr>
 NB.- Tools for for adjusting and modifying Qx tables.
 NB.- Plot Qx tables.
 NB.- This script loads all the Qx mortality tables.
-NB.- <a href="../qxtools.ijs" target="_blank">Script source: qxtools.ijs</a>
 NB.-<hr>
 NB.- Boxed Qx tables
 NB.- '0.5' 8!:0 Qx_Data

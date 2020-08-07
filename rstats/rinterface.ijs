@@ -1,29 +1,33 @@
 NB. =========================================================
 NB.% rinterface.ijs - Interfacing J with R (using Rserve.exe)
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Rstats</a>
+NB.-<hr> 
 NB.- Script: ~addons/finance/finexec/rstats/rinterface.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 30/1/2020
+NB.- Updated: 31/7/2020
 NB.- Depend: R statitical package 
 NB.-         Rserve.exe package 
 NB.-         ~addons/stats/r/rserve.ijs
 NB.- Definitions: loaded to locale base
-NB.-<hr>
-NB.- <a class="HREF" href="index.htm" target="_blank">Category: R Stats</a>
-NB.- <a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
+NB.- Status: done:
+NB.- <a href="../rinterface.ijs" target="_blank">Script source: rinterface.ijs</a>
 NB.-<hr>
 NB.- The interface definition is an example only and requires to be 
 NB.- modified for the R Stats package installation.
 NB.- See the source code: ~addons/finance/fp/rstats/rinterface.ijs
 NB.- Example definition:
+NB.- 
 NB.- rinterface =: 3 : 0
 NB.- fork_jtask_ 'C:/Program Files/R/R-3.6.1/bin/x64/Rserve.exe' 
 NB.- )
-NB.-<hr>
+NB.- 
 NB.- Tools for interfacing J with the statisical package R. 
 NB.- The interface is made through the Rserve.exe package.
 NB.- For details see:
 NB.- <a class="HREF" href="https://code.jsoftware.com/wiki/Interfaces/R">J interface to R</a>
-NB.- <a href="../rinterface.ijs" target="_blank">Script source: rinterface.ijs</a>
 NB.-<hr>
 
 
@@ -40,8 +44,8 @@ NB.+rinterface ''
 NB.-example:
 NB.+   rinterface ''
 NB.+
-NB.+Testing the interface of J with R. 
-NB.+   Rget 'pi'
+NB.+Testing the interface of J with R.  
+NB.+  Rget 'pi'
 NB.+3.14159
 NB.-
 NB.+   Rget 'rnorm(5)'

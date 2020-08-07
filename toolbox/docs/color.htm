@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>color.ijs</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="joxygen.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">color.ijs</h1>
+</div>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a> <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a> <a class="HREF" href="index.htm" target="_blank">Toolbox</a>
+<hr>
+<p>Script: ~addons/finance/toolbox/color.ijs<br />
+Contrinutor: William Szuch<br />
+Updated: 31/7/2020<br />
+Depend: ~addons/graphics/viewmat/viewmat.ijs<br />
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../color.ijs" target="_blank">Script source: color.ijs</a></p>
+<hr>
+<p>Show the color for rgb/hexadecimal and number formats.<br />
+  rgb triplet eg: 100 50 150<br />
+  hexadecimal number as text eg: 'aaaaaa'<br />
+  number &lt; 256^3<br />
+Convert between number/hexadecimal and RGB<br />
+Useful for selecting colors for web pages.<br />
+<a href="../colortables/colorx256.html" target="_blank">View: color table 256</a><br />
+<a href="../colortables/colortab.html" target="_blank">View: color table</a><br />
+See folder: ~addons/graphics/color</p>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+H
+</td>
+<td>
+<a href="#hexcolor">hexcolor</a>, <a href="#hextonumber">hextonumber</a>, <a href="#hextorgb">hextorgb</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+N
+</td>
+<td>
+<a href="#numbercolor">numbercolor</a>, <a href="#numbertohex">numbertohex</a>, <a href="#numbertorgb">numbertorgb</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+R
+</td>
+<td>
+<a href="#rgbcolor">rgbcolor</a>, <a href="#rgbtonumber">rgbtonumber</a>
+</td>
+</tr>
+</table>
+<h2 id="hexcolor" class="hdef">hexcolor (monad)</h2>
+<p><b>Form:</b> explicit<br />
+Show hexadecimal color</p>
+<h3>Syntax</h3>
+<pre><code>hexcolor(H)
+H = hexadecimal number as text</code></pre>
+<h3>Example</h3>
+<pre><code>   hexcolor(&#39;aaaaaa&#39;)</code></pre>
+<pre><code>   hexcolor(&#39;000000&#39;)</code></pre>
+<h2 id="hextonumber" class="hdef">hextonumber (monad)</h2>
+<p><b>Form:</b> tacit<br />
+Convert a hexadecimal number to a number</p>
+<h3>Syntax</h3>
+<pre><code> hextonumber(H)
+H = hexadecimal number as text ie: &#39;asd&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>   hextonumber(&#39;aaaaaa&#39;)
+11184810</code></pre>
+<pre><code>   hextonumber(&#39;000000&#39;)
+0</code></pre>
+<pre><code>   hextonumber(&#39;asd&#39;)
+2829</code></pre>
+<h2 id="hextorgb" class="hdef">hextorgb (monad)</h2>
+<p><b>Form:</b> tacit<br />
+Convert a hexadecimal number to rgb color triplet.</p>
+<h3>Syntax</h3>
+<pre><code>hextorgb(H)
+H = hexadecimal number as text</code></pre>
+<h3>Example</h3>
+<pre><code>   hextorgb(&#39;aaaaaa&#39;)
+170 170 170</code></pre>
+<pre><code>   hextorgb(&#39;000000&#39;)
+0 0 0</code></pre>
+<h2 id="numbercolor" class="hdef">numbercolor (monad)</h2>
+<p><b>Form:</b> explicit<br />
+Show number color</p>
+<h3>Syntax</h3>
+<pre><code>numbercolor(N)
+N = integer number &lt; _1+256^3</code></pre>
+<h3>Example</h3>
+<pre><code>   numbercolor(0)</code></pre>
+<pre><code>   numbercolor(2000000)</code></pre>
+<h2 id="numbertohex" class="hdef">numbertohex (monad)</h2>
+<p><b>Form:</b> tacit<br />
+Convert a number to hexadecimal text number.</p>
+<h3>Syntax</h3>
+<pre><code>numbertohex(N)
+N = integer &lt;= 256^3</code></pre>
+<h3>Example</h3>
+<pre><code>   numbertohex(100)
+000064</code></pre>
+<pre><code>   numbertohex(0)
+000000</code></pre>
+<pre><code>  numbertohex(_1+ 256^3)
+ffffff</code></pre>
+<h2 id="numbertorgb" class="hdef">numbertorgb (monad)</h2>
+<p><b>Form:</b> tacit<br />
+Convert number to rgb color triplet.</p>
+<h3>Syntax</h3>
+<pre><code>numbertorgb(N)
+N = number in the range (0,-1+256^3)</code></pre>
+<h3>Example</h3>
+<pre><code>  numbertorgb(6579300)
+100 100 100</code></pre>
+<pre><code>  numbertorgb(0)
+0 0 0</code></pre>
+<pre><code>  numbertorgb(_1+256^3)
+255 255 255</code></pre>
+<h2 id="rgbcolor" class="hdef">rgbcolor (monad)</h2>
+<p><b>Form:</b> explicit<br />
+Show rgb color triplet.</p>
+<h3>Syntax</h3>
+<pre><code>rgbcolor(R,G,B)
+R = red : integer 0 to 255
+G = green : integer 0 to 255
+B = blue : integer 0 to 255</code></pre>
+<h3>Example</h3>
+<pre><code>   rgbcolor(100 100 100)</code></pre>
+<pre><code>   rgbcolor(255 0 0)</code></pre>
+<h2 id="rgbtonumber" class="hdef">rgbtonumber (monad)</h2>
+<p><b>Form:</b> tacit<br />
+Convert rgb color triplet to a number.</p>
+<h3>Syntax</h3>
+<pre><code>rgbtonumber(N)
+N = rgb triplet in the range (0 0 0)...(255 255 255)</code></pre>
+<h3>Example</h3>
+<pre><code>  rgbtonumber(100 100 100)
+6579300</code></pre>
+<pre><code>  rgbtonumber(0 0 0)
+0</code></pre>
+</body>
+</html>

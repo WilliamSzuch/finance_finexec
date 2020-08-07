@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>plots.ijs</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="joxygen.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">plots.ijs</h1>
+</div>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a> <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a> <a class="HREF" href="index.htm" target="_blank">Toolbox</a>
+<hr>
+<p>Script: ~addons/finance/finexec/toolbox/plots.ijs<br />
+Contrinutor: William Szuch<br />
+Updated: 31/7/2020<br />
+Depend: ~addons/graphics/plot.ijs<br />
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../plot.ijs" target="_blank">Script source: plot.ijs</a></p>
+<hr>
+<p>Definitions for using the plot in Qt and JHS.<br />
+Further details about plot see: <a class="HREF" href="https://code.jsoftware.com/wiki/Plot" target="_blank">JWiki Plot</a></p>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+P
+</td>
+<td>
+<a href="#plotfn">plotfn</a>, <a href="#plotjhsshow">plotjhsshow</a>, <a href="#plotkeys">plotkeys</a>, <a href="#plotlink">plotlink</a>, <a href="#plotm">plotm</a>, <a href="#plotnone">plotnone</a>, <a href="#plotshow">plotshow</a>, <a href="#plotsize">plotsize</a>, <a href="#plotsizedefault">plotsizedefault</a>
+</td>
+</tr>
+</table>
+<h2 id="plotfn" class="hdef">plotfn (adverb)</h2>
+<p><b>Form</b> explicit</p>
+<p>Plot the results from a function/defiition.</p>
+<h3>Syntax</h3>
+<pre><code>(f)plotfn(X)
+f = function/definition
+X = values inputed to f</code></pre>
+<h3>Example</h3>
+<pre><code>  f =: %:
+  f plotfn i. 10
+  f plotfn 10 + i. 10</code></pre>
+<pre><code>   sin plotfn i. 100</code></pre>
+<pre><code>  fz =: (*: @: (+/\ @: sin))
+  fz plotfn i. 100</code></pre>
+<pre><code>  (sin,:cos) plotfn(0.1*i.100)</code></pre>
+<h2 id="plotjhsshow" class="hdef">plotjhsshow (monad)</h2>
+<p><b>Form</b> explicit<br />
+Only for JHS.<br />
+Show plot in window plot ie: ~temp/plot.html.</p>
+<h3>Syntax</h3>
+<pre><code>plotjhsshow(P) y</code></pre>
+<h3>Example</h3>
+<pre><code>   plotjhsshow(~temp/plot.html)</code></pre>
+<h2 id="plotkeys" class="hdef">plotkeys (monad)</h2>
+<p><b>Form</b> tacit<br />
+Set up the keys for a plot.</p>
+<h3>Syntax</h3>
+<pre><code>plotkeys(L)
+L = list of boxed labels for the plot</code></pre>
+<h3>Example</h3>
+<pre><code>   plotkeys(&#39;ABC&#39;)
+  (plotkeys(&#39;ABC&#39;))  plot i. 10
+   plotkeys(&#39;ABC&#39;;&#39;EFG&#39;)
+   plotkeys(&#39;ABC&#39;;&#39;DEF&#39;;&#39;EFGAA&#39;)
+   plotkeys(&#39;QxM&#39;;&#39;ALT_2010_12_F&#39;)</code></pre>
+<h2 id="plotlink" class="hdef">plotlink (monad)</h2>
+<p><b>Form</b> explicit<br />
+Only for JHS.<br />
+Show the plot in a link.</p>
+<h3>Syntax</h3>
+<pre><code>plotlink(W,H)
+W = width in pixcels
+H = height in piscels</code></pre>
+<h3>Example</h3>
+<pre><code>   plotlink(300 300)
+The try:
+   plot(i. 10)</code></pre>
+<h2 id="plotm" class="hdef">plotm (verb)</h2>
+<p><b>Form</b> explicit<br />
+Allow for multiple plots in Qt.<br />
+Nove plot window as required to show multiple plots.</p>
+<h3>Syntax</h3>
+<pre><code> plotm - as for plot</code></pre>
+<h3>Example</h3>
+<pre><code>  plotm i. 123
+  plotm *: i. 123
+  &#39;title ASD&#39; plotm *: i. 123
+  plotm each (i.10);(i.100);(%: i. 100)
+  (&#39;title P1&#39;plotm i. 10); (&#39;title P2&#39;plotm %: i. 100)</code></pre>
+<h2 id="plotnone" class="hdef">plotnone (monad)</h2>
+<p><b>Form</b> explicit<br />
+Only for JHS.<br />
+Create plot in ~temp/plot.html.</p>
+<h3>Syntax</h3>
+<pre><code>plotnone(W,H)
+W = width in pixcels
+H = height in piscels</code></pre>
+<h3>Example</h3>
+<pre><code>   plotnone(300 300)
+The try:
+   plot(i. 10)</code></pre>
+<h2 id="plotshow" class="hdef">plotshow (monad)</h2>
+<p><b>Form</b> explicit<br />
+Only for JHS.<br />
+Show the plot in a new tab plot.</p>
+<h3>Syntax</h3>
+<pre><code>plotshow(W,H)
+W = width in pixcels
+H = height in piscels</code></pre>
+<h3>Example</h3>
+<pre><code>   plotshow(300 300)
+The try:
+   plot(i. 10)</code></pre>
+<h2 id="plotsize" class="hdef">plotsize (monad)</h2>
+<p><b>Form</b> explicit<br />
+Only for JHS.<br />
+Change the size of the plot in the Execution Window<br />
+for subsequent plots.<br />
+Default setting in pixcels: W =500,H = 400</p>
+<h3>Syntax</h3>
+<pre><code>plotsize(W,H)
+W = width in pixcels
+H = height in piscels</code></pre>
+<h3>Example</h3>
+<pre><code>   plotsize(300 300)
+The try:
+   plot(i. 10)</code></pre>
+<h2 id="plotsizedefault" class="hdef">plotsizedefault (monad)</h2>
+<p><b>Form</b> explicit<br />
+Only for JHS<br />
+set default plot size<br />
+size attributes for subsequent plots</p>
+<h3>Syntax</h3>
+<pre><code>plotsizedefault &#39;&#39;</code></pre>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title>lists.ijs</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="joxygen.css" type="text/css" />
+</head>
+<body>
+<div id="header">
+<h1 class="title">lists.ijs</h1>
+</div>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a> <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a> <a class="HREF" href="index.htm" target="_blank">Toolbox</a>
+<hr>
+<p>script: ~adons/finance/finexec/toolbox/lists.ijs<br />
+Contributor: William Szuch<br />
+Updated: 5/8/2020<br />
+depend:nil<br />
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../lists.ijs" target="_blank">Script source: lists.ijs</a></p>
+<hr>
+<p>Definitions for creating lists of data, numeris and text.</p>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+E
+</td>
+<td>
+<a href="#extend">extend</a>, <a href="#extenda">extenda</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="#steps">steps</a>
+</td>
+</tr>
+</table>
+<h2 id="extend" class="hdef">extend (dyad)</h2>
+<p><b>Form:</b> tacit<br />
+Extend the last item of a list.</p>
+<h3>Syntax</h3>
+<pre><code>(N)extend(L)
+N = number of items in the extended list
+L = list to be extended</code></pre>
+<h3>Example</h3>
+<pre><code>   (12)extend(1.01 1.02 1.03)
+1.01 1.02 1.03 1.03 1.03 1.03 1.03 1.03 1.03 1.03 1.03 1.03</code></pre>
+<pre><code>   (2)extend(1.01 1.02 1.03 1.04 1.05)
+1.01 1.02</code></pre>
+<pre><code>   (15)extend(&#39;asd&#39;)
+asddddddddddddd</code></pre>
+<pre><code>   (6)extend(&#39;ad&#39;;1;2;&#39;ZZ&#39;)
+┌──┬─┬─┬──┬──┬──┐
+│ad│1│2│ZZ│ZZ│ZZ│
+└──┴─┴─┴──┴──┴──┘</code></pre>
+<h2 id="extenda" class="hdef">extenda (dyad)</h2>
+<p><b>Form:</b> tacit<br />
+Extend the last item of a list.<br />
+Similiar to extend except reversed.</p>
+<h3>Syntax</h3>
+<pre><code>(L)extenda(N)
+N = number of items in the extended list
+L = list to be extended</code></pre>
+<h3>Example</h3>
+<pre><code>   (1.01 1.02 1.03)extenda(12)
+1.01 1.02 1.03 1.03 1.03 1.03 1.03 1.03 1.03 1.03 1.03 1.03</code></pre>
+<pre><code>   (1.01 1.02 1.03 1.04 1.05)extenda(2)
+1.01 1.02</code></pre>
+<pre><code>   (&#39;asd&#39;)extenda(15)
+asddddddddddddd</code></pre>
+<pre><code>   (&#39;ad&#39;;1;2;&#39;ZZ&#39;)extenda(6)
+┌──┬─┬─┬──┬──┬──┐
+│ad│1│2│ZZ│ZZ│ZZ│
+└──┴─┴─┴──┴──┴──┘</code></pre>
+<h2 id="steps" class="hdef">steps (monad)</h2>
+<p><b>Form:</b> tacit<br />
+Generate uniform steps over a closed interval.<br />
+The end points of the interval are inculded.</p>
+<h3>Syntax</h3>
+<pre><code>steps(A,B,N)
+A = lower limit of range
+B = upper limit of range
+N = number of steps in the interval</code></pre>
+<h3>Example</h3>
+<pre><code>   steps(0,10,5)
+0 2 4 6 8 10</code></pre>
+<pre><code>   steps(1.0,1.1,10)
+1 1.01 1.02 1.03 1.04 1.05 1.06 1.07 1.08 1.09 1.1</code></pre>
+</body>
+</html>

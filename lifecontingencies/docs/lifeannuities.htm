@@ -12,14 +12,16 @@
 <div id="header">
 <h1 class="title">lifeannuities.ijs</h1>
 </div>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a> <a class="HREF" href="../../finexec_category.html" target="_blank">Category</a> <a class="HREF" href="index.htm" target="_blank">Life Contingencies</a>
+<hr>
 <p>Script: ~addons/finance/finexec/lifecontingencies/lifeannuities.ijs<br />
 Contributor: William Szuch<br />
-Updated: 3/2/2020<br />
+Updated: 31/7/2020<br />
 Depend: ~addons/finance/finexec/qxtables/qxtools.ijs'<br />
-Definitions: loaded to locale base</p>
-<hr>
-<p><a class="HREF" href="index.htm" target="_blank">Category: Life Contingencies</a><br />
-<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a></p>
+Definitions: loaded to locale base<br />
+Status: update:<br />
+<a href="../lifeannuities.ijs" target="_blank">Script scource: lifeannuities.ijs</a></p>
 <hr>
 <p>Definitions to calculate life annuities<br />
 for single and multiple lives.<br />
@@ -27,8 +29,17 @@ Qx tables loaded to the locale base.<br />
 See: Qx_ALL for a list of names.<br />
 See: Qx_ALT for a list of Australian Life Tables.<br />
 All mortality tables start at age = 0.<br />
-<a href="../eqs/lifeannuities_ijs_eqs.html" target="_blank">Script equations: lifeannuities.ijs</a><br />
-<a href="../lifeannuities.ijs" target="_blank">Script source: lifeannuities.ijs</a></p>
+<img alt="NF" src="../eqs/lifeannuities_ijs_eqs.gif"></p>
+<hr>
+<p>Note:<br />
+(1) Extending Qx tables by 5 years.<br />
+(2) Variable interest rates<br />
+(3) Multiple lives<br />
+(4) term annuities<br />
+(5) axy<br />
+(6) reversionary<br />
+(7) payment frequency with a year<br />
+(8) dev tacits</p>
 <hr>
 <h2>Definitions</h2>
 <table class="map">
@@ -43,8 +54,7 @@ A
 </table>
 <h2 id="ax" class="hdef">ax (dyad)</h2>
 <p><b>Form:</b> tacit<br />
-single life annuity with yearly payments of 1 in arrears.<br />
-<a href="../eqs/ax_eq.html" target="_blank">Equation: (Qx)ax(Age)</a></p>
+single life annuity with yearly payments of 1 in arrears.</p>
 <h3>Syntax</h3>
 <pre><code>(Qx;E)ax(Age)
 Qx = name of Qx table starting at age = 0
@@ -59,8 +69,7 @@ Age = integer ages</code></pre>
 22.367 16.4441 13.1335</code></pre>
 <h2 id="ax0" class="hdef">ax0 (dyad)</h2>
 <p><b>Form:</b> tacit<br />
-single life annuity with yearly payments of 1 in advance.<br />
-<a href="../eqs/ax0_eq.html" target="_blank">Equation: (Qx)ax0(Age)</a></p>
+single life annuity with yearly payments of 1 in advance.</p>
 <h3>Syntax</h3>
 <pre><code>(Qx;E)ax0(Age)
 Qx = name of Qx table starting at age = 0
@@ -77,8 +86,7 @@ Age = integer ages</code></pre>
 <p><b>Form:</b> tacit<br />
 Monadic form of ax0<br />
 Single life annuity with payments yearly payments<br />
-in advance of one.<br />
-<a href="../eqs/ax0_M_eq.html" target="_blank">Equation: ax0_M(Qx;Age;E)</a></p>
+in advance of one.</p>
 <h3>Syntax</h3>
 <pre><code>axm0(Qx;Age;E)
 Qx = name of Qx table starting at age = 0
@@ -97,8 +105,7 @@ Monadic form of ax.<br />
 single life annuity with payments in arrears<br />
 <a href="../eqs/ax_M_eq.html" target="_blank">Equation: (Qx)ax_M(Age)</a><br />
 Calculate the value of a single life annuity with<br />
-yearly payments in arrears of one.<br />
-<a href="../equations/ax_M_eq.html" target="_blank">Equation: ax_M(Qx;Age;E)</a></p>
+yearly payments in arrears of one.</p>
 <h3>Syntax</h3>
 <pre><code>ax_M(Qx;Age;E)
 Qx = name of Qx table starting at age = 0
@@ -113,8 +120,7 @@ E = yearly effective interest rate</code></pre>
 22.367 16.4441 13.1335</code></pre>
 <h2 id="axn" class="hdef">axn (dyad)</h2>
 <p><b>Form:</b> explicit<br />
-Single life term annuity with yearly payments of 1 in arrears.<br />
-<a href="../eqs/axn_eq.html" target="_blank">Equation: (Qx;E)axn(Age;N)</a></p>
+Single life term annuity with yearly payments of 1 in arrears.</p>
 <h3>Syntax</h3>
 <pre><code>(Qx;E)axn(Age;N)
 Qx = name of Qx table starting at age = 0
@@ -136,8 +142,7 @@ N = term of annuity - integer years</code></pre>
 <h2 id="axn1" class="hdef">axn1 (dyad)</h2>
 <p><b>Form:</b> tacit<br />
 (Same as axn - one life)<br />
-Single life term annuity with yearly payments of 1 in arrears.<br />
-<a href="../eqs/axn1_eq.html" target="_blank">Equation: (Qx;E)axn1(Age;N)</a></p>
+Single life term annuity with yearly payments of 1 in arrears.</p>
 <h3>Syntax</h3>
 <pre><code>(Qx;E)axn1(Age;N)
 Qx = name of Qx table starting at age = 0
@@ -154,8 +159,7 @@ N = term of annuity - integer years</code></pre>
 Joint life annuity with yearly payments of 1 in arrears.<br />
 (ie: payable while both lives are alive)<br />
 The last value in the Qx tables is extended so that tables<br />
-are of equal length for the selected ages.<br />
-<a href="../eqs/axy_eq.html" target="_blank">Equation: (Qx;Qy;E)ax(Agex;Agey)</a></p>
+are of equal length for the selected ages.</p>
 <h3>Syntax</h3>
 <pre><code>(Qx;Qy;E)ax(Agex;Agey)
 Qx = name of Qx table for life x starting at age = 0
@@ -177,8 +181,7 @@ Agey = age of life y(integer age)</code></pre>
 Last survivor annuity with yearly payments of 1 in arrears.<br />
 (ie: payable while at least one life is alive)<br />
 The last value in the Qx tables is extended so that tables<br />
-are of equal length for the selected ages.<br />
-<a href="../eqs/axyLS_eq.html" target="_blank">Equation: (Qx;Qy;E)axyLS(Agex;Agey)</a></p>
+are of equal length for the selected ages.</p>
 <h3>Syntax</h3>
 <pre><code>(Qx;Qy;E)axLS(Agex;Agey)
 Qx = name of Qx table for life x starting at age = 0
@@ -201,8 +204,7 @@ Reversionary annuity - payable on the life of x<br />
 then a percentage to the life y if life y survives life x.<br />
 Payments yearly in arresrs.<br />
 The last value in the Qx tables is extended so that tables<br />
-are of equal length for the selected ages.<br />
-<a href="../eqs/axyR_eq.html" target="_blank">Equation: (Qx;Qy;E)axyR(Agex;Agey)</a></p>
+are of equal length for the selected ages.</p>
 <h3>Syntax</h3>
 <pre><code>(Qx;Qy;E)axLS(P:Agex;Agey)
 Qx = name of Qx table for life x starting at age = 0

@@ -1,13 +1,17 @@
 NB. =========================================================
 NB.%lifeannuities.ijs - Life annuity definitions
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Life Contingencies</a>
+NB.-<hr>
 NB.- Script: ~addons/finance/finexec/lifecontingencies/lifeannuities.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 3/2/2020
+NB.- Updated: 31/7/2020
 NB.- Depend: ~addons/finance/finexec/qxtables/qxtools.ijs'
 NB.- Definitions: loaded to locale base
-NB.-<hr>
-NB.- <a class="HREF" href="index.htm" target="_blank">Category: Life Contingencies</a>
-NB.- <a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
+NB.- Status: update:
+NB.- <a href="../lifeannuities.ijs" target="_blank">Script scource: lifeannuities.ijs</a>
 NB.-<hr>
 NB.- Definitions to calculate life annuities 
 NB.- for single and multiple lives.
@@ -15,10 +19,8 @@ NB.- Qx tables loaded to the locale base.
 NB.- See: Qx_ALL for a list of names.
 NB.- See: Qx_ALT for a list of Australian Life Tables.
 NB.- All mortality tables start at age = 0.
-NB.- <a href="../eqs/lifeannuities_ijs_eqs.html" target="_blank">Script equations: lifeannuities.ijs</a>
-NB.- <a href="../lifeannuities.ijs" target="_blank">Script source: lifeannuities.ijs</a>
+NB.- <img alt="NF" src="../eqs/lifeannuities_ijs_eqs.gif">
 NB.-<hr>
-NB. =========================================================
 NB.- Note:
 NB.- (1) Extending Qx tables by 5 years. 
 NB.- (2) Variable interest rates
@@ -28,7 +30,7 @@ NB.- (5) axy
 NB.- (6) reversionary
 NB.- (7) payment frequency with a year
 NB.- (8) dev tacits
-NB.<hr>
+NB.-<hr>
 
 
 require '~addons/finance/fp/qxtables/qxtools.ijs'
@@ -49,7 +51,6 @@ NB. =========================================================
 NB.*ax d - 
 NB.- <b>Form:</b> tacit
 NB.- single life annuity with yearly payments of 1 in arrears.
-NB.- <a href="../eqs/ax_eq.html" target="_blank">Equation: (Qx)ax(Age)</a>
 NB.-syntax:
 NB.+(Qx;E)ax(Age)
 NB.+Qx = name of Qx table starting at age = 0
@@ -81,7 +82,6 @@ NB. =========================================================
 NB.*ax0 d - 
 NB.- <b>Form:</b> tacit
 NB.- single life annuity with yearly payments of 1 in advance.
-NB.- <a href="../eqs/ax0_eq.html" target="_blank">Equation: (Qx)ax0(Age)</a>
 NB.-syntax:
 NB.+(Qx;E)ax0(Age)
 NB.+Qx = name of Qx table starting at age = 0
@@ -113,7 +113,6 @@ NB.- single life annuity with payments in arrears
 NB.- <a href="../eqs/ax_M_eq.html" target="_blank">Equation: (Qx)ax_M(Age)</a>
 NB.- Calculate the value of a single life annuity with
 NB.- yearly payments in arrears of one.
-NB.- <a href="../equations/ax_M_eq.html" target="_blank">Equation: ax_M(Qx;Age;E)</a>
 NB.-syntax:
 NB.+ax_M(Qx;Age;E)
 NB.+Qx = name of Qx table starting at age = 0
@@ -146,7 +145,6 @@ NB.- <b>Form:</b> tacit
 NB.- Monadic form of ax0
 NB.- Single life annuity with payments yearly payments 
 NB.- in advance of one.
-NB.- <a href="../eqs/ax0_M_eq.html" target="_blank">Equation: ax0_M(Qx;Age;E)</a>
 NB.-syntax:
 NB.+axm0(Qx;Age;E)
 NB.+Qx = name of Qx table starting at age = 0
@@ -175,7 +173,6 @@ NB.*axn1 d -
 NB.- <b>Form:</b> tacit 
 NB.- (Same as axn - one life)
 NB.- Single life term annuity with yearly payments of 1 in arrears.
-NB.- <a href="../eqs/axn1_eq.html" target="_blank">Equation: (Qx;E)axn1(Age;N)</a>
 NB.-syntax:
 NB.+(Qx;E)axn1(Age;N)
 NB.+Qx = name of Qx table starting at age = 0
@@ -208,7 +205,6 @@ NB. =========================================================
 NB.*axn d -
 NB.- <b>Form:</b> explicit
 NB.- Single life term annuity with yearly payments of 1 in arrears.
-NB.- <a href="../eqs/axn_eq.html" target="_blank">Equation: (Qx;E)axn(Age;N)</a>
 NB.-syntax:
 NB.+(Qx;E)axn(Age;N)
 NB.+Qx = name of Qx table starting at age = 0
@@ -254,7 +250,6 @@ NB.- Joint life annuity with yearly payments of 1 in arrears.
 NB.- (ie: payable while both lives are alive)
 NB.- The last value in the Qx tables is extended so that tables
 NB.- are of equal length for the selected ages.
-NB.- <a href="../eqs/axy_eq.html" target="_blank">Equation: (Qx;Qy;E)ax(Agex;Agey)</a>
 NB.-syntax:
 NB.+(Qx;Qy;E)ax(Agex;Agey)
 NB.+Qx = name of Qx table for life x starting at age = 0
@@ -298,7 +293,6 @@ NB.- Last survivor annuity with yearly payments of 1 in arrears.
 NB.- (ie: payable while at least one life is alive)
 NB.- The last value in the Qx tables is extended so that tables
 NB.- are of equal length for the selected ages.
-NB.- <a href="../eqs/axyLS_eq.html" target="_blank">Equation: (Qx;Qy;E)axyLS(Agex;Agey)</a>
 NB.-syntax:
 NB.+(Qx;Qy;E)axLS(Agex;Agey)
 NB.+Qx = name of Qx table for life x starting at age = 0
@@ -347,7 +341,6 @@ NB.- then a percentage to the life y if life y survives life x.
 NB.- Payments yearly in arresrs.
 NB.- The last value in the Qx tables is extended so that tables
 NB.- are of equal length for the selected ages.
-NB.- <a href="../eqs/axyR_eq.html" target="_blank">Equation: (Qx;Qy;E)axyR(Agex;Agey)</a>
 NB.-syntax: 
 NB.+(Qx;Qy;E)axLS(P:Agex;Agey)
 NB.+Qx = name of Qx table for life x starting at age = 0

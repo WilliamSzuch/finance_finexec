@@ -2,10 +2,14 @@ NB. =========================================================
 NB. header for main page index.htm
 IndexHdr=: 0 : 0
 <h1>Finexec: Category: Qx Tables (Mortality tables)</h1>
+<hr>
+<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+<hr>
 Script: ~addons/finance/finexec/qxtables/qxtables_docs.ijs<br>
+Updated: 28/7/2020<br>
 Definitions for loading, modifying and plotting Qx tables.<br>
 Qx tables (mortality tables) can be loaded for a project.<br>
-<a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
 <hr>
 <pre>
 Some conventions with respect to the Qx tables.

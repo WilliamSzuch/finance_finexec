@@ -1,21 +1,24 @@
 NB. =========================================================
 NB.%lifetable.ijs - Life table definitions
+NB.-<hr>
+NB.-<a class="HREF" href="../../finexec_addon.html" target="_blank">Addon</a>
+NB.-<a class="HREF" href="../../finexec_category.html" target="_blank">Category</a>
+NB.-<a class="HREF" href="index.htm" target="_blank">Life Contingencies</a>
+NB.-<hr>
 NB.- Script: ~addons/finance/finexec/lifecontingencies/lifetable.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 3/2/2020
+NB.- Updated: 31/2/2020
 NB.- Depend: ~addons/finance/finexec/qxtables/qxtools.ijs'
 NB.- Definitions: loaded to locale base
-NB.-<hr>
-NB.- <a class="HREF" href="index.htm" target="_blank">Category: Life Contingencies</a>
-NB.- <a class="HREF" href="../../finexec_category.html" target="_blank">Finexec: Category</a>
+NB.- Status: todo: equations
+NB.- <a href="../lifetable.ijs" target="_blank">Script source: lifetable.ijs</a>
 NB.-<hr>
 NB.- Definitions to calculate life table functions and survival factors.
 NB.- Qx tables loaded to the locale base.
 NB.- See: Qx_ALL for a list of names.
 NB.- See: Qx_ALT for a list of Australian Life Tables.
 NB.- All mortality tables start at age = 0.
-NB.- <a href="../eqs/lifetable_ijs_eqs.html" target="_blank">Script equations: lifetable.ijs</a>
-NB.- <a href="../lifetable.ijs" target="_blank">Script source: lifetable.ijs</a>
+NB.- <img alt="NF" src="../eqs/lifetable_ijs_eqs.gif"></a>
 NB.-<hr>
 NB.- Note:
 NB.- (1) Dealing with Ages outside the range of the mortality table.
@@ -41,7 +44,6 @@ NB.*qx d -
 NB.- <b>Form:</b> tacit
 NB.- The probability of dying within a year for the selected Qx table. 
 NB.- Qx tables start from age = 0. 
-NB.- <a href="../eqs/qx_eq.html" target="_blank">Equation: (Qx)qx(Age)</a>
 NB.-syntax:
 NB.+(Qx)qx(Age)
 NB.+Qx = name of Qx table starting at age = 0
@@ -61,7 +63,6 @@ NB.*px d -
 NB.- <b>Form:</b> tacit
 NB.- The probability of surviving a year for the selected Qx mortality table.<br> 
 NB.- Qx tables start from age = 0. 
-NB.- <a href="../eqs/px_eq.html" target="_blank">Equation: (Qx)px(Age)</a>
 NB.-syntax:
 NB.+(Qx)px(Age)
 NB.+Qx = name of Qx table starting at age = 0
@@ -87,7 +88,6 @@ NB.- <b>Form:</b> tacit
 NB.- The probability of a life surviving N years for the selected Qx table.
 NB.- Qx tables start from age = 0.
 NB.- (for one life) -  same equation as pxn
-NB.- <a href="../eqs/pxn_eq.html" target="_blank">Equation: (Qx)pxn(Age;N)</a>
 NB.-syntax:
 NB.+(Qx)pxn1(Age;N)
 NB.+Qx = name of Qx table starting at age = 0
@@ -125,7 +125,6 @@ NB.- <b>Depend:</b> boxtable
 NB.- Extension of pxn1
 NB.- The probability of a life surviving N years for the selected Qx table.
 NB.- Qx tables start from age = 0. 
-NB.- <a href="../eqs/pxn_eq.html" target="_blank">Equation: (Qx)pxn(Age;N)</a>
 NB.-syntax:
 NB.+(Qx)pxn(Age;N)
 NB.+Qx = name of Qx table starting at age = 0
@@ -162,7 +161,6 @@ NB.- <b>Form:</b> tacit
 NB.- The probability of a life dying within N years for the selected Qx table.
 NB.- Mortality tables start from age = 0. 
 NB.- (for one life) -  same equation as qxn
-NB.- <a href="../eqs/qxn_eq.html" target="_blank">Equation: (Qx)qxn(Age;N)</a>
 NB.-syntax:
 NB.+(Qx)qxn1(Age;N)
 NB.+Qx = name of Qx table starting at age = 0
@@ -197,7 +195,6 @@ NB.- Extension of qxn1.
 NB.- The probability for multiple ages dying with multiple periods 
 NB.- for the selected Qx table.
 NB.-Qx tables start from age = 0. 
-NB.- <a href="../eqs/qxn_eq.html" target="_blank">Equation: (Qx)qxn(Age;N)</a>
 NB.-syntax:
 NB.+(Qx)qxn(Age;N)
 NB.+Qx = name of Qx table starting at age = 0
@@ -237,7 +234,6 @@ NB.-note:
 NB.- The complete expectation of life is the average number of 
 NB.- years lived by person aged x from age x.<br>
 NB.- The final value in the Qx table is extended by 5 years.
-NB.- <a href="../eqs/ex_eq.html" target="_blank">Equation: (Qx)ex(Age)</a>
 NB.-syntax:
 NB.+(Qx)ex(Age)
 NB.+Qx = name of Qx table starting at age = 0
@@ -272,7 +268,6 @@ NB.- The complete expectation of life is the average number of
 NB.- years lived by person aged x from age x.<br>
 NB.- The final value in the qx table has not been extended.
 NB.- Same equation as for ex.
-NB.- <a href="../eqs/ex_eq.html" target="_blank">Equation: (Qx)ex(Age)</a>
 NB.-syntax:
 NB.+(Qx)exz(Age)
 NB.+Qx = name of Qx table starting at age = 0
@@ -301,7 +296,6 @@ NB.*lx d -
 NB.- Calculate the number of lives surviving to Age from 100,000 births for the 
 NB.- Qx selected table.
 NB.- Qx tables start from Age = 0.
-NB.- <a href="../eqs/lx_eq.html" target="_blank">Equation: (Qx)lx(Age)</a> 
 NB.-syntax:
 NB.+(Qx)lx(Age)
 NB.+Qx = name of Qx table starting at age = 0
@@ -330,7 +324,6 @@ NB.- Calculate the number lives surviving to Age + N from 100,000 lives
 NB.- at Age for the selected Qx table.
 NB.- Qx tables start from age = 0. 
 NB.- (for one life) -  same equation as lxn
-NB.- <a href="../eqs/lxn_eq.html" target="_blank">Equation: (Qx)lxn(Age;N)</a>
 NB.-syntax:
 NB.+(Qx)lxn1(Age;N)
 NB.+Qx = name of Qx table starting at age = 0
@@ -359,7 +352,6 @@ NB.- Multiple ages surviving for multiple periods in years
 NB.- Calculate for multiple ages and periods surviving from 100,000
 NB.- lives at each age for the selected (Qx) mortality table.
 NB.- Qx tables start from age = 0. 
-NB.- <a href="../eqs/lxn_eq.html" target="_blank">Equation: (Qx)lxn(Age;N)</a>
 NB.-syntax:
 NB.+(Qx)lxn(Age;N)
 NB.+Qx = name of Qx table starting at age = 0
@@ -396,7 +388,6 @@ NB.- Number of deaths from Age to Age + 1
 NB.- from lx(Age) lives at Age. 
 NB.-note:
 NB.- lx(Age) is the number of lives surviving to Age from 100000 biths.
-NB.- <a href="../eqs/dx_eq.html" target="_blank">Equation: (Qx)dx(Age)</a>
 NB.-syntax:
 NB.+(Qx)dx(Age)  
 NB.+Qx = name of qx table starting at age = 0
@@ -419,10 +410,6 @@ dx =. (lx - (lx (1+]))) f.
 NB. =========================================================
 NB. Distributions and Plots
 NB. =========================================================
-
-
-
-
 
 
 NB. =========================================================
