@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>simple.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">simple.ijs</h1>
+</header>
+<hr>
+<a href="http://www.finexec.com.au" target="_blank">Finexec | </a> <a class="HREF" href="../../finexec_doc.html" target="_blank">Documentation | </a> <a class="HREF" href="../../finexec_cat.html" target="_blank">Category | </a> <a class="HREF" href="index.htm" target="_blank">Basic Finance</a>
+<hr>
+<div class="line-block">Script: ~addons/finance/finexec/basicfinance/simple.ijs<br />
+Contributor: William Szuch<br />
+Updated: 18/3/2021<br />
+Depend: nil<br />
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../simple.ijs" target="_blank">Script source: simple.ijs</a></div>
+<hr>
+<div class="line-block">Definitions for solving simple interest rate problems for<br />
+a constant simple interest rate over a period.</div>
+<hr>
+<div class="line-block">Equations:<br />
+<img alt="NF" src="../eqs/simple_ijs_eqs.gif"></div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+E
+</td>
+<td>
+<a href="#effectiveFromSimple">effectiveFromSimple</a>, <a href="#effectiveFromSimple_T">effectiveFromSimple_T</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+R
+</td>
+<td>
+<a href="#r">r</a>, <a href="#rt">rt</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="#s">s</a>, <a href="#simpleFromEffective">simpleFromEffective</a>, <a href="#simpleFromEffective_T">simpleFromEffective_T</a>, <a href="#sirate">sirate</a>, <a href="#sirate_E">sirate_E</a>, <a href="#st">st</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="effectiveFromSimple_T" class="rid">
+effectiveFromSimple_T
+</td>
+<td class="rtype">
+d
+</td>
+<td class="rdef">
+Tacit form of effectiveFromSimple
+</td>
+</tr>
+<tr>
+<td id="simpleFromEffective_T" class="rid">
+simpleFromEffective_T
+</td>
+<td class="rtype">
+d
+</td>
+<td class="rdef">
+Tacit form of simpleFromEffective
+</td>
+</tr>
+<tr>
+<td id="sirate_E" class="rid">
+sirate_E
+</td>
+<td class="rtype">
+m
+</td>
+<td class="rdef">
+Explicit form of sirate
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="effectiveFromSimple">effectiveFromSimple (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Calculate the effective interest rate for a time from the<br />
+simple interest rate for a time unit over a period.</div>
+<h3>Syntax</h3>
+<pre><code>(S)effectiveFromSimple(T)
+S = constant simple interest rate for one time unit over the period
+T = number of time units in the period</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.05)effectiveFromSimple(1)
+0.05</code></pre>
+<pre><code>   (0.05)effectiveFromSimple(3)
+0.0476896</code></pre>
+<pre><code>   (0.05)effectiveFromSimple(i. 10)
+0 0.05 0.0488088 0.0476896 0.0466351 0.0456396 0.0446975 0.0438044 0.042956 0.0421489</code></pre>
+<h2 class="hdef" id="r">r (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+<b>Depend:</b> nil<br />
+Present value of 1 payable in 1 time unit<br />
+for a simple interest rate S.</div>
+<h3>Syntax</h3>
+<pre><code>r(S)
+S = simple interest rate for one time unit</code></pre>
+<h3>Example</h3>
+<pre><code>   r(0.05)
+0.952381</code></pre>
+<pre><code>   r(0 0.01 0.05 0.09)
+1 0.990099 0.952381 0.917431</code></pre>
+<h2 class="hdef" id="rt">rt (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+<b>Depend:</b> nil<br />
+Present value of 1 payable in a period of T time units<br />
+for a constant simple interest rate S over the period.</div>
+<h3>Syntax</h3>
+<pre><code>(S)rt(T)
+S = constant simple interest rate for one time unit over the period
+T = number of time units in the period</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.05)rt(10)
+0.666667</code></pre>
+<pre><code>   (0.05)rt(0.1)
+0.995025</code></pre>
+<pre><code>   (0.05)rt(0.1 0.5 0.75 1)
+0.995025 0.97561 0.963855 0.952381</code></pre>
+<pre><code>   (0 0.05 0.07)rt(0 0.1 0.5 0.75 1)
+1        1        1
+1 0.995025 0.993049
+1  0.97561 0.966184
+1 0.963855 0.950119
+1 0.952381 0.934579</code></pre>
+<h2 class="hdef" id="s">s (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+<b>Depend:</b> nil<br />
+Future value of 1 in 1 time unit<br />
+for a simple interest rate S.<br />
+syntax:</div>
+<pre><code>   s(S)
+S = simple interest rate for one time unit</code></pre>
+<h3>Example</h3>
+<pre><code>   s(0.05)
+1.05</code></pre>
+<pre><code>   s(0 0.05 0.1 0.15)
+1 1.05 1.1 1.15</code></pre>
+<h2 class="hdef" id="simpleFromEffective">simpleFromEffective (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Calculate the simple interest rate for a time from the<br />
+effective interest rate for a time unit over a period.</div>
+<h3>Syntax</h3>
+<pre><code>(E)simpleFromEffective(T)
+E = constant effective interest rate for one time unit over the period
+T = number of time units in the period</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.05)simpleFromEffective(1)
+0.05</code></pre>
+<pre><code>   (0.05)simpleFromEffective(3)
+0.0525417</code></pre>
+<pre><code>   (0.05)simpleFromEffective(i. 10)
+0 0.05 0.05125 0.0525417 0.0538766 0.0552563 0.0566826 0.0581572 0.0596819 0.0612587</code></pre>
+<h2 class="hdef" id="sirate">sirate (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+<b>Depend:</b> nil<br />
+Calculate the simple interest rate for a<br />
+time unit from the amount at the start and end of a period.</div>
+<h3>Syntax</h3>
+<pre><code> sirate(A0;A1;T)
+A0 = amount at start of a period
+A1 = amount at end of the period
+T =  period in time units</code></pre>
+<h3>Example</h3>
+<pre><code>  sirate(100;110;1)
+0.1</code></pre>
+<pre><code>   sirate(100;90;1)
+ _0.1</code></pre>
+<pre><code>   sirate(100;103;(91%365))
+0.12033</code></pre>
+<pre><code>   sirate(100;110;0.5 0.7 1 1.1)
+0.2 0.142857 0.1 0.0909091</code></pre>
+<h2 class="hdef" id="st">st (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+<b>Depend:</b> nil<br />
+Future value of 1 in T time units<br />
+for a simple interest rate S.</div>
+<h3>Syntax</h3>
+<pre><code>(S)st(T)
+S = constant simple interest rate for one time unit over the period
+T = number of time units in the period</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.05)st(0.6)
+1.03</code></pre>
+<pre><code>   (0.05)st(0 0.5 1.5)
+1 1.025 1.075</code></pre>
+<pre><code>   (0.05 0.07)st(0.1 0.5 0.75 1)
+ 1.005  1.007
+ 1.025  1.035
+1.0375 1.0525
+  1.05   1.07</code></pre>
+</body>
+</html>
