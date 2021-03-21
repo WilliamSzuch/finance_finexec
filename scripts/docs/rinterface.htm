@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>rinterface.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">rinterface.ijs</h1>
+</header>
+<hr>
+<a href="http://www.finexec.com.au" target="_blank">Finexec | </a> <a class="HREF" href="../../finexec_doc.html" target="_blank">Documentation | </a> <a class="HREF" href="../../finexec_cat.html" target="_blank">Category | </a> <a class="HREF" href="index.htm" target="_blank">Rstats</a>
+<hr>
+<div class="line-block">Script: ~addons/finance/finexec/rstats/rinterface.ijs<br />
+Contributor: William Szuch<br />
+Updated: 28/2/2021<br />
+Depend: R statitical package<br />
+        Rserve.exe package<br />
+        ~addons/stats/r/rserve.ijs<br />
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../rinterface.ijs" target="_blank">Script source: rinterface.ijs</a></div>
+<hr>
+<div class="line-block">The interface definition is an example only and requires to be<br />
+modified for the R Stats package installation.<br />
+See the source code: ~addons/finance/fp/rstats/rinterface.ijs<br />
+Example definition:</div>
+<div class="line-block">rinterface =: 3 : 0<br />
+fork_jtask_ ‘C:/Program Files/R/R-3.6.1/bin/x64/Rserve.exe’<br />
+)</div>
+<div class="line-block">Tools for interfacing J with the statisical package R.<br />
+The interface is made through the Rserve.exe package.<br />
+For details see:<br />
+<a class="HREF" href="https://code.jsoftware.com/wiki/Interfaces/R">J interface to R</a></div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+R
+</td>
+<td>
+<a href="#rinterface">rinterface</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="rinterface">rinterface (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Example only - definition requires to be modified.<br />
+Creates the interface between J and R.</div>
+<h3>Syntax</h3>
+<pre><code>rinterface &#39;&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>   rinterface &#39;&#39;
+
+Testing the interface of J with R.
+  Rget &#39;pi&#39;
+3.14159</code></pre>
+<pre><code>   Rget &#39;rnorm(5)&#39;
+0.141088 _0.116309 _1.08985 _0.902064 _0.150221</code></pre>
+<pre><code>   Rget &#39;R.Version()&#39;</code></pre>
+</body>
+</html>

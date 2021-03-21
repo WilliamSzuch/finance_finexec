@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>edatetime_tools.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">edatetime_tools.ijs</h1>
+</header>
+<hr>
+<a href="http://www.finexec.com.au" target="_blank">Finexec | </a> <a class="HREF" href="../../finexec_doc.html" target="_blank">Documentation | </a> <a class="HREF" href="../../finexec_cat.html" target="_blank">Category | </a> <a class="HREF" href="index.htm" target="_blank">Date Time</a>
+<hr>
+<div class="line-block">Script: ~addons/finexec/datetime/edatetime_tools.ijs<br />
+Contributor: William Szuch<br />
+Updated: 18/3/2021<br />
+Depend: Foreigns: 6!:14, 6!:15, 6!:16 and 6!:17<br />
+Definitions loaded to locale: base<br />
+Status: dev:<br />
+<a href="../edatetime_tools.ijs" target="_blank">Script source: edatetime.ijs</a></div>
+<hr>
+<div class="line-block">This script has definitions that are useful for handling edatetimes.<br />
+For more detailed information see:<br />
+&lt;href “https://code.jsoftware.com/wiki/Vocabulary/Foreigns#m6” _blank&gt;Foreigns 6!:</a></div>
+<p>note:</p>
+<div class="line-block">Leap Year:<br />
+Every year that is exactly divisible by four is a leap year,<br />
+except for years that are exactly divisible by 100;<br />
+The centurial years that are exactly divisible by 400 are still leap years.<br />
+For example, the years 1800,1900,2100,2200 are not leap years;<br />
+The year 2000 is leap year.</div>
+<div class="line-block">Nano second = 1e_9<br />
+Milli second = 1e_3</div>
+<div class="line-block">edateimes are measured in nanoseconds from 1/1/2000.</div>
+<div class="line-block">edatetimes are in the range:<br />
+1800-01-01 to 2200-12-31<br />
+If the edatetime is outside the range the result is the error:<br />
+ _9223372036854775808.</div>
+<div class="line-block">digit datetime integer: YYYYMMDDhhmmss<br />
+Expanded digit dateime: Year, Month, Day, Hours, Minutes, Seconds, nanoseconds</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+D
+</td>
+<td>
+<a href="#ddtn">ddtn</a>, <a href="#dtn">dtn</a>, <a href="#dtn0">dtn0</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+N
+</td>
+<td>
+<a href="#nddt">nddt</a>, <a href="#ndt">ndt</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="ddtn">ddtn (monad)</h2>
+<div class="line-block"><b>Form</b> tacit<br />
+<b>Depend:</b> Foreign 6!:15<br />
+Convert nanosecond datetime to expanded digit datetime<br />
+Expanded digit dateime: Year, Month, Day, Hours, Minutes, Seconds, nanoseconds</div>
+<h3>Syntax</h3>
+<pre><code>ddtn(N)
+N = nanoseconds</code></pre>
+<h3>Example</h3>
+<pre><code>  ddtn(0)
+2000 1 1 0 0 0 0
+
+  ddtn(315619200000000000)
+2010 1 1 0 0 0 0
+
+  ddtn(_315532800000000000)
+1990 1 1 0 0 0 0</code></pre>
+<h2 class="hdef" id="dtn">dtn (monad)</h2>
+<div class="line-block"><b>Form</b> tacit<br />
+<b>Depend:</b> Foreign 6!:16<br />
+Convert nanoseconds to ISO 8601 datetime</div>
+<h3>Syntax</h3>
+<pre><code>dtn(N)
+N = nanoseconds</code></pre>
+<h3>Example</h3>
+<pre><code>  dtn(0)
+2000-01-01T00:00:00.000000000
+
+  dtn(315619200000000000)
+2010-01-01T00:00:00.000000000
+
+  dtn(_315532800000000000)
+1990-01-01T00:00:00.000000000
+
+  dtn(315619210001000000)
+2010-01-01T00:00:10.001000000
+
+ dtn(7311433600000000000)  NB. Outside range
+?</code></pre>
+<h2 class="hdef" id="dtn0">dtn0 (monad)</h2>
+<div class="line-block"><b>Form</b> tacit<br />
+<b>Depend:</b> Foreign 6!:16<br />
+Convert nanoseconds to ISO 8601 datetime</div>
+<h3>Syntax</h3>
+<pre><code>dtn0(N)
+N = nanoseconds</code></pre>
+<h3>Example</h3>
+<pre><code>  dtn0(0)
+2000-01-01T00:00:00
+
+  dtn0(315619200000000000)
+2010-01-01T00:00:00
+
+  dtn0(_315532800000000000)
+1990-01-01T00:00:00
+
+  dtn0(315619210001000000)
+2010-01-01T00:00:10
+
+ dtn0(6311433600000000000)
+2200-01-01T00:00:00
+
+ dtn0(7311433600000000000)  NB. Outside range
+?</code></pre>
+<h2 class="hdef" id="nddt">nddt (monad)</h2>
+<div class="line-block"><b>Form</b> tacit<br />
+<b>Depend:</b> Foreign 6!:14<br />
+Convert digit datetime to nanosecond edatetime</div>
+<h3>Syntax</h3>
+<pre><code>ndft(D)
+D = digit datetime: YYYYMMDDhhmmss</code></pre>
+<h3>Example</h3>
+<pre><code>  nddt(20000101000000)
+0
+
+  nddt(20100101000000)
+315619200000000000
+
+  nddt(19900101000000)
+_315532800000000000</code></pre>
+<h2 class="hdef" id="ndt">ndt (monad)</h2>
+<div class="line-block"><b>Form</b> tacit<br />
+<b>Depend:</b> Foreign 6!:17<br />
+Convert ISO 8601 datetime to nanoseconds</div>
+<h3>Syntax</h3>
+<pre><code>dtn0(D)
+D = ISO 8601 datetime</code></pre>
+<h3>Example</h3>
+<pre><code>  ndt &#39;2000&#39;
+0
+
+  ndt &#39;2200&#39;
+6311433600000000000
+
+  ndt &#39;2201&#39;
+_9223372036854775808   NB. Outside range
+
+ Further examples ISO 8601 formats to try:
+  ndt &#39;2000-01-01&#39;
+  ndt &#39;2000-01-01T&#39;
+  ndt &#39;2000-01-01T00&#39;
+  ndt &#39;2000-01-01T00:00&#39;
+  ndt &#39;2000-01-01T00:00:00&#39;
+  ndt &#39;2000-01-01T00:00:00.00&#39;</code></pre>
+</body>
+</html>

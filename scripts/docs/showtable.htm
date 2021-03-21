@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>showtable.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">showtable.ijs</h1>
+</header>
+<hr>
+<a href="http://www.finexec.com.au" target="_blank">Finexec | </a> <a class="HREF" href="../../finexec_doc.html" target="_blank">Documentation | </a> <a class="HREF" href="../../finexec_cat.html" target="_blank">Category | </a> <a class="HREF" href="index.htm" target="_blank">Toolbox</a>
+<hr>
+<div class="line-block">Script: ~addons/finance/finexec/toolbox/showtable.ijs<br />
+Contributor: William Szuch<br />
+Updated: 28/2/2021<br />
+Depend: dev:<br />
+Definitions: loaded to locale base<br />
+Status: dev:<br />
+<a href="../showtable.ijs" target="_blank">Script source: showtable.ijs</a></div>
+<hr>
+<div class="line-block">Definition to show tables of data:<br />
+   numeric - undoxed and boxed<br />
+   text - unboxed and boxed<br />
+   numeric/text - boxed<br />
+Using QTableWidget.<br />
+Modify to use for transfer of data from J to Excel.<br />
+See: edittable</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="#showtable">showtable</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="showtable">showtable (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil</div>
+<h3>Syntax</h3>
+<pre><code>ntable(D)
+D = data table: unboxed or boxed to be shown</code></pre>
+<h3>Example</h3>
+<pre><code>  showtable i. 10 10
+  showtable &lt;&quot;0 ? 10 10 $ 10000
+  showtable 1 1 $ 1000</code></pre>
+<pre><code>  showtable ? 1000 1000 $10000
+  Slower than  ngrid for large data tables.</code></pre>
+<pre><code>  showtable &lt;&quot;0 [12 12 $&#39;A&#39;
+  showtable  12 12 $&lt;&#39;A&#39;
+  showtable (&lt;&quot;0 i. 12 12)[showtable (12 12 $ &lt;&#39;AB&#39;)</code></pre>
+<pre><code>  A =: i. 4 4
+  B =: 3 3 $ &lt;&#39;ASD&#39;
+  showtable A[showtable B</code></pre>
+</body>
+</html>

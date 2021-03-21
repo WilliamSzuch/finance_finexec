@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>invreturnhardy.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">invreturnhardy.ijs</h1>
+</header>
+<hr>
+<a href="http://www.finexec.com.au" target="_blank">Finexec | </a> <a class="HREF" href="../../finexec_doc.html" target="_blank">Documentation | </a> <a class="HREF" href="../../finexec_cat.html" target="_blank">Category | </a> <a class="HREF" href="index.htm" target="_blank">Investment Performamce</a>
+<hr>
+<div class="line-block">Script: ~addons/finance/finexec/ipm/inreturnhardy.ijs<br />
+Contributor: William Szuch<br />
+Updated: 28/2/2021<br />
+Depend:nil<br />
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../invreturnhardy.ijs" target="_blank">Script source: invreturnhardy.ijs</a></div>
+<hr>
+<div class="line-block">Definition to calculate the investment return for a time unit using Hardy’s<br />
+method<br />
+Equations:<br />
+<img alt="NF" src="../eqs/invreturnhardy_ijs_eqs.gif"></div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+I
+</td>
+<td>
+<a href="#invReturnHardy">invReturnHardy</a>, <a href="#invReturnHardy_T">invReturnHardy_T</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="invReturnHardy_T" class="rid">
+invReturnHardy_T
+</td>
+<td class="rtype">
+m
+</td>
+<td class="rdef">
+Tacit form of invReturnHardy
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="invReturnHardy">invReturnHardy (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Calculate the rate of investmnet return using Hardy’s<br />
+approximation formula over one time unit.</div>
+<h3>Syntax</h3>
+<pre><code>  invReturnHardy(Vb;Ve;I)
+Vb = value of assets at beginning of time unit including accruals
+Ve = value of assets at end of time unit including accurals
+I  = investment income over the time unit including</code></pre>
+</body>
+</html>
