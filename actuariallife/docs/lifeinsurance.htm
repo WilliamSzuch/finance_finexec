@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>lifeinsurance.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">lifeinsurance.ijs</h1>
+</header>
+<hr>
+<a href="http://www.finexec.com.au" target="_blank">Finexec | </a> <a class="HREF" href="../../finexec_doc.html" target="_blank">Documentation | </a> <a class="HREF" href="../../finexec_cat.html" target="_blank">Category | </a> <a class="HREF" href="index.htm" target="_blank">Actaurial Life</a>
+<hr>
+<div class="line-block">Script: ~addons/finance/finexec/actuariallife/lifeinsurance.ijs<br />
+Contributor: William Szuch<br />
+Updated: 28/2/2021<br />
+Depend: ~addons/finance/fp/qxtables/qxtables/qxtools.ijs’<br />
+Definitions: loaded to locale base<br />
+Status: todo: equations<br />
+<a href="../lifeinsurance.ijs" target="_blank">Script scource: lifeinsurance.ijs</a></div>
+<hr>
+<div class="line-block">Definitions to calculate life issurance factors for<br />
+single and multiple lives.<br />
+Qx tables loaded to the locale base<br />
+See: Qx_ALL for a list of names.<br />
+See: Qx_ALT for a list of Australian Life Tables.<br />
+All mortality tables start at age = 0.<br />
+<img alt="NF" src="../eqs/lifeinsurance_ijs_eqs.gif"></div>
+<hr>
+<div class="line-block">(1) Extending Qx tables by 5 years.<br />
+(2) Multiple lives<br />
+(3) Variable interest rates</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+A
+</td>
+<td>
+<a href="#asx">asx</a>, <a href="#asx_M">asx_M</a>, <a href="#asxn">asxn</a>, <a href="#asxn1">asxn1</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="asx">asx (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Calculate the value of a whole of life issurance for<br />
+a sum insured of one payable at the end of the year death.<br />
+syntax:</div>
+<pre><code>(Qx;E)asx(Age)
+Qx = name of Qx table starting at age = 0
+E = yearly effective interest rate
+Age = integer ages</code></pre>
+<h3>Example</h3>
+<pre><code>   (AL_49_52_M_ULT;0.05)asx(20)
+0.0966624</code></pre>
+<pre><code>   (AL_49_52_M_ULT;0.05)asx(20 40 60 80)
+0.0966624 0.222605 0.472562 0.756022</code></pre>
+<h2 class="hdef" id="asx_M">asx_M (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Monadic form of asx.<br />
+Calculate the value of a whole of life issurance for<br />
+a sum insured of one payable at the end of the year death.</div>
+<h3>Syntax</h3>
+<pre><code>asx_M(Qx;Age;E)
+Qx = name of Qx table starting at age = 0
+Age = integer ages
+E = yearly effective interest rate</code></pre>
+<h3>Example</h3>
+<pre><code>   asx_M(AL_AM92_ULT;17;0.04)
+0.10127</code></pre>
+<pre><code>    asx_M(AL_AM92_ULT;17 50 60 65;0.04)
+0.10127 0.329072 0.456402 0.527864</code></pre>
+<h2 class="hdef" id="asxn">asxn (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Same as asxn1 but allow multiple lives and terms.<br />
+Calculate the value of a term life issurance for<br />
+a sum insured of one payable at the end of the year death.<br />
+syntax:</div>
+<pre><code>(Qx;E)asxn(Age;N)
+Qx = name of Qx table starting at age = 0
+E = yearly effective interest rate
+Age = integer ages
+N = term of insurance - integer years</code></pre>
+<h3>Example</h3>
+<pre><code>   (AL_49_52_M_ULT;0.05)asxn(20;40)
+0.0394944</code></pre>
+<pre><code>   (AL_AM92_ULT;0.05)asxn(20 40;20)
+0.00762835 0.0304109</code></pre>
+<pre><code>   (AL_AM92_ULT;0.05)asxn(20;20 30 40)
+0.00762835 0.0116736 0.0189453</code></pre>
+<pre><code>   (AL_AM92_ULT;0.05)asxn(20 40;20 30 40)
+0.00762835 0.0116736 0.0189453
+ 0.0304109 0.0654055   0.11467</code></pre>
+<h2 class="hdef" id="asxn1">asxn1 (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Calculate the value of a term life issurance for<br />
+a sum insured of one payable at the end of the year death.<br />
+(one life)<br />
+syntax:</div>
+<pre><code>(Qx;E)asx(Age;N)
+Qx = name of Qx table starting at age = 0
+E = yearly effective interest rate
+Age = integer ages
+N = term of insurance - integer years</code></pre>
+<h3>Example</h3>
+<pre><code>   (AL_49_52_M_ULT;0.05)asxn1(40;20)
+0.0671175</code></pre>
+<pre><code>   (AL_49_52_M_ULT;0.05)asxn1(20;40)
+0.0394944</code></pre>
+</body>
+</html>
