@@ -1,7 +1,7 @@
 NB. =========================================================
 NB.%finexec.ijs - Finexec addon
 NB.- Script: ~addons/finance/finexec/finexec.ijs
-NB.- Updated: 31/7/2020
+NB.- Updated: 20/3/2021
 NB.- Depend: ~addons/ide/jhs/sp.ijs'
 NB.- Definitions: loaded to locale z
 NB.-<hr>
@@ -37,21 +37,21 @@ jhtml '<div contenteditable="false"></span>',L end.
 
 
 NB. =========================================================
-NB. Show the finexec_addon window.
-NB. finexec_addon ''
-finexec_addon =: 3 : 0
-if. IFQT = 1 do. browse_j_ 'file:///',jpath '~addons/finance/finexec/finexec_addon.html'
-else. L =. '<a href="http://127.0.0.1:65001/~addons/finance/finexec/finexec_addon.html" target="_blank">Addon</a>'
+NB. Show the finexec_doc window.
+NB. finexec_doc ''
+finexec_doc =: 3 : 0
+if. IFQT = 1 do. browse_j_ 'file:///',jpath '~addons/finance/finexec/finexec_doc.html'
+else. L =. '<a href="http://127.0.0.1:65001/~addons/finance/finexec/finexec_doc.html" target="_blank">Documentation</a>'
 jhtml '<div contenteditable="false"></span>',L end.
 )
 
 
 NB. =========================================================
-NB. Show the finexec_category window.
-NB. finexec_category ''
-finexec_category =: 3 : 0
-if. IFQT = 1 do. browse_j_ 'file:///',jpath '~addons/finance/finexec/finexec_category.html'
-else. L =. '<a href="http://127.0.0.1:65001/~addons/finance/finexec/finexec_category.html" target="_blank">Category</a>'
+NB. Show the finexec_cat window.
+NB. finexec_cat ''
+finexec_cat =: 3 : 0
+if. IFQT = 1 do. browse_j_ 'file:///',jpath '~addons/finance/finexec/finexec_cat.html'
+else. L =. '<a href="http://127.0.0.1:65001/~addons/finance/finexec/finexec_cat.html" target="_blank">Category</a>'
 jhtml '<div contenteditable="false"></span>',L end.
 )
 
@@ -59,19 +59,19 @@ jhtml '<div contenteditable="false"></span>',L end.
 NB. =========================================================
 NB. Finexec addon welcome message.
 ADDON_MSG =:  < > LF cut 0 : 0
-Welcome to the Finexec addon. 
-Run the following sentences for information about the Finexec addon.
-Finexec addon scripts for a category have not been loaded.
-Load these scripts as required for a task or project.
-Also review the documemtation for any script loaded. 
+Welcome Finexec. 
+Run the following sentences for information about Finexec.
+Finexec scripts have not been loaded.
+Load scripts as required for a task or project.
+Review the documemtation for any Finexec category and script. 
 )
 
 
 NB. =========================================================
 NB. Initial output on: load 'finance/finexec
 smoutput  ADDON_MSG
-smoutput 'finexec_addon ''''','          NB. Overview'
-smoutput 'finexec_category ''''','       NB. Category and documentation'
+smoutput 'finexec_doc ''''','            NB. Documentation overview'
+smoutput 'finexec_cat ''''','            NB. List of categories'
 smoutput 'finexec_tutorials ''''','      NB. List and run tutorials'
 
 

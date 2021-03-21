@@ -1,34 +1,36 @@
 0 : 0
 NB. =========================================================
 TITLE: Finexec: Introduction to Tutorials
+Contributor: William Szuch
+Updated: 2/3/2021
 )
 0 : 0
-NB. ---------------------------------------------------------
+NB. =========================================================
 Tutorial Sections
 )
 spx':'
-NB.spxsection:Overview
+NB.spxsection: Overview
 0 : 0
-NB. ---------------------------------------------------------
-The tutorials are executed in a J session and you 
+NB. =========================================================
+Tutorials are executed in a J session and you 
 can experiment with the definitions. The tutorials are an excellent 
 way of learning how to use the definitions from the 
-Finexec addon to solve problems and introduction to the 
+Finexec to solve problems and introduction to the 
 J programming language.
 A J session can be a Qt IDE or JHS window.
 )
-NB.spxsection:View this script'
+NB.spxsection: View this script'
 0 : 0
-NB. ---------------------------------------------------------
+NB. =========================================================
 Next we open the this script so it can be viewed as the
 tutorial is stepped through.
 Put the script in another window so you can read the
 script as it is stepped through. Or just close the window.
 )
 showscript '~addons/finance/finexec/introduction_tut.ijs'
-NB.spxsection:Starting a Tutorial
+NB.spxsection: Starting a Tutorial
 0 : 0
-NB. ---------------------------------------------------------
+NB. =========================================================
 Show a list of tutorials and run a tutorial
    finexec_tutorials ''
 or run a specific tutorial
@@ -37,9 +39,9 @@ or run a specific tutorial
 You can view a script by executing the line.
   showscript '~addons/finance/finexec/basicfinance/simple.ijs'
 )
-NB.spxsection:Getting around a Tutorial
+NB.spxsection: Getting around a Tutorial
 0 : 0
-NB. ---------------------------------------------------------
+NB. =========================================================
 To get the most benefit from a tutorial you need to be able 
 to move to different lines and sections.
 There are several ways of getting around a tutorial.
@@ -75,5 +77,22 @@ This goes to the end of the script.
 You can go back to a line or section:
    spx 1
    spx':Starting a Tutorial'
+)
+NB.spxsection: Noun - spxhelp
+0 : 0
+NB. =========================================================
+spx f        set SPXFILE
+ crtl+.       JHS advance
+ menu >       JHS advance
+ ctrl+j       JQt advance
+ spx''        advance
+ spx 0        status
+ spx n        run line n
+ spx n m      run lines n through m
+ spx':'       sections
+NB. ---------------------------------------------------------
+Also run for further examples:
+ spx'~addons/ide/jhs/spx/spx.ijs' 
+ spx'~addons/ide/jhs/spx/plot.ijs' 
 )
 NB.spxsection:End
