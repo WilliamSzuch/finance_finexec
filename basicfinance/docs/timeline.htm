@@ -28,7 +28,7 @@
 <hr>
 <div class="line-block">Script: ~addons/finance/finrxec/basicfinance/timeline.ijs<br />
 Contributor: William Szuch<br />
-Updated: 28/2/2021<br />
+Updated: 23/3/2021<br />
 Depend: ~addons/graphics/plot/plot.ijs<br />
 Definitions: loaded to locale base<br />
 Status: done:</div>
@@ -58,11 +58,12 @@ Show the cash flow as a time line plot.</div>
 <div class="line-block">T = list of periods measured in time units from an<br />
     origin (ie: 0) at which the cash flow occurred<br />
 C = the amout of cash flow at each period in the<br />
-    list of periods in Y0</div>
+    list of periods in T</div>
 <h3>Example</h3>
-<pre><code>   timelinecf (0 1 2 3 4;1 2 3 4 5)
-   timelinecf (0 1 2 3 4 5.5 3.3 0.5 _1;1 2 3 _4 5 _6 7 8 9)
-   timelinecf ((i. 25);100, - 24 #10)
-   timelinecf (0 1 2 3 4;3 4 5)  NB. (T;C) do not match</code></pre>
+<pre><code>   timelinecf(0 1 2 3 4;1 2 3 4 5)
+   timelinecf(_3 _2 _1 0 1 2 3 ;1 2 3 4 5 _6 7)
+   timelinecf(0 1 2 3 4 5.5 3.3 0.5 _1;1 2 3 _4 5 _6 7 8 9)
+   timelinecf((i. 25);100, - 24 #10)
+   timelinecf(0 1 2 3 4;3 4 5)  NB. (T;C) do not match</code></pre>
 </body>
 </html>

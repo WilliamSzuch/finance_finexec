@@ -9,7 +9,7 @@ IndexHdr=: 0 : 0
 <a class="HREF" href="../basicfinance_terminology.html" target="_blank">Basic Finance Terminology</a>
 <hr>
 Script: ~addons/finance/finexec/basicfinance/basicfinance_docs.ijs<br>
-Updated: 18/3/2021<br>
+Updated: 10/4/2021<br>
 Definitions for simple and compound interest rate problems with 
 a constant interest rate over a period.
 <hr>
@@ -50,6 +50,8 @@ Files =: cutopen 0 : 0
 compound.ijs
 compoundv.ijs
 force.ijs
+lease.ijs
+loan.ijs
 rba.ijs
 ruleof78.ijs
 simple.ijs

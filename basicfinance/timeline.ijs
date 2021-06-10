@@ -8,7 +8,7 @@ NB.-<a class="HREF" href="index.htm" target="_blank">Basic Finance</a>
 NB.-<hr>
 NB.- Script: ~addons/finance/finrxec/basicfinance/timeline.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 28/2/2021
+NB.- Updated: 23/3/2021
 NB.- Depend: ~addons/graphics/plot/plot.ijs
 NB.- Definitions: loaded to locale base
 NB.- Status: done:
@@ -33,12 +33,13 @@ NB.+timelinecf(T;C)
 NB.- T = list of periods measured in time units from an 
 NB.-     origin (ie: 0) at which the cash flow occurred
 NB.- C = the amout of cash flow at each period in the 
-NB.-     list of periods in Y0
+NB.-     list of periods in T
 NB.-example: 
-NB.+   timelinecf (0 1 2 3 4;1 2 3 4 5)
-NB.+   timelinecf (0 1 2 3 4 5.5 3.3 0.5 _1;1 2 3 _4 5 _6 7 8 9)
-NB.+   timelinecf ((i. 25);100, - 24 #10)
-NB.+   timelinecf (0 1 2 3 4;3 4 5)  NB. (T;C) do not match
+NB.+   timelinecf(0 1 2 3 4;1 2 3 4 5)
+NB.+   timelinecf(_3 _2 _1 0 1 2 3 ;1 2 3 4 5 _6 7)
+NB.+   timelinecf(0 1 2 3 4 5.5 3.3 0.5 _1;1 2 3 _4 5 _6 7 8 9)
+NB.+   timelinecf((i. 25);100, - 24 #10)
+NB.+   timelinecf(0 1 2 3 4;3 4 5)  NB. (T;C) do not match
 NB. ---------------------------------------------------------
 timelinecf =: 3 : 0
 '' timelinecf y
