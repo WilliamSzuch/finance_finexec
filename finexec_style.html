@@ -30,7 +30,7 @@ The category scripts are of the form category_docs.ijs and:
 </pre>
 <h3 class="Hw">Scripts</h3>
 <pre>
-As a general style the Finexec addon scripts are stand-a-lone (ie. no dependencies)
+As a general style the Finexec scripts are stand-a-lone (ie. no dependencies)
 Any dependencies to other scripts are listed at the start of the script.
 Use the <b>require</b> definition to load any dependant scripts to aviod having to 
 reload the script. 
@@ -39,14 +39,14 @@ The documentation for the definitions in a script can be viewed by linking to a 
 The scripts can be used for projects and jobs.
 The scripts can copied, modified and loaded into another locale for a project or job to aviod
 potential naming conflicts.
-
 <b>View Source Scripts</b>
 The source script can be viewed in Qt and JHS IDE front ends.
 eg: Qt IDE: open '~addoms/finance/finexec/basicfinance/simple.ijs'
 eg: JHS IDE: edit '~addons/finance/finexec/basicfinance/simple.ijs'
 <b>Source Script Names</b> 
 Script names as general rule use lowercase. For example: ~addons/finexec/basicfinance/simple.ijs
-
+<b>Script Status</b>
+Defined as: done: update: review: todo: dev: 
 <b>Source Script Documentation</b>
 The scripts are documented using the '~addons/docs/joxygen/joxygen.ijs' package
 which creates htm files from the script.
@@ -59,11 +59,9 @@ For details see: <a class="HREF" href="http://code.jsoftware.com/wiki/Addons/doc
 The naming style for verbs, adverbs and conjuctions is to commence with a lower case letter 
 and can be all lower case or camel case.
 The naming style for nouns is to commence with an upper case letter and can be all upper case or camel case.
-
 <b>Documentation</b>
 Definitions start with NB.* and can have some or all of the following documentation details:
 (Even for the most trivial or simple definitions.)
-
 <b>Name(type):</b> type: (acvmdn) for/or adverb, conjunction, verb, monad, dyad, noun
 <b>Form:</b> tacit or explicit 
 <b>Depend:</b> If required list any dependent definitions even if from the stdlib and script. eg:  def/script
@@ -103,6 +101,6 @@ Some browsers may not support the &#60;math&#62 element and therefore equations 
 not be displayed correctly.
 </pre>
 <hr>
-Updated: 26/7/2020
+Updated: 15/4/2021
 </body>
 </html>
