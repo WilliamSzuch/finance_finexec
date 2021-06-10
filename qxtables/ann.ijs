@@ -25,9 +25,6 @@ NB. Utility
 data =. [: ". rplc&(LF;' ')  
 
 
-cocurrent 'base'
-
-
 NB. =========================================================
 NB.*Qx_ANN n List of ANN tables
 Qx_ANN =: 0 : 0

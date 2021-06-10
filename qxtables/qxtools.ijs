@@ -25,7 +25,6 @@ NB.- Boxed Qx tables
 NB.- '0.5' 8!:0 Qx_Data
 NB.-<hr>
 
-
 require '~addons/graphics/plot/plot.ijs'
 require '~addons/finance/finexec/qxtables/al.ijs'
 require '~addons/finance/finexec/qxtables/alt.ijs'
