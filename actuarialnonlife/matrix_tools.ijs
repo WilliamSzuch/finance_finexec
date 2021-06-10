@@ -9,7 +9,7 @@ NB.-<hr>
 NB.-<hr>
 NB.- Script: ~addons/finance/finexec/actuarialmethods/matrix_tools.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 1/3/2021
+NB.- Updated: 11/3/2021
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
 NB.- Status: dev:
