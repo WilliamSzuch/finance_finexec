@@ -1,4 +1,4 @@
-NB.% J Phrases Section 1A. Conventions
+NB.%phra1.ijs - J Phrases Section 1A. Conventions
 NB.-<hr>
 NB.-<a href="http://www.finexec.com.au" target="_blank">Finexec | </a>
 NB.-<a class="HREF" href="../../finexec_doc.html" target="_blank">Documentation | </a>

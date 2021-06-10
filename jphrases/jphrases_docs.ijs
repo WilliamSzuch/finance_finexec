@@ -8,7 +8,7 @@ IndexHdr=: 0 : 0
 <a class="HREF" href="../../finexec_cat.html" target="_blank">Category | </a>
 <hr>
 Script: ~addons/finance/finexec/jphrases/jphrases_docs.ijs<br>
-Updated: 20/3/2021<br>
+Updated: 9/6/2021<br>
 J Phrases takem from: 
 <a href="https://code.jsoftware.com/wiki/JPhrases/Contents"> J Phrases</a>
 Also look at: 
@@ -48,7 +48,7 @@ phra1,ijs as phrases from Section 1A of the text.
 <b>Definitions</b>
 <pre>
 Definition names are not unique and only apply to a section and paragraph.
-Refer to the script souce for the definitions.
+Refer to the script source for the definitions.
 Definitions are loaded to the locale z.
 </pre>
 )
@@ -89,7 +89,70 @@ phra1.ijs
 phrb1.ijs
 phrc1.ijs
 phrd1.ijs
+
 phra2.ijs
+phrb2.ijs
+phrc2.ijs
+phrd2.ijs
+phre2.ijs
+phrf2.ijs
+phrg2.ijs
+phrh2.ijs
+
+phra3.ijs
+phrb3.ijs
+
+phra4.ijs
+phrb4.ijs
+phrc4.ijs
+
+phra5.ijs
+phrb5.ijs
+phrc5.ijs
+
+phra6.ijs
+phrb6.ijs
+phrc6.ijs
+
+phra7.ijs
+phrb7.ijs
+phrc7.ijs
+
+phra8.ijs
+phrb8.ijs
+phrc8.ijs
+phrd8.ijs
+phre8.ijs
+
+phra9.ijs
+phrb9.ijs
+phrc9.ijs
+phrd9.ijs
+phre9.ijs
+phrf9.ijs
+
+phra10.ijs
+phrb10.ijs
+phrc10.ijs
+phrd10.ijs
+phre10.ijs
+phrf10.ijs
+
+phra11.ijs
+phrb11.ijs
+phrc11.ijs
+
+phra12.ijs
+
+phra13.ijs
+phrb13.ijs
+phrc13.ijs
+
+phra14.ijs
+phrb14.ijs
+
+phra15.ijs
+phrb15.ijs
 )
 
 
