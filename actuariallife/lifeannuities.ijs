@@ -8,7 +8,7 @@ NB.-<a class="HREF" href="index.htm" target="_blank">Actaurial Life</a>
 NB.-<hr>
 NB.- Script: ~addons/finance/finexec/actuariallife/lifeannuities.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 28/2/2021
+NB.- Updated: 27/3/2021
 NB.- Depend: ~addons/finance/finexec/qxtables/qxtools.ijs'
 NB.- Definitions: loaded to locale base
 NB.- Status: update:
@@ -29,7 +29,7 @@ NB.- (3) Multiple lives
 NB.- (4) term annuities
 NB.- (5) axy
 NB.- (6) reversionary
-NB.- (7) payment frequency with a year
+NB.- (7) payment frequency within a year
 NB.- (8) dev tacits
 NB.-<hr>
 
@@ -232,7 +232,7 @@ NB. ---------------------------------------------------------
 axn =: 4 : 0
 'AGES N' =: y
 'Qx E' =. x
-axn1 =: +/@:(([: */\ ([: >@:(1&{) ]) {. 1 - ([: >@:(0&{) ]) }. [: >@:(0&{) [) * ([: % 1 + [: >@:(1&{) [) ^ 1 + [: i. [: # [: */\ ([: >@:(1&{) ]) {. 1 - ([: >@:(0&{) ]) }. [: >@:(0&{) [)
+axn1 =. +/@:(([: */\ ([: >@:(1&{) ]) {. 1 - ([: >@:(0&{) ]) }. [: >@:(0&{) [) * ([: % 1 + [: >@:(1&{) [) ^ 1 + [: i. [: # [: */\ ([: >@:(1&{) ]) {. 1 - ([: >@:(0&{) ]) }. [: >@:(0&{) [)
 Qx_axn1 =. (Qx;E)&axn1
 boxedtable =. <"1@:(>@:(0&{) ;"0/ >@:(1&{))
 > Qx_axn1 each boxedtable(AGES;N)

@@ -8,7 +8,7 @@ NB.-<a class="HREF" href="index.htm" target="_blank">Actaurial Life</a>
 NB.-<hr>
 NB.- Script: ~addons/finance/finexec/actuariallife/lifetable.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 28/2/2021
+NB.- Updated: 10/4/2021
 NB.- Depend: ~addons/finance/finexec/qxtables/qxtools.ijs'
 NB.- Definitions: loaded to locale base
 NB.- Status: todo: equations

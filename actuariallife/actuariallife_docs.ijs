@@ -9,7 +9,7 @@ IndexHdr=: 0 : 0
 <a class="HREF" href="../actuariallife_terminology.html" target="_blank">Actuarial Life Terminology</a>
 <hr>
 Script: ~addons/finance/finexec/actuariallife/actuariallife_docs.ijs<br>
-Updated: 27/2/2021<br>
+Updated: 29/2/2021<br>
 Definitions for calculations depending on life.<br>
 * life table<br>
 * life annuities<br>
@@ -49,6 +49,7 @@ NB. source files under the source directory
 NB. (may be more than one level down)
 Files=: cutopen 0 : 0
 lifetable.ijs
+lifetable_multiplelives.ijs
 lifeannuities.ijs
 lifeinsurance.ijs
 )
