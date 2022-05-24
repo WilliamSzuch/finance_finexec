@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Actuarial Life Terminology</title>
+<link rel="stylesheet" href="../finexec.css" type="text/css">
+</head>
+<body>
+<div class="HDR1">
+<h1><a href="http://www.finexec.com.au"><img alt="NF" src="../finexec.jpg" width="45px" height="35px"></a>Finexec: Actuarial Life Terminology</h1>
+<a class="HREF" href="http://www.finexec.com.au">Finexec | </a>
+<a class="HREF" href="../finexec_lib.html">Library | </a>
+<a class="HREF" href="docs/index.htm">Actuatial Life</a>
+</div>
+<p>
+The following terminology is applied to the definitions for the Actuarial Life category. 
+</p>
+<h3 class="Hw">Terms</h3>
+<a class="HREF" href="#Qx_tables">Qx tables</a><br>
+<a class="HREF" href="#(Qx)qx(Age)">(Qx)qx(Age)</a><br>
+<a class="HREF" href="#(Qx)px(Age)">(Qx)px(Age)</a><br>
+<a class="HREF" href="#Qx_default_tables">Qx default tables</a>
+<hr>
+<a name="Qx_tables"><b>Qx tables </b></a>
+<p>
+Qx is the short name of a mortality table that is a list of probabilities of  
+dying between Age and Age + 1 from Age 0 to Z(final age).<br>
+Ages for Qx tables are integer.
+</p>
+<pre class="WE">
+NB. The first 10 values in the table:
+   10{. ALT_2010_12_M
+0.00476 0.00039 0.00021 0.00016 0.00012 0.00011 0.00011 0.0001 0.0001 9e_5   
+</pre>   
+<p>
+Qx tables are taken from the published material and not modified or extended. 
+A list of Qx tables has been made available that can be used for calculations and experiments. 
+The list can be viewed in the Execution Window:<br> 
+For the list of short names and a description of all the Qx tables: <b>Qx_ALL</b><br>
+For the list of the short names of all Australian Life Tables Qx tables: <b>Qx_ALT</b>.
+</p>
+<p>
+The values in a Qx table can be exended to final value of 1 to allow 
+all lives to be terminated.<br>
+The values in the Qx tables all start at Age = 0 and continue to the final Age Z as in the
+published table. The final Age various with the different tables.  All the tables have a short
+name eg: ALT_2010_12_M and a general description.  The short name is used for calculations.
+</p>
+<p>
+The Qx tables can be used by simply inserting the short name of the table with the definition.
+The values of the Qx table can be viewd by executing the short name of the table in the Execution window. 
+</p>
+
+<a name="(Qx)qx(Age)"><b>(Qx)qx(Age)</b></a><br>
+<p>
+Is the probability of a life dying between Age and Age + 1 for mortality table Qx.<br>
+Also called the rate of mortlaity at Age.  Simply it is the proportion of lives at Age 
+that are expected to die before Age +1.<br>
+</p>
+<pre class="WE">
+NB. The probability of a male life dying between Age 65 and 66 assuming Qx table ALT_2010_12_M.
+   (ALT_2010_12_M)qx(65) 
+???   
+or
+    65{ ALT_2010_12_M
+0.01063    
+</pre> 
+
+<a name="(Qx)px(Age)"><b>(Qx)px(Age)</b></a><br>
+<p>
+Is the probability of a life surviving from Age to Age + 1 for the mortality table Qx.<br>
+</p>
+<pre class="WE">
+NB. The probability of a female life surviving from Age 65 to 66 assuming ALT_2010_12_F.
+   (ALT_2010_12_F)px(65) 
+???   
+or
+    1 - 65{ ALT_2010_12_F
+0.99368
+</pre>
+
+<a name="Qx_default_tables"><b>Qx default tables</b></a><br>
+<p>
+The following two Qx tables are the default mortality tables that are used 
+in the various examples and definitions.
+</p>
+<pre class="WE">
+Short Name   Description
+--------------------------------------------------
+QxF          Australian Life Table 2010-12 Females
+QxM          Australian Life Table 2010-12 Males
+</pre>
+<hr>
+</body>
+Updated: 2022-05-17
+</html>
