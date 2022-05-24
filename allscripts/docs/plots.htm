@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>plots.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">plots.ijs</h1>
+</header>
+<hr>
+<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Toolbox</a>
+<hr>
+<div class="line-block">Script: ~addons/finance/finexec/toolbox/plots.ijs<br />
+Contrinutor: William Szuch<br />
+Updated: 2022-05-22<br />
+Depend: ~addons/graphics/plot.ijs<br />
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../plot.ijs" target="_blank">Script source: plot.ijs</a></div>
+<hr>
+<div class="line-block">Definitions for using the plot in Qt and JHS.<br />
+Further details about plot see: <a class="HREF" href="https://code.jsoftware.com/wiki/Plot" target="_blank">JWiki Plot</a></div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+P
+</td>
+<td>
+<a href="#plotfn">plotfn</a>, <a href="#plotjhsshow">plotjhsshow</a>, <a href="#plotkeys">plotkeys</a>, <a href="#plotlink">plotlink</a>, <a href="#plotm">plotm</a>, <a href="#plotnone">plotnone</a>, <a href="#plotshow">plotshow</a>, <a href="#plotsize">plotsize</a>, <a href="#plotsizedefault">plotsizedefault</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="plotfn">plotfn (adverb)</h2>
+<p><b>Form</b> explicit</p>
+<div class="line-block">Plot the results from a function/defiition.</div>
+<h3>Syntax</h3>
+<pre><code>(f)plotfn(X)
+f = function/definition
+X = values inputed to f</code></pre>
+<h3>Example</h3>
+<pre><code>  f =: %:
+  f plotfn i. 10
+  f plotfn 10 + i. 10</code></pre>
+<pre><code>   sin plotfn i. 100</code></pre>
+<pre><code>  fz =: (*: @: (+/\ @: sin))
+  fz plotfn i. 100</code></pre>
+<pre><code>  (sin,:cos) plotfn(0.1*i.100)</code></pre>
+<h2 class="hdef" id="plotjhsshow">plotjhsshow (monad)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+Only for JHS.<br />
+Show plot in window plot ie: ~temp/plot.html.</div>
+<h3>Syntax</h3>
+<pre><code>plotjhsshow(P) y</code></pre>
+<h3>Example</h3>
+<pre><code>   plotjhsshow(~temp/plot.html)</code></pre>
+<h2 class="hdef" id="plotkeys">plotkeys (monad)</h2>
+<div class="line-block"><b>Form</b> tacit<br />
+Set up the keys for a plot.</div>
+<h3>Syntax</h3>
+<pre><code>plotkeys(L)
+L = list of boxed labels for the plot</code></pre>
+<h3>Example</h3>
+<pre><code>   plotkeys(&#39;ABC&#39;)
+  (plotkeys(&#39;ABC&#39;))  plot i. 10
+   plotkeys(&#39;ABC&#39;;&#39;EFG&#39;)
+   plotkeys(&#39;ABC&#39;;&#39;DEF&#39;;&#39;EFGAA&#39;)
+   plotkeys(&#39;QxM&#39;;&#39;ALT_2010_12_F&#39;)</code></pre>
+<h2 class="hdef" id="plotlink">plotlink (monad)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+Only for JHS.<br />
+Show the plot in a link.</div>
+<h3>Syntax</h3>
+<pre><code>plotlink(W,H)
+W = width in pixcels
+H = height in piscels</code></pre>
+<h3>Example</h3>
+<pre><code>   plotlink(300 300)
+The try:
+   plot(i. 10)</code></pre>
+<h2 class="hdef" id="plotm">plotm (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+Allow for multiple plots in Qt.<br />
+Move plot window as required to show multiple plots.</div>
+<h3>Syntax</h3>
+<pre><code> plotm - as for plot</code></pre>
+<h3>Example</h3>
+<pre><code>  plotm i. 123
+  plotm *: i. 123
+  &#39;title ASD&#39; plotm *: i. 123
+  plotm each (i.10);(i.100);(%: i. 100)    NB. 3 plots
+  (&#39;title P1&#39;plotm i. 10); (&#39;title P2&#39;plotm %: i. 100)  NB. 2 plots</code></pre>
+<h2 class="hdef" id="plotnone">plotnone (monad)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+Only for JHS.<br />
+Create plot in ~temp/plot.html.</div>
+<h3>Syntax</h3>
+<pre><code>plotnone(W,H)
+W = width in pixcels
+H = height in piscels</code></pre>
+<h3>Example</h3>
+<pre><code>   plotnone(300 300)
+The try:
+   plot(i. 10)</code></pre>
+<h2 class="hdef" id="plotshow">plotshow (monad)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+Only for JHS.<br />
+Show the plot in a new tab plot.</div>
+<h3>Syntax</h3>
+<pre><code>plotshow(W,H)
+W = width in pixcels
+H = height in piscels</code></pre>
+<h3>Example</h3>
+<pre><code>   plotshow(300 300)
+The try:
+   plot(i. 10)</code></pre>
+<h2 class="hdef" id="plotsize">plotsize (monad)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+Only for JHS.<br />
+Change the size of the plot in the Execution Window<br />
+for subsequent plots.<br />
+Default setting in pixcels: W =500,H = 400</div>
+<h3>Syntax</h3>
+<pre><code>plotsize(W,H)
+W = width in pixcels
+H = height in piscels</code></pre>
+<h3>Example</h3>
+<pre><code>   plotsize(300 300)
+The try:
+   plot(i. 10)</code></pre>
+<h2 class="hdef" id="plotsizedefault">plotsizedefault (monad)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+Only for JHS<br />
+set default plot size<br />
+size attributes for subsequent plots</div>
+<h3>Syntax</h3>
+<pre><code>plotsizedefault &#39;&#39;</code></pre>
+</body>
+</html>

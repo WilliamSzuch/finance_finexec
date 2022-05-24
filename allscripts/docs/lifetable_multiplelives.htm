@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>lifetable_multiplelives.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">lifetable_multiplelives.ijs</h1>
+</header>
+<hr>
+<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Actaurial Life</a>
+<hr>
+<div class="line-block">Script: ~addons/finance/finexec/actuariallife/lifetable_multiplelives.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022-05-22<br />
+Depend: ~addons/finance/finexec/qxtables/qxtools.ijs’<br />
+Definitions: loaded to locale base<br />
+Status: todo: equations<br />
+<a href="../lifetable_multiplelives.ijs" target="_blank">Script source: lifetable_multiplelives.ijs</a></div>
+<hr>
+<div class="line-block">Definitions to calculate life table functions and survival factors<br />
+for mu;tiple lives.<br />
+Qx tables loaded to the locale base.<br />
+See: Qx_ALL for a list of names.<br />
+See: Qx_ALT for a list of Australian Life Tables.<br />
+All mortality tables start at age = 0.<br />
+Note:<br />
+(1) Dealing with Ages outside the range of the mortality table.<br />
+(2) Dealing with qx&gt;1 if Qx table is scaled up.<br />
+use of ext5<br />
+Tables - try to make tacit<br />
+Plots</div>
+<hr>
+<div class="line-block">Equations:<br />
+To Do</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+J
+</td>
+<td>
+<a href="#jexp">jexp</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+L
+</td>
+<td>
+<a href="#lsexp">lsexp</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+P
+</td>
+<td>
+<a href="#pxy">pxy</a>, <a href="#pxy_v">pxy_v</a>, <a href="#pxyz">pxyz</a>, <a href="#pxyz_v">pxyz_v</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+Q
+</td>
+<td>
+<a href="#qx1y">qx1y</a>, <a href="#qxy">qxy</a>, <a href="#qxyz">qxyz</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="jexp">jexp (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Joint expextation of life.</div>
+<h3>Syntax</h3>
+<pre><code>  (Qx1;Qx2)jexp(Age1;Age2)
+Qx1,Qx2 = mortality tables
+Age1,Age2 = integer ages</code></pre>
+<h3>Example</h3>
+<pre><code>  (ALT_2004_06_M;ALT_2004_06_F)jexp(0;0)
+73.0548
+
+  (ALT_2004_06_M;ALT_2004_06_F)jexp(25;30)
+47.3702</code></pre>
+<h2 class="hdef" id="lsexp">lsexp (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> jexp<br />
+Last survivor expectation of life.</div>
+<h3>Syntax</h3>
+<pre><code>  (Qx1;Qx2)lsexp_v(Age1;Age2)
+Qx1,Qx2 = mortality tables
+Age1,Age2 = integer ages</code></pre>
+<h3>Example</h3>
+<pre><code>  (ALT_2004_06_M;ALT_2004_06_F)lsexp(0;0)
+89.062
+
+  (ALT_2004_06_M;ALT_2004_06_F)lsexp(25;30)
+61.4951</code></pre>
+<h2 class="hdef" id="pxy">pxy (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Probability of joint lives surviving one year.</div>
+<h3>Syntax</h3>
+<pre><code>(Qx1;Qx2)pxy(Age1;Age2)
+Qx1,Qx2 = mortality tables
+Age1,Age2 = integer ages</code></pre>
+<h3>Example</h3>
+<pre><code>  (ALT_2004_06_M;ALT_2004_06_F)pxy(0;0)
+0.990075
+
+  (ALT_2004_06_M;ALT_2004_06_F)pxy(25;30)
+0.99879</code></pre>
+<h2 class="hdef" id="pxy_v">pxy_v (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Vector of probability of joint lives surviving by year.<br />
+The last value in the Qx tables is extended so that tables<br />
+are of equal length for the selected ages.</div>
+<h3>Syntax</h3>
+<pre><code>(Qx1;Qx2)pxy_v(Age1;Age2)
+Qx1,Qx2 = mortality tables
+Age1,Age2 = integer ages</code></pre>
+<h3>Example</h3>
+<pre><code>  +/ (ALT_2004_06_M;ALT_2004_06_F)pxy_v(0;0)
+73.0548
+
+  +/ (ALT_2004_06_M;ALT_2004_06_F)pxy_v(25;30)
+47.3702</code></pre>
+<h2 class="hdef" id="pxyz">pxyz (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Probability of three lives failing for at least<br />
+one life within the next year.</div>
+<h3>Syntax</h3>
+<pre><code>(Qx1;Qx2;Qx3)pxy(Age1;Age2;Age3)
+Qx1,Qx2,Qx3 = mortality tables
+Age1,Age2,Age3 ... = integer ages</code></pre>
+<p>example ~~~ (ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)pxyz(0;0;0) 0.984689</p>
+<p>(ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)pxyz(25;30;35) 0.997652 ~~~</p>
+<h2 class="hdef" id="pxyz_v">pxyz_v (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Vector of probability of three lives surviving by year.<br />
+The last value in the Qx tables is extended so that tables<br />
+are of equal length for the selected ages.</div>
+<h3>Syntax</h3>
+<pre><code>  (Qx1;Qx2;Qx3)pxyz_v(Age1;Age2;Age3)
+Qx1,Qx2,Qx3 = mortality tables
+Age1,Age2,Age3 = integer ages</code></pre>
+<h3>Example</h3>
+<pre><code>  +/ (ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)pxyz_v(0;0;0)
+69.4793
+
+  +/ (ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)pxyz_v(25;30;35)
+43.5572</code></pre>
+<h2 class="hdef" id="qx1y">qx1y (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Probability of life x dying before life y in<br />
+within the next year.</div>
+<h3>Syntax</h3>
+<pre><code>(Qx1;Qx2)px1y(Age1;Age2)
+Qx1,Qx2 = mortality tables
+Age1,Age2 = integer ages</code></pre>
+<p>example ~~~ (ALT_2004_06_M;ALT_2004_06_F)qx1y(0;0) 0.00538601 ~~~</p>
+<pre><code>  (ALT_2004_06_M;ALT_2004_06_F)qx1y(25;30)
+0.000838984</code></pre>
+<h2 class="hdef" id="qxy">qxy (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Probability of joint lives failing for at least<br />
+one life within the next year.</div>
+<h3>Syntax</h3>
+<pre><code>(Qx1;Qx2)pxy(Age1;Age2)
+Qx1,Qx2 = mortality tables
+Age1,Age2 = integer ages</code></pre>
+<p>example ~~~ (ALT_2004_06_M;ALT_2004_06_F)qxy(0;0) 0.00992547</p>
+<p>(ALT_2004_06_M;ALT_2004_06_F)qxy(25;30) 0.00120969 ~~~</p>
+<h2 class="hdef" id="qxyz">qxyz (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Probability of joint lives failing for at least<br />
+one life within the next year.</div>
+<h3>Syntax</h3>
+<pre><code>(Qx1;Qx2;Qx3)pxyz(Age1;Age2;Age3)
+Qx1,Qx2,Qx3 = mortality tables
+Age1,Age2,Age3 = integer ages</code></pre>
+<p>example ~~~ (ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)qxyz(0;0;0) 0.0153115</p>
+<p>(ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)qxyz(25;30;35) 0.00234831 ~~~</p>
+</body>
+</html>

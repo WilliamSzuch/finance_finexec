@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>loanschedule.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">loanschedule.ijs</h1>
+</header>
+<hr>
+<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Basic Finance</a>
+<hr>
+<div class="line-block">Script: ~addons/finance/finexec/basicfinance/loanschedule.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022-05-22<br />
+Depend: nil<br />
+Definitions: loaded to locale base<br />
+Status: dev:<br />
+<a href="../loanschedule.ijs" target="_blank">Script source: loanschedule.ijs</a></div>
+<hr>
+<div class="line-block">Loan schedule:<br />
+Using the Fold conjuctions F: and F.<br />
+No rounding.<br />
+Loan repayment are at the end of period.<br />
+<b>Process:</b><br />
+(1) Set initial values for the loan schedule calculation.<br />
+(2) rub setv ’’ each time a calculation is required to<br />
+reset the initial values for the loan schedule.<br />
+(3) Run required definition:<br />
+      lshd ’’<br />
+      lshd_a ’’</div>
+<hr>
+<div class="line-block">Equations:<br />
+To Do:</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+H
+</td>
+<td>
+<a href="#HDR">HDR</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+L
+</td>
+<td>
+<a href="#lshd">lshd</a>, <a href="#lshd_a">lshd_a</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="#setv">setv</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+U
+</td>
+<td>
+<a href="#u">u</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+V
+</td>
+<td>
+<a href="#v">v</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="HDR" class="rid">
+HDR
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Header for loan schedule
+</td>
+</tr>
+<tr>
+<td id="u" class="rid">
+u
+</td>
+<td class="rtype">
+m
+</td>
+<td class="rdef">
+Operand to Fold conjunction
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="lshd">lshd (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Show the full loan schedule.</div>
+<h3>Syntax</h3>
+<pre><code>lshd &#39;&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>  lshd &#39;&#39;
+  &lt;&quot;0 lshd &#39;&#39;
+  HDR,&lt;&quot;0 lshd &#39;&#39;
+  plot 1{&quot;1 lshd &#39;&#39;</code></pre>
+<h2 class="hdef" id="lshd_a">lshd_a (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Show the last result of the Fold calculations.</div>
+<h3>Syntax</h3>
+<pre><code>lshd_a &#39;&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>lshd_a &#39;&#39;
+ &lt;&quot;0 lshd_a &#39;&#39;</code></pre>
+<h2 class="hdef" id="setv">setv (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Set initial values for the loan schedule.</div>
+<h3>Syntax</h3>
+<pre><code>setv &#39;&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>  setv &#39;&#39;</code></pre>
+<h2 class="hdef" id="v">v (verb)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Show the full loan schedule.</div>
+<h3>Syntax</h3>
+<pre><code>lshd &#39;&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>  lshd &#39;&#39;</code></pre>
+</body>
+</html>
