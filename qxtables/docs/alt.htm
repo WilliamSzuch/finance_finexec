@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>alt.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">alt.ijs</h1>
+</header>
+<hr>
+<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Qx Tables</a>
+<hr>
+<div class="line-block">Script: ~addons/finance/finexec/qxtables/alt.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022-05-22<br />
+Depend: nil<br />
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../alt.ijs" target="_blank">Script source: alt.ijs</a></div>
+<hr>
+<div class="line-block">Australian Life Tables (ALT)<br />
+Names commence with ALT_.<br />
+All mortality tables start at age = 0.<br />
+Australian Bureau of Statistics (ABS)<br />
+Australian Government Actuary (AGA)</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+A
+</td>
+<td>
+<a href="#ALT_1960_62_F">ALT_1960_62_F</a>, <a href="#ALT_1960_62_M">ALT_1960_62_M</a>, <a href="#ALT_1965_67_F">ALT_1965_67_F</a>, <a href="#ALT_1965_67_M">ALT_1965_67_M</a>, <a href="#ALT_1970_72_F">ALT_1970_72_F</a>, <a href="#ALT_1970_72_M">ALT_1970_72_M</a>, <a href="#ALT_1975_77_F">ALT_1975_77_F</a>, <a href="#ALT_1975_77_M">ALT_1975_77_M</a>, <a href="#ALT_1980_82_F">ALT_1980_82_F</a>, <a href="#ALT_1980_82_M">ALT_1980_82_M</a>, <a href="#ALT_1985_87_F">ALT_1985_87_F</a>, <a href="#ALT_1985_87_M">ALT_1985_87_M</a>, <a href="#ALT_1990_92_F">ALT_1990_92_F</a>, <a href="#ALT_1990_92_M">ALT_1990_92_M</a>, <a href="#ALT_1995_97_F">ALT_1995_97_F</a>, <a href="#ALT_1995_97_M">ALT_1995_97_M</a>, <a href="#ALT_1998_00_F">ALT_1998_00_F</a>, <a href="#ALT_1998_00_M">ALT_1998_00_M</a>, <a href="#ALT_2000_02_F">ALT_2000_02_F</a>, <a href="#ALT_2000_02_M">ALT_2000_02_M</a>, <a href="#ALT_2003_05_F">ALT_2003_05_F</a>, <a href="#ALT_2003_05_M">ALT_2003_05_M</a>, <a href="#ALT_2004_06_F">ALT_2004_06_F</a>, <a href="#ALT_2004_06_M">ALT_2004_06_M</a>, <a href="#ALT_2005_07_F">ALT_2005_07_F</a>, <a href="#ALT_2005_07_M">ALT_2005_07_M</a>, <a href="#ALT_2008_10_F">ALT_2008_10_F</a>, <a href="#ALT_2008_10_M">ALT_2008_10_M</a>, <a href="#ALT_2009_11_F">ALT_2009_11_F</a>, <a href="#ALT_2009_11_M">ALT_2009_11_M</a>, <a href="#ALT_2010_12_F">ALT_2010_12_F</a>, <a href="#ALT_2010_12_M">ALT_2010_12_M</a>, <a href="#ALT_2013_15_F">ALT_2013_15_F</a>, <a href="#ALT_2013_15_M">ALT_2013_15_M</a>, <a href="#ALT_2014_16_F">ALT_2014_16_F</a>, <a href="#ALT_2014_16_M">ALT_2014_16_M</a>, <a href="#ALT_2015_17_F">ALT_2015_17_F</a>, <a href="#ALT_2015_17_M">ALT_2015_17_M</a>, <a href="#ALT_2016_18_F">ALT_2016_18_F</a>, <a href="#ALT_2016_18_M">ALT_2016_18_M</a>, <a href="#ALT_2017_19_F">ALT_2017_19_F</a>, <a href="#ALT_2017_19_M">ALT_2017_19_M</a>, <a href="#ALT_2018_20_F">ALT_2018_20_F</a>, <a href="#ALT_2018_20_M">ALT_2018_20_M</a>, <a href="#ALT_AGA_2010_12_F">ALT_AGA_2010_12_F</a>, <a href="#ALT_AGA_2010_12_M">ALT_AGA_2010_12_M</a>, <a href="#ALT_AGA_2015_17_F">ALT_AGA_2015_17_F</a>, <a href="#ALT_AGA_2015_17_M">ALT_AGA_2015_17_M</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+Q
+</td>
+<td>
+<a href="#Qx_ALT">Qx_ALT</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="ALT_1960_62_F" class="rid">
+ALT_1960_62_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 1960-62
+</td>
+</tr>
+<tr>
+<td id="ALT_1960_62_M" class="rid">
+ALT_1960_62_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 1960-62
+</td>
+</tr>
+<tr>
+<td id="ALT_1965_67_F" class="rid">
+ALT_1965_67_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 1965-67
+</td>
+</tr>
+<tr>
+<td id="ALT_1965_67_M" class="rid">
+ALT_1965_67_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 1965-67
+</td>
+</tr>
+<tr>
+<td id="ALT_1970_72_F" class="rid">
+ALT_1970_72_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 1970-72
+</td>
+</tr>
+<tr>
+<td id="ALT_1970_72_M" class="rid">
+ALT_1970_72_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 1970-72
+</td>
+</tr>
+<tr>
+<td id="ALT_1975_77_F" class="rid">
+ALT_1975_77_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 19675-77
+</td>
+</tr>
+<tr>
+<td id="ALT_1975_77_M" class="rid">
+ALT_1975_77_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 1975-77
+</td>
+</tr>
+<tr>
+<td id="ALT_1980_82_F" class="rid">
+ALT_1980_82_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 1980-82
+</td>
+</tr>
+<tr>
+<td id="ALT_1980_82_M" class="rid">
+ALT_1980_82_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 1980-82
+</td>
+</tr>
+<tr>
+<td id="ALT_1985_87_F" class="rid">
+ALT_1985_87_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 1985-87
+</td>
+</tr>
+<tr>
+<td id="ALT_1985_87_M" class="rid">
+ALT_1985_87_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 1985-87
+</td>
+</tr>
+<tr>
+<td id="ALT_1990_92_F" class="rid">
+ALT_1990_92_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 1990-92
+</td>
+</tr>
+<tr>
+<td id="ALT_1990_92_M" class="rid">
+ALT_1990_92_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 1990-92
+</td>
+</tr>
+<tr>
+<td id="ALT_1995_97_F" class="rid">
+ALT_1995_97_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 1995-97
+</td>
+</tr>
+<tr>
+<td id="ALT_1995_97_M" class="rid">
+ALT_1995_97_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 1995-97
+</td>
+</tr>
+<tr>
+<td id="ALT_1998_00_F" class="rid">
+ALT_1998_00_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 1998-00
+</td>
+</tr>
+<tr>
+<td id="ALT_1998_00_M" class="rid">
+ALT_1998_00_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 1998-00
+</td>
+</tr>
+<tr>
+<td id="ALT_2000_02_F" class="rid">
+ALT_2000_02_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2000-02
+</td>
+</tr>
+<tr>
+<td id="ALT_2000_02_M" class="rid">
+ALT_2000_02_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 2000-02
+</td>
+</tr>
+<tr>
+<td id="ALT_2003_05_F" class="rid">
+ALT_2003_05_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2003-05
+</td>
+</tr>
+<tr>
+<td id="ALT_2003_05_M" class="rid">
+ALT_2003_05_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 2003-05
+</td>
+</tr>
+<tr>
+<td id="ALT_2004_06_F" class="rid">
+ALT_2004_06_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2004-06
+</td>
+</tr>
+<tr>
+<td id="ALT_2004_06_M" class="rid">
+ALT_2004_06_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 2004-06
+</td>
+</tr>
+<tr>
+<td id="ALT_2005_07_F" class="rid">
+ALT_2005_07_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2005-07
+</td>
+</tr>
+<tr>
+<td id="ALT_2005_07_M" class="rid">
+ALT_2005_07_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 2005-07
+</td>
+</tr>
+<tr>
+<td id="ALT_2008_10_F" class="rid">
+ALT_2008_10_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2008-10
+</td>
+</tr>
+<tr>
+<td id="ALT_2008_10_M" class="rid">
+ALT_2008_10_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 2008-10
+</td>
+</tr>
+<tr>
+<td id="ALT_2009_11_F" class="rid">
+ALT_2009_11_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2009-11
+</td>
+</tr>
+<tr>
+<td id="ALT_2009_11_M" class="rid">
+ALT_2009_11_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 2009-11
+</td>
+</tr>
+<tr>
+<td id="ALT_2010_12_F" class="rid">
+ALT_2010_12_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2010-12
+</td>
+</tr>
+<tr>
+<td id="ALT_2010_12_M" class="rid">
+ALT_2010_12_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 2010-12
+</td>
+</tr>
+<tr>
+<td id="ALT_2013_15_F" class="rid">
+ALT_2013_15_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2013-15
+</td>
+</tr>
+<tr>
+<td id="ALT_2013_15_M" class="rid">
+ALT_2013_15_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 2013-15
+</td>
+</tr>
+<tr>
+<td id="ALT_2014_16_F" class="rid">
+ALT_2014_16_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2014-16
+</td>
+</tr>
+<tr>
+<td id="ALT_2014_16_M" class="rid">
+ALT_2014_16_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 2014-16
+</td>
+</tr>
+<tr>
+<td id="ALT_2015_17_F" class="rid">
+ALT_2015_17_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2015-17
+</td>
+</tr>
+<tr>
+<td id="ALT_2015_17_M" class="rid">
+ALT_2015_17_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2015-17
+</td>
+</tr>
+<tr>
+<td id="ALT_2016_18_F" class="rid">
+ALT_2016_18_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2016-18
+</td>
+</tr>
+<tr>
+<td id="ALT_2016_18_M" class="rid">
+ALT_2016_18_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 2016-18
+</td>
+</tr>
+<tr>
+<td id="ALT_2017_19_F" class="rid">
+ALT_2017_19_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2017-19
+</td>
+</tr>
+<tr>
+<td id="ALT_2017_19_M" class="rid">
+ALT_2017_19_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 2017-19
+</td>
+</tr>
+<tr>
+<td id="ALT_2018_20_F" class="rid">
+ALT_2018_20_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2017-19
+</td>
+</tr>
+<tr>
+<td id="ALT_2018_20_M" class="rid">
+ALT_2018_20_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 2018-20
+</td>
+</tr>
+<tr>
+<td id="ALT_AGA_2010_12_F" class="rid">
+ALT_AGA_2010_12_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Males 2010-12
+</td>
+</tr>
+<tr>
+<td id="ALT_AGA_2010_12_M" class="rid">
+ALT_AGA_2010_12_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2010-12
+</td>
+</tr>
+<tr>
+<td id="ALT_AGA_2015_17_F" class="rid">
+ALT_AGA_2015_17_F
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2015-17
+</td>
+</tr>
+<tr>
+<td id="ALT_AGA_2015_17_M" class="rid">
+ALT_AGA_2015_17_M
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Australian Life Table Females 2015-17
+</td>
+</tr>
+<tr>
+<td id="Qx_ALT" class="rid">
+Qx_ALT
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+List of ALT tables
+</td>
+</tr>
+</table>
+</body>
+</html>
