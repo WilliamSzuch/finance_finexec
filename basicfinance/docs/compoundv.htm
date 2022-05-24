@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>compoundv.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">compoundv.ijs</h1>
+</header>
+<hr>
+<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Basic Finance</a>
+<hr>
+<div class="line-block">Script: ~addons/finance/fp/basicfinance/compoundv.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022-05-20<br />
+Depend: ~addons/finance/finexec/basicfinance/compound.ijs<br />
+Definitions: loaded to locale base<br />
+Status: done:<br />
+<a href="../compoundv.ijs" target="_blank">Script source: compoundv.ijs</a></div>
+<hr>
+<div class="line-block">Definitions for solving compound interest rate problems with<br />
+variable effective interest rates for the time units over a period.<br />
+Equations:<br />
+<img alt="NF" src="../eqs/compoundv_ijs.gif"></div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+A
+</td>
+<td>
+<a href="#anvF">anvF</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+E
+</td>
+<td>
+<a href="#ev">ev</a>, <a href="#evt">evt</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+F
+</td>
+<td>
+<a href="#fvcfv">fvcfv</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+P
+</td>
+<td>
+<a href="#pvcfv">pvcfv</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+V
+</td>
+<td>
+<a href="#vvt">vvt</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+W
+</td>
+<td>
+<a href="#wvt">wvt</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="anvF">anvF (verb)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:&gt;/b&gt; vf0, vf1<br />
+Present value of a level cash flow of one per time unit<br />
+with variable effective interest rates Ev over the period<br />
+paid at frequency F within the time unit.<br />
+<a href="../eqs/anvF_eq.html" target="_blank">Equation: ([x])anvF(N;Ev;[F])</a></div>
+<h3>Syntax</h3>
+<pre><code>([x])anvF(Ev;N;[F])
+[x] = 0 : optional: default case payments in advance
+      1 :  payments in arrears
+Ev = list of effective interest rate per time unit and can vary</code></pre>
+<div class="line-block">    last rate extended, first rate applies to first time unit</div>
+<pre><code>N = integer number of payments of 1 per time unit.
+[F] = Optional: default frequency = 1
+      frequency of payments over a time unit: 1/2/3/4 etc _ for continous</code></pre>
+<h3>Example</h3>
+<pre><code> (1)anvF(0.05;1)
+0.952381</code></pre>
+<pre><code> (0)anvF(0.05;1)
+1</code></pre>
+<pre><code>  anvF(0.05;1)
+1</code></pre>
+<pre><code>  anvF(0.05;10)
+8.10782</code></pre>
+<pre><code>  anvF(0.05 0.06;10)
+7.86647</code></pre>
+<pre><code>  anvF(0.05;10;12)
+7.92931</code></pre>
+<pre><code>  anvF(0.06;10;12)
+7.59716</code></pre>
+<pre><code>  (1)anvF(0.05 0.06;10;12)
+7.62808</code></pre>
+<pre><code>  anvF(0.05 0.06;10;_)
+7.64625</code></pre>
+<h2 class="hdef" id="ev">ev (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+List of variable effective interest rates for N time units.</div>
+<h3>Syntax</h3>
+<pre><code>(Ev)ev(N)
+ Ev = list of effective interest rates for a time unit with
+      the last rate is extended for the period of N time units
+ N = integer number of time units</code></pre>
+<div class="line-block"><a href="../eqs/ev_eq.html" target="_blank">Equation: (Ev)ev(N)</a></div>
+<h3>Example</h3>
+<pre><code>   (0.05 0.055)ev(12)
+0.05 0.055 0.055 0.055 0.055 0.055 0.055 0.055 0.055 0.055 0.055 0.055</code></pre>
+<pre><code>   (0.02 +0.001 * i. 10)ev(6)
+0.02 0.021 0.022 0.023 0.024 0.025</code></pre>
+<h2 class="hdef" id="evt">evt (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+List or table of variable effective interest rates plus one for T time units.</div>
+<h3>Syntax</h3>
+<pre><code>(Ev)evt(T)
+ Ev = variable effective interest rate for time units over the oeriod
+      the last rate is estended for the period</code></pre>
+<h2 class="hdef" id="fvcfv">fvcfv (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Future value of a cash flow C payable at the periods<br />
+of T time units from the point of accumulation for variable<br />
+effective interest rates Ev.<br />
+<a href="../eqs/fvcfv_eq.html" target="_blank">Equation: (Ev)fvcfv(C;T)</a></div>
+<h3>Syntax</h3>
+<pre><code>(Ev)pvcfv(C;T)
+Ev = variable effective interest rate per time unit over the period.
+     the last rate is estended for the period
+C  = amount of cash flow
+T = periods in time units of cash flow from the point of accumulation.</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.05)fvcfv(1;1)
+1.05</code></pre>
+<pre><code>   (0.05 0.1)fvcfv(1 1;1 2)
+2.205</code></pre>
+<pre><code>   (0.05 0.1)fvcfv(1 1 1;1 2 3)
+3.4755</code></pre>
+<pre><code>   (0.05 0.1)fvcfv((1+i.10);(1+ i. 10))
+105</code></pre>
+<pre><code>   (0.05)fvcfv((1+i.10);(1+ i. 10))
+77.9321</code></pre>
+<h2 class="hdef" id="pvcfv">pvcfv (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Present value of a cash flow C payable at the periods<br />
+of T time units for variable effective interest rates Ev.<br />
+<a href="../eqs/pvcfv_eq.html" target="_blank">Equation: (E)pvcfv(C;T)</a></div>
+<h3>Syntax</h3>
+<pre><code>(Ev)pvcfv(C;T)
+Ev = variable effective interest rate per time unit over the period.
+     the last rate is estended for the period
+C  = amount of cash flow
+T = periods in time units of cash flow</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.05)pvcfv(1;1)
+0.952381</code></pre>
+<pre><code>   (0.05 0.1)pvcfv(1 1 1;1 2 3)
+2.60527</code></pre>
+<pre><code>   (0.05 0.1)pvcfv((1+i.10);(1+ i. 10))
+30.4186</code></pre>
+<pre><code>   (0.05)pvcfv((1+i.10);(1+ i. 10))
+39.3738</code></pre>
+<h2 class="hdef" id="vvt">vvt (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Present value of 1 payable in a period of T time units<br />
+for variable effective interest rates Ev over the period.<br />
+<a href="../eqs/vvt_eq.html" target="_blank">? Equation: (Ev)vvt(T)</a></div>
+<h3>Syntax</h3>
+<pre><code>(Ev)vvt(T)
+Ev = variable effective interest rate per time unit over a period
+     the last rate is extended for the period
+T = number of time units in the period</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.05 0.06 0.07)vvt(0.5)
+0.9759</code></pre>
+<pre><code>   (0.05 0.06 0.07)vvt(3.5)
+0.811763</code></pre>
+<pre><code>   (0.05 0.06 0.07)vvt(0 1 2 3)
+1 0.952381 0.898473 0.839694</code></pre>
+<pre><code>   (0.05 0.06 0.07)vvt(0 0.5 1 1.5 2.5 10.1)
+ 1 0.9759 0.952381 0.925034 0.868586 0.519393</code></pre>
+<h2 class="hdef" id="wvt">wvt (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Future value of an amount of 1 in a period of T time units<br />
+for variable effective interest Ev over the period.<br />
+<a href="../eqs/wvt_eq.html" target="_blank">Equation: (Ev)wvt(T)</a></div>
+<h3>Syntax</h3>
+<pre><code>(Ev)wvt(T)
+Ev = variable effective interest rate per time unit over a period
+     the last rate is extended for the period
+T = number of time units in the period</code></pre>
+<h3>Example</h3>
+<pre><code>   (0)wvt(0)
+1</code></pre>
+<pre><code>   (0.05)wvt(10)
+1.62889</code></pre>
+<pre><code>   (0 0.05 0.1 0.15)wvt(10)
+3.07232</code></pre>
+<pre><code>   (0.05)wvt(0 5 10)
+1 1.27628 1.62889</code></pre>
+<pre><code>   (0 0.05 0.1 0.15)wvt(0 5 10 10.5)
+1 1.52749 3.07232 3.2947</code></pre>
+</body>
+</html>
