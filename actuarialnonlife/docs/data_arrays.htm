@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>data_arrays.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">data_arrays.ijs</h1>
+</header>
+<hr>
+<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Actuarial Non-Life</a>
+<hr>
+<div class="line-block">Script: ~addons/finance/finexec/actuarialnonlifes/data_arrays.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022-05-22<br />
+Depend: nil<br />
+Definitions: loaded to locale base<br />
+Status: dev: review<br />
+<a href="../data_arrays.ijs" target="_blank">Script source: data_arrays.ijs</a></div>
+<hr>
+<div class="line-block">Tools for creating data arrays by data codes.<br />
+For example incident by report arrays.<br />
+Indexing - this starts at: 0 or 0 0 etc<br />
+Make sure that data codes have been calculated on this basis<br />
+or adjusted prior to using array1, array2 etc.</div>
+<div class="line-block">Also make sure that data codes have been determined as required,<br />
+Especially codes (indices) for periods.<br />
+See definition for dates codes outside the range of the array dimensions.</div>
+<div class="line-block">Accident periods - start at ‘0’ (Usually ROWS)<br />
+Report periods - start at ‘0’ (Usually COLUMNS)<br />
+Development periods -(Accident period - Report period) (Usually COLUMNS)<br />
+Payment periods - start at ‘0’ (Usually COLUMNS)</div>
+<hr>
+<div class="line-block">Equations:<br />
+To Do</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+D
+</td>
+<td>
+<a href="#darray">darray</a>, <a href="#darray1">darray1</a>, <a href="#darray2">darray2</a>, <a href="#darray3">darray3</a>, <a href="#darray4">darray4</a>, <a href="#darray5">darray5</a>, <a href="#darray6">darray6</a>, <a href="#darray7">darray7</a>, <a href="#darray8">darray8</a>, <a href="#data_codes">data_codes</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+I
+</td>
+<td>
+<a href="#index_sum_count">index_sum_count</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+M
+</td>
+<td>
+<a href="#max">max</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+N
+</td>
+<td>
+<a href="#nubsum">nubsum</a>, <a href="#nubsum_all">nubsum_all</a>, <a href="#nubsum_code">nubsum_code</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="max" class="rid">
+max
+</td>
+<td class="rtype">
+m
+</td>
+<td class="rdef">
+Maximum value in a list
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="darray">darray (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+General development verb - useful for large data cases.<br />
+Data codes have been determined as required.<br />
+If the data code is not range of the array dimension then<br />
+an index error is generated.<br />
+This should be fixed and then development can be completed.<br />
+Data count is in the last dimemsion.</div>
+<h3>Syntax</h3>
+<pre><code>(N)darray(D)
+N = set array dimensions eg: 5 5 5 5 5 5 5 5 eg. 4 6 8 8 3 4 5 6 etc
+D = matrix of data to be summarised of which data codes
+    are in the first #N columns and data. in the remaing columns.</code></pre>
+<h3>Example</h3>
+<pre><code>  $ (5)darray(Z =: ? 10 1 $ 5)
+1 5</code></pre>
+<pre><code>  $ (5)darray(Z =: ? 10 2 $ 5)
+2 5</code></pre>
+<pre><code>  $ (5 5)darray(Z =: ? 100000 8 $ 5)
+7 5 5</code></pre>
+<pre><code>  $ (5 5 10 10)darray(Z =: ? 100000 8 $ 5)
+5 5 5 10 10</code></pre>
+<pre><code>  $ (5 5 10 10)darray(Z =: ? 10000000 10 $ 5)  NB. Large data
+7 5 5 10 10</code></pre>
+<h2 class="hdef" id="darray1">darray1 (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Data codes have been determined as required.<br />
+If the data code is not range of the array dimension then<br />
+the data is not included.<br />
+No error is generated to show that the data code is not in the range.<br />
+Data count is in the first column.<br />
+Sums are in other columns</div>
+<h3>Syntax</h3>
+<pre><code>(N)darray1(D)
+N = set array dimension eg: 5
+D = matrix of data to be summarised of
+    which data codes are in the first column and data in
+    the remaining columns.</code></pre>
+<h3>Example</h3>
+<pre><code> $ (5)darray1( Z =: 0 + ? (10 2 $ 5))
+5 2</code></pre>
+<div class="line-block">$ (10)darray1( Z =: 0 + ? (30 3 $ 5))</div>
+<p>10 3</p>
+<h2 class="hdef" id="darray2">darray2 (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> array1<br />
+Data codes have been determined as required.<br />
+If the data code is not range of the array dimension then<br />
+the data is not included.<br />
+No error is generated to show that the data code is not in the range.<br />
+Data count is in the first table.</div>
+<pre><code>(N)darray2(D)
+N = set array dimensions eg: 5 5 eg: 4 6 etc
+D = matrix of data to be summarised of
+    which data codes are in the first two columns and data in
+    the remaining columns.</code></pre>
+<h3>Example</h3>
+<pre><code>  $ (5 5)darray2(Z =: 0 + ? (10 4 $ 5))
+3 5 5</code></pre>
+<h2 class="hdef" id="darray3">darray3 (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> dev1<br />
+Data codes have been determined as required.<br />
+If the data code is not range of the array dimension then<br />
+the data is not included.<br />
+No error is generated to show that the data code is not in the range.<br />
+Data count is in the first table.</div>
+<h3>Syntax</h3>
+<pre><code>(N)darray3(D)
+N = set matrix dimemsions eg: 5 5 5 eg: 4 6 8 etc
+D = matrix of data to be summarised of
+    which data codes are in the first three columns and data in
+    the remaing columns.</code></pre>
+<h3>Example</h3>
+<pre><code>  $ (5 5 5)darray3(Z =: 0 + ?(10 5 $ 5))
+3 5 5 5</code></pre>
+<h2 class="hdef" id="darray4">darray4 (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> dev1<br />
+Data codes have been determined as required.<br />
+If the data code is not range of the array dimension then<br />
+the data is not included.<br />
+No error is generated to show that the data code is not in the range.<br />
+Data count is in the first table.</div>
+<h3>Syntax</h3>
+<pre><code>(N)darray3(D)
+N = set matrix dimensions eg: 5 5 5 5 eg: 4 4 6 8 etc
+D = matrix of data to be summarised of
+    which data codes are in the first four columns and data in
+    in the remaining columns</code></pre>
+<h3>Example</h3>
+<pre><code>   ($ 5 5 5 5)darray4(Z =: 0 + ? 10 6 $ 5)
+3 5 5 5 5</code></pre>
+<h2 class="hdef" id="darray5">darray5 (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> dev1<br />
+Data codes have been determined as required.<br />
+If the data code is not range of the array dimension then<br />
+the data is not included.<br />
+No error is generated to show that the data code is not in the range.<br />
+Data count is in the first table.</div>
+<h3>Syntax</h3>
+<pre><code>(N)darray5(D)
+N = set matrix dimensions eg: 5 5 5 5 5 eg. 4 4 4 6 8 etc
+D = matrix of data to be summarised of
+    which data codes are in the first five columns and data in
+    in the remaining columns</code></pre>
+<h3>Example</h3>
+<pre><code>   $ (5 5 5 5 5)darray5(Z =: 0 + ? 10 7 $ 5)
+3 5 5 5 5 5</code></pre>
+<h2 class="hdef" id="darray6">darray6 (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> dev1<br />
+Data codes have been determined as required.<br />
+If the data code is not range of the array dimension then<br />
+the data is not included.<br />
+No error is generated to show that the data code is not in the range.<br />
+Data count is in the first table.</div>
+<h3>Syntax</h3>
+<pre><code>(N)darray6(D)
+N = set matrix dimensions eg: 5 5 5 5 5 5 eg. 4 4 4 4 6 8 etc
+D = matrix of data to be summarised of
+    which data codes are in the first six columns and data in
+    in the remaining columns</code></pre>
+<h3>Example</h3>
+<pre><code>   $ (5 5 5 5 5 5)darray6(Z =: 0 + ? 10 7 $ 5)
+2 5 5 5 5 5 5</code></pre>
+<h2 class="hdef" id="darray7">darray7 (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> dev1<br />
+Data codes have been determined as required.<br />
+If the data code is not range of the array dimension then<br />
+the data is not included.<br />
+No error is generated to show that the data code is not in the range.<br />
+Data count is in the first table.</div>
+<h3>Syntax</h3>
+<pre><code>(N)darray7(D)
+N = set matrix dimensions eg: 5 5 5 5 5 5 5 eg. 4 4 4 4 4 6 8 etc
+D = matrix of data to be summarised of
+    which data codes are in the first seven columns and data in
+    in the remaining columns</code></pre>
+<h3>Example</h3>
+<pre><code>  $ (5 5 5 5 5 5 5)darray7( Z =: ? 10 9 $ 5)
+3 5 5 5 5 5 5 5</code></pre>
+<h2 class="hdef" id="darray8">darray8 (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> dev1<br />
+Data codes have been determined as required.<br />
+If the data code is not range of the array dimension then<br />
+the data is not included.<br />
+No error is generated to show that the data code is not in the range.<br />
+Data count is in the first table.</div>
+<h3>Syntax</h3>
+<pre><code>(N)darray8(D)
+N = set matrix dimensions eg: 5 5 5 5 5 5 5 5 eg. 4 4 4 4 4 4 6 8 etc
+D = matrix of data to be summarised of
+    which data codes are in the first eight columns and data in
+    in the remaining columns</code></pre>
+<h3>Example</h3>
+<pre><code> $ (5 5 5 5 5 5 5 5)darray8(Z =: ?10 10 $ 5)
+3 5 5 5 5 5 5 5 5</code></pre>
+<h2 class="hdef" id="data_codes">data_codes (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> sort<br />
+Get the data codes from raw data.<br />
+Result is a boxed table of an index and data codes.<br />
+Data codes are sorted.</div>
+<h3>Syntax</h3>
+<pre><code>data_codes(D)
+D = data codes: required to be a boxed list.
+    text or numeric</code></pre>
+<h3>Example</h3>
+<pre><code>  data_codes &lt;&quot;0 &#39;sadfhyerZZ&#39;
+  data_codes &lt;&quot;0 [? 10 # 10</code></pre>
+<h2 class="hdef" id="index_sum_count">index_sum_count (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nubsum_code,max<br />
+Create sum and count from tables of codes and data.</div>
+<h2 class="hdef" id="nubsum">nubsum (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Produce totals for subgroups based on the nub of the group.<br />
+Data is a boxed matrix.</div>
+<h3>Syntax</h3>
+<pre><code>(C)nubsum(D)
+C = columns to determine the nub from data.
+    numeric and text
+D = data to be boxed
+    columns remaining to be summed ie: numeric</code></pre>
+<h3>Example</h3>
+<pre><code>  D =: &lt;&quot;0 (0,0,i.6),.(0 0 1 1 2 2 0 0 ),. 8 5 $1
+  0 nubsum  D
+  0 1 nubsum D
+  0 1 2 nubsum D</code></pre>
+<pre><code>  D1 =: (&lt;&quot;0 &#39;aabbcdef&#39;),.D
+  0  nubsum D1
+  0 1 nubsum D1</code></pre>
+<pre><code>  D2 =: (&lt;&quot;0 &#39;aghnmcde&#39;),.D1
+  0 1 nubsum D2
+  0 1 2 nubsum D2</code></pre>
+<h2 class="hdef" id="nubsum_all">nubsum_all (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Nub sum by code for data.<br />
+Try to make faster.</div>
+<h3>Syntax</h3>
+<pre><code>(C)nubsum_all(D)
+C = vector of codes
+D = Vector of values to be summed</code></pre>
+<h3>Example</h3>
+<pre><code>  0 1 2 4 5 2 0 1 nubsum_all 1 2 3 4 5 6 7 8
+0  8
+1 10
+2  9
+4  4
+5  5</code></pre>
+<pre><code>  ZZZZZ =: ? 100000 2 $ 10
+  sort (0{&quot;1 ZZZZZ) nubsum_all (1{&quot;1 ZZZZZ)</code></pre>
+<h2 class="hdef" id="nubsum_code">nubsum_code (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Sums for code - numerical data.</div>
+<h3>Syntax</h3>
+<pre><code>(D)nubsum_code(C)
+D = N x 2  matrix of index and data
+C = code to be summed</code></pre>
+<h3>Example</h3>
+<pre><code> 2 1 nubsum_code 2
+1 0</code></pre>
+<pre><code> ZZ =: 5 2 $ 2 1 3 2 0 1 3 12 2 99
+ ZZ nubsum_code 2
+2 100</code></pre>
+<pre><code>  &gt;ZZ &amp; nubsum_code each (~. 0{&quot;1 ZZ)
+2 100
+3  14
+0   1</code></pre>
+<pre><code>  ZZZ =: 100000 2 $ 2 1 3 2 0 1 3 12 2 99
+   &gt; ZZZ &amp; nubsum_code each (~. 0{&quot;1 ZZZ)
+2 2000000
+3  280000
+0   20000</code></pre>
+<pre><code>  ZZZZ =: ? 100000 2 $ 1000
+  &gt; ZZZZ &amp; nubsum_code each (~. 0{&quot;1 ZZZZ)</code></pre>
+</body>
+</html>
