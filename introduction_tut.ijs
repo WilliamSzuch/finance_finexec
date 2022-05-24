@@ -2,7 +2,7 @@
 NB. =========================================================
 TITLE: Finexec: Introduction to Tutorials
 Contributor: William Szuch
-Updated: 2/3/2021
+Updated: 2021-06-16
 )
 0 : 0
 NB. =========================================================

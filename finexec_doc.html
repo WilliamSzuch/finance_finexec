@@ -6,12 +6,12 @@
 </head>
 <body>
 <div class="HDR1">
-<h1><a href="http://www.finexec.com.au" target="_blank"><img alt="NF" src="finexec.jpg" width="45px" height="35px"></a>Finexec: Documentation</h1>
+<h1><a href="http://www.finexec.com.au"><img alt="NF" src="finexec.jpg" width="45px" height="35px"></a>Finexec: Documentation</h1>
 <a class="HREF" href="http://www.finexec.com.au" target="_blank">Finexec | </a>
-<a class="HREF" href="finexec_doc.html" target="_blank">Documentation | </a>
-<a class="HREF" href="finexec_cat.html" target="_blank">Category | </a>
-<a class="HREF" href="finexec_usage.html" target="_blank">Usage | </a>
-<a class="HREF" href="finexec_style.html" target="_blank">Style</a>
+<a class="HREF" href="finexec_lib.html">Library | </a>
+<a class="HREF" href="finexec_doc.html">Documentation | </a>
+<a class="HREF" href="finexec_usage.html">Usage | </a>
+<a class="HREF" href="finexec_style.html">Style</a>
 </div>
 
 <h3 class="Hw">Documentation</h3>
@@ -22,17 +22,25 @@ Finexec documentation is provided at three levels:
   3) definition
 
 <b>1) Category</b>
-Category documentation provides an overview of the subject or task. 
+Category documentation provides an overview of the subject or task covered in the caterory and a list of scripts. 
 For example: <b><a class="HREF" href="../finexec/basicfinance/docs/index.htm" target="_blank">Basic Finance</a></b>
 The categories are installed in the folder: <b>dir '~addons/finance/finexec'</b>
 Category scripts are in sub-folders. eg: <b>dir '~addons/finance/finexec/basicfinance'</b>
-A category may have a terminology link that sets out the meaning and usage of terms in the definitions.
- 
+A category folder may can have other sub folders and files eg:
+(a) terminology file that sets out the meaning and usage of terms in the definitions
+(b) docs
+(c) eqs 
+(d) tutes
+
 <b>2) Script</b>
-Script doscumentation provides an overview of the definitions for a subject or task.  
+Script doscumentation provides an overview of the definitions for a subject or task covered in the script.  
 For example: <b><a class="HREF" href="../finexec/basicfinance/docs/simple.htm" target="_blank">simple.ijs</a></b>
-The script scource can also be viewed. eg: <b><a class="HREF" href="../finexec/basicfinance/simple.ijs" target="_blank">Script source: simple.ijs</a></b>
+The script J scource can also be viewed. eg: <b><a class="HREF" href="../finexec/basicfinance/simple.ijs" target="_blank">Script source: simple.ijs</a></b>
 A script may have equations for its definitions.
+<b>View Source Script</b>
+The source script can be viewed in Qt and JHS IDE front ends.
+eg: Qt IDE: <b>open '~addoms/finance/finexec/basicfinance/simple.ijs'</b>
+eg: JHS IDE:<b>edit '~addons/finance/finexec/basicfinance/simple.ijs'</b>
 
 <b>3) Definition</b>
 Definition documentation is provided in the scripts.
@@ -50,20 +58,9 @@ Use the <b>Edit | Find in Files</b> in the Term window.<br>
 Search in the folder:<b> ~addons/finance/finexec</b> to start.
 </p>
 
-<h3 class="Hw">Tutorials: (under development)</h3>
-<pre>
-Tutorials provide examples of using Finexec scripts and definitions to solve problems.
-Tutorials are held by category, eg: <b>dir '~addons/finance/finexec/basicfinance/tutes'</b>
-   
-In the Qt or JHS session run: 
-   <b>finexec_tutorials ''</b>
-to list and run tutorials.
 
-For an introduction to using tutorials run: 
-   <b>introduction_tut ''</b> 
-</pre>
 
 <hr>
-Updated: 28/2/2021
+Updated: 2022-05-23
 </body>
 </html>

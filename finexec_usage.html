@@ -6,21 +6,21 @@
 </head>
 <body>
 <div class="HDR1">
-<h1><a href="http://www.finexec.com.au" target="_blank"><img alt="NF" src="finexec.jpg" width="45px" height="35px"></a>Finexec: Usage</h1>
-<a class="HREF" href="http://www.finexec.com.au" target="_blank">Finexec | </a>
-<a class="HREF" href="finexec_doc.html" target="_blank">Documentation | </a>
-<a class="HREF" href="finexec_cat.html" target="_blank">Category | </a>
-<a class="HREF" href="finexec_usage.html" target="_blank">Usage | </a>
-<a class="HREF" href="finexec_style.html" target="_blank">Style</a>
+<h1><a href="http://www.finexec.com.au"><img alt="NF" src="finexec.jpg" width="45px" height="35px"></a>Finexec: Usage</h1>
+<a class="HREF" href="http://www.finexec.com.au">Finexec | </a>
+<a class="HREF" href="finexec_lib.html">Library | </a>
+<a class="HREF" href="finexec_doc.html">Documentation | </a>
+<a class="HREF" href="finexec_usage.html">Usage | </a>
+<a class="HREF" href="finexec_style.html">Style</a>
 </div>
 <p>
 Use the Finexec scripts and definitions to solve problems and develop your
-own defitions and projects. The scripts and definitions can be copied, modified as required for a project.
+own definitions and projects. The scripts and definitions can be copied, modified as required for a project.
 </p>
 
 <h3 class="Hw">Overview</h3>
 <p>
-The JAL addons require to be installed.<br>
+The J Application Libray (JAL) addons require to be installed.<br>
 The Finexec scripts are installed in the folder:<b>~addons/finance/finexec</b> <br>
 Individual scripts can then be used for a task or project.<br>
 Review the documentation for a script and definitions.
@@ -28,24 +28,44 @@ Review the documentation for a script and definitions.
 
 <h3 class="Hw">Loading Finexec Scripts</h3>
 <pre>
-Generally Finexec scripts are loaded into the base locale.
+Finexec scripts require to be individually loaded for a task or project. 
+Generally Finexec scripts are loaded into the <b>base</b> locale.
 eg: <b>load '~addons/finance/finexec/basicfinance/simple.ijs'</b>
 Check the script scource for details.
 eg: <b>open '~addons/finance/finexec/basicfinance/simple.ijs'</b>
 
-If required the script can be loaded to another locale to aviod naming conflicts.
+If required a script can be loaded to another locale.
 eg: <b>load_simple_ '~addons/finance/finexec/basicfinance/simple.ijs'</b>
+Check the source script any load details.
 
 Any dependencies for a script are listed and loaded.
 </pre>
 
-<h3 class="Hw">Search  Finexec</h3>
-<p>
-The Finexec scripts can be searched for keywords, phrases and text to find 
-material for a problem or project. Use the search in files facility that is part of the J installation.<br>
-Search in the folder:<b> ~addons/finance/finexec</b><br>
-</p>
+<h3 class="Hw">Finexec Information</h3>
+<pre>
+To get information in a J session run:
+  <b>load 'finance/finexec'</b>
+</pre>
+  
+<h3 class="Hw">Example</h3>
+<pre>
+Load the script: <b>load '~addons/finance/finexec/basicfinance/simple.ijs'</b>
+The defintions are in the base locale: <b>names ''</b>
+Check the script for load details.
+</pre>
+<pre class="WE">
+    0.05 st 1 2 3
+1.05 1.1 1.15 
+</pre>
+
+<h3 class="Hw">Calculators</h3>
+<pre>
+Load a calculator:
+  <b>load '~addons/finance/finexec/calculators/explife/explifeb.ijs'</b>
+</pre>
+
+
 <hr>
-Updated: 26/2/2021
+Updated: 2022-05-22
 </body>
 </html>

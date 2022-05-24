@@ -6,27 +6,30 @@
 </head>
 <body>
 <div class="HDR1">
-<h1><a href="http://www.finexec.com.au" target="_blank"><img alt="NF" src="finexec.jpg" width="45px" height="35px"></a>Finexec: Style</h1>
-<a class="HREF" href="http://www.finexec.com.au" target="_blank">Finexec | </a>
-<a class="HREF" href="finexec_doc.html" target="_blank">Documentation | </a>
-<a class="HREF" href="finexec_cat.html" target="_blank">Category | </a>
-<a class="HREF" href="finexec_usage.html" target="_blank">Usage | </a>
-<a class="HREF" href="finexec_style.html" target="_blank">Style</a>
+<h1><a href="http://www.finexec.com.au"><img alt="NF" src="finexec.jpg" width="45px" height="35px"></a>Finexec: Style</h1>
+<a class="HREF" href="http://www.finexec.com.au">Finexec | </a>
+<a class="HREF" href="finexec_lib.html">Library | </a>
+<a class="HREF" href="finexec_doc.html">Documentation | </a>
+<a class="HREF" href="finexec_usage.html">Usage | </a>
+<a class="HREF" href="finexec_style.html">Style</a>
 </div>
 <p>
 The styles and conventions used to document the Finexec scripts and definitions are 
-set out below.
+set out below.<br>The scripts are documented using the <b>~addons/docs/joxygen/joxygen.ijs</b> addon package
+which creates htm files from the script.
+For details see: <a class="HREF" href="http://code.jsoftware.com/wiki/Addons/docs/joxygen" target="_blank">Joxygen</a>
 </p>
 <pre>
-Example: category source script: <a class="HREF" href="basicfinance/basicfinance_docs.ijs" target="_blank">finexec/basicfinance/basicfinance_docs.ijs</a>
+Example: category documentaion:<a class="HREF" href="basicfinance/docs./index.htm" target="_blank">Finexec Category: Basic Finance</a>
 Example: script source documentation style: <a class="HREF" href="basicfinance/simple.ijs" target="_blank">finexec/basicfinance/simple.ijs</a>
-Resulting documentation: <a class="HREF" href="basicfinance/docs/simple.htm" target="_blank">finexec/basicfinance/docs/simple.htm</a>
+Example: script documentation: <a class="HREF" href="basicfinance/docs/simple.htm" target="_blank">finexec/basicfinance/docs/simple.htm</a>
 </pre>
 <h3 class="Hw">Caterory</h3>
 <pre>
-The category scripts are of the form category_docs.ijs and:
-1) detail the subject and tasks  
-2) set out the documentation for the scripts and definitions
+The category documentaion provides:
+1) details of the subject and tasks covered in the category
+2) list of scripts in the category 
+3) list of definitions in the category
 </pre>
 <h3 class="Hw">Scripts</h3>
 <pre>
@@ -39,18 +42,15 @@ The documentation for the definitions in a script can be viewed by linking to a 
 The scripts can be used for projects and jobs.
 The scripts can copied, modified and loaded into another locale for a project or job to aviod
 potential naming conflicts.
-<b>View Source Scripts</b>
+<b>View Source Script</b>
 The source script can be viewed in Qt and JHS IDE front ends.
-eg: Qt IDE: open '~addoms/finance/finexec/basicfinance/simple.ijs'
-eg: JHS IDE: edit '~addons/finance/finexec/basicfinance/simple.ijs'
+eg: Qt IDE: <b>open '~addoms/finance/finexec/basicfinance/simple.ijs'</b>
+eg: JHS IDE:<b>edit '~addons/finance/finexec/basicfinance/simple.ijs'</b>
 <b>Source Script Names</b> 
-Script names as general rule use lowercase. For example: ~addons/finexec/basicfinance/simple.ijs
+Script names as general rule use lowercase. For example:<b>~addons/finexec/basicfinance/simple.ijs</b>
 <b>Script Status</b>
 Defined as: done: update: review: todo: dev: 
-<b>Source Script Documentation</b>
-The scripts are documented using the '~addons/docs/joxygen/joxygen.ijs' package
-which creates htm files from the script.
-For details see: <a class="HREF" href="http://code.jsoftware.com/wiki/Addons/docs/joxygen">Joxygen</a>
+
 </pre>
 
 <h3 class="Hw">Definitions</h3>
@@ -101,6 +101,6 @@ Some browsers may not support the &#60;math&#62 element and therefore equations 
 not be displayed correctly.
 </pre>
 <hr>
-Updated: 15/4/2021
+Updated: 2022-05-23
 </body>
 </html>
