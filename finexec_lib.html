@@ -1,28 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<meta charset="utf-8">
 <head>
 <title>Finexec: Library</title>
-<link rel="stylesheet" href="finexec.css" type="text/css">
+<link rel="stylesheet" href="finexec.css">
 </head>
 <body>
-<div class="HDR1">
-<h1><a href="http://www.finexec.com.au"><img alt="NF" src="finexec.jpg" width="45px" height="35px"></a>Finexec: Library</h1>
-<a class="HREF" href="http://www.finexec.com.au">Finexec | </a>
-<a class="HREF" href="finexec_lib.html">Library | </a>
-<a class="HREF" href="finexec_doc.html">Documentation | </a>
-<a class="HREF" href="finexec_usage.html">Usage | </a>
-<a class="HREF" href="finexec_style.html">Style</a>
-</div>
-<p>
-The Finexec library consists of:<br> 
-(a) J programming scripts that are grouped by category related to the subject or task.<br>
-(b) Tutorials that provide examples of using the scripts and definitions to solve problems.<br>
-(c) Calculators
-</p>
-<h3 class="Hw">Category</h3>
+<script src="finexec_lib.js"></script>
+<h3 class="Hw">Library</h3>
+<pre>
+The Finexec library consists of:
+1 J programming scripts that are grouped by <b>category</b> related to the subject or task.
+2 Labs that provide examples of using the scripts and definitions to solve problems.
+3 Calculators
+</pre>
+<h3 class="Hw">1 Category</h3>
 <table>
 <tr>
-  <td><a class="HREF" href="./actuariallife/docs/index.htm">Actuarial Life</a> </td>
+  <td><a class="HREF" href="./actuariallife/docs/index.htm">Actuarial Life</a></td>
   <td>Life table, life annuities and life insurance</td>
 </tr>
 <tr>
@@ -38,7 +33,7 @@ The Finexec library consists of:<br>
   <td>Basic financial and actuarial calculators</td>
 </tr>
 <tr>
-  <td><a class="HREF" href="./datetime/docs/index.htm">Date Time</a> </td>
+  <td><a class="HREF" href="./datetime/docs/index.htm">Date Time</a></td>
   <td>Definitions for date and time calculations</td>
 </tr>
 <tr>
@@ -54,8 +49,12 @@ The Finexec library consists of:<br>
   <td>J Phrases</td>
 </tr>
 <tr>
-  <td><a class="HREF" href="./jsp/docs/index.htm">J Statistical Package</a></td>
+  <td><a class="HREF" href="./jstatpac/docs/index.htm">J Statistical Package</a></td>
   <td>J Statistical Package (Keith Smillie)</td>
+</tr>
+<tr>
+  <td><a class="HREF" href="./miscellaneous/docs/index.htm">Miscellaneous</a></td>
+  <td>Show the power of J for solving problems</td>
 </tr>
 <tr>
   <td><a class="HREF" href="./qxtables/docs/index.htm">Qx Tables</a></td>
@@ -66,43 +65,53 @@ The Finexec library consists of:<br>
   <td>J interface to the R Statistcal Package</td>
 </tr>
 <tr>
+  <td><a class="HREF" href="./statistics/docs/index.htm">Statistics</a> </td>
+  <td>Statistical tools</td>
+</tr>
+<tr>
   <td><a class="HREF" href="./toolbox/docs/index.htm">Toolbox</a></td>
-  <td>Tools for developing scripts and definition for a task or project</td>
+  <td>Tools for developing scripts and definitions</td>
 </tr>
 </table>
 
-
-<h3 class="Hw">Tutorials (under development)</h3>
+<h3 class="Hw">2 Labs</h3>
 <pre>
-Tutorials are run in a J session and are in early stages of development.
-In the Qt or JHS session run: 
-    <b>finexec_tutorials ''</b>
-to list and run tutorials.
-For an introduction to using tutorials run: 
-   <b>introduction_tut ''</b> 
+Labs are run in a Jqt session and are in early stages of development.
+In the Jqt session run: 
+    <b>load 'finance/finexec'</b> if not already loaded.
+    <b>finexec_labs ''</b>
+to list and run labs.
+For an introduction to using labs run: 
+   <b>introduction_lab ''</b> 
 </pre>
 
-<h3 class="Hw">Calculators</h3>
+<h3 class="Hw">3 Calculators</h3>
 <pre>
-Financial and actuarial calculators are available in a Qt session.
+Financial and actuarial calculators are available in a Jqt session.
 For a list of calculators: <a class="HREF" href="./calculators/docs/index.htm" target="_blank">Calculators</a>
 </pre>
 
-
-<h3 class="Hw">All Scripts</h3>
-<table>
-  <tr><a class="HREF" href="./allscripts/docs/index.htm" target="_blank">All Scripts</a></tr>
-  <tr>  View all Finexec scripts and documentation subject to limitations to links </tr>
+<h3 class="Hw">All Finexec Scripts</h3>
+View <table>
+  <tr><a href="./allscripts/docs/index.htm" target="_blank">All Finexec Scripts</a></tr>
+  <tr> subject to limitations.</tr>
 <p>
 <b>Limitations</b><br>
-The links in the script when accessing using <b>All Scripts</b> are not available. For example:<br>
+The links in the scripts when accessing using the link <b>All Finexec Scripts</b> are not available. For example:<br>
 * Script source<br>
 * Equations<br>
 * Terminology<br>
 * etc.<br>
 These links are available when using the <b>Library</b> link via the category to access the script.
 </p>
+<h3 class="Hw">Search Finexec Library</h3>
+<p>
+The Finexec library scripts can be searched for keywords, phrases and text to 
+find subjects and definitions for a problem or project.<br>
+Use the <b>Edit | Find in Files</b> in the Term window.<br>
+Search in the folder:<b> ~addons/finance/finexec</b> to start.
+</p>
 <hr>
-Updated: 2022-05-23
+Updated: 2023 05 19
 </body>
 </html>

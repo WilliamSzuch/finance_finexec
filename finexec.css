@@ -1,4 +1,5 @@
 /* finexec.css
+Updated: 2022 7 13
 Styles that apply to Finexec pages.
 * { = applies to all elements
 .zzz = class
@@ -12,8 +13,8 @@ body {margin-left: 20px;margin-right: 20px;background-color:rgb(230,250,240);}
 h1,h2,h3,h4 {font-weight:bold;margin-top:0px;margin-bottom:0px;}
 
 /* href links */
-.HREF {color:rgb(0,0,255);}
-.HREF:hover {color:rgb(255,255,255);background-color:rgb(255,0,0);}
+a {color:rgb(0,0,255);}
+a:hover {color:rgb(255,255,255);background-color:rgb(255,0,0);} 
 
 /* Headings */
 .HDR1 {background-image:linear-gradient(90deg,rgb(215,255,215),rgb(0,215,0));padding-top:4px;}

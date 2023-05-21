@@ -1,78 +1,149 @@
 NB. =========================================================
 NB.%finexec.ijs - Finexec addon
 NB.- Script: ~addons/finance/finexec/finexec.ijs
-NB.- Updated: 2022-05-24
-NB.- Depend: ~addons/ide/jhs/sp.ijs'
+NB.- Updated: 2023 03 29
+NB.- Depend: ~addons/lads/labs/labs.ijs'
 NB.- Definitions: loaded to locale z
 NB.-<hr>
+NB.- For Jqt session
+NB.- Limitations in JHS and J Playground sessions.
 NB.- Information about the Finexec addon only.
-NB.- Finexec addon scripts loaded.
+NB.- Finexec addon scripts are NOT loaded.
 NB.- Use path ~addons/finance/finexec/...
 NB.-<hr>
 
 
-require '~addons/ide/jhs/sp.ijs'
+NB. =========================================================
+Note 'Using J Playground'
+Opening a script from GitHub in the J Playground Edit window
+openscript 'https://raw.githubusercontent.com/cdburke/simple/master/structural.ijs'
+openscript 'https://raw.githubusercontent.com/WilliamSzuch/finance_finexec/master/basicfinance/simple.ijs'
+openscript 'https://raw.githubusercontent.com/WilliamSzuch/finance_finexec/master/basicfinance/labs/simple_interest_lab.ijs'
+openscript 'https://raw.githubusercontent.com/WilliamSzuch/finance_finexec/master/sudoku/sudoku_hui.ijs'
+)
 
 
 coclass 'z'
 
 
+IFJPLAY =: IFQT = IFJHS  NB. J Playground session
+
+
+require 'labs/labs'
+
+
+SESSION =: (IFJPLAY,IFQT,IFJHS) # 'J Playground';'Jqt session';'JHS session'
+
 NB. =========================================================
-NB. Show the script source for a file.
-NB. showscript '~addons/finance/finexec/basicfinance/simple.ijs'
-showscript =: 3 : 0
-if. IFJHS = 1 do. edit y  else. open y end.
+smoutput <'*** Running in a ',(,>SESSION),' ***'
+
+
+NB. =========================================================
+NB. Popups permissions 
+NB. browse_jplay 'http://www.finexec.com.au'
+NB. browse_jplay 'https://www.jsoftware.com'
+NB. browse_jplay 'addons/finance/finexec/basicfinance/docs/index.htm'
+NB. ---------------------------------------------------------
+browse_jplay =: {{2!:0 'open("',y,'")'}}
+
+
+NB. =========================================================
+NB. Open a script in the J Playground
+NB. Modified from open in the J playground
+NB. open_jplay '~addons/math/misc/bigpi.ijs'
+NB. ---------------------------------------------------------
+open_jplay =: 3 : 0
+data =. fread  getscripts_j_ y
+(2!:0) '{ ecmset(jgetstr("data")) }'
 )
 
 
 NB. =========================================================
-NB. Show the htm or html window.
+NB. Show the script source for a file.
+NB. In Qt, JHS and the J PLayground
+NB. showscript '~addons/finance/finexec/basicfinance/simple.ijs'
+NB. ---------------------------------------------------------
+NB. J Playground
+NB. showscript '~addons/math/misc/bigpi.ijs'
+NB. ---------------------------------------------------------
+showscript =: 3 : 0
+if. IFQT = 1 do. open y end.
+if. IFJHS = 1 do. edit y end.
+if. IFJPLAY = 1 do. open_jplay y end.
+)
+
+
+NB. =========================================================
+NB. Show the html,htm and gif files in a window.
+NB. finexec_html 'finexec_lib.html'
 NB. finexec_html 'basicfinance/docs/simple.htm'
-NB. finexec_html 'basicfinance/eqs/simple_ijs.html'
+NB. finexec_html 'basicfinance/eqs/simple_ijs.gif'
+NB. ---------------------------------------------------------
 finexec_html =: 3 : 0
-if. IFQT =1 do. browse_j_ 'file:///',jpath '~addons/finance/finexec/',y
-else.L =. '<a href="http://127.0.0.1:65001/~addons/finance/finexec',y,'"' ,'target="_blank">',y,'</a>'
-jhtml '<div contenteditable="false"></span>',L end.
+if. IFQT =1 do. browse_j_ 'file:///',jpath '~addons/finance/finexec/',y end.
+if. IFJHS = 1 do. L =. '<a href="http://127.0.0.1:65001/~addons/finance/finexec/',y,'"' ,'target="_blank">',y,'</a>'
+    jhtml '<div contenteditable="false"></span>',L end.
+if. IFJPLAY = 1 do. browse_jplay jpath '~addons/finance/finexec/',y end.
+)
+
+
+NB. =========================================================
+NB. Show Finexec website
+NB. finexec ''
+NB. ---------------------------------------------------------
+finexec =: 3 : 0
+if. IFQT =1 do. browse_j_ 'http://www.finexec.com.au' end.
+if. IFJHS = 1 do. L =. '<a href="http://www.finexec.com.au" target="_blank">Finexec</a>'
+    jhtml '<div contenteditable="false"></span>',L end.
+if. IFJPLAY = 1 do. browse_jplay 'http://www.finexec.com.au' end.
+)
+
+
+NB. =========================================================
+NB. Show Jsoftware
+NB. jsoftware ''
+NB. ---------------------------------------------------------
+jsoftware =: 3 : 0
+if. IFQT =1 do. browse_j_ 'http://www.jsoftware.com' end.
+if. IFJHS = 1 do. L =. '<a href="http://www.jsoftware.com" target="_blank">Finexec</a>'
+    jhtml '<div contenteditable="false"></span>',L end.
+if. IFJPLAY = 1 do. browse_jplay 'https://www.jsoftware.com' end.
 )
 
 
 NB. =========================================================
 NB. Show the finexec_doc window.
 NB. finexec_doc ''
+NB. ---------------------------------------------------------
 finexec_doc =: 3 : 0
-if. IFQT = 1 do. browse_j_ 'file:///',jpath '~addons/finance/finexec/finexec_doc.html'
-else. L =. '<a href="http://127.0.0.1:65001/~addons/finance/finexec/finexec_doc.html" target="_blank">Documentation</a>'
-jhtml '<div contenteditable="false"></span>',L end.
+finexec_html 'finexec_doc.html'
 )
 
 
 NB. =========================================================
 NB. Show the finexec_lib window.
 NB. finexec_lib ''
+NB. ---------------------------------------------------------
 finexec_lib =: 3 : 0
-if. IFQT = 1 do. browse_j_ 'file:///',jpath '~addons/finance/finexec/finexec_lib.html'
-else. L =. '<a href="http://127.0.0.1:65001/~addons/finance/finexec/finexec_lib.html" target="_blank">Library</a>'
-jhtml '<div contenteditable="false"></span>',L end.
+finexec_html 'finexec_lib.html'
 )
 
 
 NB. =========================================================
 NB. Show the finexec_usage window.
 NB. finexec_usage ''
+NB. ---------------------------------------------------------
 finexec_usage =: 3 : 0
-if. IFQT = 1 do. browse_j_ 'file:///',jpath '~addons/finance/finexec/finexec_usage.html'
-else. L =. '<a href="http://127.0.0.1:65001/~addons/finance/finexec/finexec_lib.html" target="_blank">Usage</a>'
-jhtml '<div contenteditable="false"></span>',L end.
+finexec_html 'finexec_usage.html'
 )
 
 
 NB. =========================================================
 NB. Show the finexec_style window.
 NB. finexec_lib ''
+NB. ---------------------------------------------------------
 finexec_style =: 3 : 0
-if. IFQT = 1 do. browse_j_ 'file:///',jpath '~addons/finance/finexec/finexec_style.html'
-else. L =. '<a href="http://127.0.0.1:65001/~addons/finance/finexec/finexec_lib.html" target="_blank">Style</a>'
-jhtml '<div contenteditable="false"></span>',L end.
+finexec_html 'finexec_style.html'
 )
 
 
@@ -91,56 +162,91 @@ NB. =========================================================
 NB. Initial output on: load 'finance/finexec
 smoutput  ADDON_MSG
 smoutput <'Run the following sentences for information'
-smoutput 'finexec_usage ''''','            NB. Finexec usage'
-smoutput 'finexec_lib ''''','              NB. Finexec library by category'
-smoutput 'finexec_doc ''''','              NB. Documentation overview'
-smoutput 'finexec_style ''''','            NB. Documentation style'
-smoutput 'finexec_tutorials ''''','        NB. List and run tutorials'
+smoutput 'finexec ''''','                  NB. Finexec home'
+smoutput 'finexec_lib ''''','              NB. Library'
+smoutput 'finexec_doc ''''','              NB. Documentation'
+smoutput 'finexec_usage ''''','            NB. usage'
+smoutput 'finexec_style ''''','            NB. Syle'
+smoutput 'finexec_labs ''''','             NB. List and run labs'
 
 
 NB. =========================================================
-NB. Tutorials: List and run
+NB. Labs: List and run
 NB. =========================================================
 
 
 NB. =========================================================
-NB. Show a list and run the Finenxec tutorials.
-NB. finexec_tutorials ''
-finexec_tutorials =: 3 : 0
+NB. Show a list and run the labs.
+NB. finexec_labs ''
+finexec_labs =: 3 : 0
 smoutput <'*** Introduction ***'
-smoutput 'introduction_tut ''''','' 
+smoutput 'introduction_lab ''''','' 
 smoutput <'*** Basic Finance ***'
-smoutput 'cash_flow_approach_tut ''''','' 
-smoutput 'simple_interest_tut ''''','' 
-smoutput 'compound_interest_tut ''''','' 
+smoutput 'simple_interest_lab ''''','' 
+smoutput 'compound_interest_lab ''''','' 
+smoutput 'cash_flow_approach_lab ''''','' 
+smoutput <'*** Qx Tables ***'
+smoutput 'qx_tables_lab ''''','' 
+smoutput <'*** Actuarial Life ***'
+smoutput 'life_table_lab ''''','' 
+smoutput 'life_annuities_lab ''''','' 
 )
 
 
 NB. =========================================================
-NB. introduction_tut ''
-introduction_tut =: 3 : 0
-spx_jsp_  '~addons/finance/finexec/introduction_tut.ijs'
+NB. introduction_lab ''
+introduction_lab =: 3 : 0
+lab '~addons/finance/finexec/introduction_lab.ijs'
+)
+
+NB. =========================================================
+NB. Basic Finance Labs
+NB. =========================================================
+
+NB. =========================================================
+NB. cash_flow_approach_lab ''
+cash_flow_approach_lab =: 3 : 0 
+lab '~addons/finance/finexec/basicfinance/labs/cash_flow_approach_lab.ijs'
+)
+
+NB. =========================================================
+NB. simple_interest_lab ''
+simple_interest_lab =: 3 : 0 
+lab '~addons/finance/finexec/basicfinance/labs/simple_interest_lab.ijs'
+)
+
+NB. =========================================================
+NB. compound_interest_lab ''
+compound_interest_lab =: 3 : 0 
+lab '~addons/finance/finexec/basicfinance/labs/compound_interest_lab.ijs'
 )
 
 
 NB. =========================================================
-NB. cash_flow_approach_tut ''
-cash_flow_approach_tut =: 3 : 0 
-spx_jsp_ '~addons/finance/finexec/basicfinance/tutes/cash_flow_approach_tut.ijs'
+NB. Qx Tables Labs
+NB. =========================================================
+
+NB. =========================================================
+NB. qx_tables_table_lab ''
+qx_tables_lab =: 3 : 0 
+lab '~addons/finance/finexec/qxtables/labs/qx_tables_lab.ijs'
 )
 
 
 NB. =========================================================
-NB. simple_interest_tut ''
-simple_interest_tut =: 3 : 0 
-spx_jsp_ '~addons/finance/finexec/basicfinance/tutes/simple_interest_tut.ijs'
-)
-
+NB. Actuarial Life Labs
+NB. =========================================================
 
 NB. =========================================================
-NB. compound_interest_tut ''
-compound_interest_tut =: 3 : 0 
-spx_jsp_ '~addons/finance/finexec/basicfinance/tutes/compound_interest_tut.ijs'
+NB. life_table_lab ''
+life_table_lab =: 3 : 0 
+lab '~addons/finance/finexec/actuariallife/labs/life_table_lab.ijs'
+)
+
+NB. =========================================================
+NB. life_annuities_lab ''
+life_annuities_lab =: 3 : 0 
+lab '~addons/finance/finexec/actuariallife/labs/life_annuities_lab.ijs'
 )
 
 
@@ -165,53 +271,31 @@ smoutput 'load_ipm ''''','                NB. Investment Performance Measurement
 
 NB. =========================================================
 load_actuariallife =: 3 : 0
-AL =. '~addons/finance/finexec/actuariallife/'
-load AL,'lifeannuities.ijs'          
-load AL,'lifeinsurance.ijs'          
-load AL,'lifetable.ijs'              
-load AL,'lifetable_multiplelives.ijs'
-smoutput <'Actuarial Life loaded'
+load '~addons/finance/finexec/actuariallife/actuariallife.ijs'
 )
 
 
 NB. =========================================================
 load_basicfinance =: 3 : 0
-BF =. '~addons/finance/finexec/basicfinance/'
-load BF,'compound.ijs'
-load BF,'compoundv.ijs'  
-load BF,'force.ijs'
-load BF,'fundprojection.ijs'   
-load BF,'fundprojection_a.ijs'
-load BF,'lease.ijs'           
-load BF,'loan.ijs'            
-load BF,'loanschedule.ijs'    
-load BF,'rba.ijs'             
-load BF,'ruleof78.ijs'        
-load BF,'simple.ijs'          
-load BF,'timeline.ijs' 
-smoutput <'Basic Finance loaded'
+load '~addons/finance/finexec/basicfinance/basicfinance.ijs'
 )
 
 
 NB. =========================================================
 load_ipm=: 3 : 0
-IP =. '~addons/finance/finexec/ipm/'
-load IP,'invreturnhardy.ijs'
-load IP,'mwrr.ijs'          
-load IP,'twrr.ijs'   
-smoutput <'Investment Performance Measurement loaded'
+load '~addons/finance/finexec/ipm/ipm.ijs'
 )
 
 
 NB. =========================================================
-NB. Load a calculator
+NB. Load some calculators
 NB. =========================================================
 
 
 NB. =========================================================
 LOAD_CALC =: < >LF cut 0 : 0
 Run the following sentences to load a calculator.
-*** Only in a Qt session ***
+*** Only in a Jqt session ***
 )
 smoutput LOAD_CALC
 smoutput 'load_explifeb ''''','          NB. Expectation of Life Single Life'
