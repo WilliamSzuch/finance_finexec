@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>distributions.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">distributions.ijs</h1>
+</header>
+<script src="../js/statistics_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/statistics/distributions.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2023 03 17<br />
+Depend: plot<br />
+Definitions: loaded to locale base<br />
+Status: dev<br />
+<a href="../distributions.ijs" target="_blank">Script source:
+distributions.ijs</a></div>
+<hr>
+<div class="line-block">Definitions for distribution functions:<br />
+Probability density function (pdf)<br />
+Cummualtive density function (cdf)</div>
+<hr>
+<div class="line-block">See stats functions from:
+‘~addons/stats/base.ijs’<br />
+base.ijs loads complete set of base statistical verbs into locale
+z.</div>
+<hr>
+<div class="line-block">Equations:<br />
+To Do</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+L
+</td>
+<td>
+<a href="#lognormal_pdf">lognormal_pdf</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+N
+</td>
+<td>
+<a href="#normal_pdf">normal_pdf</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+P
+</td>
+<td>
+<a href="#poisson_pdf">poisson_pdf</a>, <a
+href="#polygon_cdf">polygon_cdf</a>, <a
+href="#polygon_pdf">polygon_pdf</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+X
+</td>
+<td>
+<a href="#x_from_y">x_from_y</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+Y
+</td>
+<td>
+<a href="#y_from_x">y_from_x</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="x_from_y" class="rid">
+x_from_y
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Interpolation of y onto x - disctete curve.
+</td>
+</tr>
+<tr>
+<td id="y_from_x" class="rid">
+y_from_x
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Interpolation of x onto y - disctete curve.
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="lognormal_pdf">lognormal_pdf (verb)</h2>
+<div class="line-block"><b>Form:</b> explici<br />
+<b>Depend:</b>nil<br />
+Lognormal pdf<br />
+X has distribution Normal(mean,stddev)<br />
+Y = exp(X) so that X = log(Y)<br />
+The pdf of Y is lognormal</div>
+<h3>Syntax</h3>
+<pre><code>[M,S]lognormal_pdf(P)
+   M = mean
+   S = standard devation
+   Default = (0,1)
+   P = Point to calculate the value of the pdf</code></pre>
+<h3>Example</h3>
+<pre><code>  lognormal_pdf( 1 2)
+0.398942 0.221853</code></pre>
+<pre><code> plot (steps 0.001 4 1000);(0,0.5)lognormal_pdf(steps 0.001 4 1000)</code></pre>
+<h2 class="hdef" id="normal_pdf">normal_pdf (verb)</h2>
+<div class="line-block"><b>Form:</b> explici<br />
+<b>Depend:</b> nil<br />
+Normal pdf</div>
+<h3>Syntax</h3>
+<pre><code>[M,S]normal_pdf(P)
+   M = mean
+   S = standard devation
+ Default = (0,1)
+   P = Point to calculate the value of the pdf</code></pre>
+<h3>Example</h3>
+<pre><code>   normal_pdf(_2 _1 0 1 2)
+0.053991 0.241971 0.398942 0.241971 0.053991</code></pre>
+<pre><code>  plot (steps _4 4 1000);normal_pdf(steps _4 4 1000)</code></pre>
+<pre><code>  plot (steps _4 4 1000);(1,0.5)normal_pdf(steps _4 4 1000)</code></pre>
+<h2 class="hdef" id="poisson_pdf">poisson_pdf (verb)</h2>
+<div class="line-block">Poison pdf</div>
+<h2 class="hdef" id="polygon_cdf">polygon_cdf (verb)</h2>
+<p>synax:</p>
+<h2 class="hdef" id="polygon_pdf">polygon_pdf (verb)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b>nil<br />
+Polygon pdf<br />
+Area under the polygon to be scaled to 1</div>
+<h3>Syntax</h3>
+<pre><code> (X;Y)polygon_pdf(P)</code></pre>
+</body>
+</html>
