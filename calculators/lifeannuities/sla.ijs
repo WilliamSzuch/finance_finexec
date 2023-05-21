@@ -7,10 +7,10 @@ NB.-<a class="HREF" href="index.htm" target="_blank">Calculators</a>
 NB.-<hr>
 NB.- Script: ~addons/finance/finexec/calculators/lifeannuities/sla.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-20
+NB.- Updated: 2022 8 4
 NB.- Depend: ~addons/finance/finexec/qxtables/alt.ijs
 NB.- Definitions: loaded to locale singlelifeannuity
-NB.- Status: dev:
+NB.- Status: dev
 NB.- <a href="../lifeannuities/sla.ijs" target="_blank">Script source: singlelifeannuity.ijs</a>
 NB.-<hr>
 NB.- Single life annuity  calculator
@@ -90,7 +90,6 @@ maxwh 100 20;cc S3 static;
 set S3 stylesheet background-color:white;
 bin sz;
 
-pas 6 6;
 pcenter;pshow;
 )
 

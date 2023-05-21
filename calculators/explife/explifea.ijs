@@ -7,10 +7,10 @@ NB.-<a class="HREF" href="index.htm" target="_blank">Calculators</a>
 NB.-<hr>
 NB.- Script: ~addons/finance/finexec/calculators/explife/explifea.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2021-06-09
+NB.- Updated: 2021 08 4
 NB.- Depend: ~addons/finance/finexec/qxtables/alt.ijs
 NB.- Definitions: loaded to locale explife
-NB.- Status: dev:
+NB.- Status: dev
 NB.- <a href="../explife/explifea.ijs" target="_blank">Script source: explifea.ijs</a>
 NB.-<hr>
 NB.- Single and Joint Expectation of life calculator
@@ -159,7 +159,6 @@ minwh 165 20;cc S10 static;cn "Last Survivor Expectation of Life";
 cc S11 static;set S11 stylesheet background-color:white;
 bin sz;
 
-pas 6 6;
 pcenter;pshow;
 )
 

@@ -7,10 +7,10 @@ NB.-<a class="HREF" href="index.htm" target="_blank">Calculators</a>
 NB.-<hr>
 NB.- Script: ~addons/finance/finexec/calculators/lifeannuities/lsla.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-20
+NB.- Updated: 2022 8 4
 NB.- Depend: ~addons/finance/finexec/qxtables/alt.ijs
 NB.- Definitions: loaded to locale jla
-NB.- Status: dev:
+NB.- Status: dev
 NB.- <a href="../lifeannuities/lsla.ijs" target="_blank">Script source: lsla.ijs</a>
 NB.-<hr>
 NB.- Last survivor life annuity  calculator
@@ -114,7 +114,6 @@ maxwh 100 20;cc V static;
 set V stylesheet background-color:white;
 bin sz;
 
-pas 6 6;
 pcenter;pshow;
 )
 

@@ -7,10 +7,10 @@ NB.-<a class="HREF" href="index.htm" target="_blank">Calculators</a>
 NB.-<hr>
 NB.- Script: ~addons/finance/finexec/calculators/explifeb.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-20
+NB.- Updated: 2022 8 4
 NB.- Depend: ~addons/finance/finexec/qxtables/alt.ijs
 NB.- Definitions: loaded to locale explife
-NB.- Status: dev:
+NB.- Status: dev
 NB.- <a href="../explife/explifeb.ijs" target="_blank">Script source: explifeb.ijs</a>
 NB.-<hr>
 NB.- Expectation of life calculator
@@ -100,7 +100,6 @@ cc PDF button;cn "Plot Probability Density Function (PDF) of Expectation of Life
 cc CDF button;cn "Plot Cummulative Density Function (CDF) of Expectation of Life";
 
 
-pas 6 6;
 pcenter;pshow;
 )
 
