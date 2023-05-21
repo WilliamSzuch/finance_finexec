@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>intervals_freq_sums_counts.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">intervals_freq_sums_counts.ijs</h1>
+</header>
+<script src="../js/statistics_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/statistics/intervals_freq_sums_counts.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2023 03 17<br />
+Depend: Nil<br />
+Definitions: loaded to locale base<br />
+Status: dev<br />
+<a href="../intervals_freq_sums_counts.ijs" target="_blank">Script
+source: intervals_freq_sums_counts.ijs</a></div>
+<hr>
+<div class="line-block">Intervals,frquency,sums,counts</div>
+<hr>
+<div class="line-block">See stats functions from:
+‘~addons/stats/base.ijs’<br />
+base.ijs loads complete set of base statistical verbs into locale
+z.</div>
+<hr>
+<div class="line-block">Equations:<br />
+To Do</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+F
+</td>
+<td>
+<a href="#freq_count_sum">freq_count_sum</a>, <a
+href="#freq_dist_count">freq_dist_count</a>, <a
+href="#freq_dist_countv">freq_dist_countv</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+H
+</td>
+<td>
+<a href="#histogram">histogram</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+I
+</td>
+<td>
+<a href="#interval">interval</a>, <a
+href="#interval_count">interval_count</a>, <a
+href="#interval_countr">interval_countr</a>, <a
+href="#intervalr">intervalr</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="#sum_intervalr">sum_intervalr</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="freq_count_sum" class="rid">
+freq_count_sum
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Frequency dustribution and sum with varying intervals.
+</td>
+</tr>
+<tr>
+<td id="freq_dist_count" class="rid">
+freq_dist_count
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Frequency distribution of data.
+</td>
+</tr>
+<tr>
+<td id="freq_dist_countv" class="rid">
+freq_dist_countv
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Frequency distribution of data with varying intervals.
+</td>
+</tr>
+<tr>
+<td id="histogram" class="rid">
+histogram
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Generates histogram from data.
+</td>
+</tr>
+<tr>
+<td id="interval" class="rid">
+interval
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Whether a number is contained in the z0 &lt;= z &lt;= z1.
+</td>
+</tr>
+<tr>
+<td id="interval_count" class="rid">
+interval_count
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Count the numer of items in an interval z0 &lt;= z &lt;= z1.
+</td>
+</tr>
+<tr>
+<td id="interval_countr" class="rid">
+interval_countr
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Count the numer of items in an interval z0 &lt; z &lt;= z1.
+</td>
+</tr>
+<tr>
+<td id="intervalr" class="rid">
+intervalr
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Whether number is contained in z0 &lt; z &lt;= z1.
+</td>
+</tr>
+<tr>
+<td id="sum_intervalr" class="rid">
+sum_intervalr
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Sum of numbers that is contained in the z0 &lt; z &lt;= z1.
+</td>
+</tr>
+</table>
+</body>
+</html>

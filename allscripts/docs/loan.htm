@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>loan.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">loan.ijs</h1>
+</header>
+<script src="../js/basicfinance_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/basicfinance/loan.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022 6 25<br />
+Depend: ~addons/graphics/plot/plot.ijs<br />
+        ~addons/finance/finexec/ipm/mwrr.ijs<br />
+        ~addons/finance/finexec/toolbox/plot.ijs<br />
+Definitions: loaded to locale base<br />
+Status: dev<br />
+<a href="../loan.ijs" target="_blank">Script source: loan.ijs</a></div>
+<hr>
+<div class="line-block">Definitions for loan calculation problems
+with<br />
+a constant effective interest rate over the loan period.<br />
+Defintions for loan schedules and plots.<br />
+No rounding in calculations unles specified in the definition.</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+L
+</td>
+<td>
+<a href="#loanBal">loanBal</a>, <a
+href="#loanLevelPmt">loanLevelPmt</a>, <a
+href="#loanLevelPmtEffRate">loanLevelPmtEffRate</a>, <a
+href="#loanMonthlyPmt">loanMonthlyPmt</a>, <a
+href="#loanMonthlyPmtShd">loanMonthlyPmtShd</a>, <a
+href="#loanTerm">loanTerm</a>, <a
+href="#loanTermMonths">loanTermMonths</a>, <a
+href="#loanVarPmtsEffRate">loanVarPmtsEffRate</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+P
+</td>
+<td>
+<a href="#plotLoanMonthlyPmtShd">plotLoanMonthlyPmtShd</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="loanBal">loanBal (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Loan balance over one time unit after interest and loan repayment.<br />
+Result is a 5 item list:<br />
+(1) loan balance at start of the time unit<br />
+(2) effective interest rate for the time unit<br />
+(3) interest payable at the end of the time unit<br />
+(4) payment made at the end of the time unit<br />
+(5) loan balance at the end of the time unit<br />
+    a negative balance is an overpayment</div>
+<h3>Syntax</h3>
+<pre><code>loanBal(L;E;P)
+L = loan balance at start of time unit
+E = effective rate of interest for the time unit
+P = payment at the end of the time unit</code></pre>
+<h3>Example</h3>
+<pre><code>   loanBal(100000;0.06;7110)
+100000 0.06 6000 7110 98890</code></pre>
+<pre><code>  loanBal(1000;0.06;1200)
+1000 0.06 60 1200 _140</code></pre>
+<pre><code>  loanBal(1000;0.06;55)</code></pre>
+<h2 class="hdef" id="loanLevelPmt">loanLevelPmt (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+<b>Depend:</b> nil<br />
+Calculate the level loan repayments for time units.<br />
+Loan repayments commence at the end of the first time unit.</div>
+<h3>Syntax</h3>
+<pre><code>(E)loanLevelPmt(L;N)
+E = effective rate of interest for the time unit
+L = amount of the loan
+N = number of loan repayments (integer)</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.06)loanLevelPmt(100000;12)
+11927.7</code></pre>
+<pre><code>   (0.06 0.05)loanLevelPmt(100000;10 15 20)
+13586.8 12950.5
+10296.3 9634.23
+8718.46 8024.26</code></pre>
+<h2 class="hdef" id="loanLevelPmtEffRate">loanLevelPmtEffRate
+(verb)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> mwrPeriodic<br />
+Calculate the effective rate of interest for a time unit<br />
+for a loan with level repayments at each time unit.<br />
+Depend: mwrPeriodic</div>
+<h2 class="hdef" id="loanMonthlyPmt">loanMonthlyPmt (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+<b>Depend:</b> nil<br />
+Calculate the level monthly loan repayments.<br />
+Loan repayments commence at the end of the first month.</div>
+<h3>Syntax</h3>
+<pre><code>(R)loanMonthlyPmt(L;M)
+R = yearly nominal rates of interest payable monthly
+L = amount of the loan
+M = period of the loan in months (integer)</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.06)loanMonthlyPmt(100000;120)
+1110.21</code></pre>
+<pre><code>   (0.06 0.05)loanMonthlyPmt(100000;120 132 144)
+1110.21 1060.66
+ 1036.7 986.449
+ 975.85  924.89</code></pre>
+<h2 class="hdef" id="loanMonthlyPmtShd">loanMonthlyPmtShd (verb)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> loanBal<br />
+Calculate the monthly loan repayment schedule.<br />
+Interest and monthly payment paid at end of the month.</div>
+<h3>Syntax</h3>
+<pre><code>([Opt])loanMonthlyPmtShd(R;L;M)
+[Opt] = optional result display:
+        default numeric table with columns:
+ Opt =  1 boxed  table with header
+       &#39;Month&#39;;&#39;Bal Start&#39;;&#39;Eff Rate&#39;;&#39;Int&#39;;&#39;Pmt&#39;;&#39;Bal End&#39;
+R = annual nominal rate of interest payable monthly
+L = amount of the loan
+M = period of the loan in months (integer)</code></pre>
+<h3>Example</h3>
+<pre><code>   loanMonthlyPmtShd(0.12;100000;120)
+  (1)loanMonthlyPmtShd(0.12;100000;120)</code></pre>
+<h2 class="hdef" id="loanTerm">loanTerm (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> loanBal<br />
+Calculate the number of time units to fully repay<br />
+a loan. The result is a two item list:<br />
+(1) number of time units payments<br />
+(2) amount of over payment in the final payment<br />
+No rounding in the calculations.</div>
+<h3>Syntax</h3>
+<pre><code>loanTermMonths(L;R;P)
+L = amount of loan
+E = effective interest rate for the time unit
+P = loan repayment at end of time unit</code></pre>
+<h3>Example</h3>
+<pre><code>  loanTerm(100000;0.01;12000)
+ 9 _3053.8</code></pre>
+<pre><code> loanTerm(100000;0.005;1110.21)
+120 _0.816215</code></pre>
+<pre><code> loanTerm(100000;0.005;975.85)
+145 _975.805</code></pre>
+<pre><code> loanTerm(1000;0.01;1200)
+1 _190</code></pre>
+<pre><code> loanTerm(1000;0.01;1)
+┌───────────────────────────────┐
+│Loan Payments not repaying loan│
+└───────────────────────────────┘</code></pre>
+<h2 class="hdef" id="loanTermMonths">loanTermMonths (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> loanBal<br />
+Calculate the number of months to fully repay<br />
+a loan. The result is a two item list:<br />
+(1) number of monthly payments<br />
+(2) amount of over payment in the final monthly payment<br />
+No rounding in the calculations.</div>
+<h3>Syntax</h3>
+<pre><code>loanTermMonths(L;R;P)
+L = amount of loan
+R = yearly nominal interest rate payable monthly
+P = monthly loan repayment</code></pre>
+<h3>Example</h3>
+<pre><code>  loanTermMonths(100000;0.12;12000)
+ 9 _3053.8</code></pre>
+<pre><code> loanTermMonths(100000;0.06;1110.21)
+120 _0.816215</code></pre>
+<pre><code> loanTermMonths(100000;0.06;975.85)
+145 _975.805</code></pre>
+<pre><code> loanTermMonths(1000;0.06;1200)
+1 _195
+
+ loanTermMonths(1000;0.06;5)
+┌───────────────────────────────┐
+│Loan Payments not repaying loan│
+└───────────────────────────────┘</code></pre>
+<h2 class="hdef" id="loanVarPmtsEffRate">loanVarPmtsEffRate (verb)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> mwr<br />
+Calculate the effective rate of interest for a time unit<br />
+for a loan with variable repayments at each time unit.<br />
+Depend: mwr</div>
+<h2 class="hdef" id="plotLoanMonthlyPmtShd">plotLoanMonthlyPmtShd
+(monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> loanMonthlyPmtShd<br />
+               plotm<br />
+Plot the loan monthly payment schedule details.</div>
+<h3>Syntax</h3>
+<pre><code>plotLoanMonthlyPmtShd(R;L;M)
+R = yearly nominal rate of interest payable monthly
+L = amount of the loan
+M = period of the loan in months (integer)</code></pre>
+<h3>Example</h3>
+<pre><code>   plotLoanMonthlyPmtShd(0.05;100000;120)
+   plotLoanMonthlyPmtShd(0.06;100000;360)
+   plotLoanMonthlyPmtShd(0.05;100000;12)</code></pre>
+</body>
+</html>

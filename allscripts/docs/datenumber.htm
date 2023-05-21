@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>datenumber.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">datenumber.ijs</h1>
+</header>
+<script src="../js/datetime_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/datetime/datenumber.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022 5 26<br />
+Depend: nil<br />
+Definitions: loaded to locale base<br />
+Status: done<br />
+<a href="../datenumber.ijs" target="_blank">Script source:
+datenember.ijs</a></div>
+<hr>
+<div class="line-block">This is an exercise in building long tacits for
+todayno and todate.<br />
+Taken from the explicit definition in dates.ijs in stdlib<br />
+This script defines definitions that convert a date to a number<br />
+and a number to a date.<br />
+The J calendar starts from 1800 1 1 (Wed): day number = 0 eg: todate 0
+gives 1800 1 1<br />
+also, 1 todate 0 gives 18000101<br />
+Use is made of the J addon: dates.ijs that is loaded to the z locale
+as<br />
+part of the stdlib.ijs.</div>
+<div class="line-block">Monday is the first day of the week as per: ISO
+8601.<br />
+Index: Monday = 0, Sunday = 6 (Days = 0 1 2 3 4 5 6)<br />
+calendar 2009<br />
+1 calendar 2009 (ISO 8601)</div>
+<div class="line-block">In the ISO 8601 calendar is a week that starts
+on Monday.<br />
+1 YEAR = 365.2425 DAYS</div>
+<div class="line-block">Date format as a number: yyyy mm dd or
+yyyymmdd</div>
+<div class="line-block">The preferred date formats:<br />
+yyyymmdd eg: 19970630<br />
+yyyy mm dd eg: 1997 6 30</div>
+<div class="line-block">Use ‘getdate’ for conversion of character dates
+to format: yyyy mm dd.</div>
+<div class="line-block">An Excel date is a number displayed with a date
+format.<br />
+It starts from 1900 1 1 with a well known leap year bug.</div>
+<div class="line-block">To convert from J day numbers (result of verb
+‘todayno’ in dates.ijs),to<br />
+Excel day number subtract 36522 from the J day number.</div>
+<hr>
+<div class="line-block">Definitions to be completed.<br />
+numbertodate/numbertodatex</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+D
+</td>
+<td>
+<a href="#datenumbertable">datenumbertable</a>, <a
+href="#datetonumber">datetonumber</a>, <a
+href="#datetonumberx">datetonumberx</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+N
+</td>
+<td>
+<a href="#numbertodate">numbertodate</a>, <a
+href="#numbertodatex">numbertodatex</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="datenumbertable">datenumbertable (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>depend:</b> todate (stdlib: dates.ijs)<br />
+Table with 5 columns: yyyy mm dd daynumber yyyymmdd<br />
+1800 1 1 = 0 daynumber</div>
+<h3>Syntax</h3>
+<pre><code>  datenumbertable(N,N1)
+N = start day number
+N1 = number of days</code></pre>
+<h3>Example</h3>
+<pre><code>  datenumbertable(0,2)
+1800 1 1 0 18000101
+1800 1 2 1 18000102</code></pre>
+<pre><code>   datenumbertable(80353,4)
+2020 1 1 80353 20200101
+2020 1 2 80354 20200102
+2020 1 3 80355 20200103
+2020 1 4 80356 20200104</code></pre>
+<h2 class="hdef" id="datetonumber">datetonumber (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+<b>Depend:</b> nil<br />
+Based on explixit todayno from dates.ijs (stdlib)<br />
+Convert a date to a day number.</div>
+<h3>Syntax</h3>
+<pre><code>datetonumber(D)
+D = table of dates with format YYYY MM DD</code></pre>
+<h3>Example</h3>
+<pre><code>  datetonumber 2014 12 1
+78496</code></pre>
+<pre><code>  datetonumber (1998 3 23,:2014 12 1)
+72399 78496</code></pre>
+<pre><code>  datetonumber(1998 3 23,2014 12 1,2019 1 1,:2019 5 20)
+72399 78496 79988 80127</code></pre>
+<h2 class="hdef" id="datetonumberx">datetonumberx (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+<b>Depend:</b> nil<br />
+convert a date to a day number<br />
+Based on explicit todayno from dates.ijs (stdlib)</div>
+<h2 class="hdef" id="numbertodate">numbertodate (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+<b>Depend:</b> nil<br />
+Convert a day number to a date<br />
+Based on explicit todate from dates.ijs (stdlib)</div>
+<pre><code>TO Do</code></pre>
+<h3>Syntax</h3>
+<pre><code> numbertodate(D)
+D = day number</code></pre>
+<h2 class="hdef" id="numbertodatex">numbertodatex (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+<b>Depend:</b> nil<br />
+Convert a day number to a date<br />
+Based on explicit todate from dates.ijs (stdlib)</div>
+<pre><code>To Do</code></pre>
+<h3>Syntax</h3>
+<pre><code>   numbertodatex(D)
+D = day number</code></pre>
+</body>
+</html>

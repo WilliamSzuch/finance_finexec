@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>edittable.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">edittable.ijs</h1>
+</header>
+<script src="../js/toolbox_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/toolbox/edittable.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022 6 26<br />
+Depend: nil<br />
+Definitions: loaded to locale base<br />
+Status: done<br />
+<a href="../ntable.ijs" target="_blank">Script source:
+edittable.ijs</a></div>
+<hr>
+<div class="line-block">Definitions to create, edit and show table
+data:<br />
+   numeric - undoxed and boxed<br />
+   text - boxed<br />
+   numeric/text - boxed<br />
+Using QTableWidget.<br />
+Edit one cell at a time.</div>
+<p>note:</p>
+<div class="line-block">Modify to:<br />
+allow copy/paste from table<br />
+use for transfer of data from J to Excel.<br />
+See: showtable</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+E
+</td>
+<td>
+<a href="#edittable">edittable</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="edittable">edittable (verb)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil</div>
+<h3>Syntax</h3>
+<pre><code>edittable(D)
+D = data table: unboxed or boxed table
+    numeric - undoxed and boxed
+    text - boxed
+    numeric/text - boxed
+    saved as NEWTABLE on exit
+    NEWTABLE is boxed with numeric and text data</code></pre>
+<h3>Example</h3>
+<pre><code> Sample data tables
+ A =: i. 10 10
+ A1 =: &lt;&quot;0 i. 10 10
+ B =: 10 10 $ &lt;&#39;Text&#39;
+ C =: A1,.B</code></pre>
+<pre><code>  edittable i. 6 6        NB. Numeric data table
+  &gt;NEWTABLE               NB. Numeric data table</code></pre>
+<pre><code>  edittable 5 6 $ &lt;&#39;Text&#39; NB. Text data table
+  NEWTABLE</code></pre>
+<pre><code>  edittable A
+  edittable A1
+  edittable B
+  edittable C</code></pre>
+<pre><code> Create a table
+ edittable 1 10 $ 0    NB. create a new table</code></pre>
+</body>
+</html>

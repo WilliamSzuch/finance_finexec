@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>fundprojection_a.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">fundprojection_a.ijs</h1>
+</header>
+<script src="../js/basicfinance_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/basicfinance/fundprojection_a.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022 6 25<br />
+Depend: nil<br />
+Definitions: loaded to locale base<br />
+Status: dev<br />
+<a href="../fundprojection_a.ijs" target="_blank">Script source:
+fundprojection_a.ijs</a></div>
+<hr>
+<div class="line-block">Fund projection:<br />
+Using the Fold conjuctions F:. and F..<br />
+No rounding.<br />
+Cash flow at the end of period.<br />
+<b>Process:</b><br />
+(1) Set initial values for the fund projection schedule
+calculation.<br />
+(2) run setv ’’ each time a calculation is required to<br />
+reset the initial values for the fund projection.<br />
+(3) Run required definition:<br />
+      fproj_a ’’<br />
+      fproj_a_l ’’</div>
+<hr>
+<div class="line-block">Equations:<br />
+To Do:</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+F
+</td>
+<td>
+<a href="#fproj_a">fproj_a</a>, <a href="#fproj_a_l">fproj_a_l</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+H
+</td>
+<td>
+<a href="#HDR_a">HDR_a</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="#setiv_a">setiv_a</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+U
+</td>
+<td>
+<a href="#uu_a">uu_a</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+V
+</td>
+<td>
+<a href="#vv_a">vv_a</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="HDR_a" class="rid">
+HDR_a
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Header for fund projection schedule
+</td>
+</tr>
+<tr>
+<td id="uu_a" class="rid">
+uu_a
+</td>
+<td class="rtype">
+m
+</td>
+<td class="rdef">
+Operand to Fold conjunction
+</td>
+</tr>
+<tr>
+<td id="vv_a" class="rid">
+vv_a
+</td>
+<td class="rtype">
+d
+</td>
+<td class="rdef">
+Operand to Fold conjunction
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="fproj_a">fproj_a (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Show the full fund projection schedule.</div>
+<h3>Syntax</h3>
+<pre><code>lshd &#39;&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>  F0 fproj_a Cn
+  &lt;&quot;0 fproj Cn
+  HDR,&lt;&quot;0 F0 fproj Cn
+  plot 1{&quot;1 F0 fproj_a Cn</code></pre>
+<h2 class="hdef" id="fproj_a_l">fproj_a_l (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Show the last result of the Fold calculations.</div>
+<h3>Syntax</h3>
+<pre><code>fproj_a_l &#39;&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>  F0 fproj_a_l Cn
+  HDR_a&lt;&quot;0 F0 fproj_a_l Cn</code></pre>
+<h2 class="hdef" id="setiv_a">setiv_a (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> nil<br />
+Set the initial values for the fund projection schedule.</div>
+<h3>Syntax</h3>
+<pre><code>setiv_a &#39;&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>  setiv_a &#39;&#39;</code></pre>
+</body>
+</html>

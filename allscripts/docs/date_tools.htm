@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>date_tools.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">date_tools.ijs</h1>
+</header>
+<script src="../js/datetime_links.js"></script>
+<div class="line-block">Script:
+~addons/finexec/datetime/date_tools.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022 6-26<br />
+Depend: nil<br />
+Definitions loaded to locale: base<br />
+Status: review<br />
+<a href="../date_tools.ijs" target="_blank">Script source:
+date_tools.ijs</a></div>
+<hr>
+<div class="line-block">This script has definitions that are useful for
+handling dates.<br />
+  checking dates<br />
+  age<br />
+  system<br />
+  date conversions<br />
+The J Calendar starts from 1800 1 1 (Wed): day number = 0 eg todate 0
+gives 1800 1 1<br />
+also, 1 todate 0 gives 18000101<br />
+Use is made of the J utility: dates.ijs that is loaded<br />
+into ‘z’ as part of the Standard Library.</div>
+<div class="line-block">Monday is the first day of the week as per: ISO
+8601.<br />
+Index: Monday = 0, Sunday = 6 (Days = 0 1 2 3 4 5 6)<br />
+  calendar 2009<br />
+1 calendar 2009 NB. &lt; ISO 8601 &gt;</div>
+<div class="line-block">In the ISO 8601 calendar a week starts on
+monday.<br />
+1 YEAR = 365.2425 days</div>
+<div class="line-block">Date format as a number: <yyyy mm dd> or
+<yyyymmdd></div>
+<div class="line-block">Use of ‘calendar’ is slow - could consider doing
+something faster.</div>
+<div class="line-block">The preferred formats for a date are: yyyy mm dd
+eg. 1997 6 30 etc.<br />
+Alternative format: yyyymmdd eg 19970630 has advantages.</div>
+<div class="line-block">Use ‘getdate’ for conversion of character dates
+to format: yyyy mm dd.</div>
+<div class="line-block">An Excel date is a number displayed with a date
+format.<br />
+It starts from 1900 1 1 with a well known leap year bug.</div>
+<div class="line-block">To convert from J day numbers (result of verb
+‘todayno’ in dates.ijs),to<br />
+Excel day number subtract 36522 from the J day number.</div>
+<div class="line-block">Some useful date conversion verbs are also
+contained in the script.</div>
+<div class="line-block">Format date: yyyymmdd<br />
+(1) Dates in yyyymmdd format can be held as a vector and not a
+matrix.<br />
+    This can have some advantages.<br />
+    Can also help with dates in EXCEL</div>
+<div class="line-block">Consider: 1&amp;todate<br />
+           1&amp;todayno<br />
+to work with date format yyyymmdd</div>
+<hr>
+<div class="line-block">Gregorian Calendar - Started by Pope Gregory
+Vlll in 1582.</div>
+<div class="line-block">Leap Year:<br />
+Every year that is exactly divisible by four is a leap year,<br />
+except for years that are exactly divisible by 100;<br />
+The centurial years that are exactly divisible by 400 are still leap
+years.<br />
+For example, the years 1800,1900,2100,2200 are not leap years;<br />
+The year 2000 ia a leap year.</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+A
+</td>
+<td>
+<a href="#age_lastbd">age_lastbd</a>, <a
+href="#age_nearestbd">age_nearestbd</a>, <a
+href="#age_nextbd">age_nextbd</a>, <a href="#age_yrs">age_yrs</a>, <a
+href="#age_yydd">age_yydd</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+C
+</td>
+<td>
+<a href="#calendar_yr">calendar_yr</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+D
+</td>
+<td>
+<a href="#date_convert1">date_convert1</a>, <a
+href="#date_convert2">date_convert2</a>, <a
+href="#date_convert3">date_convert3</a>, <a
+href="#date_convert4">date_convert4</a>, <a
+href="#date_convert5">date_convert5</a>, <a
+href="#date_convert6">date_convert6</a>, <a
+href="#date_sys">date_sys</a>, <a href="#date_test">date_test</a>, <a
+href="#date_time_sys">date_time_sys</a>, <a
+href="#dates_test">dates_test</a>, <a
+href="#day_of_week">day_of_week</a>, <a
+href="#day_of_weekno">day_of_weekno</a>, <a href="#DAYS">DAYS</a>, <a
+href="#days_diff">days_diff</a>, <a
+href="#days_in_month">days_in_month</a>, <a
+href="#days_in_year">days_in_year</a>, <a href="#DAYSA">DAYSA</a>, <a
+href="#DAYSB">DAYSB</a>, <a href="#dur_yrs">dur_yrs</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+E
+</td>
+<td>
+<a href="#end_of_month">end_of_month</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+L
+</td>
+<td>
+<a href="#last_bd">last_bd</a>, <a href="#leapyr">leapyr</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+M
+</td>
+<td>
+<a href="#MONTHS">MONTHS</a>, <a href="#MONTHSA">MONTHSA</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+N
+</td>
+<td>
+<a href="#next_bd">next_bd</a>, <a href="#next_month">next_month</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="#set_monthly_dates">set_monthly_dates</a>, <a
+href="#set_weekly_dates">set_weekly_dates</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+T
+</td>
+<td>
+<a href="#time_sys">time_sys</a>, <a href="#todate1">todate1</a>, <a
+href="#todayno1">todayno1</a>, <a href="#tsdiff_a">tsdiff_a</a>, <a
+href="#tsdiff_b">tsdiff_b</a>, <a href="#tsdiff_c">tsdiff_c</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+V
+</td>
+<td>
+<a href="#valdate_yyyymmdd">valdate_yyyymmdd</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+W
+</td>
+<td>
+<a href="#week">week</a>, <a href="#wks">wks</a>, <a
+href="#wks53">wks53</a>, <a href="#wks53y">wks53y</a>, <a
+href="#wy">wy</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+Y
+</td>
+<td>
+<a href="#yearb">yearb</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="DAYS" class="rid">
+DAYS
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Days as dd
+</td>
+</tr>
+<tr>
+<td id="DAYSA" class="rid">
+DAYSA
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Days full name
+</td>
+</tr>
+<tr>
+<td id="DAYSB" class="rid">
+DAYSB
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Days as ddd
+</td>
+</tr>
+<tr>
+<td id="MONTHS" class="rid">
+MONTHS
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Months mmm
+</td>
+</tr>
+<tr>
+<td id="MONTHSA" class="rid">
+MONTHSA
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+Months full name
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="age_lastbd">age_lastbd (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> last_bd<br />
+Age last birthday<br />
+If birthay on D then gives age at D</div>
+<h3>Syntax</h3>
+<pre><code>(D)age_lastbd(B) y
+D = date of calculation: yyyy mm dd
+B = date of birth: yyyy mm dd</code></pre>
+<h3>Example</h3>
+<pre><code> 1997 6 30 age_lastbd 1948 11 10
+48</code></pre>
+<h2 class="hdef" id="age_nearestbd">age_nearestbd (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> tsdiff<br />
+Age nearest birthday.<br />
+If birthay on D then gives age at D<br />
+Watch for B &gt; D<br />
+Based on the tsdiff using 365 days.</div>
+<h3>Syntax</h3>
+<pre><code>(D)age_nearestbd(B)
+D = calculation date: yyyy mm dd
+B = birth date: yyyy mm dd</code></pre>
+<h3>Example</h3>
+<pre><code>  2002 10 9 age_nearestbd 1948 11 10
+54</code></pre>
+<h2 class="hdef" id="age_nextbd">age_nextbd (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> next_bd<br />
+Age next birthday<br />
+If birthay on D then gives age at D</div>
+<h3>Syntax</h3>
+<pre><code>(D)age_nextbd(B)
+D = date of calculation: yyyy mm dd
+B = date of birth: yyyy mm dd
+
+### Example
+
+  1997 6 30 age_nextbd 1948 11 10
+49</code></pre>
+<h2 class="hdef" id="age_yrs">age_yrs (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> tsdiff<br />
+Same as ‘tsdiff’ in dates.ijs<br />
+Produces age of y at x in years(fractions).<br />
+Years converted to fraction by using ‘tsdiff’<br />
+Based on months and days.<br />
+Watch for cases when B &gt; D</div>
+<h3>Syntax</h3>
+<pre><code> (D)age_yrs(B)
+D = date of calculation: yyyy mm dd
+B = date of birth: yyyy mm dd</code></pre>
+<h3>Example</h3>
+<pre><code>  1997 6 30 age_yrs 1954 5 12
+43.1326</code></pre>
+<pre><code>  2002 11 9 age_yrs 1948 11 10
+53.9961</code></pre>
+<h2 class="hdef" id="age_yydd">age_yydd (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> todayno<br />
+Produces age of B at D in yy,dd (years &amp; days).</div>
+<h3>Syntax</h3>
+<pre><code> (D)age_yydd(B)
+D = date of calculation: yyyy mm dd
+B = date of birth: yyyy mm dd</code></pre>
+<h2 class="hdef" id="calendar_yr">calendar_yr (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> nil<br />
+Formatted calendar for year [months]<br />
+Returns calendar for year, as a list of months<br />
+Based on ‘calendar’ in dates.ijs (stdlib) but shows YEAR<br />
+In the ISO 8601 calendar a week starts on Monday.</div>
+<h3>Syntax</h3>
+<pre><code>([x]) calendar_yr(Y)
+[x] = optional left argument and is the start day of week
+    0=sunday (default)
+    1=monday, 2 Tuesday ...
+y = is one or more numbers: year, months
+    If no months are given, it defaults to all months in year.</code></pre>
+<h3>Example</h3>
+<pre><code>  calendar_yr 2009
+  calendar_yr 2020 1 2 12</code></pre>
+<h2 class="hdef" id="date_convert1">date_convert1 (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> chopstring<br />
+Verb to convert text date of the form ‘yy-mm-dd’, yyyy mm dd etc.<br />
+with ‘-’ as the separetar between parts of date to ‘yyyy mm dd’
+format.</div>
+<h3>Syntax</h3>
+<pre><code>([C])date_convert1(D)
+[C] = Century eg. 1900 2000 etc: default = 1900
+D = date as text: yy-mm-dd</code></pre>
+<h3>Example</h3>
+<pre><code>  1900 date_convert1 &#39;97-6-30&#39;
+1997 6 30</code></pre>
+<pre><code>  2000 date_convert1 &#39;97-6-30&#39;
+2097 6 20</code></pre>
+<pre><code> 2000 date_convert1&#39;1-6-30&#39;
+2001 6 30</code></pre>
+<h2 class="hdef" id="date_convert2">date_convert2 (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> chopstring<br />
+Verb to convert text date of the form ‘yyZmmZdd’ to yyyy mm dd.<br />
+with ‘Z’ as the separetar between parts of date.</div>
+<h3>Syntax</h3>
+<pre><code>(Z;C) FORM: x date_convert2 y
+Z;C = delimitor;century eg. (1900;Z)
+D = date as text: &#39;yyZmmZdd&#39; Z = some delimiter</code></pre>
+<h3>Example</h3>
+<pre><code>  (&#39;s&#39;;1900) date_convert2 &#39;97s6s30&#39;
+1997 6 30</code></pre>
+<pre><code>  (&#39;/&#39;;1900) date_convert2 &#39;97/6/30&#39;
+1997 6 30</code></pre>
+<pre><code>  (&#39;s&#39;;2000)date_convert2 &#39;97s6s30&#39;
+2097 6 30</code></pre>
+<h2 class="hdef" id="date_convert3">date_convert3 (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> nil<br />
+Convert from yyyy mm dd to yyyymmdd.</div>
+<h3>Syntax</h3>
+<pre><code>  date_convert3(D)
+D = date: yyyy mm dd</code></pre>
+<h3>Example</h3>
+<pre><code> date_convert3 1994 7 1
+19940701</code></pre>
+<h2 class="hdef" id="date_convert4">date_convert4 (verb)</h2>
+<div class="line-block">Convert from yyyymmdd to yyyy mm dd.</div>
+<h2 class="hdef" id="date_convert5">date_convert5 (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> charsub, getdate<br />
+Convert date text ‘dd.mm.yyyy’ to yyyy mm dd.</div>
+<h3>Syntax</h3>
+<pre><code>  date_convert5(D)
+D = text text in format: &#39;dd.mm.yyyy&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>  date_convert5 &#39;1.1.2000&#39;
+2000 1 1</code></pre>
+<h2 class="hdef" id="date_convert6">date_convert6 (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> charsub<br />
+Convert date text ‘dd.mm.yy’ -&gt; yyyy mm dd.<br />
+Note the treatment of the year in yy format.</div>
+<h3>Syntax</h3>
+<pre><code>([C]) date_convert6(D)
+[C] = Century eg. 1900 2000 etc: default = 1900
+D = date in text format &#39;dd.mm.yy&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>  1900 date_convert6 &#39;1.1.89&#39;
+1989 1 1</code></pre>
+<pre><code>  2000 date_convert6 &#39;1.1.00&#39;
+2000 1 1</code></pre>
+<h2 class="hdef" id="date_sys">date_sys (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> nil<br />
+Gives current date on system - YYYY MM DD.</div>
+<p>synyax: ~~~ date_sys ’’ ~~~</p>
+<h3>Example</h3>
+<pre><code>  date_sys &#39;&#39;</code></pre>
+<h2 class="hdef" id="date_test">date_test (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> valdate<br />
+Test if a boxed date is valid.<br />
+Test for dates in yyyy mm dd format</div>
+<h3>Syntax</h3>
+<pre><code>date_test(D) y
+D = boxed date</code></pre>
+<h3>Example</h3>
+<pre><code>  date_test &lt; 2000 1 1
+1</code></pre>
+<pre><code>  date_test &lt; 20200811
+0
+  date_test &lt; &#39;2000/1/1&#39;
+0</code></pre>
+<h2 class="hdef" id="date_time_sys">date_time_sys (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> nil<br />
+Gives current date and time on the system - yyyy MM DD HH MM SS.</div>
+<h3>Syntax</h3>
+<pre><code>  date_time_sys &#39;&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>  date_time_sys &#39;&#39;</code></pre>
+<h2 class="hdef" id="dates_test">dates_test (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> date_test<br />
+Test if a boxed list of dates is valid and<br />
+the result is an index of invalid dates.<br />
+Test for dates in yyyy mm dd format.</div>
+<h3>Syntax</h3>
+<pre><code>dates_test(D) y
+D = boxed dates</code></pre>
+<h3>Example</h3>
+<pre><code>  dates_test &lt; 2000 1 1
+</code></pre>
+<pre><code>   dates_test &lt;20200811
+0</code></pre>
+<pre><code>  dates_test &lt;20200811
+  dates_test &lt; &#39;2000/1/1&#39;
+0</code></pre>
+<pre><code>  dates_test (10 # &lt; 2000 1 1),(5 # &lt; &#39;2000/1/1&#39;),(&lt;&#39;234&#39;),(&lt; 2005 1 1),(&lt;20060101)
+10 11 12 13 14 15 17</code></pre>
+<pre><code>  (dates_test { [)  (10 # &lt; 2000 1 1),(5 # &lt; &#39;2000/1/1&#39;),(&lt;&#39;234&#39;),(&lt; 2005 1 1),(&lt;20060101)
+┌────────┬────────┬────────┬────────┬────────┬───┬────────┐
+│2000/1/1│2000/1/1│2000/1/1│2000/1/1│2000/1/1│234│20060101│
+└────────┴────────┴────────┴────────┴────────┴───┴────────┘</code></pre>
+<h2 class="hdef" id="day_of_week">day_of_week (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> todayno from dates.ijs (stdlib)<br />
+Day of the week.</div>
+<h3>Syntax</h3>
+<pre><code>day_of_week(D)
+D = date: yyyy mm dd</code></pre>
+<h3>Example</h3>
+<pre><code>  day_of_week(1800 1 1)
+Wed
+  day_of_week(2020 8 7)
+Fri</code></pre>
+<h2 class="hdef" id="day_of_weekno">day_of_weekno (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> todayno from dates.ijs (stdlib)<br />
+Number of day in the week, start with Monday = 0<br />
+<b>Form</b> explicit<br />
+<b>Depend:</b> todayno from dates.ijs (stdlib)<br />
+Sunday = 6 (Days = 0 1 2 3 4 5 6)<br />
+Calendar starts from 1800 1 1</div>
+<p>symtax: ~~~ day_of_weekno(D) D = date: yyyy mm dd ~~~</p>
+<h3>Example</h3>
+<pre><code>  day_of_weekno 1996 6 30
+6
+  day_of_weekno 2020 8 10
+0</code></pre>
+<h2 class="hdef" id="days_diff">days_diff (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> todayno<br />
+By: R.E. Ross<br />
+Number of days between to dates.</div>
+<h3>Syntax</h3>
+<pre><code>(S)days_diff(E)
+S = start date: yyyy mm dd
+E = end date: yyyy mm dd</code></pre>
+<h3>Example</h3>
+<pre><code> 1948 11 10 days_diff 2003 7 8
+19963</code></pre>
+<pre><code>  &gt;1948 11 10 &amp; days_diff each 2003 7 8;2004 1 1;2005 2 1
+19963 20140 20537</code></pre>
+<h2 class="hdef" id="days_in_month">days_in_month (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> todayno from dates.ijs (stdlib)<br />
+Days in month.</div>
+<h3>Syntax</h3>
+<pre><code>days_in_month(YYYY,MM)
+ YYYY,MM = year and month</code></pre>
+<h3>Example</h3>
+<pre><code>  days_in_month 1996 6
+30</code></pre>
+<pre><code> days_in_month 2020 2
+29</code></pre>
+<h2 class="hdef" id="days_in_year">days_in_year (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> days_diff<br />
+Shows number of days in a year.</div>
+<h3>Syntax</h3>
+<pre><code>  days_in_year(Y)
+y = year</code></pre>
+<h3>Example</h3>
+<pre><code>  days_in_year 1800
+365</code></pre>
+<pre><code>  &gt;days_in_year each 1800 2000 2004 2005 2008 2009 2020
+365 366 366 365 366 365 366</code></pre>
+<h2 class="hdef" id="dur_yrs">dur_yrs (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> tsdiff<br />
+Duration years &amp; fractions from x to y<br />
+Based on months and days.</div>
+<h2 class="hdef" id="end_of_month">end_of_month (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> days_in_month<br />
+Sets future end of month dates.<br />
+Inculdes first date.</div>
+<h3>Syntax</h3>
+<pre><code>(YYYY,MM)end_of_month(N)
+YYYY,MM = start month
+N = number of monthly intervals</code></pre>
+<h3>Example</h3>
+<pre><code>  (1990 11)end_of_month 4
+1990 11 30
+1991 12 31
+1991  1 31
+1991  2 28</code></pre>
+<pre><code>  (2020 1)end_of_month 4
+2020 1 31
+2020 2 29
+2020 3 31
+2020 4 30</code></pre>
+<h2 class="hdef" id="last_bd">last_bd (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> todayno, todate<br />
+Gives date of last bithday at x for date of birth y</div>
+<h2 class="hdef" id="leapyr">leapyr (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> nil<br />
+Result: 1 if year is a leap year, 0 otherwise.</div>
+<h3>Syntax</h3>
+<pre><code>leapyr(Y) y
+Y = YEAR</code></pre>
+<h3>Example</h3>
+<pre><code>  &gt;leapyr each 1800 2000 2004
+0 1 1</code></pre>
+<h2 class="hdef" id="next_bd">next_bd (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> todayno, todate<br />
+Gives date of next bithday at x for date of birth y</div>
+<h3>Syntax</h3>
+<pre><code>(D)next_bd(B)
+D = date of calculation: yyyy mm dd
+B = date of birth: yyyy mm dd</code></pre>
+<h2 class="hdef" id="next_month">next_month (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> days_in_month<br />
+Gives future or past month with same day or nearest if at end of
+month.</div>
+<h3>Syntax</h3>
+<pre><code>(D)next_month(N)
+D = start date : yyyy mm dd
+N = Number of months forward or back</code></pre>
+<h3>Example</h3>
+<pre><code>  1996 6 30 next_month 2
+1996 8 30</code></pre>
+<pre><code>  2020 3 30 next_month _1
+2020 2 29</code></pre>
+<h2 class="hdef" id="set_monthly_dates">set_monthly_dates (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> next_month<br />
+Set dates at monthly intervals on fixed day, From 1800 1 1.<br />
+Includes first date.<br />
+Watch out for end of months ie. 28,29,30 &amp; 31</div>
+<h3>Syntax</h3>
+<pre><code> (D)set_monthly_dates(N)
+D = start date: yyyy mm dd
+N = number of months forward</code></pre>
+<h3>Example</h3>
+<pre><code>  2020 8 11 set_monthly_dates 3
+2020  8 11
+2020  9 11
+2020 10 11</code></pre>
+<pre><code>  2020 1 31 set_monthly_dates 12
+2020  1 31
+2020  2 29
+2020  3 31
+2020  4 30
+2020  5 31
+2020  6 30
+2020  7 31
+2020  8 31
+2020  9 30
+2020 10 31
+2020 11 30
+2020 12 31</code></pre>
+<h2 class="hdef" id="set_weekly_dates">set_weekly_dates (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> todayno from dates.ijs (stdlib)<br />
+Set dates at weekly intervals.<br />
+Includes the start date.</div>
+<h3>Syntax</h3>
+<pre><code>(D)set_weekly_dates(N)
+D = start date: yyyy mm dd
+N = number of weekly intervals</code></pre>
+<h3>Example</h3>
+<pre><code>  1998 9 22 set_weekly_dates 3
+1998  9 22
+1998  9 29
+1998 10  6
+1998 10 13</code></pre>
+<h2 class="hdef" id="time_sys">time_sys (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> nil<br />
+Gives current time on system - HH MM SS(with fractions).</div>
+<h3>Syntax</h3>
+<pre><code> time_sys &#39;&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>  time_sys &#39;&#39;</code></pre>
+<h2 class="hdef" id="todate1">todate1 (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit-<br />
+<b>Depend:</b> todate from dates.ijs (stdlib)<br />
+Convert a day number to a date with format: yyyymmdd.<br />
+Similiar to todate.</div>
+<h3>Syntax</h3>
+<pre><code>todate1(N)
+N = day number</code></pre>
+<h3>Example</h3>
+<pre><code>   todate1 79000
+20160418</code></pre>
+<pre><code>   todate 79000
+2016 4 18</code></pre>
+<pre><code>   todate1 0
+18000101</code></pre>
+<h2 class="hdef" id="todayno1">todayno1 (monad)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> todayno from dates.ijs (stdlib)<br />
+Convert date to a day number.<br />
+Similiar to todayno.</div>
+<h2 class="hdef" id="tsdiff_a">tsdiff_a (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> nil<br />
+The differences between pairs of dates is expressed as: - yyyy mm
+dd.<br />
+Based on tsdiff<br />
+start and end dates are vectors or matrices in form yyyy mm dd<br />
+end dates should be later than begin dates<br />
+Method is to subtract dates on a calendar basis to determine<br />
+Result is integer number of years, months and days (yy,mm,dd).<br />
+Note the result when D&lt;F</div>
+<h3>Syntax</h3>
+<pre><code>(T)tsdiff_a(F)
+T = to date: yyyy mmm dd
+F = from date: yyyy mm dd</code></pre>
+<h3>Example</h3>
+<pre><code>  1998 10 1 tsdiff_a 1988 5 23
+10 4 9</code></pre>
+<pre><code>  1998 10 1 tsdiff_a 1998 10 3
+_1 11 29</code></pre>
+<h2 class="hdef" id="tsdiff_b">tsdiff_b (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> tsrep<br />
+The differences between pairs of dates is expressed<br />
+in 1000’s of a second.<br />
+Based on tsrep</div>
+<h3>Syntax</h3>
+<pre><code>(S)tsdiff_a(F)
+S = start date and time: yyyy mm dd hh mm ss:eg: 2001 1 1 0 0 0
+F = finish date and time: yyyy mm dd hh mm ss eg. 2001 1 1 0 1 0</code></pre>
+<h3>Example</h3>
+<pre><code>  2001 1 1 0 0 0 tsdiff_b 2001 1 1 0 1 0
+60000</code></pre>
+<pre><code>  2001 1 1 0 0 0 tsdiff_b 2002 1 1 0 0 0
+31536000000</code></pre>
+<h2 class="hdef" id="tsdiff_c">tsdiff_c (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> tsrep<br />
+The differences between pairs of dates is expressed as: - yyyy mm dd hh
+mm ss.<br />
+Based on tsrep</div>
+<h3>Syntax</h3>
+<pre><code>(S)tsdiff_a(F)
+S = start date and time: yyyy mm dd hh mm ss eg: 2001 1 1 0 0 0&gt;
+F = finish date and time: yyyy mm dd hh mm ss eg. 2002 1 1 0 1 0</code></pre>
+<h3>Example</h3>
+<pre><code>  2001 1 1 0 0 0 tsdiff_c 2002 1 1 0 1 0
+1 0 0 0 1 0</code></pre>
+<h2 class="hdef" id="valdate_yyyymmdd">valdate_yyyymmdd (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+Validate that a date is in YYYYMMDD format<br />
+Returns 1 if date valid.<br />
+Based on valdate in dates.ijs (stdlib)</div>
+<h3>Syntax</h3>
+<pre><code>valdate_yyyymmdd(D)
+D = dates in YYYYMMDD format</code></pre>
+<h3>Example</h3>
+<pre><code>  valdate_yyyymmdd 20200131 20200132
+1 0</code></pre>
+<pre><code>  valdate_yyyymmdd 20190228 20190229 20200229
+1 0 1</code></pre>
+<h2 class="hdef" id="week">week (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> weekday,wks,todauno<br />
+By: R.E. Ross<br />
+Gives the year and week of a date.<br />
+A week belongs to a year if and only if 4 days of the<br />
+week belong to that year.<br />
+Week is based on a Mathematical procedure in<br />
+http://www.phys.uu.nl/~vgent/calendar/isocalendar.htm<br />
+In the ISO calendar a week starts on Monday</div>
+<h3>Syntax</h3>
+<pre><code>([x])week(D)
+[F]= first day of week:
+     0 - first day of week is Sunday (default)
+D = date: yyyy mm dd</code></pre>
+<h3>Example</h3>
+<pre><code>   1 week 2004 1 1
+ 2004 1</code></pre>
+<pre><code>   week 2004 1 1
+2003 53</code></pre>
+<h2 class="hdef" id="wks">wks (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> weekday<br />
+Gives number of weeks in year.<br />
+In the ISO calendar a week starts on Monday</div>
+<h3>Syntax</h3>
+<pre><code>([F])wks(Y)
+[F] = first day of week:
+      0 - first day of week is Sunday (default)
+Y = year</code></pre>
+<h3>Example</h3>
+<pre><code>  wks 2000 +i.10
+52 52 52 53 52 52 52 52 53 52</code></pre>
+<pre><code>  4 wks 2000 +i.10
+52 52 52 52 52 52 52 52 52 52</code></pre>
+<h2 class="hdef" id="wks53">wks53 (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> nil<br />
+A function for determining whether an ISO year has 52 or 53 weeks.<br />
+1 if year has 53 ISO weeks, 0 otherwise</div>
+<h3>Syntax</h3>
+<pre><code>wks53(Y)
+Y = YEAR</code></pre>
+<h3>Example</h3>
+<pre><code>  &gt;wks53 each 2000 2004
+0 1</code></pre>
+<h2 class="hdef" id="wks53y">wks53y (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> learyr,yearb<br />
+A definition for determining whether an ISO year has 52 or 53
+weeks.<br />
+This is faster then wks53.</div>
+<h2 class="hdef" id="wy">wy (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> wks53<br />
+By: Eugene McDonnell<br />
+A function giving the number of weeks in an ISO year.</div>
+<h3>Syntax</h3>
+<pre><code>wy(Y)
+Y = YEAR</code></pre>
+<h3>Example</h3>
+<pre><code>  wy 2000
+52</code></pre>
+<pre><code>  &gt;wy each 2000 + i. 10
+52 52 52 52 53 52 52 52 52 52</code></pre>
+<h2 class="hdef" id="yearb">yearb (verb)</h2>
+<div class="line-block"><b>Form</b> explicit<br />
+<b>Depend:</b> nil<br />
+Gives the index of the weekday that the year begins.<br />
+0 = Sunday, 1 = Monday, 2 = Tuesday etc</div>
+</body>
+</html>

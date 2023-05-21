@@ -1,0 +1,1816 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>joxygen</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<script src="../../finexec_logo.js"></script>
+<b>Catogory: All Finexec Scripts</b>
+<script src="../../finexec_docs_links.js"></script>
+<hr>
+Script: ~Finexec_docs/allscripts_docs.ijs<br> Updated: 2023 05 19<br>
+Build the documentation for all Finexec scripts.<br> Run after all the
+category documentation.<br> USE finexec_mgt.ijs<br> LIMITATIONS - links
+in the scripts not available
+<hr>
+<h2>Scripts</h2>
+<table class="noun">
+<tr>
+<td class="noun">
+<a href="actuariallife.htm">actuariallife.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Actuarial Life
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="actuarialnonlife.htm">actuarialnonlife.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Actuarial Non Life
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="al.htm">al.ijs</a>
+</td>
+<td class="noun">
+Assured Lives Tables (AL)
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="alt.htm">alt.ijs</a>
+</td>
+<td class="noun">
+Australian Life Tables (ALT)
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="ann.htm">ann.ijs</a>
+</td>
+<td class="noun">
+Annuity Life Tables (ANN)
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="basicfinance.htm">basicfinance.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Basic Finance
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="bisection.htm">bisection.ijs</a>
+</td>
+<td class="noun">
+Bisection methodology for finding a solution to: f(x) = 0
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="blackscholes.htm">blackscholes.ijs</a>
+</td>
+<td class="noun">
+Black-Scholes option pricing models
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="boxed_table.htm">boxed_table.ijs</a>
+</td>
+<td class="noun">
+Build a boxed table of data
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="calculators.htm">calculators.ijs</a>
+</td>
+<td class="noun">
+Script file required for the folder
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="calendaryr.htm">calendaryr.ijs</a>
+</td>
+<td class="noun">
+Calendar year tool: excerise in tacit form
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="chain_ladder_INBR_claims.htm">chain_ladder_INBR_claims.ijs</a>
+</td>
+<td class="noun">
+Chain ladder calculation of IBNR claims
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="color.htm">color.ijs</a>
+</td>
+<td class="noun">
+Show colors in rgb/hexadecimal and number formats
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="compound.htm">compound.ijs</a>
+</td>
+<td class="noun">
+Compound interest definitions for constant effective interest rates
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="compoundv.htm">compoundv.ijs</a>
+</td>
+<td class="noun">
+Compound interest definitions for variable effective interest rates
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="conversions.htm">conversions.ijs</a>
+</td>
+<td class="noun">
+Various conversions
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="data_arrays.htm">data_arrays.ijs</a>
+</td>
+<td class="noun">
+Definitions for creating data arrays by codes
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="date_tools.htm">date_tools.ijs</a>
+</td>
+<td class="noun">
+Tools for handling dates
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="datedb.htm">datedb.ijs</a>
+</td>
+<td class="noun">
+Date data base
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="datenumber.htm">datenumber.ijs</a>
+</td>
+<td class="noun">
+Date number utilities
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="dateperiod.htm">dateperiod.ijs</a>
+</td>
+<td class="noun">
+Dates grouped by by period
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="datetime.htm">datetime.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Date Time
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="datetime_rs.htm">datetime_rs.ijs</a>
+</td>
+<td class="noun">
+Date time utilities Ric Shirlock
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="derivatives.htm">derivatives.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Derivatives
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="distributions.htm">distributions.ijs</a>
+</td>
+<td class="noun">
+Distributions functions (pdf,cdf)
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="edatetime_tools.htm">edatetime_tools.ijs</a>
+</td>
+<td class="noun">
+Tools for working with edatetime
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="edittable.htm">edittable.ijs</a>
+</td>
+<td class="noun">
+Edit a table of data using QTableWidget
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="elt.htm">elt.ijs</a>
+</td>
+<td class="noun">
+English Life Tables (ELT)
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="explifea.htm">explifea.ijs</a>
+</td>
+<td class="noun">
+Single and Joint Expectation of life calculator
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="explifea.htm">explifea.ijs</a>
+</td>
+<td class="noun">
+Single and Joint Expectation of life calculator
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="force.htm">force.ijs</a>
+</td>
+<td class="noun">
+Force of interest definitions (Continous compounding)
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="fundprojection.htm">fundprojection.ijs</a>
+</td>
+<td class="noun">
+Fund projection using the Fold conjunctions F: and F.
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="fundprojection_a.htm">fundprojection_a.ijs</a>
+</td>
+<td class="noun">
+Fund projection using the Fold conjunctions F:. and F..
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="gi_tools.htm">gi_tools.ijs</a>
+</td>
+<td class="noun">
+Tools for general insurance tasks.
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a
+href="intervals_freq_sums_counts.htm">intervals_freq_sums_counts.ijs</a>
+</td>
+<td class="noun">
+Intervals,frequency,sums,counts
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="invreturnhardy.htm">invreturnhardy.ijs</a>
+</td>
+<td class="noun">
+Investment return using Hardy’s method
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="ipm.htm">ipm.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Investment Performance Measurement
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="jcalc.htm">jcalc.ijs</a>
+</td>
+<td class="noun">
+J and Some Elementary Statistical Calculations
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="jcomp.htm">jcomp.ijs</a>
+</td>
+<td class="noun">
+J Companion for Statistical Calculations
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="jphrases.htm">jphrases.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: J Phrases
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="jsp.htm">jsp.ijs</a>
+</td>
+<td class="noun">
+J Statisical Package
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="jstatpac.htm">jstatpac.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: J Statistical Package
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="jtsp.htm">jtsp.ijs</a>
+</td>
+<td class="noun">
+J Tutorial and Statistical Package
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="lease.htm">lease.ijs</a>
+</td>
+<td class="noun">
+Definitions for lease calculations
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="sla.htm">sla.ijs</a>
+</td>
+<td class="noun">
+Single life annuity calculator
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="sla.htm">sla.ijs</a>
+</td>
+<td class="noun">
+Single life annuity calculator
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="sla.htm">sla.ijs</a>
+</td>
+<td class="noun">
+Single life annuity calculator
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="sla.htm">sla.ijs</a>
+</td>
+<td class="noun">
+Single life annuity calculator
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="lifeannuities.htm">lifeannuities.ijs</a>
+</td>
+<td class="noun">
+Life annuity definitions
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="lifeinsurance.htm">lifeinsurance.ijs</a>
+</td>
+<td class="noun">
+Life issurance definitions
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="lifesimulation.htm">lifesimulation.ijs</a>
+</td>
+<td class="noun">
+Simulation of life and payments (Stochastic)
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="lifetable.htm">lifetable.ijs</a>
+</td>
+<td class="noun">
+Life table definitions
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="lifetable_multiplelives.htm">lifetable_multiplelives.ijs</a>
+</td>
+<td class="noun">
+Life table calculations for multiple lives
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="lists.htm">lists.ijs</a>
+</td>
+<td class="noun">
+Create lists of data
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="loan.htm">loan.ijs</a>
+</td>
+<td class="noun">
+Definitions for loan calculations, plots and schedules
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="loanschedule.htm">loanschedule.ijs</a>
+</td>
+<td class="noun">
+Loan schedule using Fold conjunctions F: and F.
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="matrix_tools.htm">matrix_tools.ijs</a>
+</td>
+<td class="noun">
+Definitions for matrix manipulation
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="misc_j602.htm">misc_j602.ijs</a>
+</td>
+<td class="noun">
+Miscellaneous from J602
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="miscellaneous.htm">miscellaneous.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Miscellaneous
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="mwrr.htm">mwrr.ijs</a>
+</td>
+<td class="noun">
+Money weighted rate of rerurn (internal rate of return)
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="numeric.htm">numeric.ijs</a>
+</td>
+<td class="noun">
+Numeric utilities
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="numeric_j602.htm">numeric_j602.ijs</a>
+</td>
+<td class="noun">
+Numeric utilities from J602
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra1.htm">phra1.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 1A. Conventions
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra10.htm">phra10.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 10A. Sums &amp; Means
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra11.htm">phra11.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 11A. Inverse
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra12.htm">phra12.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 12A. Finance
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra13.htm">phra13.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 13A. Inside Boxes
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra14.htm">phra14.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 14A. Execution Time &amp; Space
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra15.htm">phra15.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 15A. Case Statements
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra2.htm">phra2.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 2A. Bond or Curry
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra3.htm">phra3.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 3A. Indexing
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra4.htm">phra4.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 4A. Intervals
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra5.htm">phra5.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 5A. Structural
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra6.htm">phra6.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 6A. Sorting
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra7.htm">phra7.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 7A. Permutations
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra8.htm">phra8.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 8A. Numbers &amp; Counting
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phra9.htm">phra9.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 9A. Matrix Algebra
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb1.htm">phrb1.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 1B. Locales and the Loading of Script Files
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb10.htm">phrb10.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 10B. E Pluribus Unum
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb11.htm">phrb11.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 11B. Duality
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb13.htm">phrb13.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 13B. Character
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb14.htm">phrb14.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 14B. Date &amp; Time
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb15.htm">phrb15.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 15B. Miscellaneous
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb2.htm">phrb2.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 2B. Rank
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb3.htm">phrb3.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 3B. Merge &amp; Amend
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb4.htm">phrb4.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 4B. Locating &amp; Selecting
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb5.htm">phrb5.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 5B. Partition
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb6.htm">phrb6.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 6B. Ranking &amp; Classification
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb6.htm">phrb6.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 7B. Rotations &amp; Reflections
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb8.htm">phrb8.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 8B. Grids
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrb9.htm">phrb9.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 9B. Linear Vector Functions
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrc1.htm">phrc1.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 1C. Specimens
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrc10.htm">phrc10.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 10C. Math &amp; Stats
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrc11.htm">phrc11.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 11C. Transformations
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrc13.htm">phrc13.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 13C. Type Change
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrc2.htm">phrc2.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 2C. Ambivalent Functions
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrc4.htm">phrc4.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 4C. Test
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrc5.htm">phrc5.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 5C. Special Matrices &amp; Lists
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrc6.htm">phrc6.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 6C. Grading
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrc7.htm">phrc7.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 7C. Parity &amp; Symmetry
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrc8.htm">phrc8.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 8C. Representations
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrc9.htm">phrc9.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 9C. Polynomials &amp; Rational Functions
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrd1.htm">phrd1.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 1D. Function Tables
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrd10.htm">phrd10.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 10D. Plotting
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrd2.htm">phrd2.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 2D. Adverbs &amp; Conjunctions
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrd8.htm">phrd8.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 8D. Arithmetic
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrd9.htm">phrd9.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 9D. Transcendental Functions
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phre10.htm">phre10.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 10E. Approximation
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phre2.htm">phre2.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 2E. Explicit Definitions
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phre8.htm">phre8.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 8E. Complex Numbers
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phre9.htm">phre9.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 9E. Quadrature &amp; Simpson’s Rule
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrf10.htm">phrf10.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 10F. Random Numbers
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrf2.htm">phrf2.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 2F. Hooks
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrf9.htm">phrf9.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 9F. Geometry
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrg2.htm">phrg2.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 2G. Verb Trains
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="phrh2.htm">phrh2.ijs</a>
+</td>
+<td class="noun">
+J Phrases Section 2H. Gerunds
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="pi_1000001.htm">pi_1000001.ijs</a>
+</td>
+<td class="noun">
+pi string digits to 1000001
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="pi_digits.htm">pi_digits.ijs</a>
+</td>
+<td class="noun">
+Calculator digits of pi
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="plots.htm">plots.ijs</a>
+</td>
+<td class="noun">
+Plot tools
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="qxtables.htm">qxtables.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Qx Tables
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="qxtools.htm">qxtools.ijs</a>
+</td>
+<td class="noun">
+Definitions for modifying Qx tables and loading all the Qx tables
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="rba.htm">rba.ijs</a>
+</td>
+<td class="noun">
+Reserve Bank of Australia formula for calculating value of securities
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="rinterface.htm">rinterface.ijs</a>
+</td>
+<td class="noun">
+Interfacing J with R (using Rserve.exe)
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="rstats.htm">rstats.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: R Stats
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="ruleof78.htm">ruleof78.ijs</a>
+</td>
+<td class="noun">
+Rule of 78
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="save_reteive_data.htm">save_reteive_data.ijs</a>
+</td>
+<td class="noun">
+Save and retrieve data (ie: nouns) from the workspace to a keyfile
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="select.htm">select.ijs</a>
+</td>
+<td class="noun">
+Selecting data form a list
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="showgrid.htm">showgrid.ijs</a>
+</td>
+<td class="noun">
+Show data in a grid -using isigrid
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="showtable.htm">showtable.ijs</a>
+</td>
+<td class="noun">
+show table data using QTableWidget
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="simple.htm">simple.ijs</a>
+</td>
+<td class="noun">
+Simple interest definitions for a constant simple interest rate
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="stat_tools.htm">stat_tools.ijs</a>
+</td>
+<td class="noun">
+Stat tools
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="statistics.htm">statistics.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Statistics
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="sudoku_hui.htm">sudoku_hui.ijs</a>
+</td>
+<td class="noun">
+Roger Hui’s sudoku solver
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="text_to_numeric.htm">text_to_numeric.ijs</a>
+</td>
+<td class="noun">
+Text data to numeric data
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="timeline.htm">timeline.ijs</a>
+</td>
+<td class="noun">
+Time line plot of a cash flow
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="toolboxijs.htm">toolboxijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Toolbox
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="twrr.htm">twrr.ijs</a>
+</td>
+<td class="noun">
+Time weighted rates of return
+</td>
+</tr>
+</table>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+A
+</td>
+<td>
+<a href="datetime_rs.htm#adjustYrMth">adjustYrMth</a>, <a
+href="date_tools.htm#age_lastbd">age_lastbd</a>, <a
+href="date_tools.htm#age_nearestbd">age_nearestbd</a>, <a
+href="date_tools.htm#age_nextbd">age_nextbd</a>, <a
+href="date_tools.htm#age_yrs">age_yrs</a>, <a
+href="date_tools.htm#age_yydd">age_yydd</a>, <a
+href="edatetime_tools.htm#ageLastBD">ageLastBD</a>, <a
+href="edatetime_tools.htm#ageNearestBD">ageNearestBD</a>, <a
+href="edatetime_tools.htm#ageNextBD">ageNextBD</a>, <a
+href="al.htm#AL_1967_70_M_ULT">AL_1967_70_M_ULT</a>, <a
+href="al.htm#AL_49_52_M_ULT">AL_49_52_M_ULT</a>, <a
+href="al.htm#AL_AM92_ULT">AL_AM92_ULT</a>, <a
+href="al.htm#AL_IA85_90_F_ULT">AL_IA85_90_F_ULT</a>, <a
+href="al.htm#AL_IA85_90_M_ULT">AL_IA85_90_M_ULT</a>, <a
+href="al.htm#AL_IA90_92_F_ULT">AL_IA90_92_F_ULT</a>, <a
+href="al.htm#AL_IA90_92_M_ULT">AL_IA90_92_M_ULT</a>, <a
+href="al.htm#AL_IA_64_70_ULT">AL_IA_64_70_ULT</a>, <a
+href="alt.htm#ALT_1960_62_F">ALT_1960_62_F</a>, <a
+href="alt.htm#ALT_1960_62_M">ALT_1960_62_M</a>, <a
+href="alt.htm#ALT_1965_67_F">ALT_1965_67_F</a>, <a
+href="alt.htm#ALT_1965_67_M">ALT_1965_67_M</a>, <a
+href="alt.htm#ALT_1970_72_F">ALT_1970_72_F</a>, <a
+href="alt.htm#ALT_1970_72_M">ALT_1970_72_M</a>, <a
+href="alt.htm#ALT_1975_77_F">ALT_1975_77_F</a>, <a
+href="alt.htm#ALT_1975_77_M">ALT_1975_77_M</a>, <a
+href="alt.htm#ALT_1980_82_F">ALT_1980_82_F</a>, <a
+href="alt.htm#ALT_1980_82_M">ALT_1980_82_M</a>, <a
+href="alt.htm#ALT_1985_87_F">ALT_1985_87_F</a>, <a
+href="alt.htm#ALT_1985_87_M">ALT_1985_87_M</a>, <a
+href="alt.htm#ALT_1990_92_F">ALT_1990_92_F</a>, <a
+href="alt.htm#ALT_1990_92_M">ALT_1990_92_M</a>, <a
+href="alt.htm#ALT_1995_97_F">ALT_1995_97_F</a>, <a
+href="alt.htm#ALT_1995_97_M">ALT_1995_97_M</a>, <a
+href="alt.htm#ALT_1998_00_F">ALT_1998_00_F</a>, <a
+href="alt.htm#ALT_1998_00_M">ALT_1998_00_M</a>, <a
+href="alt.htm#ALT_2000_02_F">ALT_2000_02_F</a>, <a
+href="alt.htm#ALT_2000_02_M">ALT_2000_02_M</a>, <a
+href="alt.htm#ALT_2003_05_F">ALT_2003_05_F</a>, <a
+href="alt.htm#ALT_2003_05_M">ALT_2003_05_M</a>, <a
+href="alt.htm#ALT_2004_06_F">ALT_2004_06_F</a>, <a
+href="alt.htm#ALT_2004_06_M">ALT_2004_06_M</a>, <a
+href="alt.htm#ALT_2005_07_F">ALT_2005_07_F</a>, <a
+href="alt.htm#ALT_2005_07_M">ALT_2005_07_M</a>, <a
+href="alt.htm#ALT_2008_10_F">ALT_2008_10_F</a>, <a
+href="alt.htm#ALT_2008_10_M">ALT_2008_10_M</a>, <a
+href="alt.htm#ALT_2009_11_F">ALT_2009_11_F</a>, <a
+href="alt.htm#ALT_2009_11_M">ALT_2009_11_M</a>, <a
+href="alt.htm#ALT_2010_12_F">ALT_2010_12_F</a>, <a
+href="alt.htm#ALT_2010_12_M">ALT_2010_12_M</a>, <a
+href="alt.htm#ALT_2013_15_F">ALT_2013_15_F</a>, <a
+href="alt.htm#ALT_2013_15_M">ALT_2013_15_M</a>, <a
+href="alt.htm#ALT_2014_16_F">ALT_2014_16_F</a>, <a
+href="alt.htm#ALT_2014_16_M">ALT_2014_16_M</a>, <a
+href="alt.htm#ALT_2015_17_F">ALT_2015_17_F</a>, <a
+href="alt.htm#ALT_2015_17_M">ALT_2015_17_M</a>, <a
+href="alt.htm#ALT_2016_18_F">ALT_2016_18_F</a>, <a
+href="alt.htm#ALT_2016_18_M">ALT_2016_18_M</a>, <a
+href="alt.htm#ALT_2017_19_F">ALT_2017_19_F</a>, <a
+href="alt.htm#ALT_2017_19_M">ALT_2017_19_M</a>, <a
+href="alt.htm#ALT_2018_20_F">ALT_2018_20_F</a>, <a
+href="alt.htm#ALT_2018_20_M">ALT_2018_20_M</a>, <a
+href="alt.htm#ALT_2019_21_F">ALT_2019_21_F</a>, <a
+href="alt.htm#ALT_2019_21_M">ALT_2019_21_M</a>, <a
+href="alt.htm#ALT_AGA_2010_12_F">ALT_AGA_2010_12_F</a>, <a
+href="alt.htm#ALT_AGA_2010_12_M">ALT_AGA_2010_12_M</a>, <a
+href="alt.htm#ALT_AGA_2015_17_F">ALT_AGA_2015_17_F</a>, <a
+href="alt.htm#ALT_AGA_2015_17_M">ALT_AGA_2015_17_M</a>, <a
+href="compound.htm#an">an</a>, <a href="compound.htm#an0">an0</a>, <a
+href="compound.htm#anD">anD</a>, <a href="compound.htm#anF">anF</a>, <a
+href="ann.htm#ANN_1920_F_ULT">ANN_1920_F_ULT</a>, <a
+href="ann.htm#ANN_1920_M_ULT">ANN_1920_M_ULT</a>, <a
+href="ann.htm#ANN_55_F_ULT">ANN_55_F_ULT</a>, <a
+href="ann.htm#ANN_55_M_ULT">ANN_55_M_ULT</a>, <a
+href="ann.htm#ANN_90_F_ULT">ANN_90_F_ULT</a>, <a
+href="ann.htm#ANN_90_M_ULT">ANN_90_M_ULT</a>, <a
+href="ann.htm#ANN_IM80_F_ULT">ANN_IM80_F_ULT</a>, <a
+href="ann.htm#ANN_IM80_M_ULT">ANN_IM80_M_ULT</a>, <a
+href="compoundv.htm#anvF">anvF</a>, <a
+href="lifeinsurance.htm#asx">asx</a>, <a
+href="lifeinsurance.htm#asx_M">asx_M</a>, <a
+href="lifeinsurance.htm#asxn">asxn</a>, <a
+href="lifeinsurance.htm#asxn1">asxn1</a>, <a
+href="gi_tools.htm#avg_dev">avg_dev</a>, <a
+href="lifeannuities.htm#ax">ax</a>, <a
+href="lifeannuities.htm#ax0">ax0</a>, <a
+href="lifeannuities.htm#ax0_M">ax0_M</a>, <a
+href="lifeannuities.htm#ax_M">ax_M</a>, <a
+href="lifeannuities.htm#axn">axn</a>, <a
+href="lifeannuities.htm#axn1">axn1</a>, <a
+href="lifeannuities.htm#axy">axy</a>, <a
+href="lifeannuities.htm#axyLS">axyLS</a>, <a
+href="lifeannuities.htm#axyR">axyR</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+B
+</td>
+<td>
+<a href="numeric_j602.htm#baserep">baserep</a>, <a
+href="numeric.htm#bdiff">bdiff</a>, <a
+href="pi_digits.htm#bigpi">bigpi</a>, <a
+href="bisection.htm#bisection">bisection</a>, <a
+href="sudoku_hui.htm#BLK">BLK</a>, <a
+href="matrix_tools.htm#bottom_triL">bottom_triL</a>, <a
+href="matrix_tools.htm#bottom_triR">bottom_triR</a>, <a
+href="misc_j602.htm#boxcols">boxcols</a>, <a
+href="boxed_table.htm#boxedtable">boxedtable</a>, <a
+href="blackscholes.htm#bsGKCurrencyOption">bsGKCurrencyOption</a>, <a
+href="blackscholes.htm#bsNonDividend">bsNonDividend</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+C
+</td>
+<td>
+<a href="date_tools.htm#calendar_yr">calendar_yr</a>, <a
+href="calendaryr.htm#calendaryr">calendaryr</a>, <a
+href="edatetime_tools.htm#cDateTime">cDateTime</a>, <a
+href="edatetime_tools.htm#cDigitTime">cDigitTime</a>, <a
+href="chain_ladder_INBR_claims.htm#chl_dev_ratios">chl_dev_ratios</a>,
+<a href="chain_ladder_INBR_claims.htm#chl_proj">chl_proj</a>, <a
+href="misc_j602.htm#chop">chop</a>, <a
+href="edatetime_tools.htm#cISO_8601DateTime">cISO_8601DateTime</a>, <a
+href="numeric_j602.htm#clean">clean</a>, <a
+href="edatetime_tools.htm#cNanoDateTime">cNanoDateTime</a>, <a
+href="numeric_j602.htm#colsum">colsum</a>, <a
+href="stat_tools.htm#common">common</a>, <a
+href="gi_tools.htm#cumm_sum_columns">cumm_sum_columns</a>, <a
+href="gi_tools.htm#cumm_sum_rows">cumm_sum_rows</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+D
+</td>
+<td>
+<a href="compound.htm#d">d</a>, <a
+href="data_arrays.htm#darray">darray</a>, <a
+href="data_arrays.htm#darray1">darray1</a>, <a
+href="data_arrays.htm#darray2">darray2</a>, <a
+href="data_arrays.htm#darray3">darray3</a>, <a
+href="data_arrays.htm#darray4">darray4</a>, <a
+href="data_arrays.htm#darray5">darray5</a>, <a
+href="data_arrays.htm#darray6">darray6</a>, <a
+href="data_arrays.htm#darray7">darray7</a>, <a
+href="data_arrays.htm#darray8">darray8</a>, <a
+href="text_to_numeric.htm#data">data</a>, <a
+href="data_arrays.htm#data_codes">data_codes</a>, <a
+href="text_to_numeric.htm#data_table">data_table</a>, <a
+href="text_to_numeric.htm#datas">datas</a>, <a
+href="date_tools.htm#date_convert1">date_convert1</a>, <a
+href="date_tools.htm#date_convert2">date_convert2</a>, <a
+href="date_tools.htm#date_convert3">date_convert3</a>, <a
+href="date_tools.htm#date_convert4">date_convert4</a>, <a
+href="date_tools.htm#date_convert5">date_convert5</a>, <a
+href="date_tools.htm#date_convert6">date_convert6</a>, <a
+href="date_tools.htm#date_sys">date_sys</a>, <a
+href="date_tools.htm#date_test">date_test</a>, <a
+href="date_tools.htm#date_time_sys">date_time_sys</a>, <a
+href="datenumber.htm#datenumbertable">datenumbertable</a>, <a
+href="date_tools.htm#dates_test">dates_test</a>, <a
+href="datenumber.htm#datetonumber">datetonumber</a>, <a
+href="datenumber.htm#datetonumberx">datetonumberx</a>, <a
+href="date_tools.htm#day_of_week">day_of_week</a>, <a
+href="date_tools.htm#day_of_weekno">day_of_weekno</a>, <a
+href="date_tools.htm#DAYS">DAYS</a>, <a
+href="date_tools.htm#days_diff">days_diff</a>, <a
+href="date_tools.htm#days_in_month">days_in_month</a>, <a
+href="date_tools.htm#days_in_year">days_in_year</a>, <a
+href="date_tools.htm#DAYSA">DAYSA</a>, <a
+href="date_tools.htm#DAYSB">DAYSB</a>, <a
+href="datetime_rs.htm#daysDiff">daysDiff</a>, <a
+href="edatetime_tools.htm#ddtn">ddtn</a>, <a
+href="misc_j602.htm#default">default</a>, <a
+href="qxtools.htm#descQx">descQx</a>, <a
+href="stat_tools.htm#deviation_mat">deviation_mat</a>, <a
+href="misc_j602.htm#diff">diff</a>, <a
+href="lifesimulation.htm#dist_yr_of_death">dist_yr_of_death</a>, <a
+href="lifesimulation.htm#dist_yrs_life">dist_yrs_life</a>, <a
+href="lifetable.htm#distDeathsYr">distDeathsYr</a>, <a
+href="lifetable.htm#distDurLife">distDurLife</a>, <a
+href="save_reteive_data.htm#dltLastBox">dltLastBox</a>, <a
+href="numeric.htm#dp">dp</a>, <a
+href="save_reteive_data.htm#dtDots">dtDots</a>, <a
+href="edatetime_tools.htm#dtn">dtn</a>, <a
+href="edatetime_tools.htm#dtn0">dtn0</a>, <a
+href="date_tools.htm#dur_yrs">dur_yrs</a>, <a
+href="lifetable.htm#dx">dx</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+E
+</td>
+<td>
+<a href="compound.htm#econvf">econvf</a>, <a
+href="compound.htm#econvg">econvg</a>, <a
+href="edittable.htm#edittable">edittable</a>, <a
+href="simple.htm#effectiveFromSimple">effectiveFromSimple</a>, <a
+href="simple.htm#effectiveFromSimple_T">effectiveFromSimple_T</a>, <a
+href="elt.htm#ELT_10_M">ELT_10_M</a>, <a
+href="elt.htm#ELT_12_M">ELT_12_M</a>, <a
+href="elt.htm#ELT_15_F">ELT_15_F</a>, <a
+href="elt.htm#ELT_15_M">ELT_15_M</a>, <a
+href="date_tools.htm#end_of_month">end_of_month</a>, <a
+href="compound.htm#enominal">enominal</a>, <a
+href="datetime_rs.htm#escaped">escaped</a>, <a
+href="compoundv.htm#ev">ev</a>, <a href="compoundv.htm#evt">evt</a>, <a
+href="lifetable.htm#ex">ex</a>, <a href="lists.htm#extend">extend</a>,
+<a href="lists.htm#extenda">extenda</a>, <a
+href="lifetable.htm#exz">exz</a>, <a href="force.htm#ez">ez</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+F
+</td>
+<td>
+<a href="force.htm#f">f</a>, <a href="lease.htm#f">f</a>, <a
+href="force.htm#fc">fc</a>, <a href="force.htm#fct">fct</a>, <a
+href="force.htm#fct1">fct1</a>, <a href="force.htm#fct1_E">fct1_E</a>,
+<a href="force.htm#fct_E">fct_E</a>, <a
+href="numeric.htm#fdiff">fdiff</a>, <a
+href="save_reteive_data.htm#filesList">filesList</a>, <a
+href="save_reteive_data.htm#filesListn">filesListn</a>, <a
+href="datetime_rs.htm#fmt">fmt</a>, <a
+href="datetime_rs.htm#fmtDate">fmtDate</a>, <a
+href="datetime_rs.htm#fmtDateTime">fmtDateTime</a>, <a
+href="datetime_rs.htm#fmtTime">fmtTime</a>, <a
+href="datetime_rs.htm#fmtTimeDiff">fmtTimeDiff</a>, <a
+href="force.htm#fn">fn</a>, <a
+href="fundprojection.htm#fproj">fproj</a>, <a
+href="fundprojection_a.htm#fproj_a">fproj_a</a>, <a
+href="fundprojection_a.htm#fproj_a_l">fproj_a_l</a>, <a
+href="fundprojection.htm#fproj_l">fproj_l</a>, <a
+href="intervals_freq_sums_counts.htm#freq_count_sum">freq_count_sum</a>,
+<a
+href="intervals_freq_sums_counts.htm#freq_dist_count">freq_dist_count</a>,
+<a
+href="intervals_freq_sums_counts.htm#freq_dist_countv">freq_dist_countv</a>,
+<a href="datetime_rs.htm#fromJulian">fromJulian</a>, <a
+href="force.htm#ft">ft</a>, <a href="compound.htm#fvcf">fvcf</a>, <a
+href="compoundv.htm#fvcfv">fvcfv</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+G
+</td>
+<td>
+<a href="force.htm#g">g</a>, <a href="force.htm#gc">gc</a>, <a
+href="force.htm#gct">gct</a>, <a href="force.htm#gct1">gct1</a>, <a
+href="force.htm#gct1_E">gct1_E</a>, <a href="force.htm#gct_E">gct_E</a>,
+<a href="datetime_rs.htm#getDateFormats">getDateFormats</a>, <a
+href="datetime_rs.htm#getTimeFormats">getTimeFormats</a>, <a
+href="datetime_rs.htm#getTimeZoneInfo">getTimeZoneInfo</a>, <a
+href="force.htm#gn">gn</a>, <a
+href="numeric_j602.htm#groupndx">groupndx</a>, <a
+href="force.htm#gt">gt</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+H
+</td>
+<td>
+<a href="fundprojection.htm#HDR">HDR</a>, <a
+href="loanschedule.htm#HDR">HDR</a>, <a
+href="fundprojection_a.htm#HDR_a">HDR_a</a>, <a
+href="color.htm#hexcolor">hexcolor</a>, <a
+href="color.htm#hextonumber">hextonumber</a>, <a
+href="color.htm#hextorgb">hextorgb</a>, <a
+href="intervals_freq_sums_counts.htm#histogram">histogram</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+I
+</td>
+<td>
+<a href="misc_j602.htm#index">index</a>, <a
+href="dateperiod.htm#index_period">index_period</a>, <a
+href="data_arrays.htm#index_sum_count">index_sum_count</a>, <a
+href="gi_tools.htm#inf_fac">inf_fac</a>, <a
+href="gi_tools.htm#inf_pmts">inf_pmts</a>, <a
+href="numeric_j602.htm#int01">int01</a>, <a
+href="intervals_freq_sums_counts.htm#interval">interval</a>, <a
+href="intervals_freq_sums_counts.htm#interval_count">interval_count</a>,
+<a
+href="intervals_freq_sums_counts.htm#interval_countr">interval_countr</a>,
+<a href="intervals_freq_sums_counts.htm#intervalr">intervalr</a>, <a
+href="invreturnhardy.htm#invReturnHardy">invReturnHardy</a>, <a
+href="invreturnhardy.htm#invReturnHardy_T">invReturnHardy_T</a>, <a
+href="numeric.htm#ip">ip</a>, <a href="numeric.htm#ip1">ip1</a>, <a
+href="numeric.htm#ip_1">ip_1</a>, <a
+href="numeric.htm#ipneg1">ipneg1</a>, <a
+href="numeric.htm#ipneg_1">ipneg_1</a>, <a
+href="conversions.htm#isscalar">isscalar</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+J
+</td>
+<td>
+<a href="datetime_rs.htm#J0Date">J0Date</a>, <a
+href="lifetable_multiplelives.htm#jexp">jexp</a>, <a
+href="misc_j602.htm#join">join</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+L
+</td>
+<td>
+<a href="date_tools.htm#last_bd">last_bd</a>, <a
+href="date_tools.htm#leapyr">leapyr</a>, <a
+href="lease.htm#leasePmt">leasePmt</a>, <a
+href="lease.htm#leasePmtShd">leasePmtShd</a>, <a
+href="lease.htm#leaseR">leaseR</a>, <a
+href="matrix_tools.htm#left_tri">left_tri</a>, <a
+href="numeric_j602.htm#linsert">linsert</a>, <a
+href="datetime_rs.htm#Linux0DateTime">Linux0DateTime</a>, <a
+href="loan.htm#loanBal">loanBal</a>, <a
+href="loan.htm#loanLevelPmt">loanLevelPmt</a>, <a
+href="loan.htm#loanLevelPmtEffRate">loanLevelPmtEffRate</a>, <a
+href="loan.htm#loanMonthlyPmt">loanMonthlyPmt</a>, <a
+href="loan.htm#loanMonthlyPmtShd">loanMonthlyPmtShd</a>, <a
+href="loan.htm#loanTerm">loanTerm</a>, <a
+href="loan.htm#loanTermMonths">loanTermMonths</a>, <a
+href="loan.htm#loanVarPmtsEffRate">loanVarPmtsEffRate</a>, <a
+href="numeric.htm#log1y">log1y</a>, <a
+href="distributions.htm#lognormal_pdf">lognormal_pdf</a>, <a
+href="lifetable_multiplelives.htm#lsexp">lsexp</a>, <a
+href="loanschedule.htm#lshd">lshd</a>, <a
+href="loanschedule.htm#lshd_a">lshd_a</a>, <a
+href="lifetable.htm#lx">lx</a>, <a href="lifetable.htm#lxn">lxn</a>, <a
+href="lifetable.htm#lxn1">lxn1</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+M
+</td>
+<td>
+<a href="matrix_tools.htm#mat_det">mat_det</a>, <a
+href="matrix_tools.htm#mat_id">mat_id</a>, <a
+href="matrix_tools.htm#mat_inv">mat_inv</a>, <a
+href="matrix_tools.htm#mat_mult">mat_mult</a>, <a
+href="data_arrays.htm#max">max</a>, <a
+href="dateperiod.htm#month_days">month_days</a>, <a
+href="date_tools.htm#MONTHS">MONTHS</a>, <a
+href="date_tools.htm#MONTHSA">MONTHSA</a>, <a
+href="datetime_rs.htm#MS0Date">MS0Date</a>, <a
+href="mwrr.htm#mwr">mwr</a>, <a href="mwrr.htm#mwrDates">mwrDates</a>,
+<a href="mwrr.htm#mwrPeriodic">mwrPeriodic</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+N
+</td>
+<td>
+<a href="edatetime_tools.htm#nddt">nddt</a>, <a
+href="edatetime_tools.htm#ndt">ndt</a>, <a
+href="sudoku_hui.htm#NEW_PZ">NEW_PZ</a>, <a
+href="date_tools.htm#next_bd">next_bd</a>, <a
+href="date_tools.htm#next_month">next_month</a>, <a
+href="distributions.htm#normal_pdf">normal_pdf</a>, <a
+href="misc_j602.htm#nounsizes">nounsizes</a>, <a
+href="save_reteive_data.htm#nounsloc">nounsloc</a>, <a
+href="save_reteive_data.htm#nounsTable">nounsTable</a>, <a
+href="save_reteive_data.htm#nounsTableRetrieve">nounsTableRetrieve</a>,
+<a href="misc_j602.htm#nubcount">nubcount</a>, <a
+href="stat_tools.htm#nubsum">nubsum</a>, <a
+href="data_arrays.htm#nubsum">nubsum</a>, <a
+href="stat_tools.htm#nubsum_all">nubsum_all</a>, <a
+href="data_arrays.htm#nubsum_all">nubsum_all</a>, <a
+href="data_arrays.htm#nubsum_code">nubsum_code</a>, <a
+href="stat_tools.htm#nubsum_indx">nubsum_indx</a>, <a
+href="color.htm#numbercolor">numbercolor</a>, <a
+href="datenumber.htm#numbertodate">numbertodate</a>, <a
+href="datenumber.htm#numbertodatex">numbertodatex</a>, <a
+href="color.htm#numbertohex">numbertohex</a>, <a
+href="color.htm#numbertorgb">numbertorgb</a>, <a
+href="lifetable.htm#nyears">nyears</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+O
+</td>
+<td>
+<a href="numeric.htm#onesd">onesd</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+P
+</td>
+<td>
+<a href="misc_j602.htm#pathname">pathname</a>, <a
+href="dateperiod.htm#periods_end_monthly">periods_end_monthly</a>, <a
+href="dateperiod.htm#periods_hy">periods_hy</a>, <a
+href="dateperiod.htm#periods_monthly">periods_monthly</a>, <a
+href="dateperiod.htm#periods_qrt">periods_qrt</a>, <a
+href="dateperiod.htm#periods_yr">periods_yr</a>, <a
+href="pi_1000001.htm#PI_1000001">PI_1000001</a>, <a
+href="pi_digits.htm#pi_n">pi_n</a>, <a
+href="pi_digits.htm#pi_s">pi_s</a>, <a
+href="lifetable.htm#plotdistDeathsYr">plotdistDeathsYr</a>, <a
+href="lifetable.htm#plotdistDurLife">plotdistDurLife</a>, <a
+href="plots.htm#plotfn">plotfn</a>, <a
+href="plots.htm#plotjhsshow">plotjhsshow</a>, <a
+href="plots.htm#plotkeys">plotkeys</a>, <a
+href="plots.htm#plotlink">plotlink</a>, <a
+href="loan.htm#plotLoanMonthlyPmtShd">plotLoanMonthlyPmtShd</a>, <a
+href="plots.htm#plotm">plotm</a>, <a
+href="plots.htm#plotnone">plotnone</a>, <a
+href="qxtools.htm#plotQx">plotQx</a>, <a
+href="plots.htm#plotshow">plotshow</a>, <a
+href="plots.htm#plotsize">plotsize</a>, <a
+href="plots.htm#plotsizedefault">plotsizedefault</a>, <a
+href="qxtools.htm#plotz">plotz</a>, <a
+href="qxtools.htm#plotzQx">plotzQx</a>, <a
+href="distributions.htm#poisson_pdf">poisson_pdf</a>, <a
+href="distributions.htm#polygon_cdf">polygon_cdf</a>, <a
+href="distributions.htm#polygon_pdf">polygon_pdf</a>, <a
+href="misc_j602.htm#prompt">prompt</a>, <a
+href="compound.htm#pvcf">pvcf</a>, <a
+href="compoundv.htm#pvcfv">pvcfv</a>, <a href="lifetable.htm#px">px</a>,
+<a href="lifetable.htm#pxn">pxn</a>, <a
+href="lifetable.htm#pxn1">pxn1</a>, <a
+href="lifetable_multiplelives.htm#pxy">pxy</a>, <a
+href="lifetable_multiplelives.htm#pxy_v">pxy_v</a>, <a
+href="lifetable_multiplelives.htm#pxyz">pxyz</a>, <a
+href="lifetable_multiplelives.htm#pxyz_v">pxyz_v</a>, <a
+href="sudoku_hui.htm#PZ_1">PZ_1</a>, <a
+href="sudoku_hui.htm#PZ_1A">PZ_1A</a>, <a
+href="sudoku_hui.htm#PZ_2">PZ_2</a>, <a
+href="sudoku_hui.htm#PZ_3">PZ_3</a>, <a
+href="sudoku_hui.htm#PZ_4">PZ_4</a>, <a
+href="sudoku_hui.htm#PZ_5">PZ_5</a>, <a
+href="sudoku_hui.htm#PZ_6">PZ_6</a>, <a
+href="sudoku_hui.htm#PZ_7">PZ_7</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+Q
+</td>
+<td>
+<a href="qxtools.htm#quadfit">quadfit</a>, <a
+href="lifetable.htm#qx">qx</a>, <a
+href="lifetable_multiplelives.htm#qx1y">qx1y</a>, <a
+href="al.htm#Qx_AL">Qx_AL</a>, <a href="qxtools.htm#Qx_ALL">Qx_ALL</a>,
+<a href="qxtools.htm#Qx_ALL_Boxed">Qx_ALL_Boxed</a>, <a
+href="alt.htm#Qx_ALT">Qx_ALT</a>, <a
+href="qxtools.htm#Qx_ALT_Boxed">Qx_ALT_Boxed</a>, <a
+href="ann.htm#Qx_ANN">Qx_ANN</a>, <a
+href="qxtools.htm#Qx_Data">Qx_Data</a>, <a
+href="qxtools.htm#Qx_Desc">Qx_Desc</a>, <a
+href="qxtools.htm#Qx_DF">Qx_DF</a>, <a href="elt.htm#Qx_ELT">Qx_ELT</a>,
+<a href="qxtools.htm#Qx_Names">Qx_Names</a>, <a
+href="qxtools.htm#Qx_Names_Desc">Qx_Names_Desc</a>, <a
+href="qxtools.htm#qxextend">qxextend</a>, <a
+href="qxtools.htm#QxF">QxF</a>, <a href="qxtools.htm#QxM">QxM</a>, <a
+href="lifetable.htm#qxn">qxn</a>, <a href="lifetable.htm#qxn1">qxn1</a>,
+<a href="lifetable_multiplelives.htm#qxy">qxy</a>, <a
+href="lifetable_multiplelives.htm#qxyz">qxyz</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+R
+</td>
+<td>
+<a href="simple.htm#r">r</a>, <a
+href="stat_tools.htm#random_0to1">random_0to1</a>, <a
+href="stat_tools.htm#random_seed">random_seed</a>, <a
+href="numeric_j602.htm#randomize">randomize</a>, <a
+href="numeric_j602.htm#range">range</a>, <a
+href="rba.htm#rba_bond">rba_bond</a>, <a
+href="rba.htm#rba_tb">rba_tb</a>, <a
+href="rba.htm#rba_tb_capital_index">rba_tb_capital_index</a>, <a
+href="rba.htm#rba_tn">rba_tn</a>, <a
+href="rba.htm#rba_tn_yield">rba_tn_yield</a>, <a
+href="compound.htm#rconvf">rconvf</a>, <a
+href="numeric_j602.htm#recur">recur</a>, <a
+href="stat_tools.htm#repeat">repeat</a>, <a
+href="stat_tools.htm#repeats">repeats</a>, <a
+href="save_reteive_data.htm#retrieveData">retrieveData</a>, <a
+href="save_reteive_data.htm#retrieveData1">retrieveData1</a>, <a
+href="save_reteive_data.htm#retrieveDataTemp">retrieveDataTemp</a>, <a
+href="color.htm#rgbcolor">rgbcolor</a>, <a
+href="color.htm#rgbtonumber">rgbtonumber</a>, <a
+href="matrix_tools.htm#right_tri">right_tri</a>, <a
+href="rinterface.htm#rinterface">rinterface</a>, <a
+href="matrix_tools.htm#rotate1">rotate1</a>, <a
+href="matrix_tools.htm#rotate2">rotate2</a>, <a
+href="matrix_tools.htm#rotate3">rotate3</a>, <a
+href="matrix_tools.htm#rotate4">rotate4</a>, <a
+href="numeric_j602.htm#round">round</a>, <a
+href="numeric.htm#round">round</a>, <a
+href="numeric_j602.htm#roundbanker">roundbanker</a>, <a
+href="numeric_j602.htm#rounddist">rounddist</a>, <a
+href="numeric_j602.htm#rounddown">rounddown</a>, <a
+href="numeric_j602.htm#roundint">roundint</a>, <a
+href="numeric_j602.htm#roundup">roundup</a>, <a
+href="simple.htm#rt">rt</a>, <a
+href="ruleof78.htm#ruleof78">ruleof78</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="simple.htm#s">s</a>, <a
+href="save_reteive_data.htm#saveData">saveData</a>, <a
+href="save_reteive_data.htm#saveData1">saveData1</a>, <a
+href="save_reteive_data.htm#saveDataTemp">saveDataTemp</a>, <a
+href="misc_j602.htm#scriptform">scriptform</a>, <a
+href="select.htm#sel">sel</a>, <a href="select.htm#selb">selb</a>, <a
+href="select.htm#selb1">selb1</a>, <a href="select.htm#selb2">selb2</a>,
+<a href="select.htm#selb3">selb3</a>, <a
+href="select.htm#selb4">selb4</a>, <a href="select.htm#selb5">selb5</a>,
+<a href="stat_tools.htm#select_no_repl">select_no_repl</a>, <a
+href="stat_tools.htm#select_with_repl">select_with_repl</a>, <a
+href="select.htm#selx0">selx0</a>, <a href="select.htm#selx1">selx1</a>,
+<a href="select.htm#selx2">selx2</a>, <a
+href="select.htm#selx3">selx3</a>, <a href="select.htm#selx4">selx4</a>,
+<a href="select.htm#selx5">selx5</a>, <a
+href="select.htm#sely0">sely0</a>, <a href="select.htm#sely1">sely1</a>,
+<a href="select.htm#sely2">sely2</a>, <a
+href="select.htm#sely3">sely3</a>, <a href="select.htm#sely4">sely4</a>,
+<a href="select.htm#sely5">sely5</a>, <a
+href="date_tools.htm#set_monthly_dates">set_monthly_dates</a>, <a
+href="date_tools.htm#set_weekly_dates">set_weekly_dates</a>, <a
+href="fundprojection.htm#setiv">setiv</a>, <a
+href="fundprojection_a.htm#setiv_a">setiv_a</a>, <a
+href="loanschedule.htm#setv">setv</a>, <a
+href="misc_j602.htm#show">show</a>, <a
+href="misc_j602.htm#showevents">showevents</a>, <a
+href="showgrid.htm#showgrid">showgrid</a>, <a
+href="showtable.htm#showtable">showtable</a>, <a
+href="stat_tools.htm#shuffle">shuffle</a>, <a
+href="numeric.htm#signchange">signchange</a>, <a
+href="simple.htm#simpleFromEffective">simpleFromEffective</a>, <a
+href="simple.htm#simpleFromEffective_T">simpleFromEffective_T</a>, <a
+href="simple.htm#sirate">sirate</a>, <a
+href="simple.htm#sirate_E">sirate_E</a>, <a
+href="compound.htm#sn">sn</a>, <a href="compound.htm#sn1">sn1</a>, <a
+href="compound.htm#snD">snD</a>, <a href="compound.htm#snF">snF</a>, <a
+href="simple.htm#st">st</a>, <a
+href="stat_tools.htm#stddev_biased">stddev_biased</a>, <a
+href="numeric_j602.htm#steps">steps</a>, <a
+href="lists.htm#steps">steps</a>, <a href="misc_j602.htm#subs">subs</a>,
+<a href="sudoku_hui.htm#sudoku">sudoku</a>, <a
+href="sudoku_hui.htm#sudoku_c">sudoku_c</a>, <a
+href="sudoku_hui.htm#sudokuz">sudokuz</a>, <a
+href="intervals_freq_sums_counts.htm#sum_intervalr">sum_intervalr</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+T
+</td>
+<td>
+<a href="chain_ladder_INBR_claims.htm#T1">T1</a>, <a
+href="date_tools.htm#time_sys">time_sys</a>, <a
+href="timeline.htm#timelinecf">timelinecf</a>, <a
+href="edatetime_tools.htm#tndiff">tndiff</a>, <a
+href="date_tools.htm#todate1">todate1</a>, <a
+href="dateperiod.htm#todate1">todate1</a>, <a
+href="datetime_rs.htm#toDateTime">toDateTime</a>, <a
+href="datetime_rs.htm#toDayNo">toDayNo</a>, <a
+href="date_tools.htm#todayno1">todayno1</a>, <a
+href="dateperiod.htm#todayno1">todayno1</a>, <a
+href="datetime_rs.htm#toJulian">toJulian</a>, <a
+href="misc_j602.htm#tolist">tolist</a>, <a
+href="matrix_tools.htm#top_triL">top_triL</a>, <a
+href="matrix_tools.htm#top_triR">top_triR</a>, <a
+href="conversions.htm#toscalar">toscalar</a>, <a
+href="datetime_rs.htm#tsDiff">tsDiff</a>, <a
+href="date_tools.htm#tsdiff_a">tsdiff_a</a>, <a
+href="date_tools.htm#tsdiff_b">tsdiff_b</a>, <a
+href="date_tools.htm#tsdiff_c">tsdiff_c</a>, <a
+href="datetime_rs.htm#tsMinus">tsMinus</a>, <a
+href="datetime_rs.htm#tsPlus">tsPlus</a>, <a
+href="twrr.htm#twr">twr</a>, <a href="twrr.htm#twr_M">twr_M</a>, <a
+href="twrr.htm#twrDietz">twrDietz</a>, <a
+href="twrr.htm#twrDietz_M">twrDietz_M</a>, <a
+href="twrr.htm#twrDietzDates">twrDietzDates</a>, <a
+href="twrr.htm#twrDietzDates_M">twrDietzDates_M</a>, <a
+href="twrr.htm#twrDietzProp">twrDietzProp</a>, <a
+href="twrr.htm#twrDietzProp_M">twrDietzProp_M</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+U
+</td>
+<td>
+<a href="loanschedule.htm#uo">uo</a>, <a
+href="fundprojection.htm#uu">uu</a>, <a
+href="fundprojection_a.htm#uu_a">uu_a</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+V
+</td>
+<td>
+<a href="compound.htm#v">v</a>, <a
+href="date_tools.htm#valdate_yyyymmdd">valdate_yyyymmdd</a>, <a
+href="dateperiod.htm#valdate_yyyymmdd">valdate_yyyymmdd</a>, <a
+href="stat_tools.htm#var_biased">var_biased</a>, <a
+href="compound.htm#vf0">vf0</a>, <a href="compound.htm#vf1">vf1</a>, <a
+href="loanschedule.htm#vo">vo</a>, <a href="compound.htm#vt">vt</a>, <a
+href="fundprojection.htm#vv">vv</a>, <a
+href="fundprojection_a.htm#vv_a">vv_a</a>, <a
+href="compoundv.htm#vvt">vvt</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+W
+</td>
+<td>
+<a href="compound.htm#w">w</a>, <a href="date_tools.htm#week">week</a>,
+<a href="date_tools.htm#wks">wks</a>, <a
+href="date_tools.htm#wks53">wks53</a>, <a
+href="date_tools.htm#wks53y">wks53y</a>, <a
+href="compound.htm#wt">wt</a>, <a href="compoundv.htm#wvt">wvt</a>, <a
+href="date_tools.htm#wy">wy</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+X
+</td>
+<td>
+<a href="distributions.htm#x_from_y">x_from_y</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+Y
+</td>
+<td>
+<a href="distributions.htm#y_from_x">y_from_x</a>, <a
+href="date_tools.htm#yearb">yearb</a>, <a
+href="lifesimulation.htm#yr_of_death">yr_of_death</a>, <a
+href="lifesimulation.htm#yrs_death">yrs_death</a>, <a
+href="lifesimulation.htm#yrs_life">yrs_life</a>, <a
+href="lifesimulation.htm#yrs_life_death">yrs_life_death</a>, <a
+href="lifesimulation.htm#yrs_lifec">yrs_lifec</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+Z
+</td>
+<td>
+<a href="force.htm#ze">ze</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

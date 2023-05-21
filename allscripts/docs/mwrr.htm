@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>mwrr.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">mwrr.ijs</h1>
+</header>
+<script src="../js/ipm_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/ipm/mwrr.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022 6-26<br />
+Depend: nil<br />
+Definitions: loaded to locale base<br />
+Status: done<br />
+<a href="../mwrr.ijs" target="_blank">Script source: mwrr.ijs</a></div>
+<hr>
+<div class="line-block">Definitions to calculate the money weighted rate
+of return for a time unit.<br />
+Also referred to as the internal rate of return.<br />
+External cash flow:<br />
+  cash inflow positive (eg: 100 10)<br />
+  cash outflow negative (eg: _10 _12)<br />
+If a solution exits it is in the range as [ _ 1,_ ] where _ is
+infinity.<br />
+Equations:<br />
+<img alt="NF" src="../eqs/mwrr_ijs.gif"></div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+M
+</td>
+<td>
+<a href="#mwr">mwr</a>, <a href="#mwrDates">mwrDates</a>, <a
+href="#mwrPeriodic">mwrPeriodic</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="mwr">mwr (verb)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Calculate the money weighted rate of return for a non-periodic<br />
+cash flow.<br />
+The money weighted rate of return is the effective interest rate
+for<br />
+the time unit of the cash flow.<br />
+The money weighted rate of return is calculated for the solution
+to<br />
+the equation that the present value of the cach flow is zero.<br />
+(1) constant time units<br />
+(2) money weighted rate of return calculated by Newton-Raphson
+method.<br />
+(3) tolerance 1e_6<br />
+(4) non periodic cash flow<br />
+(5) Maximum iterations 15</div>
+<h3>Syntax</h3>
+<pre><code>([I])mwr(C;T)
+[I] = optional initial trial value (decimal interest rate)
+      default = 0
+C  = non-periofic cash flow
+     must have at least one change of sign
+T = time of the cash flow in time units</code></pre>
+<h3>Example</h3>
+<pre><code> mwr(_1 1;0 1)
+0</code></pre>
+<pre><code>  mwr(_1 1.5;0 1)
+0.5</code></pre>
+<pre><code>  mwr(_10 10 5;0 1 1.5)
+0.419643</code></pre>
+<pre><code>  mwr(_10 10 5 5;0 1 1.5)
+┌───────────────────────────────────────┐
+│*** cash flow and time do not match ***│
+└───────────────────────────────────────┘</code></pre>
+<pre><code>  mwr(_10 10 5 5 _5 _5 5);(0 1 1.5 3.5 6 7 8)
+0.507807</code></pre>
+<h2 class="hdef" id="mwrDates">mwrDates (verb)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Calculate the money weighted rate of return for a non-periodic<br />
+cash flow with dates.<br />
+The money weighted rate of return is the effective interest rate
+for<br />
+the time unit of the cash flow.<br />
+The money weighted rate of return is calculated for the solution
+to<br />
+the equation that the present value of the cach flow is zero.<br />
+(1) constant time unit of one year : assume 365 days<br />
+    if the period is less than a year the rate is not annualised<br />
+(2) money weighted rate of return calculated by Newton-Raphson
+method.<br />
+(3) tolerance 1e_6<br />
+(4) non periodic cash flow<br />
+(5) Maximum iterations 15</div>
+<h3>Syntax</h3>
+<pre><code>[I]mwrDates(C;D)
+[I] = optional initial trial value (decimal interest rate)
+      default = 0
+C   = cash flow
+      must have at least one change of sign
+D = dates of the cash flow : yyyymmdd as 8 digit numbers</code></pre>
+<h3>Example</h3>
+<pre><code>   mwrDates(1000 20 30 _1100;20140101 20150101 20160101 20170101)</code></pre>
+<h2 class="hdef" id="mwrPeriodic">mwrPeriodic (verb)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+Calculate the money weighted rate of return for a time unit<br />
+for a periodic cash flow.<br />
+The money weighted rate of return is the effective interest rate
+for<br />
+the time unit of the cash flow.<br />
+The money weighted rate of return is calculated for the solution
+to<br />
+the equation that the present value of the cach flow is zero.<br />
+(1) constant time units<br />
+(2) money weighted rate of return calculated by Newton-Raphson
+method.<br />
+(3) tolerance 1e_6<br />
+(4) periodical cash flow<br />
+(5) Maximum iterations 15</div>
+<h3>Syntax</h3>
+<pre><code>([I])mwrPeriodic(C)
+[I] = optional initial trial value (decimal rate)
+      default = 0
+C   = periodic cash flow starting at time unit= 0
+      and increasing by uniform steps of one time unit for each cash flow
+      must have at least one change of sign</code></pre>
+<h3>Example</h3>
+<pre><code>   mwrPeriodic(_1 1.1)
+0.1</code></pre>
+<pre><code>   mwrPeriodic(_1 2)
+1</code></pre>
+<pre><code>   mwrPeriodic(_1 0.9)
+_0.1</code></pre>
+<pre><code>   mwrPeriodic(1 1 _2)
+0</code></pre>
+<pre><code>   mwrPeriodic(10 10 10 _30)
+0</code></pre>
+<pre><code>   mwrPeriodic(10 10 10 _40)
+0.150911</code></pre>
+<pre><code>   mwrPeriodic(_100 10 10 12 12 23 23 23 23 25 30 120)
+0.164739</code></pre>
+<pre><code>   mwrPeriodic(20 20 10 10 12 12 23 23 23 23 25 30 _250 12)
+_2.25588</code></pre>
+</body>
+</html>

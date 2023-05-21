@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>lease.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">lease.ijs</h1>
+</header>
+<script src="../js/basicfinance_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/basicfinance/lease.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022 6 25<br />
+Depend: ~addons/finance/finexec/ipm/mwrr.ijs<br />
+        ~addons/finance/finexec/basicfinance/compound.ijs<br />
+Definitions: loaded to locale base<br />
+Status: dev<br />
+<a href="../lease.ijs" target="_blank">Script source:
+lease.ijs</a></div>
+<hr>
+<div class="line-block">Definitions for lease calculation problems
+with<br />
+a constant effective interest rate over the lease term.<br />
+No rounding in calculations unles specified in the definition.<br />
+A yearly nominal interest rate payable monthly<br />
+is used in the calculation.<br />
+Lease payments are monthly in arrears with a ballooon<br />
+payment at the end of the lease with the final monthly payment.<br />
+For example a 36 month lease will have:<br />
+36 monthly payments 1 … 36 and<br />
+balloon payment at the end of month 36<br />
+Lease arrangements can have an Up Front Fee.</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+F
+</td>
+<td>
+<a href="#f">f</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+L
+</td>
+<td>
+<a href="#leasePmt">leasePmt</a>, <a
+href="#leasePmtShd">leasePmtShd</a>, <a href="#leaseR">leaseR</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="f">f (dyad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> an<br />
+Definition to calculate the difference between loan amount<br />
+and the present value of lease monthly payments.<br />
+Used in leaseR with bisection to<br />
+Solve f(x) = 0</div>
+<h3>Syntax</h3>
+<pre><code>(L;B;T;P)f(E)
+L = loan amount
+B = balloon payment - residual amount
+T = term of lease in months(interger)
+P = monthly lease payment
+E = monthly effective interest rate</code></pre>
+<h3>Example</h3>
+<pre><code>(30000;10000;36;616.56)f(0.0358%12)</code></pre>
+<h2 class="hdef" id="leasePmt">leasePmt (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> an<br />
+Calculate the monthly lease repayments for a lease.<br />
+Lease payments are assumed to be paid in arrears with a final
+residual<br />
+balloon payment at the end of the term.</div>
+<p>synrax: ~~~ leasePmt(L;B;R;T) L = loan amount B = balloon payment -
+residual amount R = yearly nominal interest rate payable monthly T =
+term of lease in months(interger) ~~~</p>
+<h3>Example</h3>
+<pre><code>  leasePmt(20000;10000;0.075;36)
+373.562</code></pre>
+<pre><code>  leasePmt(30000;10000;0.0358;36)
+616.584</code></pre>
+<h2 class="hdef" id="leasePmtShd">leasePmtShd (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> leasePmt<br />
+               loanBal<br />
+Calculate the monthly lease repayment schedule.<br />
+Interest and monthly payment paid at end of the month.</div>
+<h3>Syntax</h3>
+<pre><code>([Opt])leasePmtShd(L;B;R;T)
+[Opt] = optional result display:
+        default numeric table with columns:
+ Opt =  1 boxed  table with header
+       &#39;Month&#39;;&#39;Bal Start&#39;;&#39;Eff Rate&#39;;&#39;Int&#39;;&#39;Pmt&#39;;&#39;Bal End&#39;
+L = loan amount
+B = balloon payment - residual amount
+R  = yearly nominal interest rate payable monthly
+T = term of lease in months(interger)</code></pre>
+<h3>Example</h3>
+<pre><code>  leasePmtShd(20000;10000;0.075;36)
+  (1)leasePmtShd(30000;10000;0.0358;36)</code></pre>
+<h2 class="hdef" id="leaseR">leaseR (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> f<br />
+               bisection<br />
+Calculate the yearly nominal interest rate payable monthly<br />
+for a lease.<br />
+Using the Bisection Method.<br />
+The result is a two item list:<br />
+(1) monthly effective inteerest rate<br />
+(2) value of f(x) using the approximation ie: error</div>
+<h3>Syntax</h3>
+<pre><code>(L;B;T;P)leaseR(A;B:[Tol])
+L = loan amount
+B = balloon payment - residual amount
+T = term of lease in months(interger)
+P = monthly lease payment
+A,B = lower and upper values of initial range
+[TOL] = default tolerence for solution 0.01</code></pre>
+<h3>Example</h3>
+<pre><code>  (20000;10000;36;373.56)leaseR(0;0.1;0.001)
+0.00624986 0.000287248</code></pre>
+<pre><code>  (30000;10000;36;616.56)leaseR(0;0.05;0.001)
+0.00298219 _0.000491984</code></pre>
+</body>
+</html>

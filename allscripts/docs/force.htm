@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>force.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">force.ijs</h1>
+</header>
+<script src="../js/basicfinance_links.js"></script>
+<div class="line-block">Script:
+~addons/finexec/finexec/basicfinance/force.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022 6 25<br />
+Depend: nil<br />
+Definitions: loaded to locale base<br />
+Status: done<br />
+<a href="../force.ijs" target="_blank">Script source:
+force.ijs</a></div>
+<hr>
+<div class="line-block">Definitions for solving force of interest
+(continous compounding) problems.</div>
+<hr>
+<div class="line-block">Equations:<br />
+<img alt="NF" src="../eqs/force_ijs.gif"></div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+E
+</td>
+<td>
+<a href="#ez">ez</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+F
+</td>
+<td>
+<a href="#f">f</a>, <a href="#fc">fc</a>, <a href="#fct">fct</a>, <a
+href="#fct1">fct1</a>, <a href="#fct1_E">fct1_E</a>, <a
+href="#fct_E">fct_E</a>, <a href="#fn">fn</a>, <a href="#ft">ft</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+G
+</td>
+<td>
+<a href="#g">g</a>, <a href="#gc">gc</a>, <a href="#gct">gct</a>, <a
+href="#gct1">gct1</a>, <a href="#gct1_E">gct1_E</a>, <a
+href="#gct_E">gct_E</a>, <a href="#gn">gn</a>, <a href="#gt">gt</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+Z
+</td>
+<td>
+<a href="#ze">ze</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="fct1_E" class="rid">
+fct1_E
+</td>
+<td class="rtype">
+d
+</td>
+<td class="rdef">
+Explicit form of fct1
+</td>
+</tr>
+<tr>
+<td id="fct_E" class="rid">
+fct_E
+</td>
+<td class="rtype">
+d
+</td>
+<td class="rdef">
+Explicit form of fct
+</td>
+</tr>
+<tr>
+<td id="gct1_E" class="rid">
+gct1_E
+</td>
+<td class="rtype">
+d
+</td>
+<td class="rdef">
+Explicit form of gct1
+</td>
+</tr>
+<tr>
+<td id="gct_E" class="rid">
+gct_E
+</td>
+<td class="rtype">
+d
+</td>
+<td class="rdef">
+Explicit form of gct
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="ez">ez (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Equivalent effective interest rate for a constant force<br />
+of interest rate for one time unit.</div>
+<h3>Syntax</h3>
+<pre><code>ez(Z)
+Z = constant force of interest rate for one time unit.</code></pre>
+<h3>Example</h3>
+<pre><code>   ez(0.05)
+0.0512711</code></pre>
+<pre><code>   ez(_0.05 0 0 0.05 0.1)
+_0.0487706 0 0 0.0512711 0.105171</code></pre>
+<h2 class="hdef" id="f">f (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Present value of an amount of 1 payable in one time unit<br />
+for a force of interest rate Z.</div>
+<h3>Syntax</h3>
+<pre><code>f(Z)
+Z = constant force of interest rate for one time unit.</code></pre>
+<h3>Example</h3>
+<pre><code>   f(0.05)
+0.951229</code></pre>
+<pre><code>   f(0.01 0.05 0.1)
+0.99005 0.951229 0.904837</code></pre>
+<h2 class="hdef" id="fc">fc (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Present value of an amount of 1 paid continuosly over one time
+unit<br />
+for a force of interest rates Z.</div>
+<h3>Syntax</h3>
+<pre><code>fc(Z)
+Z = constant force of interest rate for one time unit.</code></pre>
+<h3>Example</h3>
+<pre><code>   fc(0.05)
+0.975412</code></pre>
+<pre><code>   fc(0.01 0.05 0.1)
+0.995017 0.975412 0.951626</code></pre>
+<pre><code>   fc(0 0.1)
+1 0.951626</code></pre>
+<h2 class="hdef" id="fct">fct (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Present value of continous payments over the period of<br />
+of T time units where the rate of payment per time unit<br />
+is one for a constant force of interest Z.</div>
+<h3>Syntax</h3>
+<pre><code>(Z)fct(T)
+Z = constant force of interest rate per time unit over the period.
+T = period in time units of continous payments</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.0)fct(10)
+10</code></pre>
+<pre><code>   (0.05)fct(10)
+7.86939</code></pre>
+<pre><code>   (0.05)fct(0 5 10)
+0 4.42398 7.86939</code></pre>
+<pre><code>   (0 0.05 0.10)fct(10)
+10 7.86939 6.32121</code></pre>
+<pre><code>   (0 0.05 0.10 0.15)fct(0 5 10)
+ 0       0       0       0
+ 5 4.42398 3.93469 3.51756
+10 7.86939 6.32121 5.17913</code></pre>
+<h2 class="hdef" id="fct1">fct1 (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Restricted form of fct: only single values for Z and T.<br />
+Present value of continous payments over the period of<br />
+of T time units where the rate of payment per time unit<br />
+is one for a constant force of interest Z.<br />
+<a class="HREF" href="../eqs/fct_eq.html" target="_blank">Equation:
+(Z)fct1(T)</a></div>
+<pre><code>(Z)fct(T)
+Z = constant force of interest rate per time unit over the period.
+T = period in time units of continous payments</code></pre>
+<h3>Example</h3>
+<pre><code>   (0)fct1(0)
+0</code></pre>
+<pre><code>   (0)fct1(10)
+10</code></pre>
+<pre><code>   (0.05)fct1(0)
+0
+   (0.05)fct1(10)
+7.86939</code></pre>
+<h2 class="hdef" id="fn">fn (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Present value of N payments of 1 paid at the beginning of each time
+unit<br />
+for a constant force of interest rate Z over the period.<br />
+ie. Payments in advance</div>
+<h3>Syntax</h3>
+<pre><code>(Z)fn(N)
+Z = constant force of interest rate per time unit over the period.
+N = integer number of payments over the period</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.0)fn(10)
+10</code></pre>
+<pre><code>   (0.05)fn(10)
+8.06776</code></pre>
+<pre><code>   (0.05)fn(0 5 10)
+0 4.53551 8.06776</code></pre>
+<pre><code>   (0 0.05 0.10)fn(10)
+10 8.06776 6.64253</code></pre>
+<pre><code>   (0 0.05 0.10 0.15)fn(0 5 10)
+ 0       0       0       0
+ 5 4.53551 4.13471 3.78797
+10 8.06776 6.64253 5.57727</code></pre>
+<h2 class="hdef" id="ft">ft (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Present value of an amount of 1 payable in T time units<br />
+for a constant force of interest Z over the period.</div>
+<h3>Syntax</h3>
+<pre><code>(Z)ft(T)
+Z = constant force of interest rate per time unit over a period
+T = number of time units in the period</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.05)ft(5)
+0.778801</code></pre>
+<pre><code>   (0.05)ft(0 5 10)
+1 0.778801 0.606531</code></pre>
+<pre><code>   (0.0 0.05 0.10)ft(5)
+1 0.778801 0.606531</code></pre>
+<pre><code>   (0.0 0.05 0.1 0.15)ft(0 5 10)
+ 1        1        1
+1 0.778801 0.606531
+1 0.606531 0.367879
+1 0.472367  0.22313</code></pre>
+<h2 class="hdef" id="g">g (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Future value of an amount of 1 in one time unit<br />
+for a force of interest rates Z.</div>
+<h3>Syntax</h3>
+<pre><code>g(Z)
+Z = constant force of interest rate for one time unit.</code></pre>
+<h3>Example</h3>
+<pre><code>   g(0.05)
+1.05127</code></pre>
+<pre><code>   g(0 0.01 0.05 0.1)
+1 1.01005 1.05127 1.10517</code></pre>
+<h2 class="hdef" id="gc">gc (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Future value of an amount of 1 paid continuosly over one time unit<br />
+for a force of interest rates Z.</div>
+<h3>Syntax</h3>
+<pre><code>gc(Z)
+Z = constant force of interest rate for one time unit.</code></pre>
+<h3>Example</h3>
+<pre><code>   gc(0.05)
+1.02542</code></pre>
+<pre><code>   gc(0.01 0.05 0.1)
+1.00502 1.02542 1.05171</code></pre>
+<pre><code>   gc(0 0.1)
+1 1.05171</code></pre>
+<h2 class="hdef" id="gct">gct (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Present value of continous payments over the period of<br />
+of T time units where the rate of payment per time unit<br />
+is one for a constant force of interest Z.</div>
+<h3>Syntax</h3>
+<pre><code>(Z)gct(T)
+Z = constant force of interest rate per time unit over the period.
+T = period in time units of continous payments</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.0)gct(10)
+10</code></pre>
+<pre><code>   (0.05)gct(10)
+12.9744</code></pre>
+<pre><code>   (0.05)gct(0 5 10)
+0 5.68051 12.9744</code></pre>
+<pre><code>   (0 0.05 0.10)gct(10)
+10 12.9744 17.1828</code></pre>
+<pre><code>   (0 0.05 0.10 0.15)gct(0 5 10)
+ 0       0       0       0
+ 5 5.68051 6.48721 7.44667
+10 12.9744 17.1828 23.2113</code></pre>
+<h2 class="hdef" id="gct1">gct1 (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Restricted form of fct: only single values for Z and T.<br />
+Present value of continous payments over the period of<br />
+of T time units where the rate of payment per time unit<br />
+is one for a constant force of interest Z.</div>
+<h3>Syntax</h3>
+<pre><code>(Z)gct(T)
+Z = constant force of interest rate per time unit over the period.
+T = period in time units of continous payments</code></pre>
+<h3>Example</h3>
+<pre><code>   (0)gct1(0)
+0</code></pre>
+<pre><code>   (0)gct1(10)
+10</code></pre>
+<pre><code>   (0.05)gct1(0)
+0
+   (0.05)gct1(10)
+12.9744</code></pre>
+<h2 class="hdef" id="gn">gn (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Future value of N payments of 1 payable at intervals for a time
+unit.<br />
+for a constant force of interest Z.<br />
+accumulated to the time of the last payment.<br />
+(ie: payments in arrears)</div>
+<h3>Syntax</h3>
+<pre><code>(Z)gn(N)
+Z = constant force of interest rate per time unit over the period.
+N = number of payments over the period</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.0)gn(10)
+10</code></pre>
+<pre><code>   (0.05)gn(10)
+12.6528</code></pre>
+<pre><code>   (0.05)gn(0 5 10)
+0 5.53968 12.6528</code></pre>
+<pre><code>   (0 0.05 0.10)gn(10)
+10 12.6528 16.338</code></pre>
+<pre><code>   (0 0.05 0.10 0.15)gn(0 5 10)
+ 0       0       0       0
+ 5 5.53968 6.16826 6.90212
+10 12.6528  16.338 21.5139</code></pre>
+<h2 class="hdef" id="gt">gt (dyad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Future value of an amount of 1 payable in T time units<br />
+for a constant force of interest Z over the period.</div>
+<h3>Syntax</h3>
+<pre><code>(Z)gt(T)
+Z = constant force of interest rate per time unit over a period
+T = number of time units in the period</code></pre>
+<h3>Example</h3>
+<pre><code>   (0.05)gt(5)
+1.28403</code></pre>
+<pre><code>   (0.05)gt(0 5 10)
+1 1.28403 1.64872</code></pre>
+<pre><code>   (0.0 0.05 0.10)gt(5)
+1 1.28403 1.64872</code></pre>
+<pre><code>   (0.0 0.05 0.1 0.15)gt(0 5 10)
+1       1       1       1
+1 1.28403 1.64872   2.117
+1 1.64872 2.71828 4.48169</code></pre>
+<h2 class="hdef" id="ze">ze (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+Equivalent constant force of interest rate for a<br />
+constant effective interest rate for one time unit.</div>
+<h3>Syntax</h3>
+<pre><code>ez(E)
+E = constant effective interest rate for one time unit.</code></pre>
+<h3>Example</h3>
+<pre><code>   ze(0.05)</code></pre>
+</body>
+</html>
