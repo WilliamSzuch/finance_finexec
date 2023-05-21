@@ -1,14 +1,9 @@
 NB. =========================================================
 NB.%lists.ijs - Create lists of data
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Toolbox</a>
-NB.-<hr>
-NB.-<hr>
+NB.-<script src="../js/toolbox_links.js"></script>
 NB.- script: ~adons/finance/finexec/toolbox/lists.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 5 26
 NB.- depend: nil
 NB.- Definitions: loaded to locale base 
 NB.- Status: done

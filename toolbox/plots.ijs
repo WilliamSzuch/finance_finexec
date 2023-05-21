@@ -1,19 +1,15 @@
 NB. =========================================================
 NB.%plots.ijs - Plot tools
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Toolbox</a>
-NB.-<hr>
+NB.-<script src="../js/toolbox_links.js"></script>
 NB.- Script: ~addons/finance/finexec/toolbox/plots.ijs
 NB.- Contrinutor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 26
 NB.- Depend: ~addons/graphics/plot.ijs
 NB.- Definitions: loaded to locale base 
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../plot.ijs" target="_blank">Script source: plot.ijs</a>
 NB.-<hr>
-NB.- Definitions for using the plot in Qt and JHS.
+NB.- Definitions for using the plot in Jqt and JHS.
 NB.- Further details about plot see: <a class="HREF" href="https://code.jsoftware.com/wiki/Plot" target="_blank">JWiki Plot</a> 
 NB.-<hr>
 

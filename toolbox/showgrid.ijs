@@ -1,13 +1,9 @@
 NB. =========================================================
 NB.%showgrid.ijs - Show data in a grid -using isigrid
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Toolbox</a>
-NB.-<hr>
+NB.-<script src="../js/toolbox_links.js"></script>
 NB.- Script: ~addons/finance/finexec/toolbox/showgrid.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 26
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
 NB.- Status: dev
@@ -50,8 +46,11 @@ NB.+ Show a large grid - 1,000,000 cells
 NB.+ Faster than showtable
 NB.+  showgrid ? 1000 1000 $10000
 NB.-
-NB.+ Causes J to crash 
+NB.+ Causes J to crash ?
 NB.+   showgrid 10 10 $'A'
+NB.+
+NB.+ OK
+NB.+   showgrid <"0 [10 10 $'A'
 NB. ---------------------------------------------------------
 showgrid=: 3 : 0
 toLF=. [:;(LF,~":)each

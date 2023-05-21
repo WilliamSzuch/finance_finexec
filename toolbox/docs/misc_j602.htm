@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>misc_j602.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">misc_j602.ijs</h1>
+</header>
+<script src="../js/toolbox_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/toolbox/misc_602.ijs<br />
+Contributor: J602<br />
+Updated: 2023 03 16<br />
+Depend: nil<br />
+Definitions: loaded to locale base<br />
+Status: done<br />
+<a href="../misc_j602.ijs" target="_blank">Script source:
+misc_j602.ijs</a></div>
+<hr>
+<div class="line-block">Miscellaneous utilities from J602.</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+B
+</td>
+<td>
+<a href="#boxcols">boxcols</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+C
+</td>
+<td>
+<a href="#chop">chop</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+D
+</td>
+<td>
+<a href="#default">default</a>, <a href="#diff">diff</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+I
+</td>
+<td>
+<a href="#index">index</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+J
+</td>
+<td>
+<a href="#join">join</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+N
+</td>
+<td>
+<a href="#nounsizes">nounsizes</a>, <a href="#nubcount">nubcount</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+P
+</td>
+<td>
+<a href="#pathname">pathname</a>, <a href="#prompt">prompt</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="#scriptform">scriptform</a>, <a href="#show">show</a>, <a
+href="#showevents">showevents</a>, <a href="#subs">subs</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+T
+</td>
+<td>
+<a href="#tolist">tolist</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="boxcols" class="rid">
+boxcols
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+box columns of matrix
+</td>
+</tr>
+<tr>
+<td id="chop" class="rid">
+chop
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+chop array into boxed list
+</td>
+</tr>
+<tr>
+<td id="default" class="rid">
+default
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+set default value
+</td>
+</tr>
+<tr>
+<td id="diff" class="rid">
+diff
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+second differences
+</td>
+</tr>
+<tr>
+<td id="index" class="rid">
+index
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+index where result is _1 if not found, instead of #x
+</td>
+</tr>
+<tr>
+<td id="join" class="rid">
+join
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+join boxed items
+</td>
+</tr>
+<tr>
+<td id="nounsizes" class="rid">
+nounsizes
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+noun sizes
+</td>
+</tr>
+<tr>
+<td id="nubcount" class="rid">
+nubcount
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+nub + count
+</td>
+</tr>
+<tr>
+<td id="pathname" class="rid">
+pathname
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+split filename into path;name
+</td>
+</tr>
+<tr>
+<td id="prompt" class="rid">
+prompt
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+prompt for input
+</td>
+</tr>
+<tr>
+<td id="scriptform" class="rid">
+scriptform
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+script representation of names
+</td>
+</tr>
+<tr>
+<td id="show" class="rid">
+show
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+show names using a linear representation
+</td>
+</tr>
+<tr>
+<td id="showevents" class="rid">
+showevents
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+show events
+</td>
+</tr>
+<tr>
+<td id="subs" class="rid">
+subs
+</td>
+<td class="rtype">
+c
+</td>
+<td class="rdef">
+substitution
+</td>
+</tr>
+<tr>
+<td id="tolist" class="rid">
+tolist
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+convert boxed list to LF delimited list
+</td>
+</tr>
+</table>
+</body>
+</html>

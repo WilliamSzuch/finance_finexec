@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%text_to_numeric.ijs - Text data to numeric data
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Toolbox</a>
-NB.-<hr>
+NB.-<script src="../js/toolbox_links.js"></script>
 NB.- Script: ~addons/finance/finexec/toolbox/test_to_numeric.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 26
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../text_to_numeric.ijs" target="_blank">Script source: text_to_numeric.ijs</a> 
 NB.-<hr>
 NB.- Definitions to convert text data to numeric data.

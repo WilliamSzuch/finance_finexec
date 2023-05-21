@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%boxed_table.ijs - Build a boxed table of data 
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Toolbox</a>
-NB.-<hr>
+NB.-<script src="../js/toolbox_links.js"></script>
 NB.- Script: ~addons/finance/finexec/toolbox/boxed_table.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 26
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../boxed_table.ijs" target="_blank">Script source: boxed_table.ijs</a> 
 NB.-<hr>
 NB.- Build a boxed table of data for numbers or characters that can be  

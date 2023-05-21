@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%save_reteive_data.ijs - Save and retrieve data (ie: nouns) from the workspace to a keyfile
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Toolbox</a>
-NB.-<hr>
+NB.-<script src="../js/toolbox_links.js"></script>
 NB.- Script: ~addons/finexec/utilitry/save_retrieve_data.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 26
 NB.- Depend: ~addons/data/jfiles/jfiles.ijs
 NB.- Definitions: loaded to locale base 
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../save_retrieve_data.ijs" target="_blank">Script source: save_retrieve_data.ijs</a> 
 NB.-<hr>
 NB.- Save the data (ie: nouns) in the base or other locale in the 

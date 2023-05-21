@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,38 +28,46 @@
 <header id="title-block-header">
 <h1 class="title">save_reteive_data.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Toolbox</a>
-<hr>
-<div class="line-block">Script: ~addons/finexec/utilitry/save_retrieve_data.ijs<br />
+<script src="../js/toolbox_links.js"></script>
+<div class="line-block">Script:
+~addons/finexec/utilitry/save_retrieve_data.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022-05-22<br />
+Updated: 2022 6 26<br />
 Depend: ~addons/data/jfiles/jfiles.ijs<br />
 Definitions: loaded to locale base<br />
-Status: done:<br />
-<a href="../save_retrieve_data.ijs" target="_blank">Script source: save_retrieve_data.ijs</a></div>
+Status: done<br />
+<a href="../save_retrieve_data.ijs" target="_blank">Script source:
+save_retrieve_data.ijs</a></div>
 <hr>
-<div class="line-block">Save the data (ie: nouns) in the base or other locale in the<br />
+<div class="line-block">Save the data (ie: nouns) in the base or other
+locale in the<br />
 workspace to a keyfile so that data can then be retrieved<br />
 and used in a job again. A keyfile allows the data to be saved<br />
 using its noun name and the data retrieved by the same<br />
 noun name.</div>
-<div class="line-block">Keyword file verbs are used to save and retrieve nouns from<br />
+<div class="line-block">Keyword file verbs are used to save and retrieve
+nouns from<br />
 a keyfile for a job. Data is saved from the base locale<br />
 unless otherwise specified.<br />
 Most likely data is only saved from base locale.</div>
-<div class="line-block">Saving data from a locale other than base’- see examples in saveData<br />
+<div class="line-block">Saving data from a locale other than base’- see
+examples in saveData<br />
 and savedataTemp.</div>
-<div class="line-block">It is useful to save the data created in a job or project<br />
+<div class="line-block">It is useful to save the data created in a job
+or project<br />
 for further use.</div>
-<div class="line-block">The default keyfile name is KEYFILE_DEFAULT that has been defined<br />
-in the base locale that allows for simple saving and retrieving of data<br />
+<div class="line-block">The default keyfile name is KEYFILE_DEFAULT that
+has been defined<br />
+in the base locale that allows for simple saving and retrieving of
+data<br />
 without having to refer to the keyfile.<br />
 Otherwise the keyfile is as specified.</div>
-<div class="line-block">The keyfile KEYFILE_DEFAULT or other keyfile<br />
+<div class="line-block">The keyfile KEYFILE_DEFAULT or other
+keyfile<br />
 requires to be created first before any saving data.</div>
 <p><b>(1) Create names for keyfiles eg:</b></p>
-<div class="line-block">KEYFILE_DEFAULT =: jpath ‘~user/temp/testkeyfile.ijf’<br />
+<div class="line-block">KEYFILE_DEFAULT =: jpath
+‘~user/temp/testkeyfile.ijf’<br />
 KEYFILE_OTHER =: jpath ‘~user/temp/testkeyfileother.ijf’</div>
 <p><b>(2) Erase any keyfiles with the same name (as requited)</b></p>
 <div class="line-block">ferase KEYFILE_DEFAULT<br />
@@ -62,18 +75,23 @@ ferase KEYFILE_OTHER</div>
 <p><b>(3) Create the keyfiles</b></p>
 <div class="line-block">keycreate KEYFILE_DEFAULT<br />
 keycreate KEYFILE_OTHER</div>
-<p><b>(4) Check that keyfiles have been created with extension: .ijf</b></p>
+<p><b>(4) Check that keyfiles have been created with extension:
+.ijf</b></p>
 <div class="line-block">dir ‘~user/temp’</div>
-<div class="line-block"> keydir KEYFILE_DEFAULT NB. shows the data saved in the keyfile<br />
+<div class="line-block"> keydir KEYFILE_DEFAULT NB. shows the data saved
+in the keyfile<br />
  keydir KEYFILE_OTHER NB. shows the data saved in the keyfile</div>
 <p><b>(5) Create some data in the base locale.</b></p>
-<div class="line-block">DATA =: ‘N1 N2 N3’ =: (i. 3 4);‘Data’;i. 12 12</div>
+<div class="line-block">DATA =: ‘N1 N2 N3’ =: (i. 3 4);‘Data’;i. 12
+12</div>
 <p><b>(6) Create some data in the zzz locale</b></p>
-<div class="line-block">DATAZ_zzz_ =: ‘NZ1_zzz_ NZ2_zzz_ NZ3_zzz_’ =: (i. 5 4);‘DataZ’;i. 15 15</div>
+<div class="line-block">DATAZ_zzz_ =: ‘NZ1_zzz_ NZ2_zzz_ NZ3_zzz_’ =:
+(i. 5 4);‘DataZ’;i. 15 15</div>
 <p><b>(7) Save and retrieve data</b></p>
 <div class="line-block">saveData(‘N1’)<br />
 saveData(’’)<br />
-saveData1(‘XXX’) NB.- Writes an empty item if the noun is not defined.<br />
+saveData1(‘XXX’) NB.- Writes an empty item if the noun is not
+defined.<br />
 savedDta(’‘;’zzz’)</div>
 <div class="line-block">(KEYFILE_OTHER)savedata(’’)<br />
 (KEYFILE_OTHER)savedata(’‘;’zzz’)</div>
@@ -108,7 +126,8 @@ F
 N
 </td>
 <td>
-<a href="#nounsloc">nounsloc</a>, <a href="#nounsTable">nounsTable</a>, <a href="#nounsTableRetrieve">nounsTableRetrieve</a>
+<a href="#nounsloc">nounsloc</a>, <a href="#nounsTable">nounsTable</a>,
+<a href="#nounsTableRetrieve">nounsTableRetrieve</a>
 </td>
 </tr>
 <tr>
@@ -116,7 +135,9 @@ N
 R
 </td>
 <td>
-<a href="#retrieveData">retrieveData</a>, <a href="#retrieveData1">retrieveData1</a>, <a href="#retrieveDataTemp">retrieveDataTemp</a>
+<a href="#retrieveData">retrieveData</a>, <a
+href="#retrieveData1">retrieveData1</a>, <a
+href="#retrieveDataTemp">retrieveDataTemp</a>
 </td>
 </tr>
 <tr>
@@ -124,7 +145,8 @@ R
 S
 </td>
 <td>
-<a href="#saveData">saveData</a>, <a href="#saveData1">saveData1</a>, <a href="#saveDataTemp">saveDataTemp</a>
+<a href="#saveData">saveData</a>, <a href="#saveData1">saveData1</a>, <a
+href="#saveDataTemp">saveDataTemp</a>
 </td>
 </tr>
 </table>

@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,18 +28,19 @@
 <header id="title-block-header">
 <h1 class="title">select.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Toolbox</a>
-<hr>
-<div class="line-block">Script: ~addons/finexec/finexec/toolbox/select.ijs<br />
+<script src="../js/toolbox_links.js"></script>
+<div class="line-block">Script:
+~addons/finexec/finexec/toolbox/select.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022-05-22<br />
+Updated: 2022 6 26<br />
 Depend: nil<br />
 Definitions: loaded to locale base<br />
-Status: done:<br />
-<a href="../select.ijs" target="_blank">Script source: select.ijs</a></div>
+Status: done<br />
+<a href="../select.ijs" target="_blank">Script source:
+select.ijs</a></div>
 <hr>
-<div class="line-block">Definitions for selecting data from a list.</div>
+<div class="line-block">Definitions for selecting data from a
+list.</div>
 <hr>
 <h2>Definitions</h2>
 <table class="map">
@@ -43,7 +49,16 @@ Status: done:<br />
 S
 </td>
 <td>
-<a href="#sel">sel</a>, <a href="#selb">selb</a>, <a href="#selb1">selb1</a>, <a href="#selb2">selb2</a>, <a href="#selb3">selb3</a>, <a href="#selb4">selb4</a>, <a href="#selb5">selb5</a>, <a href="#selx0">selx0</a>, <a href="#selx1">selx1</a>, <a href="#selx2">selx2</a>, <a href="#selx3">selx3</a>, <a href="#selx4">selx4</a>, <a href="#selx5">selx5</a>, <a href="#sely0">sely0</a>, <a href="#sely1">sely1</a>, <a href="#sely2">sely2</a>, <a href="#sely3">sely3</a>, <a href="#sely4">sely4</a>, <a href="#sely5">sely5</a>
+<a href="#sel">sel</a>, <a href="#selb">selb</a>, <a
+href="#selb1">selb1</a>, <a href="#selb2">selb2</a>, <a
+href="#selb3">selb3</a>, <a href="#selb4">selb4</a>, <a
+href="#selb5">selb5</a>, <a href="#selx0">selx0</a>, <a
+href="#selx1">selx1</a>, <a href="#selx2">selx2</a>, <a
+href="#selx3">selx3</a>, <a href="#selx4">selx4</a>, <a
+href="#selx5">selx5</a>, <a href="#sely0">sely0</a>, <a
+href="#sely1">sely1</a>, <a href="#sely2">sely2</a>, <a
+href="#sely3">sely3</a>, <a href="#sely4">sely4</a>, <a
+href="#sely5">sely5</a>
 </td>
 </tr>
 </table>
@@ -113,7 +128,8 @@ L = list of items</code></pre>
 <pre><code>   selb2(&#39;asd&#39;;&#39;dfg&#39;;3;4;5)
 dfg</code></pre>
 <h2 class="hdef" id="selb3">selb3 (monad)</h2>
-<div class="line-block">Select the 3rd item from a list of items and unbox.</div>
+<div class="line-block">Select the 3rd item from a list of items and
+unbox.</div>
 <h3>Syntax</h3>
 <pre><code>selb3(L)
 L = list of items</code></pre>

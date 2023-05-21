@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%showtable.ijs - show table data using QTableWidget
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Toolbox</a>
-NB.-<hr>
+NB.-<script src="../js/toolbox_links.js"></script>
 NB.- Script: ~addons/finance/finexec/toolbox/showtable.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 26
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.- Status: dev:
+NB.- Status: dev
 NB.- <a href="../showtable.ijs" target="_blank">Script source: showtable.ijs</a> 
 NB.-<hr>
 NB.- Definition to show tables of data:

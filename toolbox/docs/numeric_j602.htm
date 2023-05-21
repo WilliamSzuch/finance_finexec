@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>numeric_j602.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">numeric_j602.ijs</h1>
+</header>
+<script src="../js/toolbox_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/toolbox/numeric_j602.ijs<br />
+Contributor: J602<br />
+Updated: 2023 03 16<br />
+Depend: nil<br />
+Definitions: loaded to locale base<br />
+Status: done<br />
+<a href="../numeric_j602.ijs" target="_blank">Script source:
+numeric_j602.ijs</a></div>
+<hr>
+<div class="line-block">Numeric utilities.</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+B
+</td>
+<td>
+<a href="#baserep">baserep</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+C
+</td>
+<td>
+<a href="#clean">clean</a>, <a href="#colsum">colsum</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+G
+</td>
+<td>
+<a href="#groupndx">groupndx</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+I
+</td>
+<td>
+<a href="#int01">int01</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+L
+</td>
+<td>
+<a href="#linsert">linsert</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+R
+</td>
+<td>
+<a href="#randomize">randomize</a>, <a href="#range">range</a>, <a
+href="#recur">recur</a>, <a href="#round">round</a>, <a
+href="#roundbanker">roundbanker</a>, <a href="#rounddist">rounddist</a>,
+<a href="#rounddown">rounddown</a>, <a href="#roundint">roundint</a>, <a
+href="#roundup">roundup</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="#steps">steps</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="baserep" class="rid">
+baserep
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+y in base x
+</td>
+</tr>
+<tr>
+<td id="clean" class="rid">
+clean
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+clean y to tolerance of x (default 1e_10)
+</td>
+</tr>
+<tr>
+<td id="colsum" class="rid">
+colsum
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+sum data columns of matrix by key
+</td>
+</tr>
+<tr>
+<td id="groupndx" class="rid">
+groupndx
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+group indices of y in x
+</td>
+</tr>
+<tr>
+<td id="int01" class="rid">
+int01
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+interval in n steps from 0 to 1 (= steps 0 1,n)
+</td>
+</tr>
+<tr>
+<td id="linsert" class="rid">
+linsert
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+linear insert x (default 2) steps into y
+</td>
+</tr>
+<tr>
+<td id="randomize" class="rid">
+randomize
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+sets a random value into random link
+</td>
+</tr>
+<tr>
+<td id="range" class="rid">
+range
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+range from a to b [in steps of c]
+</td>
+</tr>
+<tr>
+<td id="recur" class="rid">
+recur
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+solves recurrence r(i)=a(i)+r(i-1)*m(i-1)
+</td>
+</tr>
+<tr>
+<td id="round" class="rid">
+round
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+round y to nearest x (e.g. 1000 round 12345)
+</td>
+</tr>
+<tr>
+<td id="roundbanker" class="rid">
+roundbanker
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+round y to nearest x with bankers rounding
+</td>
+</tr>
+<tr>
+<td id="rounddist" class="rid">
+rounddist
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+round y to nearest x preserving total
+</td>
+</tr>
+<tr>
+<td id="rounddown" class="rid">
+rounddown
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+round y down to nearest x (e.g. 1000 round 12345)
+</td>
+</tr>
+<tr>
+<td id="roundint" class="rid">
+roundint
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+round to nearest integer
+</td>
+</tr>
+<tr>
+<td id="roundup" class="rid">
+roundup
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+round y up to nearest x (e.g. 1000 round 12345)
+</td>
+</tr>
+<tr>
+<td id="steps" class="rid">
+steps
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+steps from a to b in c steps
+</td>
+</tr>
+</table>
+</body>
+</html>

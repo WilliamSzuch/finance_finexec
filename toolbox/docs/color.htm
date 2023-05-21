@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,25 +28,28 @@
 <header id="title-block-header">
 <h1 class="title">color.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Toolbox</a>
-<hr>
-<div class="line-block">Script: ~addons/finance/finexec/toolbox/color.ijs<br />
+<script src="../js/toolbox_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/toolbox/color.ijs<br />
 Contrinutor: William Szuch<br />
-Updated: 2022-05-22<br />
+Updated: 2022 6 26<br />
 Depend: ~addons/graphics/viewmat/viewmat.ijs<br />
 Definitions: loaded to locale base<br />
-Status: done:<br />
-<a href="../color.ijs" target="_blank">Script source: color.ijs</a></div>
+Status: done<br />
+<a href="../color.ijs" target="_blank">Script source:
+color.ijs</a></div>
 <hr>
-<div class="line-block">Show the color for rgb/hexadecimal and number formats.<br />
+<div class="line-block">Show the color for rgb/hexadecimal and number
+formats.<br />
   rgb triplet eg: 100 50 150<br />
   hexadecimal number as text eg: ‘aaaaaa’<br />
   number &lt; 256^3<br />
 Convert between number/hexadecimal and RGB<br />
 Useful for selecting colors for web pages.<br />
-<a href="../colortables/colorx256.html" target="_blank">View: color table 256</a><br />
-<a href="../colortables/colortab.html" target="_blank">View: color table</a><br />
+<a href="../colortables/colorx256.html" target="_blank">View: color
+table 256</a><br />
+<a href="../colortables/colortab.html" target="_blank">View: color
+table</a><br />
 See folder: ~addons/graphics/color</div>
 <hr>
 <h2>Definitions</h2>
@@ -51,7 +59,8 @@ See folder: ~addons/graphics/color</div>
 H
 </td>
 <td>
-<a href="#hexcolor">hexcolor</a>, <a href="#hextonumber">hextonumber</a>, <a href="#hextorgb">hextorgb</a>
+<a href="#hexcolor">hexcolor</a>, <a
+href="#hextonumber">hextonumber</a>, <a href="#hextorgb">hextorgb</a>
 </td>
 </tr>
 <tr>
@@ -59,7 +68,9 @@ H
 N
 </td>
 <td>
-<a href="#numbercolor">numbercolor</a>, <a href="#numbertohex">numbertohex</a>, <a href="#numbertorgb">numbertorgb</a>
+<a href="#numbercolor">numbercolor</a>, <a
+href="#numbertohex">numbertohex</a>, <a
+href="#numbertorgb">numbertorgb</a>
 </td>
 </tr>
 <tr>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>showgrid.ijs</title>
+  <title>conversions.ijs</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -26,60 +26,69 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">showgrid.ijs</h1>
+<h1 class="title">conversions.ijs</h1>
 </header>
 <script src="../js/toolbox_links.js"></script>
 <div class="line-block">Script:
-~addons/finance/finexec/toolbox/showgrid.ijs<br />
+~addons/finance/finexec/toolbox/conversions.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022 6 26<br />
+Updated: 2023 04 21<br />
 Depend: nil<br />
 Definitions: loaded to locale base<br />
-Status: dev<br />
-<a href="../showgrid.ijs" target="_blank">Script source:
-showgrid.ijs</a></div>
+Status: done<br />
+<a href="../conversions.ijs" target="_blank">Script source:
+conversions.ijs</a></div>
 <hr>
-<div class="line-block">Display data in a grid.<br />
-Further dev - cut data from display.<br />
-See: showtable.ijs, edittable.ijs</div>
+<div class="line-block">Definitions for conversions eg to a
+scalar.</div>
 <hr>
 <h2>Definitions</h2>
 <table class="map">
 <tr>
 <td class="key">
-S
+I
 </td>
 <td>
-<a href="#showgrid">showgrid</a>
+<a href="#isscalar">isscalar</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+T
+</td>
+<td>
+<a href="#toscalar">toscalar</a>
 </td>
 </tr>
 </table>
-<h2 class="hdef" id="showgrid">showgrid (monad)</h2>
+<h2 class="hdef" id="isscalar">isscalar (monad)</h2>
+<div class="line-block"><b>Type:</b> tacit<br />
+Test if scalar.<br />
+   1 = is a scalar<br />
+   0 = scalar</div>
 <h3>Syntax</h3>
-<pre><code>showgrid(D)
-D = data table</code></pre>
-<div class="line-block">   numeric - undoxed and boxed<br />
-   text - boxed<br />
-   numeric/text - boxed</div>
+<pre><code>toscalar(Z)
+Z = item to be tested:</code></pre>
 <h3>Example</h3>
-<pre><code>  showgrid i. 12 12
-  showgrid &lt;&quot;0 i. 12 12</code></pre>
-<pre><code> Sample data tables
- A =: i. 10 10
- A1 =: &lt;&quot;0 i. 10 10
- B =: 10 10 $ &lt;&#39;Text&#39;
- C =: A1,.B</code></pre>
-<pre><code>  showgrid A
-  showgrid A1
-  showgrid B
-  showgrid C</code></pre>
-<pre><code> Show a large grid - 1,000,000 cells
- Faster than showtable
-  showgrid ? 1000 1000 $10000</code></pre>
-<pre><code> Causes J to crash ?
-   showgrid 10 10 $&#39;A&#39;
-
- OK
-   showgrid &lt;&quot;0 [10 10 $&#39;A&#39;</code></pre>
+<pre><code>   isscalar (,12)
+1</code></pre>
+<pre><code>   isscalar (12)
+0</code></pre>
+<pre><code>   isscalar (,&#39;A&#39;)
+1</code></pre>
+<h2 class="hdef" id="toscalar">toscalar (monad)</h2>
+<div class="line-block"><b>Type:</b> tacit<br />
+Create a scalar from non scalar item with $ = 1.</div>
+<h3>Syntax</h3>
+<pre><code>toscalar(Z)
+Z = non scalar with $ = 1</code></pre>
+<h3>Example</h3>
+<pre><code>   toscalar (,12)
+12</code></pre>
+<pre><code>   toscalar (,&#39;A&#39;)
+A</code></pre>
+<pre><code> T =: 4 5 $ &#39;1 2 3 4&#39;
+   data(T)
+1 2 3 41 2 3 41 2 3</code></pre>
 </body>
 </html>

@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%select.ijs - Selecting data form a list
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Toolbox</a>
-NB.-<hr>
+NB.-<script src="../js/toolbox_links.js"></script>
 NB.- Script: ~addons/finexec/finexec/toolbox/select.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 26
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../select.ijs" target="_blank">Script source: select.ijs</a> 
 NB.-<hr>
 NB.- Definitions for selecting data from a list. 

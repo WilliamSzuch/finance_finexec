@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%bisection.ijs - Bisection methodology for finding a solution to: f(x) = 0
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Toolbox</a>
-NB.-<hr>
+NB.-<script src="../js/toolbox_links.js"></script>
 NB.- Script: ~addons/finance/finexec/toolbox/bisection.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 26
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../bisection.ijs" target="_blank">Script source: bisection.ijs</a>
 NB.-<hr>
 NB.- Bisection method of solving: f(x) = 0.

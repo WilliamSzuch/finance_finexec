@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -20,16 +25,23 @@
   <![endif]-->
 </head>
 <body>
-<h1>
-finexec: Category: Toolbox
-</h1>
+<script src="../../finexec_logo.js"></script>
+<b>Category: Toolbox</b>
+<script src="../../finexec_docs_links.js"></script>
 <hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a>
-<hr>
-Script: ~addons/finance/finexec/toolbox/toolbox_docs.ijs<br> Updated: 2022-05-22<br> Toolbox of definitions for developing new projects and definitions.<br>
+Script: ~Finexec_docs/toolbox_docs.ijs<br> Updated: 2023 05 19<br>
+Toolbox of definitions for developing new projects and definitions.<br>
 <hr>
 <h2>Scripts</h2>
 <table class="noun">
+<tr>
+<td class="noun">
+<a href="toolboxijs.htm">toolboxijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Toolbox
+</td>
+</tr>
 <tr>
 <td class="noun">
 <a href="bisection.htm">bisection.ijs</a>
@@ -56,6 +68,14 @@ Show colors in rgb/hexadecimal and number formats
 </tr>
 <tr>
 <td class="noun">
+<a href="conversions.htm">conversions.ijs</a>
+</td>
+<td class="noun">
+Various conversions
+</td>
+</tr>
+<tr>
+<td class="noun">
 <a href="edittable.htm">edittable.ijs</a>
 </td>
 <td class="noun">
@@ -72,10 +92,26 @@ Create lists of data
 </tr>
 <tr>
 <td class="noun">
+<a href="misc_j602.htm">misc_j602.ijs</a>
+</td>
+<td class="noun">
+Miscellaneous from J602
+</td>
+</tr>
+<tr>
+<td class="noun">
 <a href="numeric.htm">numeric.ijs</a>
 </td>
 <td class="noun">
 Numeric utilities
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="numeric_j602.htm">numeric_j602.ijs</a>
+</td>
+<td class="noun">
+Numeric utilities from J602
 </td>
 </tr>
 <tr>
@@ -134,7 +170,21 @@ Text data to numeric data
 B
 </td>
 <td>
-<a href="numeric.htm#bdiff">bdiff</a>, <a href="bisection.htm#bisection">bisection</a>, <a href="boxed_table.htm#boxedtable">boxedtable</a>
+<a href="numeric_j602.htm#baserep">baserep</a>, <a
+href="numeric.htm#bdiff">bdiff</a>, <a
+href="bisection.htm#bisection">bisection</a>, <a
+href="misc_j602.htm#boxcols">boxcols</a>, <a
+href="boxed_table.htm#boxedtable">boxedtable</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+C
+</td>
+<td>
+<a href="misc_j602.htm#chop">chop</a>, <a
+href="numeric_j602.htm#clean">clean</a>, <a
+href="numeric_j602.htm#colsum">colsum</a>
 </td>
 </tr>
 <tr>
@@ -142,7 +192,14 @@ B
 D
 </td>
 <td>
-<a href="text_to_numeric.htm#data">data</a>, <a href="text_to_numeric.htm#data_table">data_table</a>, <a href="text_to_numeric.htm#datas">datas</a>, <a href="save_reteive_data.htm#dltLastBox">dltLastBox</a>, <a href="numeric.htm#dp">dp</a>, <a href="save_reteive_data.htm#dtDots">dtDots</a>
+<a href="text_to_numeric.htm#data">data</a>, <a
+href="text_to_numeric.htm#data_table">data_table</a>, <a
+href="text_to_numeric.htm#datas">datas</a>, <a
+href="misc_j602.htm#default">default</a>, <a
+href="misc_j602.htm#diff">diff</a>, <a
+href="save_reteive_data.htm#dltLastBox">dltLastBox</a>, <a
+href="numeric.htm#dp">dp</a>, <a
+href="save_reteive_data.htm#dtDots">dtDots</a>
 </td>
 </tr>
 <tr>
@@ -150,7 +207,9 @@ D
 E
 </td>
 <td>
-<a href="edittable.htm#edittable">edittable</a>, <a href="lists.htm#extend">extend</a>, <a href="lists.htm#extenda">extenda</a>
+<a href="edittable.htm#edittable">edittable</a>, <a
+href="lists.htm#extend">extend</a>, <a
+href="lists.htm#extenda">extenda</a>
 </td>
 </tr>
 <tr>
@@ -158,7 +217,17 @@ E
 F
 </td>
 <td>
-<a href="numeric.htm#fdiff">fdiff</a>, <a href="save_reteive_data.htm#filesList">filesList</a>, <a href="save_reteive_data.htm#filesListn">filesListn</a>
+<a href="numeric.htm#fdiff">fdiff</a>, <a
+href="save_reteive_data.htm#filesList">filesList</a>, <a
+href="save_reteive_data.htm#filesListn">filesListn</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+G
+</td>
+<td>
+<a href="numeric_j602.htm#groupndx">groupndx</a>
 </td>
 </tr>
 <tr>
@@ -166,7 +235,9 @@ F
 H
 </td>
 <td>
-<a href="color.htm#hexcolor">hexcolor</a>, <a href="color.htm#hextonumber">hextonumber</a>, <a href="color.htm#hextorgb">hextorgb</a>
+<a href="color.htm#hexcolor">hexcolor</a>, <a
+href="color.htm#hextonumber">hextonumber</a>, <a
+href="color.htm#hextorgb">hextorgb</a>
 </td>
 </tr>
 <tr>
@@ -174,7 +245,21 @@ H
 I
 </td>
 <td>
-<a href="numeric.htm#ip">ip</a>, <a href="numeric.htm#ip1">ip1</a>, <a href="numeric.htm#ip_1">ip_1</a>, <a href="numeric.htm#ipneg1">ipneg1</a>, <a href="numeric.htm#ipneg_1">ipneg_1</a>
+<a href="misc_j602.htm#index">index</a>, <a
+href="numeric_j602.htm#int01">int01</a>, <a
+href="numeric.htm#ip">ip</a>, <a href="numeric.htm#ip1">ip1</a>, <a
+href="numeric.htm#ip_1">ip_1</a>, <a
+href="numeric.htm#ipneg1">ipneg1</a>, <a
+href="numeric.htm#ipneg_1">ipneg_1</a>, <a
+href="conversions.htm#isscalar">isscalar</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+J
+</td>
+<td>
+<a href="misc_j602.htm#join">join</a>
 </td>
 </tr>
 <tr>
@@ -182,7 +267,8 @@ I
 L
 </td>
 <td>
-<a href="numeric.htm#log1y">log1y</a>
+<a href="numeric_j602.htm#linsert">linsert</a>, <a
+href="numeric.htm#log1y">log1y</a>
 </td>
 </tr>
 <tr>
@@ -190,7 +276,14 @@ L
 N
 </td>
 <td>
-<a href="save_reteive_data.htm#nounsloc">nounsloc</a>, <a href="save_reteive_data.htm#nounsTable">nounsTable</a>, <a href="save_reteive_data.htm#nounsTableRetrieve">nounsTableRetrieve</a>, <a href="color.htm#numbercolor">numbercolor</a>, <a href="color.htm#numbertohex">numbertohex</a>, <a href="color.htm#numbertorgb">numbertorgb</a>
+<a href="misc_j602.htm#nounsizes">nounsizes</a>, <a
+href="save_reteive_data.htm#nounsloc">nounsloc</a>, <a
+href="save_reteive_data.htm#nounsTable">nounsTable</a>, <a
+href="save_reteive_data.htm#nounsTableRetrieve">nounsTableRetrieve</a>,
+<a href="misc_j602.htm#nubcount">nubcount</a>, <a
+href="color.htm#numbercolor">numbercolor</a>, <a
+href="color.htm#numbertohex">numbertohex</a>, <a
+href="color.htm#numbertorgb">numbertorgb</a>
 </td>
 </tr>
 <tr>
@@ -206,7 +299,17 @@ O
 P
 </td>
 <td>
-<a href="plots.htm#plotfn">plotfn</a>, <a href="plots.htm#plotjhsshow">plotjhsshow</a>, <a href="plots.htm#plotkeys">plotkeys</a>, <a href="plots.htm#plotlink">plotlink</a>, <a href="plots.htm#plotm">plotm</a>, <a href="plots.htm#plotnone">plotnone</a>, <a href="plots.htm#plotshow">plotshow</a>, <a href="plots.htm#plotsize">plotsize</a>, <a href="plots.htm#plotsizedefault">plotsizedefault</a>
+<a href="misc_j602.htm#pathname">pathname</a>, <a
+href="plots.htm#plotfn">plotfn</a>, <a
+href="plots.htm#plotjhsshow">plotjhsshow</a>, <a
+href="plots.htm#plotkeys">plotkeys</a>, <a
+href="plots.htm#plotlink">plotlink</a>, <a
+href="plots.htm#plotm">plotm</a>, <a
+href="plots.htm#plotnone">plotnone</a>, <a
+href="plots.htm#plotshow">plotshow</a>, <a
+href="plots.htm#plotsize">plotsize</a>, <a
+href="plots.htm#plotsizedefault">plotsizedefault</a>, <a
+href="misc_j602.htm#prompt">prompt</a>
 </td>
 </tr>
 <tr>
@@ -214,7 +317,21 @@ P
 R
 </td>
 <td>
-<a href="save_reteive_data.htm#retrieveData">retrieveData</a>, <a href="save_reteive_data.htm#retrieveData1">retrieveData1</a>, <a href="save_reteive_data.htm#retrieveDataTemp">retrieveDataTemp</a>, <a href="color.htm#rgbcolor">rgbcolor</a>, <a href="color.htm#rgbtonumber">rgbtonumber</a>, <a href="numeric.htm#round">round</a>
+<a href="numeric_j602.htm#randomize">randomize</a>, <a
+href="numeric_j602.htm#range">range</a>, <a
+href="numeric_j602.htm#recur">recur</a>, <a
+href="save_reteive_data.htm#retrieveData">retrieveData</a>, <a
+href="save_reteive_data.htm#retrieveData1">retrieveData1</a>, <a
+href="save_reteive_data.htm#retrieveDataTemp">retrieveDataTemp</a>, <a
+href="color.htm#rgbcolor">rgbcolor</a>, <a
+href="color.htm#rgbtonumber">rgbtonumber</a>, <a
+href="numeric_j602.htm#round">round</a>, <a
+href="numeric.htm#round">round</a>, <a
+href="numeric_j602.htm#roundbanker">roundbanker</a>, <a
+href="numeric_j602.htm#rounddist">rounddist</a>, <a
+href="numeric_j602.htm#rounddown">rounddown</a>, <a
+href="numeric_j602.htm#roundint">roundint</a>, <a
+href="numeric_j602.htm#roundup">roundup</a>
 </td>
 </tr>
 <tr>
@@ -222,7 +339,38 @@ R
 S
 </td>
 <td>
-<a href="save_reteive_data.htm#saveData">saveData</a>, <a href="save_reteive_data.htm#saveData1">saveData1</a>, <a href="save_reteive_data.htm#saveDataTemp">saveDataTemp</a>, <a href="select.htm#sel">sel</a>, <a href="select.htm#selb">selb</a>, <a href="select.htm#selb1">selb1</a>, <a href="select.htm#selb2">selb2</a>, <a href="select.htm#selb3">selb3</a>, <a href="select.htm#selb4">selb4</a>, <a href="select.htm#selb5">selb5</a>, <a href="select.htm#selx0">selx0</a>, <a href="select.htm#selx1">selx1</a>, <a href="select.htm#selx2">selx2</a>, <a href="select.htm#selx3">selx3</a>, <a href="select.htm#selx4">selx4</a>, <a href="select.htm#selx5">selx5</a>, <a href="select.htm#sely0">sely0</a>, <a href="select.htm#sely1">sely1</a>, <a href="select.htm#sely2">sely2</a>, <a href="select.htm#sely3">sely3</a>, <a href="select.htm#sely4">sely4</a>, <a href="select.htm#sely5">sely5</a>, <a href="showgrid.htm#showgrid">showgrid</a>, <a href="showtable.htm#showtable">showtable</a>, <a href="numeric.htm#signchange">signchange</a>, <a href="lists.htm#steps">steps</a>
+<a href="save_reteive_data.htm#saveData">saveData</a>, <a
+href="save_reteive_data.htm#saveData1">saveData1</a>, <a
+href="save_reteive_data.htm#saveDataTemp">saveDataTemp</a>, <a
+href="misc_j602.htm#scriptform">scriptform</a>, <a
+href="select.htm#sel">sel</a>, <a href="select.htm#selb">selb</a>, <a
+href="select.htm#selb1">selb1</a>, <a href="select.htm#selb2">selb2</a>,
+<a href="select.htm#selb3">selb3</a>, <a
+href="select.htm#selb4">selb4</a>, <a href="select.htm#selb5">selb5</a>,
+<a href="select.htm#selx0">selx0</a>, <a
+href="select.htm#selx1">selx1</a>, <a href="select.htm#selx2">selx2</a>,
+<a href="select.htm#selx3">selx3</a>, <a
+href="select.htm#selx4">selx4</a>, <a href="select.htm#selx5">selx5</a>,
+<a href="select.htm#sely0">sely0</a>, <a
+href="select.htm#sely1">sely1</a>, <a href="select.htm#sely2">sely2</a>,
+<a href="select.htm#sely3">sely3</a>, <a
+href="select.htm#sely4">sely4</a>, <a href="select.htm#sely5">sely5</a>,
+<a href="misc_j602.htm#show">show</a>, <a
+href="misc_j602.htm#showevents">showevents</a>, <a
+href="showgrid.htm#showgrid">showgrid</a>, <a
+href="showtable.htm#showtable">showtable</a>, <a
+href="numeric.htm#signchange">signchange</a>, <a
+href="numeric_j602.htm#steps">steps</a>, <a
+href="lists.htm#steps">steps</a>, <a href="misc_j602.htm#subs">subs</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+T
+</td>
+<td>
+<a href="misc_j602.htm#tolist">tolist</a>, <a
+href="conversions.htm#toscalar">toscalar</a>
 </td>
 </tr>
 </table>
