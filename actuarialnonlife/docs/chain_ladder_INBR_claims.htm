@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,14 +28,32 @@
 <header id="title-block-header">
 <h1 class="title">chain_ladder_INBR_claims.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Actuarial Non-Life</a>
-<hr>
-<div class="line-block">Script: ~addons/finance/finexec/actuarialnonlife/chain_ladder_IBNR_claims.ijs<br />
+<script src="../js/actuarialnonlife_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/actuarialnonlife/chain_ladder_IBNR_claims.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022-05-22<br />
+Updated: 2022 6 25<br />
 Depend: ~addons/finance/finexec/actuarialnonlife/matrix_tools.ijs<br />
-       ‘~addons/finance/finexec/actuarialnonlife/gi_tools.ijs’</div>
+       ‘~addons/finance/finexec/actuarialnonlife/gi_tools.ijs’<br />
+        ~addons/graphics/plot/plot.ijs<br />
+Definitions: loaded to locale base<br />
+Status: dev<br />
+<a href="../chain_ladder_IBNR_claims.ijs" target="_blank">Script source:
+chain_ladder_IBNR_claims.ijs</a></div>
+<hr>
+<div class="line-block">IBNR: Incurred But Not Reported claims<br />
+Chain ladder calculations of IBNR claim numbers.<br />
+The development of claim numbers from claims reported data.<br />
+Definitions:<br />
+Incident/Accident periods = period in which incident/accident
+occurred<br />
+Use Incident period<br />
+Report period = period that the incident was reported<br />
+Development period = Incident period - report period.<br />
+Example Data<br />
+Tables T1 and T2</div>
+Notes:
+<hr>
 <h2>Definitions</h2>
 <table class="map">
 <tr>
@@ -38,7 +61,8 @@ Depend: ~addons/finance/finexec/actuarialnonlife/matrix_tools.ijs<br />
 C
 </td>
 <td>
-<a href="#chl_dev_ratios">chl_dev_ratios</a>, <a href="#chl_proj">chl_proj</a>
+<a href="#chl_dev_ratios">chl_dev_ratios</a>, <a
+href="#chl_proj">chl_proj</a>
 </td>
 </tr>
 <tr>
@@ -60,7 +84,7 @@ T1
 n
 </td>
 <td class="rdef">
-Example Data Incident by report period
+Example Data: Claim numbers incident by report period
 </td>
 </tr>
 </table>

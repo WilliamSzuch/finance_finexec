@@ -1,18 +1,14 @@
 NB. =========================================================
 NB.%chain_ladder_INBR_claims.ijs - Chain ladder calculation of IBNR claims
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Actuarial Non-Life</a>
-NB.-<hr>
+NB.-<script src="../js/actuarialnonlife_links.js"></script>
 NB.- Script: ~addons/finance/finexec/actuarialnonlife/chain_ladder_IBNR_claims.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 25
 NB.- Depend: ~addons/finance/finexec/actuarialnonlife/matrix_tools.ijs
 NB.-        '~addons/finance/finexec/actuarialnonlife/gi_tools.ijs'
-NB.           plot.ijs
+NB.-         ~addons/graphics/plot/plot.ijs
 NB.- Definitions: loaded to locale base
-NB.- Status: dev:
+NB.- Status: dev
 NB.- <a href="../chain_ladder_IBNR_claims.ijs" target="_blank">Script source: chain_ladder_IBNR_claims.ijs</a>
 NB.-<hr>
 NB.- IBNR: Incurred But Not Reported claims
@@ -47,7 +43,7 @@ NB. =========================================================
 
 
 NB. =========================================================
-NB.*T1 n Example Data Incident by report period
+NB.*T1 n Example Data: Claim numbers incident by report period
 T1 =: data_table 0 : 0
 1876  361   32   12   12   10    2   11
    0 1985  342   29   23   15    5    8

@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%data_arrays.ijs - Definitions for creating data arrays by codes
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Actuarial Non-Life</a>
-NB.-<hr>
+NB.-<script src="../js/actuarialnonlife_links.js"></script>
 NB.- Script: ~addons/finance/finexec/actuarialnonlifes/data_arrays.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 25
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.- Status: dev: review
+NB.- Status: dev
 NB.- <a href="../data_arrays.ijs" target="_blank">Script source: data_arrays.ijs</a>
 NB.-<hr>
 NB.- Tools for creating data arrays by data codes.

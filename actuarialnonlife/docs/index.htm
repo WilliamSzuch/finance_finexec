@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -20,16 +25,26 @@
   <![endif]-->
 </head>
 <body>
-<h1>
-Finexec Category: Actuarial Non-Life
-</h1>
+<script src="../../finexec_logo.js"></script>
+<b>Category: Actuarial Non-Life</b>
+<script src="../../finexec_docs_links.js"></script>
 <hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a>
-<hr>
-Script: ~Finexec_docs/actuarialnonlife_docs.ijs<br> Updated: 2022-05-22<br> Tools for non life actuarial tasks. Tasks are generally shown as examples using tools to solve the problem. Example data is usually presented as zzz.xlsx and zzz.csv files. Scripts and definitions for actuarial non-life include: * general insurance * data arrays
+Script: ~Finexec_docs/actuarialnonlife_docs.ijs<br> Updated: 2023 05
+19<br> Tools for non life actuarial tasks. Tasks are generally shown as
+examples using tools to solve the problem. Example data is usually
+presented as zzz.xlsx and zzz.csv files. Scripts and definitions for
+actuarial non-life include: * general insurance * data arrays
 <hr>
 <h2>Scripts</h2>
 <table class="noun">
+<tr>
+<td class="noun">
+<a href="actuarialnonlife.htm">actuarialnonlife.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Actuarial Non Life
+</td>
+</tr>
 <tr>
 <td class="noun">
 <a href="chain_ladder_INBR_claims.htm">chain_ladder_INBR_claims.ijs</a>
@@ -78,7 +93,8 @@ A
 B
 </td>
 <td>
-<a href="matrix_tools.htm#bottom_triL">bottom_triL</a>, <a href="matrix_tools.htm#bottom_triR">bottom_triR</a>
+<a href="matrix_tools.htm#bottom_triL">bottom_triL</a>, <a
+href="matrix_tools.htm#bottom_triR">bottom_triR</a>
 </td>
 </tr>
 <tr>
@@ -86,7 +102,11 @@ B
 C
 </td>
 <td>
-<a href="chain_ladder_INBR_claims.htm#chl_dev_ratios">chl_dev_ratios</a>, <a href="chain_ladder_INBR_claims.htm#chl_proj">chl_proj</a>, <a href="gi_tools.htm#cumm_sum_columns">cumm_sum_columns</a>, <a href="gi_tools.htm#cumm_sum_rows">cumm_sum_rows</a>
+<a
+href="chain_ladder_INBR_claims.htm#chl_dev_ratios">chl_dev_ratios</a>,
+<a href="chain_ladder_INBR_claims.htm#chl_proj">chl_proj</a>, <a
+href="gi_tools.htm#cumm_sum_columns">cumm_sum_columns</a>, <a
+href="gi_tools.htm#cumm_sum_rows">cumm_sum_rows</a>
 </td>
 </tr>
 <tr>
@@ -94,7 +114,16 @@ C
 D
 </td>
 <td>
-<a href="data_arrays.htm#darray">darray</a>, <a href="data_arrays.htm#darray1">darray1</a>, <a href="data_arrays.htm#darray2">darray2</a>, <a href="data_arrays.htm#darray3">darray3</a>, <a href="data_arrays.htm#darray4">darray4</a>, <a href="data_arrays.htm#darray5">darray5</a>, <a href="data_arrays.htm#darray6">darray6</a>, <a href="data_arrays.htm#darray7">darray7</a>, <a href="data_arrays.htm#darray8">darray8</a>, <a href="data_arrays.htm#data_codes">data_codes</a>
+<a href="data_arrays.htm#darray">darray</a>, <a
+href="data_arrays.htm#darray1">darray1</a>, <a
+href="data_arrays.htm#darray2">darray2</a>, <a
+href="data_arrays.htm#darray3">darray3</a>, <a
+href="data_arrays.htm#darray4">darray4</a>, <a
+href="data_arrays.htm#darray5">darray5</a>, <a
+href="data_arrays.htm#darray6">darray6</a>, <a
+href="data_arrays.htm#darray7">darray7</a>, <a
+href="data_arrays.htm#darray8">darray8</a>, <a
+href="data_arrays.htm#data_codes">data_codes</a>
 </td>
 </tr>
 <tr>
@@ -102,7 +131,9 @@ D
 I
 </td>
 <td>
-<a href="data_arrays.htm#index_sum_count">index_sum_count</a>, <a href="gi_tools.htm#inf_fac">inf_fac</a>, <a href="gi_tools.htm#inf_pmts">inf_pmts</a>
+<a href="data_arrays.htm#index_sum_count">index_sum_count</a>, <a
+href="gi_tools.htm#inf_fac">inf_fac</a>, <a
+href="gi_tools.htm#inf_pmts">inf_pmts</a>
 </td>
 </tr>
 <tr>
@@ -118,7 +149,11 @@ L
 M
 </td>
 <td>
-<a href="matrix_tools.htm#mat_det">mat_det</a>, <a href="matrix_tools.htm#mat_id">mat_id</a>, <a href="matrix_tools.htm#mat_inv">mat_inv</a>, <a href="matrix_tools.htm#mat_mult">mat_mult</a>, <a href="data_arrays.htm#max">max</a>
+<a href="matrix_tools.htm#mat_det">mat_det</a>, <a
+href="matrix_tools.htm#mat_id">mat_id</a>, <a
+href="matrix_tools.htm#mat_inv">mat_inv</a>, <a
+href="matrix_tools.htm#mat_mult">mat_mult</a>, <a
+href="data_arrays.htm#max">max</a>
 </td>
 </tr>
 <tr>
@@ -126,7 +161,9 @@ M
 N
 </td>
 <td>
-<a href="data_arrays.htm#nubsum">nubsum</a>, <a href="data_arrays.htm#nubsum_all">nubsum_all</a>, <a href="data_arrays.htm#nubsum_code">nubsum_code</a>
+<a href="data_arrays.htm#nubsum">nubsum</a>, <a
+href="data_arrays.htm#nubsum_all">nubsum_all</a>, <a
+href="data_arrays.htm#nubsum_code">nubsum_code</a>
 </td>
 </tr>
 <tr>
@@ -134,7 +171,11 @@ N
 R
 </td>
 <td>
-<a href="matrix_tools.htm#right_tri">right_tri</a>, <a href="matrix_tools.htm#rotate1">rotate1</a>, <a href="matrix_tools.htm#rotate2">rotate2</a>, <a href="matrix_tools.htm#rotate3">rotate3</a>, <a href="matrix_tools.htm#rotate4">rotate4</a>
+<a href="matrix_tools.htm#right_tri">right_tri</a>, <a
+href="matrix_tools.htm#rotate1">rotate1</a>, <a
+href="matrix_tools.htm#rotate2">rotate2</a>, <a
+href="matrix_tools.htm#rotate3">rotate3</a>, <a
+href="matrix_tools.htm#rotate4">rotate4</a>
 </td>
 </tr>
 <tr>
@@ -142,7 +183,9 @@ R
 T
 </td>
 <td>
-<a href="chain_ladder_INBR_claims.htm#T1">T1</a>, <a href="matrix_tools.htm#top_triL">top_triL</a>, <a href="matrix_tools.htm#top_triR">top_triR</a>
+<a href="chain_ladder_INBR_claims.htm#T1">T1</a>, <a
+href="matrix_tools.htm#top_triL">top_triL</a>, <a
+href="matrix_tools.htm#top_triR">top_triR</a>
 </td>
 </tr>
 </table>

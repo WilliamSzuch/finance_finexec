@@ -1,17 +1,12 @@
 NB. =========================================================
 NB.%matrix_tools.ijs - Definitions for matrix manipulation
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Actuarial Non-Life</a>
-NB.-<hr>
-NB.-<hr>
+NB.-<script src="../js/actuarialnonlife_links.js"></script>
 NB.- Script: ~addons/finance/finexec/actuarialmethods/matrix_tools.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 25
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.- Status: dev:
+NB.- Status: dev
 NB.- <a href="../matrix_tools.ijs" target="_blank">Script source: matrix_tools.ijs</a>
 NB.-<hr>
 NB.- Tools for manipulations of matrices.

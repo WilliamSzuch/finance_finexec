@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,28 +28,33 @@
 <header id="title-block-header">
 <h1 class="title">data_arrays.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Actuarial Non-Life</a>
-<hr>
-<div class="line-block">Script: ~addons/finance/finexec/actuarialnonlifes/data_arrays.ijs<br />
+<script src="../js/actuarialnonlife_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/actuarialnonlifes/data_arrays.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022-05-22<br />
+Updated: 2022 6 25<br />
 Depend: nil<br />
 Definitions: loaded to locale base<br />
-Status: dev: review<br />
-<a href="../data_arrays.ijs" target="_blank">Script source: data_arrays.ijs</a></div>
+Status: dev<br />
+<a href="../data_arrays.ijs" target="_blank">Script source:
+data_arrays.ijs</a></div>
 <hr>
-<div class="line-block">Tools for creating data arrays by data codes.<br />
+<div class="line-block">Tools for creating data arrays by data
+codes.<br />
 For example incident by report arrays.<br />
 Indexing - this starts at: 0 or 0 0 etc<br />
 Make sure that data codes have been calculated on this basis<br />
 or adjusted prior to using array1, array2 etc.</div>
-<div class="line-block">Also make sure that data codes have been determined as required,<br />
+<div class="line-block">Also make sure that data codes have been
+determined as required,<br />
 Especially codes (indices) for periods.<br />
-See definition for dates codes outside the range of the array dimensions.</div>
-<div class="line-block">Accident periods - start at ‘0’ (Usually ROWS)<br />
+See definition for dates codes outside the range of the array
+dimensions.</div>
+<div class="line-block">Accident periods - start at ‘0’ (Usually
+ROWS)<br />
 Report periods - start at ‘0’ (Usually COLUMNS)<br />
-Development periods -(Accident period - Report period) (Usually COLUMNS)<br />
+Development periods -(Accident period - Report period) (Usually
+COLUMNS)<br />
 Payment periods - start at ‘0’ (Usually COLUMNS)</div>
 <hr>
 <div class="line-block">Equations:<br />
@@ -57,7 +67,11 @@ To Do</div>
 D
 </td>
 <td>
-<a href="#darray">darray</a>, <a href="#darray1">darray1</a>, <a href="#darray2">darray2</a>, <a href="#darray3">darray3</a>, <a href="#darray4">darray4</a>, <a href="#darray5">darray5</a>, <a href="#darray6">darray6</a>, <a href="#darray7">darray7</a>, <a href="#darray8">darray8</a>, <a href="#data_codes">data_codes</a>
+<a href="#darray">darray</a>, <a href="#darray1">darray1</a>, <a
+href="#darray2">darray2</a>, <a href="#darray3">darray3</a>, <a
+href="#darray4">darray4</a>, <a href="#darray5">darray5</a>, <a
+href="#darray6">darray6</a>, <a href="#darray7">darray7</a>, <a
+href="#darray8">darray8</a>, <a href="#data_codes">data_codes</a>
 </td>
 </tr>
 <tr>
@@ -81,7 +95,8 @@ M
 N
 </td>
 <td>
-<a href="#nubsum">nubsum</a>, <a href="#nubsum_all">nubsum_all</a>, <a href="#nubsum_code">nubsum_code</a>
+<a href="#nubsum">nubsum</a>, <a href="#nubsum_all">nubsum_all</a>, <a
+href="#nubsum_code">nubsum_code</a>
 </td>
 </tr>
 </table>
@@ -130,7 +145,8 @@ D = matrix of data to be summarised of which data codes
 Data codes have been determined as required.<br />
 If the data code is not range of the array dimension then<br />
 the data is not included.<br />
-No error is generated to show that the data code is not in the range.<br />
+No error is generated to show that the data code is not in the
+range.<br />
 Data count is in the first column.<br />
 Sums are in other columns</div>
 <h3>Syntax</h3>
@@ -150,7 +166,8 @@ D = matrix of data to be summarised of
 Data codes have been determined as required.<br />
 If the data code is not range of the array dimension then<br />
 the data is not included.<br />
-No error is generated to show that the data code is not in the range.<br />
+No error is generated to show that the data code is not in the
+range.<br />
 Data count is in the first table.</div>
 <pre><code>(N)darray2(D)
 N = set array dimensions eg: 5 5 eg: 4 6 etc
@@ -166,7 +183,8 @@ D = matrix of data to be summarised of
 Data codes have been determined as required.<br />
 If the data code is not range of the array dimension then<br />
 the data is not included.<br />
-No error is generated to show that the data code is not in the range.<br />
+No error is generated to show that the data code is not in the
+range.<br />
 Data count is in the first table.</div>
 <h3>Syntax</h3>
 <pre><code>(N)darray3(D)
@@ -183,7 +201,8 @@ D = matrix of data to be summarised of
 Data codes have been determined as required.<br />
 If the data code is not range of the array dimension then<br />
 the data is not included.<br />
-No error is generated to show that the data code is not in the range.<br />
+No error is generated to show that the data code is not in the
+range.<br />
 Data count is in the first table.</div>
 <h3>Syntax</h3>
 <pre><code>(N)darray3(D)
@@ -200,7 +219,8 @@ D = matrix of data to be summarised of
 Data codes have been determined as required.<br />
 If the data code is not range of the array dimension then<br />
 the data is not included.<br />
-No error is generated to show that the data code is not in the range.<br />
+No error is generated to show that the data code is not in the
+range.<br />
 Data count is in the first table.</div>
 <h3>Syntax</h3>
 <pre><code>(N)darray5(D)
@@ -217,7 +237,8 @@ D = matrix of data to be summarised of
 Data codes have been determined as required.<br />
 If the data code is not range of the array dimension then<br />
 the data is not included.<br />
-No error is generated to show that the data code is not in the range.<br />
+No error is generated to show that the data code is not in the
+range.<br />
 Data count is in the first table.</div>
 <h3>Syntax</h3>
 <pre><code>(N)darray6(D)
@@ -234,7 +255,8 @@ D = matrix of data to be summarised of
 Data codes have been determined as required.<br />
 If the data code is not range of the array dimension then<br />
 the data is not included.<br />
-No error is generated to show that the data code is not in the range.<br />
+No error is generated to show that the data code is not in the
+range.<br />
 Data count is in the first table.</div>
 <h3>Syntax</h3>
 <pre><code>(N)darray7(D)
@@ -251,7 +273,8 @@ D = matrix of data to be summarised of
 Data codes have been determined as required.<br />
 If the data code is not range of the array dimension then<br />
 the data is not included.<br />
-No error is generated to show that the data code is not in the range.<br />
+No error is generated to show that the data code is not in the
+range.<br />
 Data count is in the first table.</div>
 <h3>Syntax</h3>
 <pre><code>(N)darray8(D)
