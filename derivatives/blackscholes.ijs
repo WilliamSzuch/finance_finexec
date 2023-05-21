@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%blackscholes.ijs - Black-Scholes option pricing models
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Derivatives</a>
-NB.-<hr>
+NB.-<script src="../js/derivatives_links.js"></script>
 NB.- Script: ~addons/finexec/finexec/options/blackscholes.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 26
 NB.- Depend: ~addon/stats/distribs/distribs.ijs
 NB.- Definitions: loaded to locale: base 
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../blackscholes.ijs" target="_blank">Script source: blackscholes.ijs</a>
 NB.-<hr>
 NB.- Black-Scholes option pricing models.
