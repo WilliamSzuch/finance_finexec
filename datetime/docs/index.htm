@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>joxygen</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<script src="../../finexec_logo.js"></script>
+<b>Category: Date Time</b>
+<script src="../../finexec_docs_links.js"></script>
+<hr>
+Script: ~Finexec_docs/datetime_docs.ijs<br> Updated: 2023 05 18<br>
+Definitions for date and time calculations<br>
+<hr>
+<h2>Scripts</h2>
+<table class="noun">
+<tr>
+<td class="noun">
+<a href="datetime.htm">datetime.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Date Time
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="calendaryr.htm">calendaryr.ijs</a>
+</td>
+<td class="noun">
+Calendar year tool: excerise in tacit form
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="date_tools.htm">date_tools.ijs</a>
+</td>
+<td class="noun">
+Tools for handling dates
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="datedb.htm">datedb.ijs</a>
+</td>
+<td class="noun">
+Date data base
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="datenumber.htm">datenumber.ijs</a>
+</td>
+<td class="noun">
+Date number utilities
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="dateperiod.htm">dateperiod.ijs</a>
+</td>
+<td class="noun">
+Dates grouped by by period
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="datetime_rs.htm">datetime_rs.ijs</a>
+</td>
+<td class="noun">
+Date time utilities Ric Shirlock
+</td>
+</tr>
+<tr>
+<td class="noun">
+<a href="edatetime_tools.htm">edatetime_tools.ijs</a>
+</td>
+<td class="noun">
+Tools for working with edatetime
+</td>
+</tr>
+</table>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+A
+</td>
+<td>
+<a href="datetime_rs.htm#adjustYrMth">adjustYrMth</a>, <a
+href="date_tools.htm#age_lastbd">age_lastbd</a>, <a
+href="date_tools.htm#age_nearestbd">age_nearestbd</a>, <a
+href="date_tools.htm#age_nextbd">age_nextbd</a>, <a
+href="date_tools.htm#age_yrs">age_yrs</a>, <a
+href="date_tools.htm#age_yydd">age_yydd</a>, <a
+href="edatetime_tools.htm#ageLastBD">ageLastBD</a>, <a
+href="edatetime_tools.htm#ageNearestBD">ageNearestBD</a>, <a
+href="edatetime_tools.htm#ageNextBD">ageNextBD</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+C
+</td>
+<td>
+<a href="date_tools.htm#calendar_yr">calendar_yr</a>, <a
+href="calendaryr.htm#calendaryr">calendaryr</a>, <a
+href="edatetime_tools.htm#cDateTime">cDateTime</a>, <a
+href="edatetime_tools.htm#cDigitTime">cDigitTime</a>, <a
+href="edatetime_tools.htm#cISO_8601DateTime">cISO_8601DateTime</a>, <a
+href="edatetime_tools.htm#cNanoDateTime">cNanoDateTime</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+D
+</td>
+<td>
+<a href="date_tools.htm#date_convert1">date_convert1</a>, <a
+href="date_tools.htm#date_convert2">date_convert2</a>, <a
+href="date_tools.htm#date_convert3">date_convert3</a>, <a
+href="date_tools.htm#date_convert4">date_convert4</a>, <a
+href="date_tools.htm#date_convert5">date_convert5</a>, <a
+href="date_tools.htm#date_convert6">date_convert6</a>, <a
+href="date_tools.htm#date_sys">date_sys</a>, <a
+href="date_tools.htm#date_test">date_test</a>, <a
+href="date_tools.htm#date_time_sys">date_time_sys</a>, <a
+href="datenumber.htm#datenumbertable">datenumbertable</a>, <a
+href="date_tools.htm#dates_test">dates_test</a>, <a
+href="datenumber.htm#datetonumber">datetonumber</a>, <a
+href="datenumber.htm#datetonumberx">datetonumberx</a>, <a
+href="date_tools.htm#day_of_week">day_of_week</a>, <a
+href="date_tools.htm#day_of_weekno">day_of_weekno</a>, <a
+href="date_tools.htm#DAYS">DAYS</a>, <a
+href="date_tools.htm#days_diff">days_diff</a>, <a
+href="date_tools.htm#days_in_month">days_in_month</a>, <a
+href="date_tools.htm#days_in_year">days_in_year</a>, <a
+href="date_tools.htm#DAYSA">DAYSA</a>, <a
+href="date_tools.htm#DAYSB">DAYSB</a>, <a
+href="datetime_rs.htm#daysDiff">daysDiff</a>, <a
+href="edatetime_tools.htm#ddtn">ddtn</a>, <a
+href="edatetime_tools.htm#dtn">dtn</a>, <a
+href="edatetime_tools.htm#dtn0">dtn0</a>, <a
+href="date_tools.htm#dur_yrs">dur_yrs</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+E
+</td>
+<td>
+<a href="date_tools.htm#end_of_month">end_of_month</a>, <a
+href="datetime_rs.htm#escaped">escaped</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+F
+</td>
+<td>
+<a href="datetime_rs.htm#fmt">fmt</a>, <a
+href="datetime_rs.htm#fmtDate">fmtDate</a>, <a
+href="datetime_rs.htm#fmtDateTime">fmtDateTime</a>, <a
+href="datetime_rs.htm#fmtTime">fmtTime</a>, <a
+href="datetime_rs.htm#fmtTimeDiff">fmtTimeDiff</a>, <a
+href="datetime_rs.htm#fromJulian">fromJulian</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+G
+</td>
+<td>
+<a href="datetime_rs.htm#getDateFormats">getDateFormats</a>, <a
+href="datetime_rs.htm#getTimeFormats">getTimeFormats</a>, <a
+href="datetime_rs.htm#getTimeZoneInfo">getTimeZoneInfo</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+I
+</td>
+<td>
+<a href="dateperiod.htm#index_period">index_period</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+J
+</td>
+<td>
+<a href="datetime_rs.htm#J0Date">J0Date</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+L
+</td>
+<td>
+<a href="date_tools.htm#last_bd">last_bd</a>, <a
+href="date_tools.htm#leapyr">leapyr</a>, <a
+href="datetime_rs.htm#Linux0DateTime">Linux0DateTime</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+M
+</td>
+<td>
+<a href="dateperiod.htm#month_days">month_days</a>, <a
+href="date_tools.htm#MONTHS">MONTHS</a>, <a
+href="date_tools.htm#MONTHSA">MONTHSA</a>, <a
+href="datetime_rs.htm#MS0Date">MS0Date</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+N
+</td>
+<td>
+<a href="edatetime_tools.htm#nddt">nddt</a>, <a
+href="edatetime_tools.htm#ndt">ndt</a>, <a
+href="date_tools.htm#next_bd">next_bd</a>, <a
+href="date_tools.htm#next_month">next_month</a>, <a
+href="datenumber.htm#numbertodate">numbertodate</a>, <a
+href="datenumber.htm#numbertodatex">numbertodatex</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+P
+</td>
+<td>
+<a href="dateperiod.htm#periods_end_monthly">periods_end_monthly</a>, <a
+href="dateperiod.htm#periods_hy">periods_hy</a>, <a
+href="dateperiod.htm#periods_monthly">periods_monthly</a>, <a
+href="dateperiod.htm#periods_qrt">periods_qrt</a>, <a
+href="dateperiod.htm#periods_yr">periods_yr</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="date_tools.htm#set_monthly_dates">set_monthly_dates</a>, <a
+href="date_tools.htm#set_weekly_dates">set_weekly_dates</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+T
+</td>
+<td>
+<a href="date_tools.htm#time_sys">time_sys</a>, <a
+href="edatetime_tools.htm#tndiff">tndiff</a>, <a
+href="date_tools.htm#todate1">todate1</a>, <a
+href="dateperiod.htm#todate1">todate1</a>, <a
+href="datetime_rs.htm#toDateTime">toDateTime</a>, <a
+href="datetime_rs.htm#toDayNo">toDayNo</a>, <a
+href="date_tools.htm#todayno1">todayno1</a>, <a
+href="dateperiod.htm#todayno1">todayno1</a>, <a
+href="datetime_rs.htm#toJulian">toJulian</a>, <a
+href="datetime_rs.htm#tsDiff">tsDiff</a>, <a
+href="date_tools.htm#tsdiff_a">tsdiff_a</a>, <a
+href="date_tools.htm#tsdiff_b">tsdiff_b</a>, <a
+href="date_tools.htm#tsdiff_c">tsdiff_c</a>, <a
+href="datetime_rs.htm#tsMinus">tsMinus</a>, <a
+href="datetime_rs.htm#tsPlus">tsPlus</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+V
+</td>
+<td>
+<a href="date_tools.htm#valdate_yyyymmdd">valdate_yyyymmdd</a>, <a
+href="dateperiod.htm#valdate_yyyymmdd">valdate_yyyymmdd</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+W
+</td>
+<td>
+<a href="date_tools.htm#week">week</a>, <a
+href="date_tools.htm#wks">wks</a>, <a
+href="date_tools.htm#wks53">wks53</a>, <a
+href="date_tools.htm#wks53y">wks53y</a>, <a
+href="date_tools.htm#wy">wy</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+Y
+</td>
+<td>
+<a href="date_tools.htm#yearb">yearb</a>
+</td>
+</tr>
+</table>
+</body>
+</html>
