@@ -1,9 +1,5 @@
 NB.%phrb4.ijs - J Phrases Section 4B. Locating & Selecting
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm" target="_blank">J Phrases</a>
-NB.-<hr>
+NB.-<script src="../js/jphrases_links.js"></script>
 NB.- <a href="../phrb4.ijs" target="_blank">Script source: phrb4.ijs</a>
 NB.-<hr>
 

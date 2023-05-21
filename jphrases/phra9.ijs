@@ -1,9 +1,5 @@
 NB.%phra9.ijs - J Phrases Section 9A. Matrix Algebra
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">J Phrases</a>
-NB.-<hr>
+NB.-<script src="../js/jphrases_links.js"></script>
 NB.-<a href="../phra9.ijs" target="_blank">Script source: phra9.ijs</a>
 NB.-<hr>
 

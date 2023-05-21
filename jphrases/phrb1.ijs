@@ -1,9 +1,5 @@
 NB.%phrb1.ijs - J Phrases Section 1B. Locales and the Loading of Script Files
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">J Phrases</a>
-NB.-<hr>
+NB.-<script src="../js/jphrases_links.js"></script>
 NB.- <a href="../phrb1.ijs" target="_blank">Script source: phrb1.ijs</a>
 NB.-<hr>
 NB.-<b>Loading</b>

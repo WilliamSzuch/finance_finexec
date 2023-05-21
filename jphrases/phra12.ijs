@@ -1,9 +1,5 @@
 NB.%phra12.ijs - J Phrases Section 12A. Finance
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">J Phrases</a>
-NB.-<hr>
+NB.-<script src="../js/jphrases_links.js"></script>
 NB.-<a href="../phra12.ijs" target="_blank">Script source: phra12.ijs</a>
 NB.-<hr>
 

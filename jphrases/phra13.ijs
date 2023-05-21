@@ -1,9 +1,5 @@
 NB.%phra13.ijs - J Phrases Section 13A. Inside Boxes
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">J Phrases</a>
-NB.-<hr>
+NB.-<script src="../js/jphrases_links.js"></script>
 NB.-<a href="../phra13.ijs" target="_blank">Script source: phra13.ijs</a>
 NB.-<hr>
 

@@ -1,9 +1,5 @@
 NB.%phra8.ijs - J Phrases Section 8A. Numbers & Counting
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">J Phrases</a>
-NB.-<hr>
+NB.-<script src="../js/jphrases_links.js"></script>
 NB.-<a href="../phra8.ijs" target="_blank">Script source: phra8.ijs</a>
 NB.-<hr>
 

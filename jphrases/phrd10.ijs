@@ -1,9 +1,5 @@
 NB.%phrd10.ijs - J Phrases Section 10D. Plotting
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">J Phrases</a>
-NB.-<hr>
+NB.-<script src="../js/jphrases_links.js"></script>
 NB.- <a href="../phrd10.ijs" target="_blank">Script source: phrd10.ijs</a>
 NB.<hr>
 

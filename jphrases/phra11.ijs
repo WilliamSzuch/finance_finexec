@@ -1,9 +1,5 @@
 NB.%phra11.ijs - J Phrases Section 11A. Inverse
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">J Phrases</a>
-NB.-<hr>
+NB.-<script src="../js/jphrases_links.js"></script>
 NB.-<a href="../phra11.ijs" target="_blank">Script source: phra11.ijs</a>
 NB.-<hr>
 
