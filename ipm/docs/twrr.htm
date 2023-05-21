@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,18 +28,18 @@
 <header id="title-block-header">
 <h1 class="title">twrr.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Investmane Performance</a>
-<hr>
-<div class="line-block">Script: ~addons/finance/finexec/ipm/twrr.ijs<br />
+<script src="../js/ipm_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/ipm/twrr.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022-05-22<br />
+Updated: 2022 6 26<br />
 Depend: nil<br />
 Definitions: loaded to locale base<br />
-Status: done:<br />
+Status: done<br />
 <a href="../twrr.ijs" target="_blank">Script source: twrr.ijs</a></div>
 <hr>
-<div class="line-block">Definitions to calculate the time weighted rate<br />
+<div class="line-block">Definitions to calculate the time weighted
+rate<br />
 of return over for a time unit using several methods.<br />
 External cash flow:<br />
   cash inflow positive (eg: 100 10)<br />
@@ -51,7 +56,12 @@ Equations:<br />
 T
 </td>
 <td>
-<a href="#twr">twr</a>, <a href="#twr_M">twr_M</a>, <a href="#twrDietz">twrDietz</a>, <a href="#twrDietz_M">twrDietz_M</a>, <a href="#twrDietzDates">twrDietzDates</a>, <a href="#twrDietzDates_M">twrDietzDates_M</a>, <a href="#twrDietzProp">twrDietzProp</a>, <a href="#twrDietzProp_M">twrDietzProp_M</a>
+<a href="#twr">twr</a>, <a href="#twr_M">twr_M</a>, <a
+href="#twrDietz">twrDietz</a>, <a href="#twrDietz_M">twrDietz_M</a>, <a
+href="#twrDietzDates">twrDietzDates</a>, <a
+href="#twrDietzDates_M">twrDietzDates_M</a>, <a
+href="#twrDietzProp">twrDietzProp</a>, <a
+href="#twrDietzProp_M">twrDietzProp_M</a>
 </td>
 </tr>
 </table>
@@ -78,7 +88,8 @@ Ve = portfoliio value at the end of the time unit including accrued income</code
 Monadic form of twr.<br />
 Time weighted rate of return for a time unit with<br />
 no external cash flow.<br />
-<a href="../eqs/twr_eq.html" target="_blank">Equation: twr_M(Vb;Ve)</a></div>
+<a href="../eqs/twr_eq.html" target="_blank">Equation:
+twr_M(Vb;Ve)</a></div>
 <h3>Syntax</h3>
 <pre><code> twr_M(Vb;Ve)
  Vb = portfolio value at the start of the time unit including accrued income
@@ -99,7 +110,8 @@ Time weighted rate of return for a time unit with<br />
 external cash flow using the Dietz methodology.<br />
 This method assumes that the external cash flow is in the<br />
 middle of the time unit.<br />
-<a href="../eqs/twrDietz_eq.html" target="_blank">Equation: (Vb;Ve)twrDietz(Ec)</a></div>
+<a href="../eqs/twrDietz_eq.html" target="_blank">Equation:
+(Vb;Ve)twrDietz(Ec)</a></div>
 <h3>Syntax</h3>
 <pre><code>(Vb;Ve)twrDietz_d(Ec)
 Vb = portfolio value at the start of the time unit including accrued income
@@ -130,7 +142,8 @@ Ec = external cash flow over the time unit</code></pre>
 <h2 class="hdef" id="twrDietzDates">twrDietzDates (dyad)</h2>
 <div class="line-block"><b>Form:</b> explicit<br />
 Time weighted rate of return for a time unit with<br />
-external cash flow using the Dietz modified methodology with dates.<br />
+external cash flow using the Dietz modified methodology with
+dates.<br />
 External cash flow:<br />
    cash inflow positive (eg: 100);<br />
    cash outflow negative (eg: _10).<br />
@@ -150,8 +163,10 @@ D = dates of the Ec</code></pre>
 <div class="line-block"><b>Form:</b> explicit<br />
 Monadic form of twrDietzDates<br />
 Time weighted rate of return for a period with<br />
-external cash flow using the Dietz modified methodology with dates.<br><br />
-External cash flow:cash inflow positive (eg: 100);cash outflow negative (eg: _10).<br />
+external cash flow using the Dietz modified methodology with
+dates.<br><br />
+External cash flow:cash inflow positive (eg: 100);cash outflow negative
+(eg: _10).<br />
 Dates are in format: yyyymmdd eg: 20160101;20160630;20160215</div>
 <h3>Syntax</h3>
 <pre><code>twrDietzDates(Vb;VbD;Ve;VeD;Ec;D)
@@ -168,7 +183,8 @@ D = dates of the external cash flow Ec: yyyymmdd as 8 digit numbers</code></pre>
 <div class="line-block"><b>Form:</b> tacit<br />
 Time weighted rate of return for a time unit with<br />
 external cash flow using the Dietz modified methodology.<br />
-The modified methodology weights the external cash flow by the proportion<br />
+The modified methodology weights the external cash flow by the
+proportion<br />
 it is in the time unit.<br />
 External cash flow:<br />
    cash inflow positive (eg: 100)<br />
@@ -190,7 +206,8 @@ _0.0209895</code></pre>
 Monadic form of twrDietzProp.<br />
 Time weighted rate of return for a time unit with<br />
 external cash flow using the Dietz modified methodology.<br />
-The modified methodology weights the external cash flow by the proportion<br />
+The modified methodology weights the external cash flow by the
+proportion<br />
 it is in the time unit.<br />
 External cash flow:<br />
    cash inflow positive (eg: 100)<br />

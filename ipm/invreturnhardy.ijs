@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%invreturnhardy.ijs - Investment return using Hardy's method
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Investment Performamce</a>
-NB.-<hr>
+NB.-<script src="../js/ipm_links.js"></script>
 NB.- Script: ~addons/finance/finexec/ipm/inreturnhardy.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 26
 NB.- Depend:nil
 NB.- Definitions: loaded to locale base 
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../invreturnhardy.ijs" target="_blank">Script source: invreturnhardy.ijs</a>
 NB.-<hr>
 NB.- Definition to calculate the investment return for a time unit using Hardy's 

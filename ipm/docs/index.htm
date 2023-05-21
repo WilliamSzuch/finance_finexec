@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -20,16 +25,25 @@
   <![endif]-->
 </head>
 <body>
-<h1>
-Finexec: Category: Investment Performamce Measurement
-</h1>
+<script src="../../finexec_logo.js"></script>
+<b>Category: Investment Performamce Measurement</b>
+<script src="../../finexec_docs_links.js"></script>
+<a href="../ipm_terminology.html"> Investment Performamce
+Terminology</a><br>
 <hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="../ipm_terminology.html">Investment Performamce Terminology</a><br>
-<hr>
-Script: ~addons/finance/finexec/ipm/ipm_docs.ijs<br> Updated: 2022-05-22<br> Definitions for calculating investment performance measurement.<br>
+Script: ~Finexec_docs/ipm_docs.ijs<br> Updated: 2023 05 19<br>
+Definitions for calculating investment performance measurement.<br>
 <hr>
 <h2>Scripts</h2>
 <table class="noun">
+<tr>
+<td class="noun">
+<a href="ipm.htm">ipm.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Investment Performance Measurement
+</td>
+</tr>
 <tr>
 <td class="noun">
 <a href="invreturnhardy.htm">invreturnhardy.ijs</a>
@@ -62,7 +76,8 @@ Time weighted rates of return
 I
 </td>
 <td>
-<a href="invreturnhardy.htm#invReturnHardy">invReturnHardy</a>, <a href="invreturnhardy.htm#invReturnHardy_T">invReturnHardy_T</a>
+<a href="invreturnhardy.htm#invReturnHardy">invReturnHardy</a>, <a
+href="invreturnhardy.htm#invReturnHardy_T">invReturnHardy_T</a>
 </td>
 </tr>
 <tr>
@@ -70,7 +85,9 @@ I
 M
 </td>
 <td>
-<a href="mwrr.htm#mwr">mwr</a>, <a href="mwrr.htm#mwrDates">mwrDates</a>, <a href="mwrr.htm#mwrPeriodic">mwrPeriodic</a>
+<a href="mwrr.htm#mwr">mwr</a>, <a
+href="mwrr.htm#mwrDates">mwrDates</a>, <a
+href="mwrr.htm#mwrPeriodic">mwrPeriodic</a>
 </td>
 </tr>
 <tr>
@@ -78,7 +95,13 @@ M
 T
 </td>
 <td>
-<a href="twrr.htm#twr">twr</a>, <a href="twrr.htm#twr_M">twr_M</a>, <a href="twrr.htm#twrDietz">twrDietz</a>, <a href="twrr.htm#twrDietz_M">twrDietz_M</a>, <a href="twrr.htm#twrDietzDates">twrDietzDates</a>, <a href="twrr.htm#twrDietzDates_M">twrDietzDates_M</a>, <a href="twrr.htm#twrDietzProp">twrDietzProp</a>, <a href="twrr.htm#twrDietzProp_M">twrDietzProp_M</a>
+<a href="twrr.htm#twr">twr</a>, <a href="twrr.htm#twr_M">twr_M</a>, <a
+href="twrr.htm#twrDietz">twrDietz</a>, <a
+href="twrr.htm#twrDietz_M">twrDietz_M</a>, <a
+href="twrr.htm#twrDietzDates">twrDietzDates</a>, <a
+href="twrr.htm#twrDietzDates_M">twrDietzDates_M</a>, <a
+href="twrr.htm#twrDietzProp">twrDietzProp</a>, <a
+href="twrr.htm#twrDietzProp_M">twrDietzProp_M</a>
 </td>
 </tr>
 </table>

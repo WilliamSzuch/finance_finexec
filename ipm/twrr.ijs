@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%twrr.ijs - Time weighted rates of return
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Investmane Performance</a>
-NB.-<hr>
+NB.-<script src="../js/ipm_links.js"></script>
 NB.- Script: ~addons/finance/finexec/ipm/twrr.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 26
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../twrr.ijs" target="_blank">Script source: twrr.ijs</a>
 NB.-<hr>
 NB.- Definitions to calculate the time weighted rate 

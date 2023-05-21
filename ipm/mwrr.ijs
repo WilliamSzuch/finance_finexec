@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%mwrr.ijs - Money weighted rate of rerurn (internal rate of return)
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Investmane Performance</a>
-NB.-<hr>
+NB.-<script src="../js/ipm_links.js"></script>
 NB.- Script: ~addons/finance/finexec/ipm/mwrr.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6-26
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../mwrr.ijs" target="_blank">Script source: mwrr.ijs</a>
 NB.-<hr>
 NB.- Definitions to calculate the money weighted rate of return for a time unit.  
