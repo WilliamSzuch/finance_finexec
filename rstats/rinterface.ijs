@@ -1,18 +1,14 @@
 NB. =========================================================
 NB.% rinterface.ijs - Interfacing J with R (using Rserve.exe)
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Rstats</a>
-NB.-<hr> 
+NB.-<script src="../js/rstats_links.js"></script>
 NB.- Script: ~addons/finance/finexec/rstats/rinterface.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2023 04 09
 NB.- Depend: R statitical package 
 NB.-         Rserve.exe package 
 NB.-         ~addons/stats/r/rserve.ijs
 NB.- Definitions: loaded to locale base
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../rinterface.ijs" target="_blank">Script source: rinterface.ijs</a>
 NB.-<hr>
 NB.- The interface definition is an example only and requires to be 
@@ -21,7 +17,7 @@ NB.- See the source code: ~addons/finance/fp/rstats/rinterface.ijs
 NB.- Example definition:
 NB.- 
 NB.- rinterface =: 3 : 0
-NB.- fork_jtask_ 'C:/Program Files/R/R-3.6.1/bin/x64/Rserve.exe' 
+NB.- fork_jtask_ 'C:/Program Files/R/R-4.2.3/bin/x64/Rserve.exe' 
 NB.- )
 NB.- 
 NB.- Tools for interfacing J with the statisical package R. 
@@ -54,7 +50,7 @@ NB.-
 NB.+   Rget 'R.Version()'
 NB. ---------------------------------------------------------
 rinterface =: 3 : 0
-fork_jtask_ 'C:/Program Files/R/R-3.6.1/bin/x64/Rserve.exe'
+fork_jtask_ 'C:/Program Files/R/R-4.2.3/bin/x64/Rserve.exe'
 )
 
 
