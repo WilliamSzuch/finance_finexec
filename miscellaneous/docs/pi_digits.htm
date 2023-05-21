@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>pi_digits.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">pi_digits.ijs</h1>
+</header>
+<script src="../js/miscellaneous_links.js"></script>
+<div class="line-block">Contributor: William Szuch<br />
+Updated: 2023 03 07<br />
+Depend:<br />
+Definitions: loaded to locale base.<br />
+Status: dev<br />
+<a href="../pi_digits.ijs" target="_blank">Script source:
+pi_digits.ijs</a></div>
+<hr>
+<div class="line-block">Calculate the digits of pi using several
+methods<br />
+as a string and integer and compare the results.<br />
+See: video by Rob Therriault on Youtube.<br />
+<a href='https://www.youtube.com/watch?v=vyILnD0e2IE'>Bob’s pi
+video</a><br />
+See: Vocabulary at: x:<br />
+Also see Notes in the script for comparison calculations.</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+B
+</td>
+<td>
+<a href="#bigpi">bigpi</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+P
+</td>
+<td>
+<a href="#pi_n">pi_n</a>, <a href="#pi_s">pi_s</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="bigpi">bigpi (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b>nil<br />
+Definition taken from:<br />
+~addon/math/misc/bigpi.ijs<br />
+Calculate several digits of pi<br />
+from Borwein<br />
+version: 1.0.0<br />
+Calculate pi to different levels of of precision</div>
+<h3>Syntax</h3>
+<pre><code>bigpi(N)
+N = number of steps
+    each step adds about 14 digits of precision</code></pre>
+<h3>Example</h3>
+<pre><code>  #&quot;: bigpi 72    NB.(gives 1009 digits of pi)
+1009</code></pre>
+<h2 class="hdef" id="pi_n">pi_n (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+<b>Depend:</b> nil<br />
+Calculate digits of pi as an integer number</div>
+<h3>Syntax</h3>
+<pre><code>pi_n(N)
+N = number of digits of pi</code></pre>
+<h3>Example</h3>
+<pre><code>   pi_n 20
+31415926535897932384</code></pre>
+<h2 class="hdef" id="pi_s">pi_s (monad)</h2>
+<div class="line-block"><b>Form:</b> tacit<br />
+<b>Depend:</b> nil<br />
+Calculate digits of pi as a string<br />
+Taken from Vocabulary x:</div>
+<h3>Syntax</h3>
+<pre><code>pi_s(N)
+N = number of digits of pi as a string</code></pre>
+<h3>Example</h3>
+<pre><code>   pi_s 20
+31415926535897932384</code></pre>
+</body>
+</html>
