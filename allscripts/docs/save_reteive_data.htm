@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>save_reteive_data.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">save_reteive_data.ijs</h1>
+</header>
+<script src="../js/toolbox_links.js"></script>
+<div class="line-block">Script:
+~addons/finexec/utilitry/save_retrieve_data.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2022 6 26<br />
+Depend: ~addons/data/jfiles/jfiles.ijs<br />
+Definitions: loaded to locale base<br />
+Status: done<br />
+<a href="../save_retrieve_data.ijs" target="_blank">Script source:
+save_retrieve_data.ijs</a></div>
+<hr>
+<div class="line-block">Save the data (ie: nouns) in the base or other
+locale in the<br />
+workspace to a keyfile so that data can then be retrieved<br />
+and used in a job again. A keyfile allows the data to be saved<br />
+using its noun name and the data retrieved by the same<br />
+noun name.</div>
+<div class="line-block">Keyword file verbs are used to save and retrieve
+nouns from<br />
+a keyfile for a job. Data is saved from the base locale<br />
+unless otherwise specified.<br />
+Most likely data is only saved from base locale.</div>
+<div class="line-block">Saving data from a locale other than base’- see
+examples in saveData<br />
+and savedataTemp.</div>
+<div class="line-block">It is useful to save the data created in a job
+or project<br />
+for further use.</div>
+<div class="line-block">The default keyfile name is KEYFILE_DEFAULT that
+has been defined<br />
+in the base locale that allows for simple saving and retrieving of
+data<br />
+without having to refer to the keyfile.<br />
+Otherwise the keyfile is as specified.</div>
+<div class="line-block">The keyfile KEYFILE_DEFAULT or other
+keyfile<br />
+requires to be created first before any saving data.</div>
+<p><b>(1) Create names for keyfiles eg:</b></p>
+<div class="line-block">KEYFILE_DEFAULT =: jpath
+‘~user/temp/testkeyfile.ijf’<br />
+KEYFILE_OTHER =: jpath ‘~user/temp/testkeyfileother.ijf’</div>
+<p><b>(2) Erase any keyfiles with the same name (as requited)</b></p>
+<div class="line-block">ferase KEYFILE_DEFAULT<br />
+ferase KEYFILE_OTHER</div>
+<p><b>(3) Create the keyfiles</b></p>
+<div class="line-block">keycreate KEYFILE_DEFAULT<br />
+keycreate KEYFILE_OTHER</div>
+<p><b>(4) Check that keyfiles have been created with extension:
+.ijf</b></p>
+<div class="line-block">dir ‘~user/temp’</div>
+<div class="line-block"> keydir KEYFILE_DEFAULT NB. shows the data saved
+in the keyfile<br />
+ keydir KEYFILE_OTHER NB. shows the data saved in the keyfile</div>
+<p><b>(5) Create some data in the base locale.</b></p>
+<div class="line-block">DATA =: ‘N1 N2 N3’ =: (i. 3 4);‘Data’;i. 12
+12</div>
+<p><b>(6) Create some data in the zzz locale</b></p>
+<div class="line-block">DATAZ_zzz_ =: ‘NZ1_zzz_ NZ2_zzz_ NZ3_zzz_’ =:
+(i. 5 4);‘DataZ’;i. 15 15</div>
+<p><b>(7) Save and retrieve data</b></p>
+<div class="line-block">saveData(‘N1’)<br />
+saveData(’’)<br />
+saveData1(‘XXX’) NB.- Writes an empty item if the noun is not
+defined.<br />
+savedDta(’‘;’zzz’)</div>
+<div class="line-block">(KEYFILE_OTHER)savedata(’’)<br />
+(KEYFILE_OTHER)savedata(’‘;’zzz’)</div>
+<div class="line-block">retrieveData(’’)<br />
+(KETFILE_OTHER)retrieveData(’’)</div>
+<div class="line-block">See examples in the definitions:<br />
+saveData1<br />
+retrievData1<br />
+saveDataTemp<br />
+retrieveDataTemp</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+D
+</td>
+<td>
+<a href="#dltLastBox">dltLastBox</a>, <a href="#dtDots">dtDots</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+F
+</td>
+<td>
+<a href="#filesList">filesList</a>, <a href="#filesListn">filesListn</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+N
+</td>
+<td>
+<a href="#nounsloc">nounsloc</a>, <a href="#nounsTable">nounsTable</a>,
+<a href="#nounsTableRetrieve">nounsTableRetrieve</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+R
+</td>
+<td>
+<a href="#retrieveData">retrieveData</a>, <a
+href="#retrieveData1">retrieveData1</a>, <a
+href="#retrieveDataTemp">retrieveDataTemp</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="#saveData">saveData</a>, <a href="#saveData1">saveData1</a>, <a
+href="#saveDataTemp">saveDataTemp</a>
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="dltLastBox">dltLastBox (monad)</h2>
+<div class="line-block"><b>Type:</b> tacit<br />
+Delete the last box if two or more boxes.</div>
+<h3>Syntax</h3>
+<pre><code>dltLastBox(L)
+L = boxed list</code></pre>
+<h3>Example</h3>
+<pre><code>  dltLastBox &#39;asdf&#39;;&#39;sadf asdf&#39;;&#39;exe&#39;
+┌────┬─────────┐
+│asdf│sadf asdf│
+└────┴─────────┘</code></pre>
+<pre><code>  dltLastBox &lt;&#39;asdf zxc&#39;
+┌────────┐
+│asdf zxc│
+└────────┘</code></pre>
+<h2 class="hdef" id="dtDots">dtDots (monad)</h2>
+<div class="line-block"><b>Type:</b> tacit<br />
+Delete trailing dots.<br />
+Taken from ‘strings.ijs’</div>
+<h3>Syntax</h3>
+<pre><code>dtDots(T)
+T = text</code></pre>
+<h3>Example</h3>
+<pre><code>  dtDots &#39;asdf...&#39;
+  dtDots &#39;as .. df&#39;
+as .. df</code></pre>
+<h2 class="hdef" id="filesList">filesList (monad)</h2>
+<div class="line-block"><b>Type:</b> explicit<br />
+<b>Depend:</b> dir,cut,each<br />
+List of files in a folder as a text with LF<br />
+Useful for producing a list for windows.<br />
+Only the files from the folder are listed. Files in sub-folders<br />
+are not listed.</div>
+<h3>Syntax</h3>
+<pre><code>filesList(F)
+F = path to folder</code></pre>
+<pre><code>   filesList(jpath &#39;~addons/finance/fp&#39;)</code></pre>
+<h2 class="hdef" id="filesListn">filesListn (monad)</h2>
+<div class="line-block"><b>Type:</b> explicit<br />
+<b>Depend:</b> dir,cut,each,joinstring,each<br />
+List of files in a folder as a text with LF - no extension<br />
+Useful for producing a list for windows.<br />
+Only files from the folder are listed. Files in sub-folders<br />
+are not listed.</div>
+<h3>Syntax</h3>
+<pre><code>filesListn(F)
+F = path to folder</code></pre>
+<h2 class="hdef" id="nounsloc">nounsloc (verb)</h2>
+<div class="line-block"><b>Type:</b> explicit<br />
+<b>Depend:</b> cut,each<br />
+Show all the nouns in a locale with the locale extension<br />
+as a boxed list.</div>
+<h3>Syntax</h3>
+<pre><code>nounsloc(L)
+L = locale name</code></pre>
+<h3>Example</h3>
+<pre><code>   nounsloc &#39;z&#39;
+   nounsloc &#39;j&#39;</code></pre>
+<h2 class="hdef" id="nounsTable">nounsTable (monad)</h2>
+<div class="line-block"><b>Type:</b> tacit<br />
+Table of nouns in a boxed table with name and value.</div>
+<h3>Syntax</h3>
+<pre><code>nounsTable(L)
+L = boxed list of noun names</code></pre>
+<h3>Example</h3>
+<pre><code>  nounsTable &#39;g&#39; names &#39;&#39;
+  A =: i. 2 3
+  B =: 2 3 $ &#39;a&#39;
+  nounsTable &#39;A&#39;;&#39;B&#39;
+┌─┬─────┐
+│A│0 1 2│
+│ │3 4 5│
+├─┼─────┤
+│B│aaa  │
+│ │aaa  │
+└─┴─────┘</code></pre>
+<pre><code>   nounsTable ;: ,names_z_ 0
+   nounsTable ,&amp;&#39;_j_&#39; each ;: ,names_j_ 0
+   nounsTable ;: names 0</code></pre>
+<h2 class="hdef" id="nounsTableRetrieve">nounsTableRetrieve (monad)</h2>
+<div class="line-block"><b>Type:</b> explicit<br />
+<b>Depend:</b> each<br />
+Retrieve nouns from table created by nounsTable.</div>
+<h3>Syntax</h3>
+<pre><code>nounsTableRetrieve(T)
+T = boxed tabled created nounsTable</code></pre>
+<h3>Example</h3>
+<pre><code>  &#39;A B C&#39; =: &#39;AAA&#39;;123;i. 3 4
+  T =: nounsTable(&#39;A&#39;;&#39;B&#39;;&#39;C&#39;)
+  D =: 0{ T
+   erase(&#39;A B C&#39;)
+   nounsTableRetrieve(T)</code></pre>
+<h2 class="hdef" id="retrieveData">retrieveData (verb)</h2>
+<div class="line-block"><b>Type:</b> explicit<br />
+<b>Depend:</b> retrieveData1,ketdir,smoutput<br />
+Retrieves all nouns or selected nouns from a keyfile to<br />
+the base locale or other locale with noun names.</div>
+<h3>Syntax</h3>
+<pre><code>([K])retrieveData(N)
+[K] = optional keyfile name
+      default =  KETFILE_DEFAULT
+N  = &#39;&#39; all nouns in locale are saved to the keyfile
+     noun name to be retrieved from keyfile
+     can have locale extension eg: N_zzz_</code></pre>
+<h3>Example</h3>
+<pre><code>  retrieveData(&#39;&#39;)
+  retrieveData(&#39;N1&#39;)
+  (KEYFILE_OTHER)retreiveData(&#39;&#39;)</code></pre>
+<h2 class="hdef" id="retrieveData1">retrieveData1 (verb)</h2>
+<div class="line-block"><b>Type:</b> explicit<br />
+<b>Depend:</b> keyread<br />
+Retrieves one noun from a keyfile to base locale or other locales.<br />
+Assumes that keyfile exits.</div>
+<h3>Syntax</h3>
+<pre><code> ([K])retrieveData1(N)
+[K] = Optional keyfile name
+      DEFAULT = KEYFILE_DEFAULT - as defined in the base locale
+N   = noun name to be retrieved from keyfile
+      and written to the workspace
+      can have locale extension eg: N_zzz_</code></pre>
+<h3>Example</h3>
+<pre><code>  keydir KEYFILE_DEFAULT  NB. shows the data saved in the keyfile
+  keydir KEYFILE_OTHER    NB. shows the data saved in the keyfile
+
+   retrieveData1(&#39;D1&#39;)
+   retrieveData1(&#39;DZ_zzz_&#39;)
+   KEYFILE_OTHER retrieveData1(&#39;D1&#39;)</code></pre>
+<h2 class="hdef" id="retrieveDataTemp">retrieveDataTemp (verb)</h2>
+<h3>Syntax</h3>
+<pre><code>([K])retrieveDataTemp(N;[L]) y
+ [K] = optional path and keyfile
+       default = jpath &#39;~user/temp/tempkeyfile.ijf&#39;</code></pre>
+<h3>Example</h3>
+<pre><code>  retrieveDataTemp(&#39;&#39;)</code></pre>
+<h2 class="hdef" id="saveData">saveData (verb)</h2>
+<div class="line-block"><b>Type:</b> explicit<br />
+<b>Depend:</b> each,fexist,ketfile,saveData1,smoutput<br />
+Saves the nouns in base locale or another locale to a keyfile.<br />
+Assumes that the keyfile has been created.</div>
+<h3>Syntax</h3>
+<pre><code>([K])saveData(N;[L])
+[K] = Optional file name
+      DEFAULT = KEYFILE_DEFAULT as defined in the base locale
+N =  noun names of data to be saved to keyfile
+     &#39;&#39;  all nouns in locale are saved to the keyfile
+     &#39;D1&#39;  is saved to the keyfile
+     &#39;D1 D2&#39; are saved to keyfile
+[L] = optional locale name
+      default locale = base
+      locale extension is added to noun name</code></pre>
+<h3>Example</h3>
+<pre><code>Create data in the base locale
+   DATA =: &#39;N1 N2 N3&#39; =: (i. 3 4);&#39;Data&#39;;i. 12 12
+   names 0  NB. show nouns in the base locale
+Create data in the zzz locale
+   DATAZ_zzz_ =: &#39;NZ1_zzz_ NZ2_zzz_ NZ3_zzz_&#39; =: (i. 5 4);&#39;DataZ&#39;;i. 15 15
+   names_zzz_ 0  NB. show the nouns in the zzz locale
+
+  keydir KEYFILE_DEFAULT  NB. shows the data saved in the keyfile
+  keydir KEYFILE_OTHER    NB. shows the data saved in the keyfile
+
+  saveData(&#39;&#39;)
+  saveData(&#39;NZ1&#39;)
+  saveData(&#39;NZ1 NZ2&#39;;&#39;zzz&#39;)
+  saveData(&#39;&#39;;&#39;zzz&#39;)
+
+  KEYFILE_OTHER saveData(&#39;&#39;)
+  KEYFILE_OTHER saveData(&#39;N1 N2&#39;)
+  KEYFILE_OTHER saveData(&#39;N1 N2 DATAZ&#39;;&#39;zzz&#39;)</code></pre>
+<h2 class="hdef" id="saveData1">saveData1 (verb)</h2>
+<div class="line-block"><b>Type:</b> explicit<br />
+<b>Depend:</b> boxopen,keywrite<br />
+Saves one noun in base locale or another locale to the keyfile.<br />
+Assumes that the keyfile has been created.<br />
+Data in a locale other than the base locale is saved with the<br />
+locale extension. This allows the data to be retrieved to the<br />
+originating locale.</div>
+<h3>Syntax</h3>
+<pre><code>([K]savedata1(N;[L])
+[K] = Optional keyfile name
+      DEFAULT = KEYFILE_DEFAULT - as defined in the base locale
+(N) = noun name of data to be saved to the keyfile
+[L] = optional locale name
+      default locale = base
+      locale extension is added to noun name</code></pre>
+<h3>Example</h3>
+<pre><code>  D1 =: i. 3 4            NB. base locale
+  DZ_zzz_ =: 4 5 $&#39;asd&#39;   NB. zzz locale
+  keydir KEYFILE_DEFAULT  NB. shows the data saved in the keyfile
+  keydir KEYFILE_OTHER    NB. shows the data saved in the keyfile
+
+  saveData1(&#39;D1&#39;)
+  saveData1(&#39;&#39; )    NB. nothing written to keyfile
+  saveData1(&#39;XXX&#39;)  NB. writes an empty item if no data.
+  saveData1(&#39;DZ&#39;;&#39;zzz&#39;)
+  saveData1(&#39;DZ&#39;)   NB. writes an empty item as DZ not in base locale
+  saveData1(&#39;DZ_zzz_&#39;)   NB. writes an empty item as DZ not in base locale
+
+  KEYFILE_OTHER saveData1(&#39;D1&#39;)
+  KEYFILE_OTHER saveData1(&#39;DZ&#39;;&#39;zzz&#39;)
+  KEYFILE_OTHER saveData1(&#39;DZ&#39;)   NB. DZ not defined in base locale</code></pre>
+<h2 class="hdef" id="saveDataTemp">saveDataTemp (verb)</h2>
+<div class="line-block"><b>Type:</b> explicit<br />
+<b>Depend:</b> ferase,saveData,keycreate<br />
+Saves the nouns in base or other locale to the<br />
+default keyfile.<br />
+jpath ‘~user/temp/tempkeyfile.ijf’<br />
+This can be used to save the nouns when developing a job and<br />
+the nouns can be retrieved later.<br />
+If required for other use the file can be renamed<br />
+and relocated to another folder.<br />
+The default file is erased if already created - so make sure<br />
+that it is not required.</div>
+<h3>Syntax</h3>
+<pre><code>([K])saveDataTemp(N;[L]) y
+ [K] = optional path and keyfile
+       default = jpath &#39;~user/temp/tempkeyfile.ijf&#39;
+N =  noun names of data to be saved to keyfile
+     &#39;&#39;  all nouns in locale are saved to the keyfile
+     &#39;D1&#39;  is saved to the keyfile
+     &#39;D1 D2&#39; are saved to keyfile
+[L] = optional locale name
+      default locale = base
+      locale extension is added to noun name</code></pre>
+<h3>Example</h3>
+<pre><code>   saveDataTemp &#39;&#39;</code></pre>
+</body>
+</html>

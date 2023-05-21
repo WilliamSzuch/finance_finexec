@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>sudoku_hui.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">sudoku_hui.ijs</h1>
+</header>
+<script src="../js/miscellaneous_links.js"></script>
+<div class="line-block">Contributor: Roger Hui<br />
+Updated: 2022 7 14<br />
+Depend: nil<br />
+Definitions: loaded to locale base<br />
+Status: dev - entering a new puzzle<br />
+<a href="../sudoku_hui.ijs" target="_blank">Script source:
+sudoku_hui.ijs</a></div>
+<hr>
+<div class="line-block">The sudoku solver taken from J Software Wiki as
+provided by Roger Hui.<br />
+Roger Hui’s sudoku solver<br />
+View the source script to see how Roger solved the problem using
+J.<br />
+<a href="../sudoku.htm" target="_blank">Roger’s notes from
+Wiki</a><br />
+<b>Create and solve a new puzzle</b><br />
+In a Jqt session open script sudoku_hui.ijs<br />
+Edit the noun NEW_PZ<br />
+Execute to create NEW_PZ<br />
+Check the puzzle: see NEW_PZ<br />
+Solve the puzzle: sudokuz NEW_PZ<br />
+<b>Note</b><br />
+Develop GUI front end<br />
+Develop JHS</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+B
+</td>
+<td>
+<a href="#BLK">BLK</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+N
+</td>
+<td>
+<a href="#NEW_PZ">NEW_PZ</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+P
+</td>
+<td>
+<a href="#PZ_1">PZ_1</a>, <a href="#PZ_1A">PZ_1A</a>, <a
+href="#PZ_2">PZ_2</a>, <a href="#PZ_3">PZ_3</a>, <a
+href="#PZ_4">PZ_4</a>, <a href="#PZ_5">PZ_5</a>, <a
+href="#PZ_6">PZ_6</a>, <a href="#PZ_7">PZ_7</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="#sudoku">sudoku</a>, <a href="#sudoku_c">sudoku_c</a>, <a
+href="#sudokuz">sudokuz</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="BLK" class="rid">
+BLK
+</td>
+<td class="rtype">
+n
+</td>
+<td class="rdef">
+-
+</td>
+</tr>
+<tr>
+<td id="sudokuz" class="rid">
+sudokuz
+</td>
+<td class="rtype">
+m
+</td>
+<td class="rdef">
+Sudoku solver
+</td>
+</tr>
+</table>
+<h2 class="hdef" id="NEW_PZ">NEW_PZ (noun)</h2>
+<div class="line-block">Create a new puzzle<br />
+Edit the noun NEW_PZ<br />
+Excute to create NEW_PZ<br />
+see NEW_PZ<br />
+sudokuz NEW_PZ</div>
+<h2 class="hdef" id="PZ_1">PZ_1 (noun)</h2>
+<div class="line-block">Puzzle 1: 1 solution</div>
+<pre><code>  sudokuz PZ_1</code></pre>
+<h2 class="hdef" id="PZ_1A">PZ_1A (noun)</h2>
+<div class="line-block">Same as PZ_1 with different data format</div>
+<pre><code> sudokuz PZ_1A</code></pre>
+<h2 class="hdef" id="PZ_2">PZ_2 (noun)</h2>
+<div class="line-block">Puzzle 2: 6 Solutions</div>
+<pre><code> sudokuz PZ_2</code></pre>
+<h2 class="hdef" id="PZ_3">PZ_3 (noun)</h2>
+<div class="line-block">Puzzle 3: 106 Solutions</div>
+<pre><code> sudokuz PZ_3</code></pre>
+<h2 class="hdef" id="PZ_4">PZ_4 (noun)</h2>
+<div class="line-block">Puzzle 4: Blank Puzzle: To many Solutions -
+HANGS</div>
+<pre><code> sudoku PZ_$</code></pre>
+<h2 class="hdef" id="PZ_5">PZ_5 (noun)</h2>
+<div class="line-block">Puzzle 5: 0 Solutions: Bad puzzle: First Row
+doubling of 2</div>
+<pre><code> sudokuz PZ_5</code></pre>
+<h2 class="hdef" id="PZ_6">PZ_6 (noun)</h2>
+<div class="line-block">Puzzle 1: 1 solution</div>
+<pre><code>  sudokuz PZ_6</code></pre>
+<h2 class="hdef" id="PZ_7">PZ_7 (noun)</h2>
+<div class="line-block">Puzzle 1: 1 solution</div>
+<pre><code>  sudokuz PZ_7</code></pre>
+<h2 class="hdef" id="sudoku">sudoku (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> guess,ok,assign<br />
+Solves puzzle as table of solutions (N,81)<br />
+N = number of solutions</div>
+<h3>Syntax</h3>
+<pre><code>  sudoku(PZ)
+PZ = sudoku puzzle</code></pre>
+<h3>Example</h3>
+<pre><code>  sudoku PZ_1
+2 8 3 6 7 1 9 4 5 9 7 6 5 4 8 2 ...
+  sudoku PZ_2
+1 8 3 6 7 2 9 4 5 4 7 6 5 9 8 2 ...
+2 8 3 6 7 1 9 4 5 4 7 6 5 9 8 2 ...
+2 8 3 6 7 1 9 4 5 4 7 6 5 9 8 2 ...
+2 8 3 6 7 1 9 4 5 4 7 6 5 9 8 2 ...
+2 8 3 6 7 1 9 4 5 4 7 6 5 9 8 2 ...
+2 8 3 6 7 1 9 4 5 9 7 6 5 4 8 2 ...</code></pre>
+<pre><code> Show tables run:
+  see PZ_1, sudoku PZ_1
+┌─────────────┬─────────────┐
+│┌───┬───┬───┐│┌───┬───┬───┐│
+││2..│67.│...│││283│671│945││
+││..6│...│2.1│││976│548│231││
+││4..│...│8..│││415│392│876││
+│├───┼───┼───┤│├───┼───┼───┤│
+││5..│..9│3..│││567│419│382││
+││.3.│...│.5.│││834│267│159││
+││..2│8..│..7│││192│835│467││
+│├───┼───┼───┤│├───┼───┼───┤│
+││..1│...│..4│││321│786│594││
+││7.8│...│6..│││758│924│613││
+││...│.53│..8│││649│153│728││
+│└───┴───┴───┘│└───┴───┴───┘│
+└─────────────┴─────────────┘
+  see PZ_2, sudoku PZ_2
+  see PZ_3, sudoku PZ_3</code></pre>
+<h2 class="hdef" id="sudoku_c">sudoku_c (monad)</h2>
+<div class="line-block"><b>Form:</b> explicit<br />
+<b>Depend:</b> sudoku<br />
+Counts the number of solutions</div>
+<h3>Syntax</h3>
+<pre><code>sudoku_c(PZ)
+PZ = sudoku puzzle</code></pre>
+<h3>Example</h3>
+<pre><code>  sudoku_c PZ_1
+1
+  sudoku_c PZ_2
+6
+  sudoku_c PZ_3
+106</code></pre>
+</body>
+</html>

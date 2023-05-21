@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>stat_tools.ijs</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="joxygen.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">stat_tools.ijs</h1>
+</header>
+<script src="../js/statistics_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/statistics/intervals_freq_sums_counts.ijs<br />
+Contributor: William Szuch<br />
+Updated: 2023 03 17<br />
+Depend: Nil<br />
+Definitions: loaded to locale base<br />
+Status: dev<br />
+<a href="../intervals_freq_sums_counts.ijs" target="_blank">Script
+source: intervals_freq_sums_counts.ijs</a></div>
+<hr>
+<div class="line-block">Stat tools: random numbers<br />
+            deviations,stddev<br />
+            selections<br />
+            lists</div>
+<hr>
+<div class="line-block">See stats functions from:
+‘~addons/stats/base.ijs’<br />
+base.ijs loads complete set of base statistical verbs into locale
+z.</div>
+<hr>
+<div class="line-block">Equations:<br />
+To Do</div>
+<hr>
+<h2>Definitions</h2>
+<table class="map">
+<tr>
+<td class="key">
+C
+</td>
+<td>
+<a href="#common">common</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+D
+</td>
+<td>
+<a href="#deviation_mat">deviation_mat</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+N
+</td>
+<td>
+<a href="#nubsum">nubsum</a>, <a href="#nubsum_all">nubsum_all</a>, <a
+href="#nubsum_indx">nubsum_indx</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+R
+</td>
+<td>
+<a href="#random_0to1">random_0to1</a>, <a
+href="#random_seed">random_seed</a>, <a href="#repeat">repeat</a>, <a
+href="#repeats">repeats</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+S
+</td>
+<td>
+<a href="#select_no_repl">select_no_repl</a>, <a
+href="#select_with_repl">select_with_repl</a>, <a
+href="#shuffle">shuffle</a>, <a href="#stddev_biased">stddev_biased</a>
+</td>
+</tr>
+<tr>
+<td class="key">
+V
+</td>
+<td>
+<a href="#var_biased">var_biased</a>
+</td>
+</tr>
+</table>
+<hr>
+<table class="rdef">
+<tr>
+<td id="common" class="rid">
+common
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Shows which items are in common between two lists.
+</td>
+</tr>
+<tr>
+<td id="deviation_mat" class="rid">
+deviation_mat
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Devations from mean for matrices down columns.
+</td>
+</tr>
+<tr>
+<td id="nubsum" class="rid">
+nubsum
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Produce totals for subgroups based on the ‘nub’ of the goup.
+</td>
+</tr>
+<tr>
+<td id="nubsum_all" class="rid">
+nubsum_all
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Nub sum for matrix.
+</td>
+</tr>
+<tr>
+<td id="nubsum_indx" class="rid">
+nubsum_indx
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Sums for nubs - numerical data.
+</td>
+</tr>
+<tr>
+<td id="random_0to1" class="rid">
+random_0to1
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Random numbers between 0 and 1.
+</td>
+</tr>
+<tr>
+<td id="random_seed" class="rid">
+random_seed
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Randomizing random number seed.
+</td>
+</tr>
+<tr>
+<td id="repeat" class="rid">
+repeat
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Number of times an item is repeated in a list.
+</td>
+</tr>
+<tr>
+<td id="repeats" class="rid">
+repeats
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Number of times each item in the list is repeated in the list.
+</td>
+</tr>
+<tr>
+<td id="select_no_repl" class="rid">
+select_no_repl
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Select x numbers from y’s without replacement.
+</td>
+</tr>
+<tr>
+<td id="select_with_repl" class="rid">
+select_with_repl
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Select x numbers from y’s with replacement.
+</td>
+</tr>
+<tr>
+<td id="shuffle" class="rid">
+shuffle
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Random shuffle of y
+</td>
+</tr>
+<tr>
+<td id="stddev_biased" class="rid">
+stddev_biased
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Biased standard dev estimate.
+</td>
+</tr>
+<tr>
+<td id="var_biased" class="rid">
+var_biased
+</td>
+<td class="rtype">
+v
+</td>
+<td class="rdef">
+Biased variance estimate.
+</td>
+</tr>
+</table>
+</body>
+</html>
