@@ -1,6 +1,0 @@
-DayNo
-Date
-Year
-Month
-Day
-DayOfWeek
