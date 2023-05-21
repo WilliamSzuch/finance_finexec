@@ -1,18 +1,14 @@
 NB. =========================================================
 NB.%loan.ijs - Definitions for loan calculations, plots and schedules
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Basic Finance</a>
-NB.-<hr>
+NB.-<script src="../js/basicfinance_links.js"></script>
 NB.- Script: ~addons/finance/finexec/basicfinance/loan.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 25
 NB.- Depend: ~addons/graphics/plot/plot.ijs
 NB.-         ~addons/finance/finexec/ipm/mwrr.ijs
 NB.-         ~addons/finance/finexec/toolbox/plot.ijs
 NB.- Definitions: loaded to locale base
-NB.- Status: dev:
+NB.- Status: dev
 NB.- <a href="../loan.ijs" target="_blank">Script source: loan.ijs</a>
 NB.-<hr>
 NB.- Definitions for loan calculation problems with

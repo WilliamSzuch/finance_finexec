@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,22 +28,24 @@
 <header id="title-block-header">
 <h1 class="title">compound.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Basic Finance</a>
-<hr>
-<div class="line-block">Script: ~addons/finance/finexec/basicfinance/compound.ijs<br />
+<script src="../js/basicfinance_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/basicfinance/compound.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022-05-22<br />
+Updated: 2022 6-25<br />
 Depend: nil<br />
 Definitions: loaded to locale base<br />
 Status: done<br />
-<a href="../compound.ijs"  target="_blank">Script source: compound.ijs</a></div>
+<a href="../compound.ijs"  target="_blank">Script source:
+compound.ijs</a></div>
 <hr>
-<div class="line-block">Definitions for solving compound interest rate problems for<br />
+<div class="line-block">Definitions for solving compound interest rate
+problems for<br />
 a constant effective interest rate over a period.<br />
   present value<br />
   future value<br />
-  effective and nominal interest rate conversions between time units<br />
+  effective and nominal interest rate conversions between time
+units<br />
 Equations:<br />
 <img alt="NF" src="../eqs/compound_ijs.gif"></div>
 <hr>
@@ -49,7 +56,8 @@ Equations:<br />
 A
 </td>
 <td>
-<a href="#an">an</a>, <a href="#an0">an0</a>, <a href="#anD">anD</a>, <a href="#anF">anF</a>
+<a href="#an">an</a>, <a href="#an0">an0</a>, <a href="#anD">anD</a>, <a
+href="#anF">anF</a>
 </td>
 </tr>
 <tr>
@@ -65,7 +73,8 @@ D
 E
 </td>
 <td>
-<a href="#econvf">econvf</a>, <a href="#econvg">econvg</a>, <a href="#enominal">enominal</a>
+<a href="#econvf">econvf</a>, <a href="#econvg">econvg</a>, <a
+href="#enominal">enominal</a>
 </td>
 </tr>
 <tr>
@@ -97,7 +106,8 @@ R
 S
 </td>
 <td>
-<a href="#sn">sn</a>, <a href="#sn1">sn1</a>, <a href="#snD">snD</a>, <a href="#snF">snF</a>
+<a href="#sn">sn</a>, <a href="#sn1">sn1</a>, <a href="#snD">snD</a>, <a
+href="#snF">snF</a>
 </td>
 </tr>
 <tr>
@@ -105,7 +115,8 @@ S
 V
 </td>
 <td>
-<a href="#v">v</a>, <a href="#vf0">vf0</a>, <a href="#vf1">vf1</a>, <a href="#vt">vt</a>
+<a href="#v">v</a>, <a href="#vf0">vf0</a>, <a href="#vf1">vf1</a>, <a
+href="#vt">vt</a>
 </td>
 </tr>
 <tr>
@@ -134,7 +145,8 @@ N = integer number of payments over the period</code></pre>
 10 7.72173 6.14457 5.01877</code></pre>
 <h2 class="hdef" id="an0">an0 (dyad)</h2>
 <div class="line-block"><b>Form:</b> tacit<br />
-Present value of N payments of 1 paid at the beginning of each time unit<br />
+Present value of N payments of 1 paid at the beginning of each time
+unit<br />
 for a constant effective interest rate E over the period.<br />
 Payments in advance</div>
 <h3>Syntax</h3>
@@ -156,7 +168,8 @@ N = integer number of payments over the period</code></pre>
 10 8.10782 6.75902 5.77158</code></pre>
 <h2 class="hdef" id="anD">anD (dyad)</h2>
 <div class="line-block"><b>Form:</b> tacit<br />
-Present value of N payments of 1 payable at the beginning of each time unit<br />
+Present value of N payments of 1 payable at the beginning of each time
+unit<br />
 with the first payment deferred for D time units<br />
 for a constant effective interest rate E over the period.</div>
 <h3>Syntax</h3>
@@ -179,7 +192,8 @@ N = number of payments in the period</code></pre>
 10 7.35403 5.58597 4.36415</code></pre>
 <h2 class="hdef" id="anF">anF (dyad)</h2>
 <div class="line-block"><b>Form:</b> tacit<br />
-Present value of multiple payments of 1/F paid at intervals of 1/F of a time unit<br />
+Present value of multiple payments of 1/F paid at intervals of 1/F of a
+time unit<br />
 at start of the first payment<br />
 for a constant effective interest rate E over the period.<br />
 Payments in advance</div>
@@ -319,7 +333,8 @@ F = the number of times interest is payable and accumulated in the period</code>
 0.0615202 0.126162</code></pre>
 <h2 class="hdef" id="sn">sn (dyad)</h2>
 <div class="line-block"><b>Form:</b> tacit<br />
-Future value of N payments of 1 payable at intervals for a time unit.<br />
+Future value of N payments of 1 payable at intervals for a time
+unit.<br />
 for a constant effective rate of interest E.<br />
 accumulated to the time of the last payment.<br />
 Payments in arrears</div>
@@ -378,7 +393,8 @@ N = number of payments in the period</code></pre>
 10 13.8671 19.2843 26.8517</code></pre>
 <h2 class="hdef" id="snF">snF (dyad)</h2>
 <div class="line-block"><b>Form:</b> tacit<br />
-Future value of multiple payments of 1/F paid at intervals 1/F of a time unit<br />
+Future value of multiple payments of 1/F paid at intervals 1/F of a time
+unit<br />
 accumuleted to the last payment.<br />
 Payments in arrears</div>
 <h3>Syntax</h3>

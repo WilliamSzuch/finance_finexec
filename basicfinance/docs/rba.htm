@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,16 +28,15 @@
 <header id="title-block-header">
 <h1 class="title">rba.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Basic Finance</a>
-<hr>
-<div class="line-block">Script: ~addons/finance/finexec/basicfinance/rba.ijs<br />
+<script src="../js/basicfinance_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/basicfinance/rba.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022-05-22<br />
+Updated: 2022 6 25<br />
 Depend: ~addons/finance/finexec/basicfinance/compound.ijs<br />
         ~addons/finance/finexec/toolbox/bisection.ijs<br />
 Definitions: loaded to locale base<br />
-Status: todo: equations<br />
+Status: todo equations<br />
 <a href="../rba.ijs" target="_blank">Script source: rba.ijs</a></div>
 <hr>
 <div class="line-block">RBA - Treasury Bond calculations.<br />
@@ -41,7 +45,8 @@ Equations:<br />
 <img alt="NF" src="../eqs/rba_ijs.gif"><br />
 Methodology set out in the Reserve Bank of Australia<br />
 note dated: 27/10/1992 No. 92-24<br />
-<a class="HREF" href="https://aofm.gov.au/ags/" target="_blank">RBA Notes and Equations</a></div>
+<a class="HREF" href="https://aofm.gov.au/ags/" target="_blank">RBA
+Notes and Equations</a></div>
 <hr>
 <div class="line-block"><b>Treasury Bond Yield Calculation</b><br />
 Using bisection method with (E)pvcf(C;T)</div>
@@ -70,7 +75,9 @@ _0.000908185</code></pre>
 R
 </td>
 <td>
-<a href="#rba_bond">rba_bond</a>, <a href="#rba_tb">rba_tb</a>, <a href="#rba_tb_capital_index">rba_tb_capital_index</a>, <a href="#rba_tn">rba_tn</a>, <a href="#rba_tn_yield">rba_tn_yield</a>
+<a href="#rba_bond">rba_bond</a>, <a href="#rba_tb">rba_tb</a>, <a
+href="#rba_tb_capital_index">rba_tb_capital_index</a>, <a
+href="#rba_tn">rba_tn</a>, <a href="#rba_tn_yield">rba_tn_yield</a>
 </td>
 </tr>
 </table>
@@ -131,7 +138,8 @@ f = 25, d = 184, g = 1.375 (i.e. half of 2.75) and n = 22.
    rba_tb(2017 10 27);(2028 11 21);(2017 11 21);1.375;0.014150;100
 100.431</code></pre>
 <h3>Note</h3>
-<div class="line-block">Alternative method using a cash flow approach.<br />
+<div class="line-block">Alternative method using a cash flow
+approach.<br />
 Using (E)pvcf(C;T)</div>
 <pre><code>C =: (11 # 6.25),100
 T =: (75%184)+(i. 11),10
@@ -160,8 +168,10 @@ T =: (75%184)+(i. 11),10
    +/C*(v(0.0415))^T
 121.132</code></pre>
 <hr />
-<h2 class="hdef" id="rba_tb_capital_index">rba_tb_capital_index (verb)</h2>
-<div class="line-block">RBA - Treasury Bonds Basic Formula - Treasury Capital Index Bonds - cum or ex interest.</div>
+<h2 class="hdef" id="rba_tb_capital_index">rba_tb_capital_index
+(verb)</h2>
+<div class="line-block">RBA - Treasury Bonds Basic Formula - Treasury
+Capital Index Bonds - cum or ex interest.</div>
 <h3>Syntax</h3>
 <pre><code>rba_tb_capital_index(y0;y1;y2;y3;y4;y5;y6;y7;y8)
 Interest payments are quarterly

@@ -1,17 +1,13 @@
 NB. =========================================================
 NB.%rba.ijs - Reserve Bank of Australia formula for calculating value of securities
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Basic Finance</a>
-NB.-<hr>
+NB.-<script src="../js/basicfinance_links.js"></script>
 NB.- Script: ~addons/finance/finexec/basicfinance/rba.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 25
 NB.- Depend: ~addons/finance/finexec/basicfinance/compound.ijs
 NB.-         ~addons/finance/finexec/toolbox/bisection.ijs
 NB.- Definitions: loaded to locale base
-NB.- Status: todo: equations
+NB.- Status: todo  equations
 NB.- <a href="../rba.ijs" target="_blank">Script source: rba.ijs</a>
 NB.-<hr>
 NB.- RBA - Treasury Bond calculations.

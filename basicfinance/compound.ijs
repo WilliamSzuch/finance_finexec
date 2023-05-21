@@ -1,13 +1,9 @@
 NB. =========================================================
 NB.%compound.ijs - Compound interest definitions for constant effective interest rates
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Basic Finance</a>
-NB.-<hr>
+NB.-<script src="../js/basicfinance_links.js"></script>
 NB.- Script: ~addons/finance/finexec/basicfinance/compound.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6-25
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
 NB.- Status: done

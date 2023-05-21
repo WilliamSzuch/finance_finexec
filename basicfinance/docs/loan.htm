@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,20 +28,20 @@
 <header id="title-block-header">
 <h1 class="title">loan.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Basic Finance</a>
-<hr>
-<div class="line-block">Script: ~addons/finance/finexec/basicfinance/loan.ijs<br />
+<script src="../js/basicfinance_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/basicfinance/loan.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022-05-22<br />
+Updated: 2022 6 25<br />
 Depend: ~addons/graphics/plot/plot.ijs<br />
         ~addons/finance/finexec/ipm/mwrr.ijs<br />
         ~addons/finance/finexec/toolbox/plot.ijs<br />
 Definitions: loaded to locale base<br />
-Status: dev:<br />
+Status: dev<br />
 <a href="../loan.ijs" target="_blank">Script source: loan.ijs</a></div>
 <hr>
-<div class="line-block">Definitions for loan calculation problems with<br />
+<div class="line-block">Definitions for loan calculation problems
+with<br />
 a constant effective interest rate over the loan period.<br />
 Defintions for loan schedules and plots.<br />
 No rounding in calculations unles specified in the definition.</div>
@@ -48,7 +53,14 @@ No rounding in calculations unles specified in the definition.</div>
 L
 </td>
 <td>
-<a href="#loanBal">loanBal</a>, <a href="#loanLevelPmt">loanLevelPmt</a>, <a href="#loanLevelPmtEffRate">loanLevelPmtEffRate</a>, <a href="#loanMonthlyPmt">loanMonthlyPmt</a>, <a href="#loanMonthlyPmtShd">loanMonthlyPmtShd</a>, <a href="#loanTerm">loanTerm</a>, <a href="#loanTermMonths">loanTermMonths</a>, <a href="#loanVarPmtsEffRate">loanVarPmtsEffRate</a>
+<a href="#loanBal">loanBal</a>, <a
+href="#loanLevelPmt">loanLevelPmt</a>, <a
+href="#loanLevelPmtEffRate">loanLevelPmtEffRate</a>, <a
+href="#loanMonthlyPmt">loanMonthlyPmt</a>, <a
+href="#loanMonthlyPmtShd">loanMonthlyPmtShd</a>, <a
+href="#loanTerm">loanTerm</a>, <a
+href="#loanTermMonths">loanTermMonths</a>, <a
+href="#loanVarPmtsEffRate">loanVarPmtsEffRate</a>
 </td>
 </tr>
 <tr>
@@ -99,7 +111,8 @@ N = number of loan repayments (integer)</code></pre>
 13586.8 12950.5
 10296.3 9634.23
 8718.46 8024.26</code></pre>
-<h2 class="hdef" id="loanLevelPmtEffRate">loanLevelPmtEffRate (verb)</h2>
+<h2 class="hdef" id="loanLevelPmtEffRate">loanLevelPmtEffRate
+(verb)</h2>
 <div class="line-block"><b>Form:</b> explicit<br />
 <b>Depend:</b> mwrPeriodic<br />
 Calculate the effective rate of interest for a time unit<br />
@@ -198,7 +211,8 @@ P = monthly loan repayment</code></pre>
 Calculate the effective rate of interest for a time unit<br />
 for a loan with variable repayments at each time unit.<br />
 Depend: mwr</div>
-<h2 class="hdef" id="plotLoanMonthlyPmtShd">plotLoanMonthlyPmtShd (monad)</h2>
+<h2 class="hdef" id="plotLoanMonthlyPmtShd">plotLoanMonthlyPmtShd
+(monad)</h2>
 <div class="line-block"><b>Form:</b> explicit<br />
 <b>Depend:</b> loanMonthlyPmtShd<br />
                plotm<br />

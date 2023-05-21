@@ -1,17 +1,13 @@
 NB. =========================================================
 NB.%lease.ijs - Definitions for lease calculations
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Basic Finance</a>
-NB.-<hr>
+NB.-<script src="../js/basicfinance_links.js"></script>
 NB.- Script: ~addons/finance/finexec/basicfinance/lease.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 25
 NB.- Depend: ~addons/finance/finexec/ipm/mwrr.ijs
 NB.-         ~addons/finance/finexec/basicfinance/compound.ijs
 NB.- Definitions: loaded to locale base
-NB.- Status: dev:
+NB.- Status: dev
 NB.- <a href="../lease.ijs" target="_blank">Script source: lease.ijs</a>
 NB.-<hr>
 NB.- Definitions for lease calculation problems with
@@ -58,7 +54,6 @@ leasePmt =: 3 : 0
 E =. R%12
 (L - B%(1+E)^T) % ((E)an(T))
 )
-
 
 
 NB. =========================================================

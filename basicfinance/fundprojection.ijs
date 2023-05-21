@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%fundprojection.ijs - Fund projection using the Fold conjunctions F: and F.
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Basic Finance</a>
-NB.-<hr>
+NB.-<script src="../js/basicfinance_links.js"></script>
 NB.- Script: ~addons/finance/finexec/basicfinance/fundprojection.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 25
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.- Status: dev:
+NB.- Status: dev
 NB.- <a href="../fundprojection.ijs" target="_blank">Script source: fundprojection.ijs</a>
 NB.-<hr>
 NB.- Fund projection:

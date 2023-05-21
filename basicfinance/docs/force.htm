@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,18 +28,19 @@
 <header id="title-block-header">
 <h1 class="title">force.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Basic Finance</a>
-<hr>
-<div class="line-block">Script: ~addons/finexec/finexec/basicfinance/force.ijs<br />
+<script src="../js/basicfinance_links.js"></script>
+<div class="line-block">Script:
+~addons/finexec/finexec/basicfinance/force.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022-05-22<br />
+Updated: 2022 6 25<br />
 Depend: nil<br />
 Definitions: loaded to locale base<br />
-Status: done:<br />
-<a href="../force.ijs" target="_blank">Script source: force.ijs</a></div>
+Status: done<br />
+<a href="../force.ijs" target="_blank">Script source:
+force.ijs</a></div>
 <hr>
-<div class="line-block">Definitions for solving force of interest (continous compounding) problems.</div>
+<div class="line-block">Definitions for solving force of interest
+(continous compounding) problems.</div>
 <hr>
 <div class="line-block">Equations:<br />
 <img alt="NF" src="../eqs/force_ijs.gif"></div>
@@ -54,7 +60,9 @@ E
 F
 </td>
 <td>
-<a href="#f">f</a>, <a href="#fc">fc</a>, <a href="#fct">fct</a>, <a href="#fct1">fct1</a>, <a href="#fct1_E">fct1_E</a>, <a href="#fct_E">fct_E</a>, <a href="#fn">fn</a>, <a href="#ft">ft</a>
+<a href="#f">f</a>, <a href="#fc">fc</a>, <a href="#fct">fct</a>, <a
+href="#fct1">fct1</a>, <a href="#fct1_E">fct1_E</a>, <a
+href="#fct_E">fct_E</a>, <a href="#fn">fn</a>, <a href="#ft">ft</a>
 </td>
 </tr>
 <tr>
@@ -62,7 +70,9 @@ F
 G
 </td>
 <td>
-<a href="#g">g</a>, <a href="#gc">gc</a>, <a href="#gct">gct</a>, <a href="#gct1">gct1</a>, <a href="#gct1_E">gct1_E</a>, <a href="#gct_E">gct_E</a>, <a href="#gn">gn</a>, <a href="#gt">gt</a>
+<a href="#g">g</a>, <a href="#gc">gc</a>, <a href="#gct">gct</a>, <a
+href="#gct1">gct1</a>, <a href="#gct1_E">gct1_E</a>, <a
+href="#gct_E">gct_E</a>, <a href="#gn">gn</a>, <a href="#gt">gt</a>
 </td>
 </tr>
 <tr>
@@ -147,7 +157,8 @@ Z = constant force of interest rate for one time unit.</code></pre>
 0.99005 0.951229 0.904837</code></pre>
 <h2 class="hdef" id="fc">fc (monad)</h2>
 <div class="line-block"><b>Form:</b> tacit<br />
-Present value of an amount of 1 paid continuosly over one time unit<br />
+Present value of an amount of 1 paid continuosly over one time
+unit<br />
 for a force of interest rates Z.</div>
 <h3>Syntax</h3>
 <pre><code>fc(Z)
@@ -187,7 +198,8 @@ Restricted form of fct: only single values for Z and T.<br />
 Present value of continous payments over the period of<br />
 of T time units where the rate of payment per time unit<br />
 is one for a constant force of interest Z.<br />
-<a class="HREF" href="../eqs/fct_eq.html" target="_blank">Equation: (Z)fct1(T)</a></div>
+<a class="HREF" href="../eqs/fct_eq.html" target="_blank">Equation:
+(Z)fct1(T)</a></div>
 <pre><code>(Z)fct(T)
 Z = constant force of interest rate per time unit over the period.
 T = period in time units of continous payments</code></pre>
@@ -202,7 +214,8 @@ T = period in time units of continous payments</code></pre>
 7.86939</code></pre>
 <h2 class="hdef" id="fn">fn (dyad)</h2>
 <div class="line-block"><b>Form:</b> tacit<br />
-Present value of N payments of 1 paid at the beginning of each time unit<br />
+Present value of N payments of 1 paid at the beginning of each time
+unit<br />
 for a constant force of interest rate Z over the period.<br />
 ie. Payments in advance</div>
 <h3>Syntax</h3>
@@ -311,7 +324,8 @@ T = period in time units of continous payments</code></pre>
 12.9744</code></pre>
 <h2 class="hdef" id="gn">gn (dyad)</h2>
 <div class="line-block"><b>Form:</b> tacit<br />
-Future value of N payments of 1 payable at intervals for a time unit.<br />
+Future value of N payments of 1 payable at intervals for a time
+unit.<br />
 for a constant force of interest Z.<br />
 accumulated to the time of the last payment.<br />
 (ie: payments in arrears)</div>

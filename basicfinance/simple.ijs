@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%simple.ijs - Simple interest definitions for a constant simple interest rate
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Basic Finance</a>
-NB.-<hr>
+NB.-<script src="../js/basicfinance_links.js"></script>
 NB.- Script: ~addons/finance/finexec/basicfinance/simple.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 25
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../simple.ijs" target="_blank">Script source: simple.ijs</a>
 NB.-<hr>
 NB.- Definitions for solving simple interest rate problems for

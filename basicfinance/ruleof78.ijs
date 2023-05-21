@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%ruleof78.ijs - Rule of 78 
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Basic Finance</a>
-NB.-<hr>
+NB.-<script src="../js/basicfinance_links.js"></script>
 NB.- Script: ~addons/finance/finexec/basicfinance/ruleof78.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 25
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base
-NB.- Status: todo: equations
+NB.- Status: todo  equations
 NB.- <a href="../ruleof78.ijs" target="_blank">Script source: rule0f78.ijs</a>
 NB.-<hr>
 NB.- Rule of 78 outstanding monthly balance calculations.

@@ -1,21 +1,20 @@
 NB. =========================================================
 NB.%timeline.ijs - Time line plot of a cash flow
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Basic Finance</a>
-NB.-<hr>
+NB.-<script src="../js/basicfinance_links.js"></script>
 NB.- Script: ~addons/finance/finrxec/basicfinance/timeline.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 25
 NB.- Depend: ~addons/graphics/plot/plot.ijs
 NB.- Definitions: loaded to locale base
-NB.- Status: done:
+NB.- Status: done
 NB.-<hr>
 NB.- Show the cash flow as a time line plot at the periods when the cash 
 NB.- flow occurred from a reference point of period equal to 0. 
 NB.- As a convention the cash inflow to a portfolio is positive 
 NB.- <a href="../timeline.ijs" target="_blank">Script source: timeline.ijs</a>
+NB.-<hr>
+NB.- plot not working properly with level cash flow with type stick.
+NB.- type stick' plot 5 # 2 
 NB.-<hr>
 
 
@@ -41,8 +40,6 @@ NB.+   timelinecf((i. 25);100, - 24 #10)
 NB.+   timelinecf(0 1 2 3 4;3 4 5)  NB. (T;C) do not match
 NB. ---------------------------------------------------------
 timelinecf =: 3 : 0
-'' timelinecf y
-:
 'Y0 Y1' =. y
 if. -. (#Y0) = (#Y1) do. <'*** (T:periods) and (C:cash flows) do not match - check data ***' return. end.
 TITLE =. 'title Cash Flow Time Line'

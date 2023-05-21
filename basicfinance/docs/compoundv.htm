@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,19 +28,21 @@
 <header id="title-block-header">
 <h1 class="title">compoundv.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Basic Finance</a>
-<hr>
-<div class="line-block">Script: ~addons/finance/fp/basicfinance/compoundv.ijs<br />
+<script src="../js/basicfinance_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/fp/basicfinance/compoundv.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022-05-20<br />
+Updated: 2022 6 25<br />
 Depend: ~addons/finance/finexec/basicfinance/compound.ijs<br />
 Definitions: loaded to locale base<br />
-Status: done:<br />
-<a href="../compoundv.ijs" target="_blank">Script source: compoundv.ijs</a></div>
+Status: done<br />
+<a href="../compoundv.ijs" target="_blank">Script source:
+compoundv.ijs</a></div>
 <hr>
-<div class="line-block">Definitions for solving compound interest rate problems with<br />
-variable effective interest rates for the time units over a period.<br />
+<div class="line-block">Definitions for solving compound interest rate
+problems with<br />
+variable effective interest rates for the time units over a
+period.<br />
 Equations:<br />
 <img alt="NF" src="../eqs/compoundv_ijs.gif"></div>
 <hr>
@@ -96,13 +103,15 @@ W
 Present value of a level cash flow of one per time unit<br />
 with variable effective interest rates Ev over the period<br />
 paid at frequency F within the time unit.<br />
-<a href="../eqs/anvF_eq.html" target="_blank">Equation: ([x])anvF(N;Ev;[F])</a></div>
+<a href="../eqs/anvF_eq.html" target="_blank">Equation:
+([x])anvF(N;Ev;[F])</a></div>
 <h3>Syntax</h3>
 <pre><code>([x])anvF(Ev;N;[F])
 [x] = 0 : optional: default case payments in advance
       1 :  payments in arrears
 Ev = list of effective interest rate per time unit and can vary</code></pre>
-<div class="line-block">    last rate extended, first rate applies to first time unit</div>
+<div class="line-block">    last rate extended, first rate applies to
+first time unit</div>
 <pre><code>N = integer number of payments of 1 per time unit.
 [F] = Optional: default frequency = 1
       frequency of payments over a time unit: 1/2/3/4 etc _ for continous</code></pre>
@@ -133,7 +142,9 @@ List of variable effective interest rates for N time units.</div>
  Ev = list of effective interest rates for a time unit with
       the last rate is extended for the period of N time units
  N = integer number of time units</code></pre>
-<div class="line-block"><a href="../eqs/ev_eq.html" target="_blank">Equation: (Ev)ev(N)</a></div>
+<div
+class="line-block"><a href="../eqs/ev_eq.html" target="_blank">Equation:
+(Ev)ev(N)</a></div>
 <h3>Example</h3>
 <pre><code>   (0.05 0.055)ev(12)
 0.05 0.055 0.055 0.055 0.055 0.055 0.055 0.055 0.055 0.055 0.055 0.055</code></pre>
@@ -141,7 +152,8 @@ List of variable effective interest rates for N time units.</div>
 0.02 0.021 0.022 0.023 0.024 0.025</code></pre>
 <h2 class="hdef" id="evt">evt (dyad)</h2>
 <div class="line-block"><b>Form:</b> tacit<br />
-List or table of variable effective interest rates plus one for T time units.</div>
+List or table of variable effective interest rates plus one for T time
+units.</div>
 <h3>Syntax</h3>
 <pre><code>(Ev)evt(T)
  Ev = variable effective interest rate for time units over the oeriod
@@ -151,7 +163,8 @@ List or table of variable effective interest rates plus one for T time units.</d
 Future value of a cash flow C payable at the periods<br />
 of T time units from the point of accumulation for variable<br />
 effective interest rates Ev.<br />
-<a href="../eqs/fvcfv_eq.html" target="_blank">Equation: (Ev)fvcfv(C;T)</a></div>
+<a href="../eqs/fvcfv_eq.html" target="_blank">Equation:
+(Ev)fvcfv(C;T)</a></div>
 <h3>Syntax</h3>
 <pre><code>(Ev)pvcfv(C;T)
 Ev = variable effective interest rate per time unit over the period.
@@ -173,7 +186,8 @@ T = periods in time units of cash flow from the point of accumulation.</code></p
 <div class="line-block"><b>Form:</b> tacit<br />
 Present value of a cash flow C payable at the periods<br />
 of T time units for variable effective interest rates Ev.<br />
-<a href="../eqs/pvcfv_eq.html" target="_blank">Equation: (E)pvcfv(C;T)</a></div>
+<a href="../eqs/pvcfv_eq.html" target="_blank">Equation:
+(E)pvcfv(C;T)</a></div>
 <h3>Syntax</h3>
 <pre><code>(Ev)pvcfv(C;T)
 Ev = variable effective interest rate per time unit over the period.
@@ -193,7 +207,8 @@ T = periods in time units of cash flow</code></pre>
 <div class="line-block"><b>Form:</b> tacit<br />
 Present value of 1 payable in a period of T time units<br />
 for variable effective interest rates Ev over the period.<br />
-<a href="../eqs/vvt_eq.html" target="_blank">? Equation: (Ev)vvt(T)</a></div>
+<a href="../eqs/vvt_eq.html" target="_blank">? Equation:
+(Ev)vvt(T)</a></div>
 <h3>Syntax</h3>
 <pre><code>(Ev)vvt(T)
 Ev = variable effective interest rate per time unit over a period
@@ -212,7 +227,8 @@ T = number of time units in the period</code></pre>
 <div class="line-block"><b>Form:</b> tacit<br />
 Future value of an amount of 1 in a period of T time units<br />
 for variable effective interest Ev over the period.<br />
-<a href="../eqs/wvt_eq.html" target="_blank">Equation: (Ev)wvt(T)</a></div>
+<a href="../eqs/wvt_eq.html" target="_blank">Equation:
+(Ev)wvt(T)</a></div>
 <h3>Syntax</h3>
 <pre><code>(Ev)wvt(T)
 Ev = variable effective interest rate per time unit over a period
