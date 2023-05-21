@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,18 +28,19 @@
 <header id="title-block-header">
 <h1 class="title">lifetable_multiplelives.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Actaurial Life</a>
-<hr>
-<div class="line-block">Script: ~addons/finance/finexec/actuariallife/lifetable_multiplelives.ijs<br />
+<script src="../js/actuariallife_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/actuariallife/lifetable_multiplelives.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022-05-22<br />
+Updated: 2022 6 25<br />
 Depend: ~addons/finance/finexec/qxtables/qxtools.ijs’<br />
 Definitions: loaded to locale base<br />
-Status: todo: equations<br />
-<a href="../lifetable_multiplelives.ijs" target="_blank">Script source: lifetable_multiplelives.ijs</a></div>
+Status: todo equations<br />
+<a href="../lifetable_multiplelives.ijs" target="_blank">Script source:
+lifetable_multiplelives.ijs</a></div>
 <hr>
-<div class="line-block">Definitions to calculate life table functions and survival factors<br />
+<div class="line-block">Definitions to calculate life table functions
+and survival factors<br />
 for mu;tiple lives.<br />
 Qx tables loaded to the locale base.<br />
 See: Qx_ALL for a list of names.<br />
@@ -73,7 +79,8 @@ L
 P
 </td>
 <td>
-<a href="#pxy">pxy</a>, <a href="#pxy_v">pxy_v</a>, <a href="#pxyz">pxyz</a>, <a href="#pxyz_v">pxyz_v</a>
+<a href="#pxy">pxy</a>, <a href="#pxy_v">pxy_v</a>, <a
+href="#pxyz">pxyz</a>, <a href="#pxyz_v">pxyz_v</a>
 </td>
 </tr>
 <tr>
@@ -81,7 +88,8 @@ P
 Q
 </td>
 <td>
-<a href="#qx1y">qx1y</a>, <a href="#qxy">qxy</a>, <a href="#qxyz">qxyz</a>
+<a href="#qx1y">qx1y</a>, <a href="#qxy">qxy</a>, <a
+href="#qxyz">qxyz</a>
 </td>
 </tr>
 </table>
@@ -148,8 +156,10 @@ one life within the next year.</div>
 <pre><code>(Qx1;Qx2;Qx3)pxy(Age1;Age2;Age3)
 Qx1,Qx2,Qx3 = mortality tables
 Age1,Age2,Age3 ... = integer ages</code></pre>
-<p>example ~~~ (ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)pxyz(0;0;0) 0.984689</p>
-<p>(ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)pxyz(25;30;35) 0.997652 ~~~</p>
+<p>example ~~~ (ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)pxyz(0;0;0)
+0.984689</p>
+<p>(ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)pxyz(25;30;35) 0.997652
+~~~</p>
 <h2 class="hdef" id="pxyz_v">pxyz_v (dyad)</h2>
 <div class="line-block"><b>Form:</b> explicit<br />
 Vector of probability of three lives surviving by year.<br />
@@ -194,7 +204,9 @@ one life within the next year.</div>
 <pre><code>(Qx1;Qx2;Qx3)pxyz(Age1;Age2;Age3)
 Qx1,Qx2,Qx3 = mortality tables
 Age1,Age2,Age3 = integer ages</code></pre>
-<p>example ~~~ (ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)qxyz(0;0;0) 0.0153115</p>
-<p>(ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)qxyz(25;30;35) 0.00234831 ~~~</p>
+<p>example ~~~ (ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)qxyz(0;0;0)
+0.0153115</p>
+<p>(ALT_2004_06_M;ALT_2004_06_F;ALT_2004_06_M)qxyz(25;30;35) 0.00234831
+~~~</p>
 </body>
 </html>

@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%lifetable.ijs - Life table definitions
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Actaurial Life</a>
-NB.-<hr>
+NB.-<script src="../js/actuariallife_links.js"></script>
 NB.- Script: ~addons/finance/finexec/actuariallife/lifetable.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2023 03 17
 NB.- Depend: ~addons/finance/finexec/qxtables/qxtools.ijs'
 NB.- Definitions: loaded to locale base
-NB.- Status: todo: equations
+NB.- Status: todo  equations
 NB.- <a href="../lifetable.ijs" target="_blank">Script source: lifetable.ijs</a>
 NB.-<hr>
 NB.- Definitions to calculate life table functions and survival factors.
@@ -183,7 +179,7 @@ NB.+0.100569
 NB. ---------------------------------------------------------
 qxn1 =: 1 - */@:([ (1 - ] { [) ([: >@:(0&{) ]) + [: i. [: >@:(1&{) ])
 NB. ---------------------------------------------------------
-Note 'build qxn1'
+Note 'T qxn1'
 pxn1 =. */@:([ (1 - ] { [) ([: >@:(0&{) ]) + [: i. [: >@:(1&{) ]) 
 qxn1 =. (1-pxn1)  f. 
 )
@@ -514,8 +510,8 @@ NB.-syntax:
 NB.+(Qx)distDeathsYr(Age;[Y])
 NB.+Qx = name of qx table starting at age = 0
 NB.+Age = integer age
-NB.- [Y] = 0 optinal = default - probability density functions (pdf)
-NB.-     = 1 cumulative density function (cdf) 
+NB.+[Y] = 0 optinal = default - probability density functions (pdf)
+NB.+    = 1 cumulative density function (cdf) 
 NB.-example: 
 NB.+   (ALT_2013_15_M)plotdistDeathsYr(54)
 NB.+   (ALT_2013_15_M)plotdistDeathsYr(54;1)
@@ -531,8 +527,31 @@ if. Opt = 0 do. 'title PDF' plot  (%100000)   *1{"1 sort  freqcount  (Qx)distDea
 )
 
 
-
-
-
-
-
+NB. =========================================================
+NB.*nyears d -
+NB.- <b>Form:</b> explicit 
+NB.- <b>Depend:</b> oxn1
+NB.- Calculate the number of years N of survival required 
+NB.- for a probability P.
+NB.-syntax: 
+NB.+(Qx)nyears(Age;P)
+NB.+Qx = name of qx table starting at age = 0
+NB.+Age = integer age
+NB.+P = probability of survival (0<P<1)
+NB.-example:
+NB.+  (ALT_2018_20_M)nyears(55;0.5)
+NB.+31
+NB.+  (ALT_2018_20_M)pxn(55;30 31)
+NB.+0.517873 0.476785
+NB.-
+NB.+  (ALT_2018_20_M)nyears(55;0.75)
+NB.+23
+NB.+  (ALT_2018_20_M)pxn(55;22 23)
+NB.+0.766397 0.743153
+NB. ---------------------------------------------------------
+nyears =: 4 : 0
+'Age P' =. y
+N=. 0
+while. P < x pxn1(Age;N) do.N=. N+1 end.
+N
+)
