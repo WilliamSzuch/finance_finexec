@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,21 +28,22 @@
 <header id="title-block-header">
 <h1 class="title">qxtools.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Qx Tables</a>
-<hr>
-<div class="line-block">Script: ~addons/finance/finexec/qxtables/qxtools.ijs<br />
+<script src="../js/qxtables_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/qxtables/qxtools.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022-05-22<br />
+Updated: 2022-05-30<br />
 Depend: ~addons/finance/finexec/qxtables/al.ijs<br />
         ~addons/finance/finexec/qxtables/alt.ijs<br />
         ~addons/finance/finexec/qxtables/ann.ijs<br />
         ~addons/finance/finexec/qxtables/elt.ijs<br />
 Definitions: loaded to locale base<br />
-Status: update:<br />
-<a href="../qxtools.ijs" target="_blank">Script source: qxtools.ijs</a></div>
+Status: update<br />
+<a href="../qxtools.ijs" target="_blank">Script source:
+qxtools.ijs</a></div>
 <hr>
-<div class="line-block">Tools for for adjusting and modifying Qx tables.<br />
+<div class="line-block">Tools for for adjusting and modifying Qx
+tables.<br />
 Plot Qx tables.<br />
 This script loads all the Qx mortality tables.</div>
 <hr>
@@ -59,7 +65,8 @@ D
 P
 </td>
 <td>
-<a href="#plotQx">plotQx</a>, <a href="#plotz">plotz</a>, <a href="#plotzQx">plotzQx</a>
+<a href="#plotQx">plotQx</a>, <a href="#plotz">plotz</a>, <a
+href="#plotzQx">plotzQx</a>
 </td>
 </tr>
 <tr>
@@ -67,7 +74,14 @@ P
 Q
 </td>
 <td>
-<a href="#quadfit">quadfit</a>, <a href="#Qx_ALL">Qx_ALL</a>, <a href="#Qx_ALL_Boxed">Qx_ALL_Boxed</a>, <a href="#Qx_ALT_Boxed">Qx_ALT_Boxed</a>, <a href="#Qx_Data">Qx_Data</a>, <a href="#Qx_Desc">Qx_Desc</a>, <a href="#Qx_DF">Qx_DF</a>, <a href="#Qx_Names">Qx_Names</a>, <a href="#Qx_Names_Desc">Qx_Names_Desc</a>, <a href="#qxextend">qxextend</a>, <a href="#QxF">QxF</a>, <a href="#QxM">QxM</a>
+<a href="#quadfit">quadfit</a>, <a href="#Qx_ALL">Qx_ALL</a>, <a
+href="#Qx_ALL_Boxed">Qx_ALL_Boxed</a>, <a
+href="#Qx_ALT_Boxed">Qx_ALT_Boxed</a>, <a href="#Qx_Data">Qx_Data</a>,
+<a href="#Qx_Desc">Qx_Desc</a>, <a href="#Qx_DF">Qx_DF</a>, <a
+href="#Qx_Names">Qx_Names</a>, <a
+href="#Qx_Names_Desc">Qx_Names_Desc</a>, <a
+href="#qxextend">qxextend</a>, <a href="#QxF">QxF</a>, <a
+href="#QxM">QxM</a>
 </td>
 </tr>
 </table>
@@ -228,7 +242,7 @@ A0,A1 = age range (integers)
  or on separate lines.</code></pre>
 <h3>Example</h3>
 <pre><code>  (&#39;QxF&#39;)plotzQx(10 20)
-  (&#39;QxF&#39;;&#39;QxM&#39;)plotmQx(10 20)
+  (&#39;QxF&#39;;&#39;QxM&#39;)plotzQx(10 20)
   (&#39;QxF&#39;)plotzQx(10 20)
   (&#39;QxF&#39;;&#39;QxM&#39;)plotzQx(10 20)
   (&#39;QxF&#39;)plotzQx(10 20)[(&#39;QxF&#39;;&#39;QxM&#39;)plotzQx(10 20)  NB. 2 plots

@@ -1,19 +1,15 @@
 NB. =========================================================
 NB.%qxtools.ijs - Definitions for modifying Qx tables and loading all the Qx tables
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Qx Tables</a>
-NB.-<hr>
+NB.-<script src="../js/qxtables_links.js"></script>
 NB.- Script: ~addons/finance/finexec/qxtables/qxtools.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022-05-30
 NB.- Depend: ~addons/finance/finexec/qxtables/al.ijs
 NB.-         ~addons/finance/finexec/qxtables/alt.ijs
 NB.-         ~addons/finance/finexec/qxtables/ann.ijs
 NB.-         ~addons/finance/finexec/qxtables/elt.ijs
 NB.- Definitions: loaded to locale base
-NB.- Status: update:
+NB.- Status: update
 NB.- <a href="../qxtools.ijs" target="_blank">Script source: qxtools.ijs</a>
 NB.-<hr>
 NB.- Tools for for adjusting and modifying Qx tables.
@@ -258,7 +254,7 @@ NB.+ For multiple plots ploltzQx [ plotzQx[plotzQx
 NB.+ or on separate lines.
 NB.-example:
 NB.+  ('QxF')plotzQx(10 20)
-NB.+  ('QxF';'QxM')plotmQx(10 20)
+NB.+  ('QxF';'QxM')plotzQx(10 20)
 NB.+  ('QxF')plotzQx(10 20) 
 NB.+  ('QxF';'QxM')plotzQx(10 20)
 NB.+  ('QxF')plotzQx(10 20)[('QxF';'QxM')plotzQx(10 20)  NB. 2 plots

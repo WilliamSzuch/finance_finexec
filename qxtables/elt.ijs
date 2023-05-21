@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%elt.ijs - English Life Tables (ELT)
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Qx Tables</a>
-NB.-<hr>
+NB.-<script src="../js/qxtables_links.js"></script>
 NB.- Script: ~addons/finance/finexec/qxtables/elt.ijs
 NB.- Contributor: William Szuch
 NB.- Updated: 2022-05-22
 NB.- Ddepend: nil
 NB.- Definitions: loaded to locale base
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../elt.ijs" target="_blank">Script source: elt.ijs</a>
 NB.-<hr>
 NB.- English Life Tables (ELT)

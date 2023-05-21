@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -20,13 +25,13 @@
   <![endif]-->
 </head>
 <body>
-<h1>
-Finexec: Category: Qx Tables (Mortality tables)
-</h1>
+<script src="../../finexec_logo.js"></script>
+<b>Category: Qx Tables (Mortality tables)</b>
+<script src="../../finexec_docs_links.js"></script>
 <hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a>
-<hr>
-Script: ~addons/finance/finexec/qxtables/qxtables_docs.ijs<br> Updated: 2022-05-20<br> Definitions for loading, modifying and plotting Qx tables.<br> Qx tables (mortality tables) can be loaded for a project.<br>
+Script: ~Finexec_docs/qxtables_docs.ijs<br> Updated: 2023 05 19<br>
+Definitions for loading, modifying and plotting Qx tables.<br> Qx tables
+(mortality tables) can be loaded for a project.<br>
 <hr>
 <pre>
 Some conventions with respect to the Qx tables.
@@ -43,6 +48,14 @@ Tables in Excel format:
 <hr>
 <h2>Scripts</h2>
 <table class="noun">
+<tr>
+<td class="noun">
+<a href="qxtables.htm">qxtables.ijs</a>
+</td>
+<td class="noun">
+Loads scripts from category: Qx Tables
+</td>
+</tr>
 <tr>
 <td class="noun">
 <a href="al.htm">al.ijs</a>
@@ -91,7 +104,72 @@ Definitions for modifying Qx tables and loading all the Qx tables
 A
 </td>
 <td>
-<a href="al.htm#AL_1967_70_M_ULT">AL_1967_70_M_ULT</a>, <a href="al.htm#AL_49_52_M_ULT">AL_49_52_M_ULT</a>, <a href="al.htm#AL_AM92_ULT">AL_AM92_ULT</a>, <a href="al.htm#AL_IA85_90_F_ULT">AL_IA85_90_F_ULT</a>, <a href="al.htm#AL_IA85_90_M_ULT">AL_IA85_90_M_ULT</a>, <a href="al.htm#AL_IA90_92_F_ULT">AL_IA90_92_F_ULT</a>, <a href="al.htm#AL_IA90_92_M_ULT">AL_IA90_92_M_ULT</a>, <a href="al.htm#AL_IA_64_70_ULT">AL_IA_64_70_ULT</a>, <a href="alt.htm#ALT_1960_62_F">ALT_1960_62_F</a>, <a href="alt.htm#ALT_1960_62_M">ALT_1960_62_M</a>, <a href="alt.htm#ALT_1965_67_F">ALT_1965_67_F</a>, <a href="alt.htm#ALT_1965_67_M">ALT_1965_67_M</a>, <a href="alt.htm#ALT_1970_72_F">ALT_1970_72_F</a>, <a href="alt.htm#ALT_1970_72_M">ALT_1970_72_M</a>, <a href="alt.htm#ALT_1975_77_F">ALT_1975_77_F</a>, <a href="alt.htm#ALT_1975_77_M">ALT_1975_77_M</a>, <a href="alt.htm#ALT_1980_82_F">ALT_1980_82_F</a>, <a href="alt.htm#ALT_1980_82_M">ALT_1980_82_M</a>, <a href="alt.htm#ALT_1985_87_F">ALT_1985_87_F</a>, <a href="alt.htm#ALT_1985_87_M">ALT_1985_87_M</a>, <a href="alt.htm#ALT_1990_92_F">ALT_1990_92_F</a>, <a href="alt.htm#ALT_1990_92_M">ALT_1990_92_M</a>, <a href="alt.htm#ALT_1995_97_F">ALT_1995_97_F</a>, <a href="alt.htm#ALT_1995_97_M">ALT_1995_97_M</a>, <a href="alt.htm#ALT_1998_00_F">ALT_1998_00_F</a>, <a href="alt.htm#ALT_1998_00_M">ALT_1998_00_M</a>, <a href="alt.htm#ALT_2000_02_F">ALT_2000_02_F</a>, <a href="alt.htm#ALT_2000_02_M">ALT_2000_02_M</a>, <a href="alt.htm#ALT_2003_05_F">ALT_2003_05_F</a>, <a href="alt.htm#ALT_2003_05_M">ALT_2003_05_M</a>, <a href="alt.htm#ALT_2004_06_F">ALT_2004_06_F</a>, <a href="alt.htm#ALT_2004_06_M">ALT_2004_06_M</a>, <a href="alt.htm#ALT_2005_07_F">ALT_2005_07_F</a>, <a href="alt.htm#ALT_2005_07_M">ALT_2005_07_M</a>, <a href="alt.htm#ALT_2008_10_F">ALT_2008_10_F</a>, <a href="alt.htm#ALT_2008_10_M">ALT_2008_10_M</a>, <a href="alt.htm#ALT_2009_11_F">ALT_2009_11_F</a>, <a href="alt.htm#ALT_2009_11_M">ALT_2009_11_M</a>, <a href="alt.htm#ALT_2010_12_F">ALT_2010_12_F</a>, <a href="alt.htm#ALT_2010_12_M">ALT_2010_12_M</a>, <a href="alt.htm#ALT_2013_15_F">ALT_2013_15_F</a>, <a href="alt.htm#ALT_2013_15_M">ALT_2013_15_M</a>, <a href="alt.htm#ALT_2014_16_F">ALT_2014_16_F</a>, <a href="alt.htm#ALT_2014_16_M">ALT_2014_16_M</a>, <a href="alt.htm#ALT_2015_17_F">ALT_2015_17_F</a>, <a href="alt.htm#ALT_2015_17_M">ALT_2015_17_M</a>, <a href="alt.htm#ALT_2016_18_F">ALT_2016_18_F</a>, <a href="alt.htm#ALT_2016_18_M">ALT_2016_18_M</a>, <a href="alt.htm#ALT_2017_19_F">ALT_2017_19_F</a>, <a href="alt.htm#ALT_2017_19_M">ALT_2017_19_M</a>, <a href="alt.htm#ALT_2018_20_F">ALT_2018_20_F</a>, <a href="alt.htm#ALT_2018_20_M">ALT_2018_20_M</a>, <a href="alt.htm#ALT_AGA_2010_12_F">ALT_AGA_2010_12_F</a>, <a href="alt.htm#ALT_AGA_2010_12_M">ALT_AGA_2010_12_M</a>, <a href="alt.htm#ALT_AGA_2015_17_F">ALT_AGA_2015_17_F</a>, <a href="alt.htm#ALT_AGA_2015_17_M">ALT_AGA_2015_17_M</a>, <a href="ann.htm#ANN_1920_F_ULT">ANN_1920_F_ULT</a>, <a href="ann.htm#ANN_1920_M_ULT">ANN_1920_M_ULT</a>, <a href="ann.htm#ANN_55_F_ULT">ANN_55_F_ULT</a>, <a href="ann.htm#ANN_55_M_ULT">ANN_55_M_ULT</a>, <a href="ann.htm#ANN_90_F_ULT">ANN_90_F_ULT</a>, <a href="ann.htm#ANN_90_M_ULT">ANN_90_M_ULT</a>, <a href="ann.htm#ANN_IM80_F_ULT">ANN_IM80_F_ULT</a>, <a href="ann.htm#ANN_IM80_M_ULT">ANN_IM80_M_ULT</a>
+<a href="al.htm#AL_1967_70_M_ULT">AL_1967_70_M_ULT</a>, <a
+href="al.htm#AL_49_52_M_ULT">AL_49_52_M_ULT</a>, <a
+href="al.htm#AL_AM92_ULT">AL_AM92_ULT</a>, <a
+href="al.htm#AL_IA85_90_F_ULT">AL_IA85_90_F_ULT</a>, <a
+href="al.htm#AL_IA85_90_M_ULT">AL_IA85_90_M_ULT</a>, <a
+href="al.htm#AL_IA90_92_F_ULT">AL_IA90_92_F_ULT</a>, <a
+href="al.htm#AL_IA90_92_M_ULT">AL_IA90_92_M_ULT</a>, <a
+href="al.htm#AL_IA_64_70_ULT">AL_IA_64_70_ULT</a>, <a
+href="alt.htm#ALT_1960_62_F">ALT_1960_62_F</a>, <a
+href="alt.htm#ALT_1960_62_M">ALT_1960_62_M</a>, <a
+href="alt.htm#ALT_1965_67_F">ALT_1965_67_F</a>, <a
+href="alt.htm#ALT_1965_67_M">ALT_1965_67_M</a>, <a
+href="alt.htm#ALT_1970_72_F">ALT_1970_72_F</a>, <a
+href="alt.htm#ALT_1970_72_M">ALT_1970_72_M</a>, <a
+href="alt.htm#ALT_1975_77_F">ALT_1975_77_F</a>, <a
+href="alt.htm#ALT_1975_77_M">ALT_1975_77_M</a>, <a
+href="alt.htm#ALT_1980_82_F">ALT_1980_82_F</a>, <a
+href="alt.htm#ALT_1980_82_M">ALT_1980_82_M</a>, <a
+href="alt.htm#ALT_1985_87_F">ALT_1985_87_F</a>, <a
+href="alt.htm#ALT_1985_87_M">ALT_1985_87_M</a>, <a
+href="alt.htm#ALT_1990_92_F">ALT_1990_92_F</a>, <a
+href="alt.htm#ALT_1990_92_M">ALT_1990_92_M</a>, <a
+href="alt.htm#ALT_1995_97_F">ALT_1995_97_F</a>, <a
+href="alt.htm#ALT_1995_97_M">ALT_1995_97_M</a>, <a
+href="alt.htm#ALT_1998_00_F">ALT_1998_00_F</a>, <a
+href="alt.htm#ALT_1998_00_M">ALT_1998_00_M</a>, <a
+href="alt.htm#ALT_2000_02_F">ALT_2000_02_F</a>, <a
+href="alt.htm#ALT_2000_02_M">ALT_2000_02_M</a>, <a
+href="alt.htm#ALT_2003_05_F">ALT_2003_05_F</a>, <a
+href="alt.htm#ALT_2003_05_M">ALT_2003_05_M</a>, <a
+href="alt.htm#ALT_2004_06_F">ALT_2004_06_F</a>, <a
+href="alt.htm#ALT_2004_06_M">ALT_2004_06_M</a>, <a
+href="alt.htm#ALT_2005_07_F">ALT_2005_07_F</a>, <a
+href="alt.htm#ALT_2005_07_M">ALT_2005_07_M</a>, <a
+href="alt.htm#ALT_2008_10_F">ALT_2008_10_F</a>, <a
+href="alt.htm#ALT_2008_10_M">ALT_2008_10_M</a>, <a
+href="alt.htm#ALT_2009_11_F">ALT_2009_11_F</a>, <a
+href="alt.htm#ALT_2009_11_M">ALT_2009_11_M</a>, <a
+href="alt.htm#ALT_2010_12_F">ALT_2010_12_F</a>, <a
+href="alt.htm#ALT_2010_12_M">ALT_2010_12_M</a>, <a
+href="alt.htm#ALT_2013_15_F">ALT_2013_15_F</a>, <a
+href="alt.htm#ALT_2013_15_M">ALT_2013_15_M</a>, <a
+href="alt.htm#ALT_2014_16_F">ALT_2014_16_F</a>, <a
+href="alt.htm#ALT_2014_16_M">ALT_2014_16_M</a>, <a
+href="alt.htm#ALT_2015_17_F">ALT_2015_17_F</a>, <a
+href="alt.htm#ALT_2015_17_M">ALT_2015_17_M</a>, <a
+href="alt.htm#ALT_2016_18_F">ALT_2016_18_F</a>, <a
+href="alt.htm#ALT_2016_18_M">ALT_2016_18_M</a>, <a
+href="alt.htm#ALT_2017_19_F">ALT_2017_19_F</a>, <a
+href="alt.htm#ALT_2017_19_M">ALT_2017_19_M</a>, <a
+href="alt.htm#ALT_2018_20_F">ALT_2018_20_F</a>, <a
+href="alt.htm#ALT_2018_20_M">ALT_2018_20_M</a>, <a
+href="alt.htm#ALT_2019_21_F">ALT_2019_21_F</a>, <a
+href="alt.htm#ALT_2019_21_M">ALT_2019_21_M</a>, <a
+href="alt.htm#ALT_AGA_2010_12_F">ALT_AGA_2010_12_F</a>, <a
+href="alt.htm#ALT_AGA_2010_12_M">ALT_AGA_2010_12_M</a>, <a
+href="alt.htm#ALT_AGA_2015_17_F">ALT_AGA_2015_17_F</a>, <a
+href="alt.htm#ALT_AGA_2015_17_M">ALT_AGA_2015_17_M</a>, <a
+href="ann.htm#ANN_1920_F_ULT">ANN_1920_F_ULT</a>, <a
+href="ann.htm#ANN_1920_M_ULT">ANN_1920_M_ULT</a>, <a
+href="ann.htm#ANN_55_F_ULT">ANN_55_F_ULT</a>, <a
+href="ann.htm#ANN_55_M_ULT">ANN_55_M_ULT</a>, <a
+href="ann.htm#ANN_90_F_ULT">ANN_90_F_ULT</a>, <a
+href="ann.htm#ANN_90_M_ULT">ANN_90_M_ULT</a>, <a
+href="ann.htm#ANN_IM80_F_ULT">ANN_IM80_F_ULT</a>, <a
+href="ann.htm#ANN_IM80_M_ULT">ANN_IM80_M_ULT</a>
 </td>
 </tr>
 <tr>
@@ -107,7 +185,10 @@ D
 E
 </td>
 <td>
-<a href="elt.htm#ELT_10_M">ELT_10_M</a>, <a href="elt.htm#ELT_12_M">ELT_12_M</a>, <a href="elt.htm#ELT_15_F">ELT_15_F</a>, <a href="elt.htm#ELT_15_M">ELT_15_M</a>
+<a href="elt.htm#ELT_10_M">ELT_10_M</a>, <a
+href="elt.htm#ELT_12_M">ELT_12_M</a>, <a
+href="elt.htm#ELT_15_F">ELT_15_F</a>, <a
+href="elt.htm#ELT_15_M">ELT_15_M</a>
 </td>
 </tr>
 <tr>
@@ -115,7 +196,9 @@ E
 P
 </td>
 <td>
-<a href="qxtools.htm#plotQx">plotQx</a>, <a href="qxtools.htm#plotz">plotz</a>, <a href="qxtools.htm#plotzQx">plotzQx</a>
+<a href="qxtools.htm#plotQx">plotQx</a>, <a
+href="qxtools.htm#plotz">plotz</a>, <a
+href="qxtools.htm#plotzQx">plotzQx</a>
 </td>
 </tr>
 <tr>
@@ -123,7 +206,19 @@ P
 Q
 </td>
 <td>
-<a href="qxtools.htm#quadfit">quadfit</a>, <a href="al.htm#Qx_AL">Qx_AL</a>, <a href="qxtools.htm#Qx_ALL">Qx_ALL</a>, <a href="qxtools.htm#Qx_ALL_Boxed">Qx_ALL_Boxed</a>, <a href="alt.htm#Qx_ALT">Qx_ALT</a>, <a href="qxtools.htm#Qx_ALT_Boxed">Qx_ALT_Boxed</a>, <a href="ann.htm#Qx_ANN">Qx_ANN</a>, <a href="qxtools.htm#Qx_Data">Qx_Data</a>, <a href="qxtools.htm#Qx_Desc">Qx_Desc</a>, <a href="qxtools.htm#Qx_DF">Qx_DF</a>, <a href="elt.htm#Qx_ELT">Qx_ELT</a>, <a href="qxtools.htm#Qx_Names">Qx_Names</a>, <a href="qxtools.htm#Qx_Names_Desc">Qx_Names_Desc</a>, <a href="qxtools.htm#qxextend">qxextend</a>, <a href="qxtools.htm#QxF">QxF</a>, <a href="qxtools.htm#QxM">QxM</a>
+<a href="qxtools.htm#quadfit">quadfit</a>, <a
+href="al.htm#Qx_AL">Qx_AL</a>, <a href="qxtools.htm#Qx_ALL">Qx_ALL</a>,
+<a href="qxtools.htm#Qx_ALL_Boxed">Qx_ALL_Boxed</a>, <a
+href="alt.htm#Qx_ALT">Qx_ALT</a>, <a
+href="qxtools.htm#Qx_ALT_Boxed">Qx_ALT_Boxed</a>, <a
+href="ann.htm#Qx_ANN">Qx_ANN</a>, <a
+href="qxtools.htm#Qx_Data">Qx_Data</a>, <a
+href="qxtools.htm#Qx_Desc">Qx_Desc</a>, <a
+href="qxtools.htm#Qx_DF">Qx_DF</a>, <a href="elt.htm#Qx_ELT">Qx_ELT</a>,
+<a href="qxtools.htm#Qx_Names">Qx_Names</a>, <a
+href="qxtools.htm#Qx_Names_Desc">Qx_Names_Desc</a>, <a
+href="qxtools.htm#qxextend">qxextend</a>, <a
+href="qxtools.htm#QxF">QxF</a>, <a href="qxtools.htm#QxM">QxM</a>
 </td>
 </tr>
 </table>

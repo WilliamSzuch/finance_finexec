@@ -1,16 +1,12 @@
 NB. =========================================================
 NB.%al.ijs - Assured Lives Tables (AL) 
-NB.-<hr>
-NB.-<a href="http://www.finexec.com.au">Finexec | </a>
-NB.-<a class="HREF" href="../../finexec_lib.html">Library | </a>
-NB.-<a class="HREF" href="index.htm">Qx Tables</a>
-NB.-<hr>
+NB.-<script src="../js/qxtables_links.js"></script>
 NB.- Script: ~addons/finance/finexec/qxtables/al.ijs
 NB.- Contributor: William Szuch
-NB.- Updated: 2022-05-22
+NB.- Updated: 2022 6 26
 NB.- Depend: nil
 NB.- Definitions: loaded to locale base 
-NB.- Status: done:
+NB.- Status: done
 NB.- <a href="../al.ijs" target="_blank">Script source: al.ijs</a>
 NB.-<hr>
 NB.- Assured Lives (AL)

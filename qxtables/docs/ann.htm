@@ -8,10 +8,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="joxygen.css" />
@@ -23,15 +28,14 @@
 <header id="title-block-header">
 <h1 class="title">ann.ijs</h1>
 </header>
-<hr>
-<a href="http://www.finexec.com.au">Finexec | </a> <a class="HREF" href="../../finexec_lib.html">Library | </a> <a class="HREF" href="index.htm">Qx Tables</a>
-<hr>
-<div class="line-block">Script: ~addons/finance/finexec/qxtables/ann.ijs<br />
+<script src="../js/qxtables_links.js"></script>
+<div class="line-block">Script:
+~addons/finance/finexec/qxtables/ann.ijs<br />
 Contributor: William Szuch<br />
-Updated: 2022-05-22<br />
+Updated: 2022 6 26<br />
 Depend: nil<br />
 Definitions: loaded to locale base<br />
-Status: done:<br />
+Status: done<br />
 <a href="../ann.ijs" target="_blank">Script source: ann.ijs</a></div>
 <hr>
 <div class="line-block">Annuity Life Tables<br />
@@ -45,7 +49,14 @@ All mortality tables start at age = 0.</div>
 A
 </td>
 <td>
-<a href="#ANN_1920_F_ULT">ANN_1920_F_ULT</a>, <a href="#ANN_1920_M_ULT">ANN_1920_M_ULT</a>, <a href="#ANN_55_F_ULT">ANN_55_F_ULT</a>, <a href="#ANN_55_M_ULT">ANN_55_M_ULT</a>, <a href="#ANN_90_F_ULT">ANN_90_F_ULT</a>, <a href="#ANN_90_M_ULT">ANN_90_M_ULT</a>, <a href="#ANN_IM80_F_ULT">ANN_IM80_F_ULT</a>, <a href="#ANN_IM80_M_ULT">ANN_IM80_M_ULT</a>
+<a href="#ANN_1920_F_ULT">ANN_1920_F_ULT</a>, <a
+href="#ANN_1920_M_ULT">ANN_1920_M_ULT</a>, <a
+href="#ANN_55_F_ULT">ANN_55_F_ULT</a>, <a
+href="#ANN_55_M_ULT">ANN_55_M_ULT</a>, <a
+href="#ANN_90_F_ULT">ANN_90_F_ULT</a>, <a
+href="#ANN_90_M_ULT">ANN_90_M_ULT</a>, <a
+href="#ANN_IM80_F_ULT">ANN_IM80_F_ULT</a>, <a
+href="#ANN_IM80_M_ULT">ANN_IM80_M_ULT</a>
 </td>
 </tr>
 <tr>
